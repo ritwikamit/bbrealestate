@@ -37,8 +37,8 @@ export const AboutPage: React.FC<AboutPageProps> = ({ onOpenEnquiry }) => {
       <section className="relative w-full pt-4 sm:pt-6 pb-12 sm:pb-16 lg:pb-20">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           
-          {/* Main Hero Container with 4K Photo Clear in Background */}
-          <div className="relative w-full rounded-3xl sm:rounded-[2.5rem] overflow-hidden min-h-[560px] sm:min-h-[620px] md:min-h-[680px] lg:min-h-[740px] border border-[#E8E2D5] shadow-[0_25px_70px_rgba(40,25,10,0.08)] flex flex-col justify-between p-5 sm:p-8 md:p-12 lg:p-14 transition-all">
+          {/* Main Hero Container with 4K Photo in Background */}
+          <div className="relative w-full rounded-3xl sm:rounded-[2.5rem] overflow-hidden min-h-[560px] sm:min-h-[620px] md:min-h-[680px] lg:min-h-[740px] border border-[#E8E2D5] shadow-[0_25px_70px_rgba(40,25,10,0.08)] flex flex-col justify-start p-6 sm:p-10 md:p-12 lg:p-14 transition-all">
             
             {/* The 4K Photo with Artistic Blur Effect in the Background */}
             <div className="absolute inset-0 -z-10 bg-[#FAF6F0] overflow-hidden">
@@ -56,7 +56,7 @@ export const AboutPage: React.FC<AboutPageProps> = ({ onOpenEnquiry }) => {
             </div>
 
             {/* Top Bar Written Over Photo: Fully Transparent Badges */}
-            <div className="relative z-10 flex flex-wrap items-center justify-between gap-3">
+            <div className="relative z-10 flex flex-wrap items-center justify-between gap-3 mb-5 sm:mb-7">
               <div className="inline-flex items-center gap-2.5 px-3.5 py-1.5 rounded-full bg-black/10 border border-black/15 shadow-sm">
                 <span className="relative flex h-2 w-2">
                   <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-emerald-500 opacity-75" />
@@ -77,8 +77,8 @@ export const AboutPage: React.FC<AboutPageProps> = ({ onOpenEnquiry }) => {
               </div>
             </div>
 
-            {/* Bottom Content Over Photo: Completely Transparent (No Card, No Blur, Photo 100% Uncovered Behind It) */}
-            <div className="relative z-10 max-w-2xl mt-auto pt-10 sm:pt-14 space-y-4 bg-transparent border-0 shadow-none p-0">
+            {/* Main Content Block Kept Up At The Top */}
+            <div className="relative z-10 max-w-2xl space-y-4 bg-transparent border-0 shadow-none p-0">
               <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-[#B45309]/15 border border-[#B45309]/30 text-xs text-[#78350F] font-bold tracking-wide shadow-sm">
                 <Sparkles className="w-3.5 h-3.5 text-[#B45309]" />
                 <span>Corporate Heritage &bull; Institutional Standards</span>
@@ -95,7 +95,7 @@ export const AboutPage: React.FC<AboutPageProps> = ({ onOpenEnquiry }) => {
                 Baba Baidyanath Real Estate Private Limited was founded to bring uncompromising corporate governance, verifiable land due diligence, and absolute transparency to real estate development in Aurangabad and emerging growth corridors across Bihar.
               </p>
 
-              {/* Overlaid Transparent Action Buttons */}
+              {/* Action Buttons Floating Transparently Over Photo */}
               <div className="flex flex-wrap items-center gap-3 pt-2">
                 {onOpenEnquiry && (
                   <button
