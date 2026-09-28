@@ -36,10 +36,10 @@ export const LoadingScreen: React.FC<LoadingScreenProps> = ({ onComplete }) => {
           key="minimalist-loader"
           initial={{ opacity: 1 }}
           exit={{ opacity: 0, transition: { duration: 0.6, ease: [0.16, 1, 0.3, 1] } }}
-          className="fixed inset-0 z-[100] flex flex-col items-center justify-center bg-gradient-to-br from-[#EFE5D5] via-[#E2D2BC] to-[#D0BD9F] px-6 select-none"
+          className="fixed inset-0 z-[100] flex flex-col items-center justify-center bg-gradient-to-br from-[#0C0A09] via-[#050505] to-[#000000] px-6 select-none"
         >
           {/* Subtle Ambient Golden Radial Halo */}
-          <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[540px] h-[540px] bg-gradient-to-tr from-[#881337]/15 via-[#B45309]/20 to-transparent rounded-full blur-[100px] pointer-events-none" />
+          <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[540px] h-[540px] bg-gradient-to-tr from-[#991B1B]/25 via-[#F59E0B]/20 to-transparent rounded-full blur-[120px] pointer-events-none" />
 
           {/* Minimalist Centered Container */}
           <motion.div
@@ -48,28 +48,30 @@ export const LoadingScreen: React.FC<LoadingScreenProps> = ({ onComplete }) => {
             transition={{ duration: 0.6, ease: 'easeOut' }}
             className="relative z-10 flex flex-col items-center text-center max-w-lg w-full px-4"
           >
-            {/* Master Company Logo Lockup (Clean, Pure Logo, No Rectangle) */}
+            {/* Master Company Logo Lockup (with luminous contour glow for dark theme) */}
             <div className="mb-10 sm:mb-12 w-full flex justify-center relative">
               <CompanyLogo
                 variant="hero"
                 size="2xl"
-                className="transform scale-110 sm:scale-125 transition-transform duration-500 drop-shadow-[0_8px_20px_rgba(70,45,15,0.15)]"
+                theme="dark"
+                glow={true}
+                className="transform scale-110 sm:scale-125 transition-transform duration-500"
               />
             </div>
 
             {/* Ultra-Minimal Hairline Progress Bar */}
-            <div className="w-56 sm:w-64 h-[2.5px] bg-[#B89B60] rounded-full overflow-hidden relative shadow-inner">
+            <div className="w-56 sm:w-64 h-[2.5px] bg-stone-800 border border-white/10 rounded-full overflow-hidden relative shadow-inner">
               <motion.div
-                className="h-full bg-gradient-to-r from-[#881337] via-[#B45309] to-[#78350F]"
+                className="h-full bg-gradient-to-r from-[#DC2626] via-[#F59E0B] to-[#FEF08A] shadow-[0_0_12px_rgba(245,158,11,0.7)]"
                 style={{ width: `${progress}%` }}
                 transition={{ ease: 'linear' }}
               />
             </div>
 
             {/* Minimalist Tracking Text */}
-            <div className="mt-4 flex items-center justify-between w-56 sm:w-64 text-[10px] font-mono tracking-[0.24em] uppercase text-[#3D3022] font-semibold">
+            <div className="mt-4 flex items-center justify-between w-56 sm:w-64 text-[10px] font-mono tracking-[0.24em] uppercase text-stone-400 font-semibold">
               <span>INITIALIZING</span>
-              <span className="text-[#881337] font-extrabold">{progress}%</span>
+              <span className="text-[#F59E0B] font-extrabold drop-shadow-[0_0_8px_rgba(245,158,11,0.5)]">{progress}%</span>
             </div>
           </motion.div>
         </motion.div>
