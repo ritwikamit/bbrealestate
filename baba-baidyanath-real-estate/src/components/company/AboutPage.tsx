@@ -7,15 +7,12 @@ import {
   Sparkles,
   ArrowRight,
   CheckCircle2,
-  FileCheck,
   Building2,
   MapPin,
   Scale,
   FileText,
   Calendar,
-  CreditCard,
-  PhoneCall,
-  ExternalLink
+  CreditCard
 } from 'lucide-react';
 import aboutHeroBg from '../../assets/about-hero-bg.png';
 
@@ -35,107 +32,104 @@ export const AboutPage: React.FC<AboutPageProps> = ({ onOpenEnquiry }) => {
     <div className="relative z-10 w-full text-[#151311] pb-24">
       
       {/* ========================================================================= */}
-      {/* 1. REFINED & CRYSTAL CLEAR HERO STAGE */}
+      {/* 1. HERO SECTION: PHOTO CLEAR IN BACKGROUND WITH CONTENT WRITTEN OVER IT */}
       {/* ========================================================================= */}
       <section className="relative w-full pt-4 sm:pt-6 pb-12 sm:pb-16 lg:pb-20">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 space-y-10">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           
-          {/* Panoramic Masterpiece Display Card */}
-          <div className="relative w-full rounded-3xl sm:rounded-[2.5rem] bg-gradient-to-b from-[#FDFBF7] via-[#FAF6F0] to-[#F5EFEB] border border-[#E8E2D5] shadow-[0_20px_60px_rgba(40,25,10,0.06)] overflow-hidden transition-all duration-300 hover:shadow-[0_25px_70px_rgba(40,25,10,0.09)]">
+          {/* Main Hero Container with Photo Clear in Background */}
+          <div className="relative w-full rounded-3xl sm:rounded-[2.5rem] overflow-hidden min-h-[580px] sm:min-h-[640px] lg:min-h-[700px] border border-[#E8E2D5] shadow-[0_25px_70px_rgba(40,25,10,0.08)] flex flex-col justify-between p-6 sm:p-10 md:p-12 lg:p-14 transition-all">
             
-            {/* Top Accent Strip */}
-            <div className="h-1.5 w-full bg-gradient-to-r from-[#B45309] via-[#F59E0B] to-[#D97706]" />
-
-            {/* Verification Status Banner */}
-            <div className="px-6 py-3.5 sm:px-10 border-b border-[#E8E2D5] bg-white/70 backdrop-blur-md flex flex-wrap items-center justify-between gap-3">
-              <div className="flex items-center gap-2.5">
-                <span className="relative flex h-2.5 w-2.5">
-                  <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-emerald-400 opacity-75" />
-                  <span className="relative inline-flex rounded-full h-2.5 w-2.5 bg-emerald-600" />
-                </span>
-                <span className="font-mono text-xs font-semibold text-[#151311] tracking-wider uppercase">
-                  Official Corporate Portal &bull; Registered in Bihar
-                </span>
-              </div>
-
-              <div className="flex items-center gap-2 font-mono text-[11px] sm:text-xs text-[#78716C]">
-                <span className="text-[#B45309] font-bold">CIN:</span>
-                <span className="text-[#151311] font-semibold">{COMPANY_DATA.cin}</span>
-                <span className="hidden sm:inline">&bull;</span>
-                <span className="hidden sm:inline text-emerald-700 bg-emerald-50 px-2 py-0.5 rounded border border-emerald-200 font-semibold">Active</span>
-              </div>
-            </div>
-
-            {/* Master Artwork Image - Rendered at Full Sharpness & Clarity Without Any Changes */}
-            <div className="relative w-full flex items-center justify-center p-3 sm:p-6 md:p-8 bg-transparent">
+            {/* The Photo Clear in the Background - Absolutely positioned, unaltered */}
+            <div className="absolute inset-0 -z-10 bg-[#FAF6F0]">
               <img
                 src={aboutHeroBg}
-                alt="Baba Baidyanath Real Estate Private Limited"
-                className="w-full h-auto max-h-[580px] object-contain object-center select-none"
+                alt="Baba Baidyanath Real Estate Master Artwork"
+                className="w-full h-full object-cover object-center select-none"
                 style={{ imageRendering: 'auto' }}
                 loading="eager"
                 decoding="async"
               />
+              {/* Very gentle gradient at the bottom so text overlay remains 100% sharp while the photo remains totally clear */}
+              <div 
+                aria-hidden="true" 
+                className="absolute inset-0 bg-gradient-to-t from-white/90 via-white/20 to-white/40 sm:from-white/80 sm:via-transparent sm:to-white/30 pointer-events-none" 
+              />
             </div>
 
-            {/* Bottom Floating Action Bar */}
-            <div className="px-6 py-4 sm:px-10 sm:py-5 border-t border-[#E8E2D5] bg-white/90 backdrop-blur-md flex flex-col sm:flex-row items-center justify-between gap-4">
-              <div className="text-center sm:text-left">
-                <div className="text-xs uppercase tracking-widest text-[#B45309] font-mono font-bold">
-                  Statutory Jurisdiction
-                </div>
-                <div className="text-sm font-serif font-bold text-[#151311] mt-0.5">
-                  Registrar of Companies (RoC), Patna &bull; Aurangabad, Bihar 824101
-                </div>
+            {/* Top Bar Written Over Photo */}
+            <div className="relative z-10 flex flex-wrap items-center justify-between gap-3">
+              <div className="inline-flex items-center gap-2.5 px-4 py-2 rounded-full bg-white/85 backdrop-blur-md border border-[#E8E2D5] shadow-sm">
+                <span className="relative flex h-2 w-2">
+                  <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-emerald-400 opacity-75" />
+                  <span className="relative inline-flex rounded-full h-2 w-2 bg-emerald-600" />
+                </span>
+                <span className="font-mono text-xs font-semibold text-[#151311] tracking-wider uppercase">
+                  CIN: {COMPANY_DATA.cin}
+                </span>
+                <span className="text-xs text-[#78716C]">&bull;</span>
+                <span className="font-mono text-xs font-bold text-emerald-700 bg-emerald-50 px-2 py-0.5 rounded border border-emerald-200">
+                  Active
+                </span>
               </div>
 
-              <div className="flex items-center gap-3 w-full sm:w-auto justify-center">
-                {onOpenEnquiry && (
+              <div className="hidden sm:inline-flex items-center gap-2 px-4 py-2 rounded-full bg-white/85 backdrop-blur-md border border-[#E8E2D5] shadow-sm font-mono text-xs text-[#524E48]">
+                <Building2 className="w-3.5 h-3.5 text-[#B45309]" />
+                <span>ROC Patna &bull; Incorporated 7 Nov 2024</span>
+              </div>
+            </div>
+
+            {/* Content Written Over Photo (Clear, High-Contrast Frosted Glass Card) */}
+            <div className="relative z-10 max-w-2xl mt-auto pt-16">
+              <div className="bg-white/88 sm:bg-white/92 backdrop-blur-xl border border-white/80 rounded-3xl p-6 sm:p-9 shadow-[0_20px_50px_rgba(28,25,23,0.1)] space-y-4">
+                
+                <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-[#FEF3C7] border border-[#FDE68A] text-xs text-[#92400E] font-medium tracking-wide">
+                  <Sparkles className="w-3.5 h-3.5 text-[#D97706]" />
+                  <span>Corporate Heritage &bull; Institutional Standards</span>
+                </div>
+
+                <h1 className="font-serif text-3xl sm:text-5xl font-bold text-[#151311] tracking-tight leading-[1.14]">
+                  Built On Sacred Values.<br />
+                  <span className="bg-gradient-to-r from-[#DC2626] via-[#B45309] to-[#D97706] bg-clip-text text-transparent">
+                    Committed to Lasting Value.
+                  </span>
+                </h1>
+
+                <p className="text-sm sm:text-base text-[#44403C] leading-relaxed font-normal">
+                  Baba Baidyanath Real Estate Private Limited was founded to bring uncompromising corporate governance, verifiable land due diligence, and absolute transparency to real estate development in Aurangabad and emerging growth corridors across Bihar.
+                </p>
+
+                {/* Overlaid Action Buttons */}
+                <div className="flex flex-wrap items-center gap-3 pt-2">
+                  {onOpenEnquiry && (
+                    <button
+                      onClick={onOpenEnquiry}
+                      className="px-6 py-3 rounded-full bg-gradient-to-r from-[#B45309] via-[#F59E0B] to-[#D97706] text-[#0C0A09] font-bold text-xs uppercase tracking-[0.14em] cursor-pointer inline-flex items-center gap-2 hover:scale-[1.02] shadow-[0_4px_16px_rgba(245,158,11,0.3)] transition-all"
+                    >
+                      <Sparkles className="w-4 h-4 text-[#0C0A09]" />
+                      <span>Direct Consultation</span>
+                    </button>
+                  )}
+
                   <button
-                    onClick={onOpenEnquiry}
-                    className="flex-1 sm:flex-initial px-6 py-3 rounded-full bg-gradient-to-r from-[#B45309] via-[#F59E0B] to-[#D97706] text-[#0C0A09] font-bold text-xs uppercase tracking-[0.14em] cursor-pointer inline-flex items-center justify-center gap-2 hover:scale-[1.02] shadow-[0_4px_16px_rgba(245,158,11,0.28)] transition-all"
+                    onClick={scrollToDossier}
+                    className="px-5 py-3 rounded-full bg-white hover:bg-[#FAF8F5] text-[#151311] border border-[#DCD5C8] text-xs font-semibold uppercase tracking-wider transition-all inline-flex items-center gap-1.5 cursor-pointer shadow-sm hover:border-[#B45309]"
                   >
-                    <Sparkles className="w-4 h-4 text-[#0C0A09]" />
-                    <span>Inquire Online</span>
+                    <span>View Statutory Dossier</span>
+                    <ArrowRight className="w-3.5 h-3.5 text-[#B45309]" />
                   </button>
-                )}
+                </div>
 
-                <button
-                  onClick={scrollToDossier}
-                  className="px-5 py-3 rounded-full bg-white hover:bg-[#FAF8F5] text-[#151311] border border-[#DCD5C8] text-xs font-semibold uppercase tracking-wider transition-all inline-flex items-center gap-1.5 cursor-pointer shadow-sm hover:border-[#B45309]"
-                >
-                  <span>View MCA Record</span>
-                  <ArrowRight className="w-3.5 h-3.5 text-[#B45309]" />
-                </button>
               </div>
             </div>
 
-          </div>
-
-          {/* Clear Executive Summary Narrative */}
-          <div className="max-w-4xl mx-auto text-center space-y-4 pt-2">
-            <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-[#FEF3C7] border border-[#FDE68A] text-xs text-[#92400E] font-medium tracking-wide">
-              <Building2 className="w-3.5 h-3.5 text-[#D97706]" />
-              <span>Corporate Heritage &bull; Institutional Standards</span>
-            </div>
-
-            <h1 className="font-serif text-3xl sm:text-5xl lg:text-6xl font-bold text-[#151311] tracking-tight leading-[1.14]">
-              Built On Sacred Values.<br />
-              <span className="bg-gradient-to-r from-[#DC2626] via-[#B45309] to-[#D97706] bg-clip-text text-transparent">
-                Engineered For Lasting Value.
-              </span>
-            </h1>
-
-            <p className="text-base sm:text-lg text-[#524E48] leading-relaxed max-w-2xl mx-auto font-normal">
-              Baba Baidyanath Real Estate Private Limited was incorporated to bring uncompromising statutory governance, complete land title diligence, and institutional accountability to real estate development in Aurangabad and emerging growth corridors across Bihar.
-            </p>
           </div>
 
         </div>
       </section>
 
       {/* ========================================================================= */}
-      {/* 2. REFINED 4-PILLAR TRUST METRICS */}
+      {/* 2. CORE PILLARS OF GOVERNANCE (4 REFINED TRUST METRICS) */}
       {/* ========================================================================= */}
       <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pb-16">
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-5">
@@ -208,7 +202,7 @@ export const AboutPage: React.FC<AboutPageProps> = ({ onOpenEnquiry }) => {
       </section>
 
       {/* ========================================================================= */}
-      {/* 3. REFINED STATUTORY CORPORATE DOSSIER */}
+      {/* 3. REFINED STATUTORY CORPORATE DOSSIER (MCA / ROC PATNA) */}
       {/* ========================================================================= */}
       <section id="corporate-dossier" className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pb-16 scroll-mt-24">
         <div className="rounded-3xl p-7 sm:p-12 bg-white border border-[#E8E2D5] shadow-[0_20px_50px_rgba(40,25,10,0.06)] space-y-8">
