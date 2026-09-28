@@ -1,20 +1,43 @@
-<div align="center">
-<img width="1200" height="475" alt="GHBanner" src="https://ai.google.dev/static/site-assets/images/share-ais-513315318.png" />
-</div>
+# Baba Baidyanath Real Estate — Frontend Web Application
 
-# Run and deploy your AI Studio app
+This directory contains the client-side single page application (SPA) for **Baba Baidyanath Real Estate Private Limited**.
 
-This contains everything you need to run your app locally.
+Built with **React 19**, **TypeScript**, **Vite 8**, **Tailwind CSS 4**, and **Framer Motion**.
 
-View your app in AI Studio: https://ai.studio/apps/93c40a63-678f-4b76-92db-00015ad873b5
+---
 
-## Run Locally
+## 🛠️ Local Development
 
-**Prerequisites:**  Node.js
+### 1. Prerequisites
+- **Node.js**: v18.0.0+ (LTS v20+ recommended)
+- **npm** or **bun**
 
+### 2. Installation
+```bash
+npm install --legacy-peer-deps
+```
 
-1. Install dependencies:
-   `npm install`
-2. Set the `GEMINI_API_KEY` in [.env.local](.env.local) to your Gemini API key
-3. Run the app:
-   `npm run dev`
+### 3. Running Locally
+```bash
+npm run dev
+```
+Open `http://localhost:3000` in your browser.
+
+### 4. Production Build
+```bash
+npm run build
+```
+Generates production-ready distribution files in `./dist/`.
+
+---
+
+## 📂 Project Structure
+
+- `src/components/` — UI components grouped by feature (Hero, Navigation, Calculators, Enquiry, Projects, Legal).
+- `src/data/` — Static data stores for company profile, services, projects, and FAQs.
+- `src/types/` — TypeScript data definitions.
+- `public/` — Logos, brandmarks, and static visual assets.
+
+---
+
+For complete architectural documentation, product requirements (PRD), and design tokens, see the [Monorepo Documentation](../README.md).
