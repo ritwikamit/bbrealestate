@@ -32,88 +32,83 @@ export const AboutPage: React.FC<AboutPageProps> = ({ onOpenEnquiry }) => {
     <div className="relative z-10 w-full text-[#151311] pb-24">
       
       {/* ========================================================================= */}
-      {/* 1. HERO SECTION: PHOTO CLEAR IN BACKGROUND WITH CONTENT WRITTEN OVER IT */}
+      {/* 1. HERO SECTION: 4K PHOTO FULLY VISIBLE IN BACKGROUND + LUCID TRANSPARENT OVERLAY */}
       {/* ========================================================================= */}
       <section className="relative w-full pt-4 sm:pt-6 pb-12 sm:pb-16 lg:pb-20">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           
-          {/* Main Hero Container with Photo Clear in Background */}
-          <div className="relative w-full rounded-3xl sm:rounded-[2.5rem] overflow-hidden min-h-[580px] sm:min-h-[640px] lg:min-h-[700px] border border-[#E8E2D5] shadow-[0_25px_70px_rgba(40,25,10,0.08)] flex flex-col justify-between p-6 sm:p-10 md:p-12 lg:p-14 transition-all">
+          {/* Main Hero Container with 4K Photo Clear in Background */}
+          <div className="relative w-full rounded-3xl sm:rounded-[2.5rem] overflow-hidden min-h-[560px] sm:min-h-[620px] md:min-h-[680px] lg:min-h-[740px] border border-[#E8E2D5] shadow-[0_25px_70px_rgba(40,25,10,0.08)] flex flex-col justify-between p-5 sm:p-8 md:p-12 lg:p-14 transition-all">
             
-            {/* The Photo Clear in the Background - Absolutely positioned, unaltered */}
-            <div className="absolute inset-0 -z-10 bg-[#FAF6F0]">
+            {/* The 4K Photo Clear & Unhindered in the Background */}
+            <div className="absolute inset-0 -z-10 bg-[#FAF6F0] overflow-hidden flex items-center justify-center">
               <img
                 src={aboutHeroBg}
-                alt="Baba Baidyanath Real Estate Master Artwork"
-                className="w-full h-full object-cover object-center select-none"
+                alt="Baba Baidyanath Real Estate 4K Master Artwork"
+                className="w-full h-full object-cover sm:object-contain object-center select-none"
                 style={{ imageRendering: 'auto' }}
                 loading="eager"
                 decoding="async"
               />
-              {/* Very gentle gradient at the bottom so text overlay remains 100% sharp while the photo remains totally clear */}
-              <div 
-                aria-hidden="true" 
-                className="absolute inset-0 bg-gradient-to-t from-white/90 via-white/20 to-white/40 sm:from-white/80 sm:via-transparent sm:to-white/30 pointer-events-none" 
-              />
             </div>
 
-            {/* Top Bar Written Over Photo */}
+            {/* Top Bar Written Over Photo: Transparent Lucid Glass Chips */}
             <div className="relative z-10 flex flex-wrap items-center justify-between gap-3">
-              <div className="inline-flex items-center gap-2.5 px-4 py-2 rounded-full bg-white/85 backdrop-blur-md border border-[#E8E2D5] shadow-sm">
+              <div className="inline-flex items-center gap-2.5 px-4 py-2 rounded-full bg-white/30 backdrop-blur-md border border-white/50 shadow-[0_4px_16px_rgba(0,0,0,0.05)]">
                 <span className="relative flex h-2 w-2">
-                  <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-emerald-400 opacity-75" />
+                  <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-emerald-500 opacity-75" />
                   <span className="relative inline-flex rounded-full h-2 w-2 bg-emerald-600" />
                 </span>
-                <span className="font-mono text-xs font-semibold text-[#151311] tracking-wider uppercase">
+                <span className="font-mono text-xs font-bold text-[#151311] tracking-wider uppercase drop-shadow-[0_1px_1px_rgba(255,255,255,0.8)]">
                   CIN: {COMPANY_DATA.cin}
                 </span>
                 <span className="text-xs text-[#78716C]">&bull;</span>
-                <span className="font-mono text-xs font-bold text-emerald-700 bg-emerald-50 px-2 py-0.5 rounded border border-emerald-200">
-                  Active
+                <span className="font-mono text-xs font-bold text-emerald-800 bg-emerald-500/20 px-2 py-0.5 rounded-full border border-emerald-600/30">
+                  Active / RoC Patna
                 </span>
               </div>
 
-              <div className="hidden sm:inline-flex items-center gap-2 px-4 py-2 rounded-full bg-white/85 backdrop-blur-md border border-[#E8E2D5] shadow-sm font-mono text-xs text-[#524E48]">
+              <div className="hidden sm:inline-flex items-center gap-2 px-4 py-2 rounded-full bg-white/30 backdrop-blur-md border border-white/50 shadow-[0_4px_16px_rgba(0,0,0,0.05)] font-mono text-xs font-bold text-[#151311] drop-shadow-[0_1px_1px_rgba(255,255,255,0.8)]">
                 <Building2 className="w-3.5 h-3.5 text-[#B45309]" />
-                <span>ROC Patna &bull; Incorporated 7 Nov 2024</span>
+                <span>Incorporated 7 Nov 2024 &bull; Bihar</span>
               </div>
             </div>
 
-            {/* Content Written Over Photo (Clear, High-Contrast Frosted Glass Card) */}
-            <div className="relative z-10 max-w-2xl mt-auto pt-16">
-              <div className="bg-white/88 sm:bg-white/92 backdrop-blur-xl border border-white/80 rounded-3xl p-6 sm:p-9 shadow-[0_20px_50px_rgba(28,25,23,0.1)] space-y-4">
+            {/* Bottom Content Over Photo: Ultra-Transparent Lucid Glass (Photo Completely Visible Behind It) */}
+            <div className="relative z-10 max-w-2xl mt-auto pt-14">
+              <div className="bg-white/28 backdrop-blur-md border border-white/60 rounded-3xl p-5 sm:p-8 shadow-[0_15px_40px_rgba(0,0,0,0.08)] space-y-3.5">
                 
-                <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-[#FEF3C7] border border-[#FDE68A] text-xs text-[#92400E] font-medium tracking-wide">
-                  <Sparkles className="w-3.5 h-3.5 text-[#D97706]" />
+                <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-amber-500/15 backdrop-blur-sm border border-amber-600/30 text-xs text-[#78350F] font-bold tracking-wide">
+                  <Sparkles className="w-3.5 h-3.5 text-[#B45309]" />
                   <span>Corporate Heritage &bull; Institutional Standards</span>
                 </div>
 
-                <h1 className="font-serif text-3xl sm:text-5xl font-bold text-[#151311] tracking-tight leading-[1.14]">
+                <h1 className="font-serif text-2xl sm:text-4xl lg:text-5xl font-bold text-[#151311] tracking-tight leading-[1.15] drop-shadow-[0_1px_2px_rgba(255,255,255,0.85)]">
                   Built On Sacred Values.<br />
-                  <span className="bg-gradient-to-r from-[#DC2626] via-[#B45309] to-[#D97706] bg-clip-text text-transparent">
+                  <span className="bg-gradient-to-r from-[#991B1B] via-[#B45309] to-[#D97706] bg-clip-text text-transparent drop-shadow-none">
                     Committed to Lasting Value.
                   </span>
                 </h1>
 
-                <p className="text-sm sm:text-base text-[#44403C] leading-relaxed font-normal">
+                <p className="text-xs sm:text-sm md:text-base text-[#1C1917] leading-relaxed font-medium drop-shadow-[0_1px_2px_rgba(255,255,255,0.9)]">
                   Baba Baidyanath Real Estate Private Limited was founded to bring uncompromising corporate governance, verifiable land due diligence, and absolute transparency to real estate development in Aurangabad and emerging growth corridors across Bihar.
                 </p>
 
-                {/* Overlaid Action Buttons */}
+                {/* Overlaid Transparent Lucid Buttons */}
                 <div className="flex flex-wrap items-center gap-3 pt-2">
                   {onOpenEnquiry && (
                     <button
                       onClick={onOpenEnquiry}
-                      className="px-6 py-3 rounded-full bg-gradient-to-r from-[#B45309] via-[#F59E0B] to-[#D97706] text-[#0C0A09] font-bold text-xs uppercase tracking-[0.14em] cursor-pointer inline-flex items-center gap-2 hover:scale-[1.02] shadow-[0_4px_16px_rgba(245,158,11,0.3)] transition-all"
+                      className="px-6 py-3 rounded-full bg-gradient-to-r from-[#B45309] via-[#D97706] to-[#B45309] text-white font-bold text-xs uppercase tracking-[0.14em] cursor-pointer inline-flex items-center gap-2 hover:scale-[1.02] shadow-[0_6px_20px_rgba(180,83,9,0.35)] transition-all border border-amber-300/40"
                     >
-                      <Sparkles className="w-4 h-4 text-[#0C0A09]" />
+                      <Sparkles className="w-4 h-4 text-amber-200" />
                       <span>Direct Consultation</span>
                     </button>
                   )}
 
                   <button
                     onClick={scrollToDossier}
-                    className="px-5 py-3 rounded-full bg-white hover:bg-[#FAF8F5] text-[#151311] border border-[#DCD5C8] text-xs font-semibold uppercase tracking-wider transition-all inline-flex items-center gap-1.5 cursor-pointer shadow-sm hover:border-[#B45309]"
+                    className="px-5 py-3 rounded-full bg-white/40 hover:bg-white/60 text-[#151311] border border-white/70 text-xs font-bold uppercase tracking-wider backdrop-blur-md transition-all inline-flex items-center gap-1.5 cursor-pointer shadow-sm hover:border-[#B45309]"
                   >
                     <span>View Statutory Dossier</span>
                     <ArrowRight className="w-3.5 h-3.5 text-[#B45309]" />
@@ -162,7 +157,7 @@ export const AboutPage: React.FC<AboutPageProps> = ({ onOpenEnquiry }) => {
             </p>
             <div className="pt-1 text-[11px] font-mono text-emerald-700 font-semibold flex items-center gap-1">
               <CheckCircle2 className="w-3 h-3 text-emerald-600" />
-              <span>Near Gayatri Mandir, Aurangabad</span>
+              <span>Kunda House, MG Road</span>
             </div>
           </div>
 
