@@ -1,0 +1,153 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 620 380" fill="none">
+  <defs>
+    <!-- Master 1:1 Gradients matching User's Exact Artwork -->
+    <linearGradient id="exactOmGradient" x1="12%" y1="12%" x2="88%" y2="88%">
+      <stop offset="0%" stop-color="#7F1313" />
+      <stop offset="16%" stop-color="#B91C1C" />
+      <stop offset="32%" stop-color="#DC2626" />
+      <stop offset="50%" stop-color="#EA580C" />
+      <stop offset="70%" stop-color="#F59E0B" />
+      <stop offset="86%" stop-color="#FBBF24" />
+      <stop offset="100%" stop-color="#FEF08A" />
+    </linearGradient>
+
+    <linearGradient id="exactOmHighlight" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#FFFBEB" stop-opacity="0" />
+      <stop offset="25%" stop-color="#FEF08A" stop-opacity="0.8" />
+      <stop offset="50%" stop-color="#FFFFFF" stop-opacity="0.95" />
+      <stop offset="75%" stop-color="#FDE68A" stop-opacity="0.8" />
+      <stop offset="100%" stop-color="#F59E0B" stop-opacity="0" />
+    </linearGradient>
+
+    <linearGradient id="exactTrishulLeft" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#7F1313" />
+      <stop offset="45%" stop-color="#B91C1C" />
+      <stop offset="100%" stop-color="#EA580C" />
+    </linearGradient>
+    <linearGradient id="exactTrishulRight" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#FFFDF5" />
+      <stop offset="35%" stop-color="#F59E0B" />
+      <stop offset="100%" stop-color="#DC2626" />
+    </linearGradient>
+
+    <linearGradient id="exactChandraGold" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#FFFDF5" />
+      <stop offset="30%" stop-color="#FBBF24" />
+      <stop offset="70%" stop-color="#D97706" />
+      <stop offset="100%" stop-color="#78350F" />
+    </linearGradient>
+
+    <linearGradient id="exactTowerCenter" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#FFFDF5" />
+      <stop offset="22%" stop-color="#FDE68A" />
+      <stop offset="48%" stop-color="#F59E0B" />
+      <stop offset="78%" stop-color="#B45309" />
+      <stop offset="100%" stop-color="#451A03" />
+    </linearGradient>
+    <linearGradient id="exactTowerLeft" x1="0%" y1="100%" x2="50%" y2="0%">
+      <stop offset="0%" stop-color="#450A0A" />
+      <stop offset="35%" stop-color="#7F1D1D" />
+      <stop offset="70%" stop-color="#B91C1C" />
+      <stop offset="100%" stop-color="#EA580C" />
+    </linearGradient>
+    <linearGradient id="exactTowerRight" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#FDE68A" />
+      <stop offset="35%" stop-color="#F59E0B" />
+      <stop offset="75%" stop-color="#92400E" />
+      <stop offset="100%" stop-color="#78350F" />
+    </linearGradient>
+
+    <linearGradient id="exactWaveGold" x1="0%" y1="50%" x2="100%" y2="50%">
+      <stop offset="0%" stop-color="#92400E" stop-opacity="0.1" />
+      <stop offset="15%" stop-color="#B45309" />
+      <stop offset="38%" stop-color="#F59E0B" />
+      <stop offset="55%" stop-color="#FFFBEB" />
+      <stop offset="72%" stop-color="#FBBF24" />
+      <stop offset="90%" stop-color="#D97706" />
+      <stop offset="100%" stop-color="#92400E" stop-opacity="0.2" />
+    </linearGradient>
+
+    <linearGradient id="exactSunHalo" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#FFFBEB" stop-opacity="0.85" />
+      <stop offset="35%" stop-color="#FDE68A" stop-opacity="0.6" />
+      <stop offset="70%" stop-color="#F59E0B" stop-opacity="0.3" />
+      <stop offset="100%" stop-color="#DC2626" stop-opacity="0.1" />
+    </linearGradient>
+
+    <linearGradient id="textGoldGradient" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#DC2626" />
+      <stop offset="45%" stop-color="#F59E0B" />
+      <stop offset="100%" stop-color="#FEF08A" />
+    </linearGradient>
+  </defs>
+
+  <g transform="translate(50, -10)">
+    <!-- Sun Halo Ring & Accents -->
+    <circle cx="260" cy="195" r="130" stroke="url(#exactSunHalo)" stroke-width="1.6" fill="none" stroke-dasharray="5 3" />
+    <path d="M 155 125 Q 172 118 190 125 T 218 125" stroke="url(#exactSunHalo)" stroke-width="1.2" stroke-linecap="round" fill="none" opacity="0.6" />
+    <path d="M 310 132 Q 328 124 346 132 T 375 132" stroke="url(#exactSunHalo)" stroke-width="1.2" stroke-linecap="round" fill="none" opacity="0.6" />
+    <path d="M 160 105 Q 166 100 172 105 Q 178 100 184 105" stroke="#D97706" stroke-width="1.2" stroke-linecap="round" fill="none" opacity="0.75" />
+    <path d="M 368 175 Q 373 170 378 175 Q 383 170 388 175" stroke="#D97706" stroke-width="1" stroke-linecap="round" fill="none" opacity="0.6" />
+
+    <!-- Lord Shiva Trishul -->
+    <path d="M 238 108 C 246 124 274 124 282 108 C 274 116 246 116 238 108 Z" fill="url(#exactChandraGold)" />
+    <path d="M 240 107 C 248 119 272 119 280 107" stroke="#FFFDF5" stroke-width="1.2" stroke-linecap="round" fill="none" opacity="0.9" />
+    <polygon points="260,38 260,108 254,92 254,78 256,58" fill="url(#exactTrishulLeft)" />
+    <polygon points="260,38 260,108 266,92 266,78 264,58" fill="url(#exactTrishulRight)" />
+    <line x1="260" y1="38" x2="260" y2="108" stroke="#FFFDF5" stroke-width="1.4" stroke-linecap="round" />
+    <path d="M 242 58 C 245 72 250 84 258 94 C 253 91 244 82 241 70 C 238 62 238 55 242 58 Z" fill="url(#exactTrishulLeft)" />
+    <path d="M 242 58 C 245 70 249 80 256 90" stroke="#FDE68A" stroke-width="1.2" stroke-linecap="round" fill="none" opacity="0.9" />
+    <path d="M 278 58 C 275 72 270 84 262 94 C 267 91 276 82 279 70 C 282 62 282 55 278 58 Z" fill="url(#exactTrishulRight)" />
+    <path d="M 278 58 C 275 70 271 80 264 90" stroke="#FFFDF5" stroke-width="1.2" stroke-linecap="round" fill="none" opacity="0.9" />
+    <circle cx="260" cy="110" r="2.8" fill="#FFFDF5" />
+
+    <!-- Sacred Om (ॐ) -->
+    <path d="M 186 144 C 206 108 260 98 290 126 C 314 148 303 174 275 184 C 255 191 243 184 246 173 C 248 162 264 158 272 162 C 283 168 287 151 276 140 C 258 122 220 126 202 154 C 193 166 187 156 186 144 Z" fill="url(#exactOmGradient)" />
+    <path d="M 194 140 C 210 114 252 106 278 124 C 298 140 290 158 278 166" stroke="url(#exactOmHighlight)" stroke-width="3.2" stroke-linecap="round" fill="none" />
+    <path d="M 268 186 C 298 200 314 232 302 260 C 288 292 238 298 196 280 C 170 268 152 250 144 238 C 140 230 146 226 156 230 C 174 242 200 252 230 254 C 268 256 284 236 280 212 C 274 192 254 184 238 188 C 232 182 238 176 268 186 Z" fill="url(#exactOmGradient)" />
+    <path d="M 270 192 C 292 206 304 230 295 252 C 284 276 245 284 210 270 C 185 260 168 246 156 236" stroke="url(#exactOmHighlight)" stroke-width="2.8" stroke-linecap="round" fill="none" />
+    <path d="M 276 184 C 310 170 354 186 358 226 C 362 264 330 298 284 306 C 260 310 234 306 210 296 C 202 292 206 284 216 288 C 238 296 264 298 288 292 C 322 284 342 258 338 230 C 334 200 302 188 276 196 Z" fill="url(#exactOmGradient)" />
+    <path d="M 284 188 C 316 176 348 192 350 224 C 352 254 326 282 294 290" stroke="url(#exactOmHighlight)" stroke-width="3.2" stroke-linecap="round" fill="none" />
+    <path d="M 312 134 C 324 128 342 132 350 144 C 342 140 326 140 312 146 Z" fill="url(#exactOmGradient)" />
+    <circle cx="338" cy="122" r="5.2" fill="url(#exactChandraGold)" />
+    <circle cx="336.5" cy="120.5" r="1.6" fill="#FFFFFF" />
+
+    <!-- 3D Skyscrapers -->
+    <polygon points="214,264 214,212 230,198 230,264" fill="url(#exactTowerLeft)" />
+    <polygon points="230,264 230,198 236,202 236,264" fill="url(#exactTowerCenter)" />
+    <polygon points="214,212 226,196 236,202 230,198" fill="#FEF08A" opacity="0.9" />
+    <line x1="216" y1="226" x2="228" y2="216" stroke="#FFFBEB" stroke-width="0.8" opacity="0.6" />
+    <line x1="216" y1="241" x2="228" y2="231" stroke="#FFFBEB" stroke-width="0.8" opacity="0.6" />
+
+    <polygon points="238,264 238,176 258,154 258,264" fill="url(#exactTowerLeft)" />
+    <polygon points="258,264 258,154 274,164 274,264" fill="url(#exactTowerCenter)" />
+    <polygon points="238,176 252,150 274,164 258,154" fill="#FFFDF5" opacity="0.95" />
+    <line x1="245" y1="184" x2="245" y2="264" stroke="#FDE68A" stroke-width="1.2" opacity="0.75" />
+    <line x1="252" y1="174" x2="252" y2="264" stroke="#FEF08A" stroke-width="1.2" opacity="0.85" />
+    <line x1="264" y1="171" x2="264" y2="264" stroke="#FFFFFF" stroke-width="1.4" opacity="0.9" />
+    <line x1="270" y1="176" x2="270" y2="264" stroke="#FDE68A" stroke-width="1" opacity="0.75" />
+
+    <polygon points="276,264 276,206 292,192 292,264" fill="url(#exactTowerLeft)" />
+    <polygon points="292,264 292,192 298,196 298,264" fill="url(#exactTowerRight)" />
+    <polygon points="276,206 286,188 298,196 292,192" fill="#FEF08A" opacity="0.9" />
+    <line x1="278" y1="221" x2="290" y2="212" stroke="#FEF08A" stroke-width="0.8" opacity="0.6" />
+
+    <!-- 3D Wave Ribbon -->
+    <path d="M 130 268 C 185 260 220 252 260 272 C 300 290 345 284 400 260 C 370 278 320 296 265 282 C 220 270 180 274 130 268 Z" fill="#78350F" opacity="0.6" />
+    <path d="M 135 266 C 190 258 225 250 260 270 C 300 288 345 282 395 258 C 368 274 322 292 265 278 C 222 266 185 272 135 266 Z" fill="url(#exactWaveGold)" />
+    <path d="M 145 264 C 195 256 228 251 262 268 C 298 284 340 278 388 256" stroke="#FFFDF5" stroke-width="2.2" stroke-linecap="round" fill="none" opacity="0.95" />
+  </g>
+
+  <!-- Typography matching user image -->
+  <text x="310" y="325" text-anchor="middle" font-family="'Garamond', 'Times New Roman', serif" font-size="32" font-weight="700" letter-spacing="0.22em">
+    <tspan fill="#111111">BABA </tspan>
+    <tspan fill="url(#textGoldGradient)">BAIDYANATH</tspan>
+  </text>
+
+  <!-- Golden Rule Lines Framing Subtitle -->
+  <line x1="110" y1="348" x2="205" y2="348" stroke="url(#textGoldGradient)" stroke-width="1.6" />
+  <text x="310" y="352" text-anchor="middle" font-family="'Garamond', 'Times New Roman', serif" font-size="10.5" font-weight="600" letter-spacing="0.28em" fill="#3E3A37">
+    REAL ESTATE PRIVATE LIMITED
+  </text>
+  <line x1="415" y1="348" x2="510" y2="348" stroke="url(#textGoldGradient)" stroke-width="1.6" />
+</svg>

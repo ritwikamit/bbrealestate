@@ -1,0 +1,162 @@
+@import "tailwindcss";
+
+:root {
+  --font-heading-current: 'Garamond', 'Times New Roman', serif;
+  --font-body-current: 'Geist', -apple-system, BlinkMacSystemFont, sans-serif;
+
+  /* Brand Core Palette from Logo */
+  --bb-crimson: #DC2626;
+  --bb-crimson-deep: #991B1B;
+  --bb-gold: #F59E0B;
+  --bb-gold-light: #FDE68A;
+  --bb-gold-deep: #B45309;
+  --bb-amber: #D97706;
+
+  /* Mixed Surfaces */
+  --bb-dark-bg: #070605;
+  --bb-dark-surface: #0E0C0A;
+  --bb-dark-card: #151310;
+  --bb-light-bg: #FAF8F5;
+  --bb-light-surface: #FFFFFF;
+  --bb-light-card: #F5F0E6;
+  --bb-light-border: #E7E2D8;
+}
+
+@theme {
+  --font-serif: var(--font-heading-current);
+  --font-display: var(--font-heading-current);
+  --font-sans: var(--font-body-current);
+
+  --color-charcoal: #070605;
+  --color-charcoal-card: #12100E;
+  --color-charcoal-light: #1C1917;
+
+  --color-ivory: #FAF8F5;
+  --color-ivory-light: #FFFFFF;
+  --color-stone: #E7E2D8;
+
+  --color-crimson: #DC2626;
+  --color-crimson-deep: #991B1B;
+  --color-gold: #F59E0B;
+  --color-gold-light: #FDE68A;
+  --color-gold-deep: #B45309;
+  --color-amber: #D97706;
+  --color-muted: #78716C;
+}
+
+.font-garamond {
+  font-family: 'Garamond', 'Cormorant Garamond', 'Times New Roman', serif;
+}
+
+.font-cinzel {
+  font-family: 'Cinzel', serif;
+}
+
+.font-cormorant {
+  font-family: 'Cormorant Garamond', 'Garamond', Georgia, serif;
+}
+
+.font-playfair {
+  font-family: 'Playfair Display', Georgia, serif;
+}
+
+.font-outfit {
+  font-family: 'Outfit', -apple-system, BlinkMacSystemFont, sans-serif;
+}
+
+.font-jakarta {
+  font-family: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, sans-serif;
+}
+
+/* Signature luminous gold button border (as requested by user) */
+.btn-gold-border {
+  border: 1.2px solid rgba(253, 230, 138, 0.65) !important;
+  box-shadow: 0 0 20px rgba(245, 158, 11, 0.35), inset 0 1px 2px rgba(255, 255, 255, 0.45) !important;
+}
+
+.btn-gold-border:hover {
+  border-color: rgba(254, 240, 138, 0.95) !important;
+  box-shadow: 0 0 30px rgba(245, 158, 11, 0.55), inset 0 1px 3px rgba(255, 255, 255, 0.65) !important;
+}
+
+/* Liquid Glass button effect */
+.liquid-glass {
+  background: rgba(255, 255, 255, 0.02);
+  background-blend-mode: luminosity;
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+  border: 1.2px solid rgba(253, 230, 138, 0.65);
+  box-shadow: inset 0 1px 2px rgba(255, 255, 255, 0.35), 0 0 20px rgba(245, 158, 11, 0.3);
+  position: relative;
+  overflow: hidden;
+}
+
+.liquid-glass::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  border-radius: inherit;
+  padding: 1.2px;
+  background: linear-gradient(
+    180deg,
+    rgba(253, 230, 138, 0.6) 0%,
+    rgba(245, 158, 11, 0.25) 30%,
+    rgba(220, 38, 38, 0) 50%,
+    rgba(245, 158, 11, 0.2) 70%,
+    rgba(253, 230, 138, 0.5) 100%
+  );
+  -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+  -webkit-mask-composite: xor;
+  mask-composite: exclude;
+  pointer-events: none;
+}
+
+.liquid-glass:hover {
+  background: rgba(245, 158, 11, 0.08);
+  border-color: rgba(254, 240, 138, 0.9);
+  box-shadow: inset 0 1px 2px rgba(255, 255, 255, 0.45), 0 0 28px rgba(245, 158, 11, 0.45);
+}
+
+.liquid-glass:active {
+  transform: scale(0.98);
+}
+
+/* Mobile menu glass dropdown */
+.mobile-menu-glass {
+  background: rgba(0, 0, 0, 0.94);
+  backdrop-filter: blur(28px);
+  -webkit-backdrop-filter: blur(28px);
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  box-shadow: 0 16px 48px rgba(0, 0, 0, 0.85), inset 0 1px 0 rgba(255, 255, 255, 0.15);
+}
+
+body {
+  font-family: var(--font-body-current);
+  background-color: #070605;
+  color: #FAF8F5;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  overflow-x: hidden;
+}
+
+h1, h2, h3, h4, .font-display, .font-serif {
+  font-family: var(--font-heading-current);
+}
+
+/* Custom scrollbar matching sacred amber gold */
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: #0C0A09;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #B45309;
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #F59E0B;
+}
