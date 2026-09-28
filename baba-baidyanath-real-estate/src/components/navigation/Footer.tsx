@@ -1,6 +1,6 @@
 import React from 'react';
 import { TabType } from '../../types';
-import { COMPANY_DATA, SIYARAM_DATA } from '../../data/company';
+import { COMPANY_DATA, SIYARAM_DATA, VERIFIED_REGISTRIES } from '../../data/company';
 import { ShieldCheck, MapPin, Building, ArrowUpRight } from 'lucide-react';
 import { CompanyLogo } from '../common/CompanyLogo';
 
@@ -221,6 +221,33 @@ export const Footer: React.FC<FooterProps> = ({ onSelectTab, onOpenEnquiry }) =>
                 <ArrowUpRight className="w-3.5 h-3.5 text-amber-200" />
               </button>
             </div>
+          </div>
+        </div>
+
+        {/* Verified Public Corporate Registries Bar in Footer */}
+        <div className="py-6 border-b border-[#B89B60]/50 flex flex-col lg:flex-row items-start lg:items-center justify-between gap-4">
+          <div className="space-y-0.5">
+            <span className="text-[10px] uppercase font-mono tracking-widest text-[#881337] font-bold block">
+              Independent Third-Party Verification Registries
+            </span>
+            <span className="text-xs text-[#3D3225]">
+              Publicly auditable corporate intelligence listings &amp; registration records
+            </span>
+          </div>
+
+          <div className="flex flex-wrap items-center gap-2 sm:gap-2.5">
+            {VERIFIED_REGISTRIES.map((reg) => (
+              <a
+                key={reg.id}
+                href={reg.url}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="px-3 py-1.5 rounded-lg bg-[#EFE5D5]/80 hover:bg-white text-[#1C1917] border border-[#B89B60]/70 text-[11px] font-semibold font-mono flex items-center gap-1.5 transition-all shadow-xs hover:shadow-sm"
+              >
+                <span>{reg.name}</span>
+                <ArrowUpRight className="w-3 h-3 text-[#881337]" />
+              </a>
+            ))}
           </div>
         </div>
 

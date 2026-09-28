@@ -16,6 +16,7 @@ import {
 } from 'lucide-react';
 import aboutHeroBg from '../../assets/about-hero-bg.png';
 import { SiyaramShowcaseCard } from '../common/SiyaramShowcaseCard';
+import { CorporateRegistriesSection } from './CorporateRegistriesSection';
 
 interface AboutPageProps {
   onOpenEnquiry?: () => void;
@@ -377,6 +378,11 @@ export const AboutPage: React.FC<AboutPageProps> = ({ onOpenEnquiry }) => {
 
         </div>
       </section>
+
+      {/* ========================================================================= */}
+      {/* 4. THIRD-PARTY VERIFIED CORPORATE REGISTRIES & DIRECTORIES */}
+      {/* ========================================================================= */}
+      <CorporateRegistriesSection />
 
     </div>
   );

@@ -10,6 +10,7 @@ import { ProjectsSection } from './components/projects/ProjectsSection';
 import { LandAndEMICalculator } from './components/tools/LandAndEMICalculator';
 import { LocationSection } from './components/location/LocationSection';
 import { FAQSection } from './components/company/FAQSection';
+import { CorporateRegistriesSection } from './components/company/CorporateRegistriesSection';
 import { ClientVoicesSection } from './components/testimonials/ClientVoicesSection';
 import { AboutPage } from './components/company/AboutPage';
 import { ContactPage } from './components/contact/ContactPage';
@@ -118,6 +119,11 @@ export default function App() {
               {/* Location & Map Section */}
               <div className="relative z-10">
                 <LocationSection />
+              </div>
+
+              {/* Verified Public Corporate Registries & Intelligence Dossiers */}
+              <div className="relative z-10 border-t border-[#E7E2D8]">
+                <CorporateRegistriesSection />
               </div>
 
               {/* Frequently Asked Questions */}
