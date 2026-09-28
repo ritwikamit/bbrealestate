@@ -16,9 +16,9 @@ export const Footer: React.FC<FooterProps> = ({ onSelectTab, onOpenEnquiry }) =>
   };
 
   return (
-    <footer className="relative z-10 bg-gradient-to-b from-[#E5DAC8] to-[#DDD0BB] text-[#221B13] border-t border-[#D2C1A8] shadow-[0_-8px_30px_rgba(40,30,15,0.04)]" aria-label="Corporate Footer">
+    <footer className="relative z-10 bg-gradient-to-b from-[#EFE5D5] via-[#E4D4BE] to-[#D5C1A4] text-[#221B13] border-t border-[#D2C0A4] shadow-[0_-10px_35px_rgba(40,30,15,0.06)]" aria-label="Corporate Footer">
       {/* Statutory Corporate Credentials Strip */}
-      <div className="border-b border-[#D2C1A8] bg-[#D9CBB6] py-3 px-4 sm:px-6 lg:px-8">
+      <div className="border-b border-[#D2C0A4] bg-gradient-to-r from-[#DFD0BC] via-[#EADBCE] to-[#DFD0BC] py-3.5 px-4 sm:px-6 lg:px-8">
         <div className="max-w-7xl mx-auto flex flex-col sm:flex-row items-center justify-between gap-2 text-[11px] font-mono text-[#261E16]">
           <div className="flex items-center gap-2">
             <ShieldCheck className="w-3.5 h-3.5 text-[#881337] shrink-0" />
