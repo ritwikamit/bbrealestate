@@ -3,18 +3,46 @@ import { CAPABILITY_AREAS } from '../../data/services';
 import {
   IconModernTowers,
   IconVerifiedBadge,
-  IconMinimalArrow,
-  IconDivineSpark
+  IconMinimalArrow
 } from '../common/ThemeIcons';
+
+import commercialComplexImg from '../../assets/commercial-complex.jpg';
+import residentialPlotsImg from '../../assets/residential-plots.jpg';
+import agriculturalLandImg from '../../assets/agricultural-land.jpg';
+import luxuryVillasImg from '../../assets/luxury-villas.jpg';
 
 interface CapabilitiesSectionProps {
   onOpenEnquiry: () => void;
 }
 
+const SERVICE_IMAGES: Record<string, { image: string; caption: string }> = {
+  'land-assembly': {
+    image: residentialPlotsImg,
+    caption: 'Strategic Land Demarcation & Boundary Surveying'
+  },
+  'property-development': {
+    image: luxuryVillasImg,
+    caption: 'Master Layout Conceptualization & Villa Community Development'
+  },
+  'landowner-jv': {
+    image: agriculturalLandImg,
+    caption: 'Fertile Agricultural Consolidation & Landowner JDA Structuring'
+  },
+  'leasehold-commercial': {
+    image: commercialComplexImg,
+    caption: 'Prime Commercial Real Estate & High-Visibility Transit Corridors'
+  },
+  'investment-advisory': {
+    image: residentialPlotsImg,
+    caption: 'Data-Driven Regional Appreciation & Plotted Land Advisory'
+  }
+};
+
 export const CapabilitiesSection: React.FC<CapabilitiesSectionProps> = ({ onOpenEnquiry }) => {
   const [activeTab, setActiveTab] = useState<string>(CAPABILITY_AREAS[0].id);
 
   const selectedService = CAPABILITY_AREAS.find((s) => s.id === activeTab) || CAPABILITY_AREAS[0];
+  const currentAsset = SERVICE_IMAGES[selectedService.id] || SERVICE_IMAGES['land-assembly'];
 
   return (
     <section className="py-12 sm:py-20 md:py-28 relative z-10 bg-transparent text-[#1C1917] border-b border-[#E7E2D8]" aria-label="Capabilities and Scope">
@@ -81,7 +109,7 @@ export const CapabilitiesSection: React.FC<CapabilitiesSectionProps> = ({ onOpen
 
           {/* Active Capability Detail Panel in Light Luxury Card */}
           <div className="lg:col-span-7">
-            <div className="rounded-2xl p-5 sm:p-9 bg-white border border-[#E7E2D8] shadow-[0_15px_35px_rgba(28,25,23,0.06)] space-y-6">
+            <div className="rounded-2xl p-5 sm:p-8 bg-white border border-[#E7E2D8] shadow-[0_15px_35px_rgba(28,25,23,0.06)] space-y-6">
               
               <div className="flex items-center justify-between border-b border-[#E7E2D8] pb-4">
                 <span className="text-xs uppercase tracking-widest text-[#B45309] font-mono font-semibold">
@@ -90,6 +118,25 @@ export const CapabilitiesSection: React.FC<CapabilitiesSectionProps> = ({ onOpen
                 <span className="text-xs text-[#78716C] font-mono">
                   BBRE / SPEC-0{CAPABILITY_AREAS.findIndex(s => s.id === selectedService.id) + 1}
                 </span>
+              </div>
+
+              {/* Showcase Image Banner */}
+              <div className="relative h-48 sm:h-64 w-full rounded-2xl overflow-hidden border border-[#E7E2D8] bg-stone-100 shadow-sm">
+                <img
+                  src={currentAsset.image}
+                  alt={currentAsset.caption}
+                  className="w-full h-full object-cover object-center transition-transform duration-700 hover:scale-105"
+                  loading="lazy"
+                />
+                <div className="absolute inset-0 bg-gradient-to-t from-black/65 via-transparent to-black/10 pointer-events-none" />
+                <div className="absolute bottom-3.5 left-3.5 right-3.5 text-white text-xs font-mono flex items-center justify-between gap-2">
+                  <span className="bg-black/60 backdrop-blur-md px-3 py-1.5 rounded-lg border border-white/20 font-medium truncate">
+                    {currentAsset.caption}
+                  </span>
+                  <span className="hidden sm:inline-block text-[11px] text-amber-300 font-semibold shrink-0">
+                    Verified Execution Scope
+                  </span>
+                </div>
               </div>
 
               <div>
@@ -103,7 +150,7 @@ export const CapabilitiesSection: React.FC<CapabilitiesSectionProps> = ({ onOpen
 
               {/* Scope Deliverables & Protocol Highlights */}
               <div className="space-y-3 pt-2">
-                <h4 className="text-xs uppercase tracking-widest text-[#78716C] font-semibold">
+                <h4 className="text-xs uppercase tracking-widest text-[#78716C] font-semibold font-mono">
                   Standard Operating Verification Protocols
                 </h4>
                 <div className="space-y-2.5">
@@ -133,10 +180,10 @@ export const CapabilitiesSection: React.FC<CapabilitiesSectionProps> = ({ onOpen
                 </div>
                 <button
                   onClick={onOpenEnquiry}
-                  className="inline-flex items-center justify-center gap-2 px-6 py-3 rounded-xl bg-gradient-to-r from-[#B45309] via-[#F59E0B] to-[#D97706] text-[#0C0A09] font-bold text-xs tracking-wider uppercase transition-all duration-300 btn-gold-border hover:scale-[1.02] cursor-pointer"
+                  className="inline-flex items-center justify-center gap-2 px-6 py-3 rounded-xl bg-gradient-to-r from-[#881337] via-[#991B1B] to-[#B45309] text-white font-bold text-xs tracking-wider uppercase transition-all duration-300 hover:scale-[1.02] cursor-pointer shadow-md"
                 >
                   <span>Enquire on this Scope</span>
-                  <IconMinimalArrow size={14} color="stone" />
+                  <IconMinimalArrow size={14} color="amber" />
                 </button>
               </div>
 

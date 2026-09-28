@@ -45,8 +45,8 @@ export const Navbar: React.FC<NavbarProps> = ({
     <header
       className={`sticky top-0 z-50 transition-all duration-300 border-b ${
         scrolled
-          ? 'bg-gradient-to-r from-[#D8C7B0]/98 via-[#EADBCE]/98 to-[#D8C7B0]/98 backdrop-blur-2xl border-[#C4B196] shadow-[0_4px_25px_rgba(50,35,20,0.1)]'
-          : 'bg-gradient-to-r from-[#DFD0BC]/96 via-[#EFE6D8]/96 to-[#DFD0BC]/96 backdrop-blur-xl border-[#D2C1A8] shadow-[0_2px_15px_rgba(50,35,20,0.06)]'
+          ? 'bg-white/80 backdrop-blur-2xl backdrop-saturate-180 border-[#E8E0D2]/80 shadow-[0_8px_32px_rgba(40,25,10,0.08)]'
+          : 'bg-[#FAF7F2]/70 backdrop-blur-2xl backdrop-saturate-150 border-white/60 shadow-[0_4px_25px_rgba(40,25,10,0.03)]'
       }`}
     >
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -121,11 +121,11 @@ export const Navbar: React.FC<NavbarProps> = ({
 
       {/* 5. Mobile Drawer Menu */}
       {mobileMenuOpen && (
-        <div className="lg:hidden border-b border-[#B89B60] bg-[#D4BC8B] backdrop-blur-2xl shadow-2xl animate-in slide-in-from-top-3 fade-in duration-200">
+        <div className="lg:hidden border-b border-[#E8E0D2] bg-[#FAF7F2]/95 backdrop-blur-2xl shadow-2xl animate-in slide-in-from-top-3 fade-in duration-200">
           <div className="px-5 pt-3 pb-5 space-y-2">
             
             {/* Logo in drawer without rectangle */}
-            <div className="pb-3 mb-2 border-b border-[#B89B60]/50 flex items-center justify-between">
+            <div className="pb-3 mb-2 border-b border-[#E8E0D2] flex items-center justify-between">
               <CompanyLogo variant="full" size="sm" />
               <span className="text-[10px] font-mono text-[#881337] bg-[#881337]/10 px-2 py-0.5 rounded border border-[#881337]/30 font-bold">
                 RoC Patna
