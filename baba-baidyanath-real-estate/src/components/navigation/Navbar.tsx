@@ -43,10 +43,10 @@ export const Navbar: React.FC<NavbarProps> = ({
 
   return (
     <header
-      className={`sticky top-0 z-50 transition-all duration-300 border-b ${
+      className={`sticky top-0 z-50 transition-all duration-300 border-b border-white/10 shadow-[0_12px_40px_rgba(0,0,0,0.7)] ${
         scrolled
-          ? 'bg-[#0A0908]/80 backdrop-blur-2xl backdrop-saturate-180 border-white/10 shadow-[0_12px_40px_rgba(0,0,0,0.7)]'
-          : 'bg-black/45 backdrop-blur-2xl backdrop-saturate-150 border-white/10 shadow-[0_8px_32px_rgba(0,0,0,0.5)]'
+          ? 'bg-[#0B0908]/98 backdrop-blur-2xl backdrop-saturate-200 shadow-[0_16px_48px_rgba(0,0,0,0.85)]'
+          : 'bg-[#0B0908]/92 backdrop-blur-2xl backdrop-saturate-180'
       }`}
     >
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -127,7 +127,7 @@ export const Navbar: React.FC<NavbarProps> = ({
 
       {/* 5. Mobile Drawer Menu (Lucid Dark Frosted Glass) */}
       {mobileMenuOpen && (
-        <div className="lg:hidden border-b border-white/15 bg-[#0A0908]/95 backdrop-blur-2xl shadow-2xl animate-in slide-in-from-top-3 fade-in duration-200">
+        <div className="lg:hidden border-b border-white/15 bg-[#0B0908]/98 backdrop-blur-2xl shadow-2xl animate-in slide-in-from-top-3 fade-in duration-200">
           <div className="px-5 pt-3 pb-5 space-y-2">
             
             {/* Logo in drawer with luminous contour glow */}
