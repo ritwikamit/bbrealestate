@@ -4,7 +4,8 @@ import logoImg from '../../assets/logo.png';
 export interface CompanyLogoProps {
   variant?: 'horizontal' | 'vertical' | 'mark-only' | 'hero' | 'full';
   className?: string;
-  size?: 'xs' | 'sm' | 'md' | 'lg' | 'xl' | 'custom';
+  imgClassName?: string;
+  size?: 'xs' | 'sm' | 'md' | 'lg' | 'xl' | '2xl' | '3xl' | 'custom';
   theme?: 'dark' | 'light' | 'auto';
   alt?: string;
 }
@@ -17,6 +18,7 @@ export interface CompanyLogoProps {
 export const CompanyLogo: React.FC<CompanyLogoProps> = ({
   variant = 'horizontal',
   className = '',
+  imgClassName = '',
   size = 'md',
   alt = 'Baba Baidyanath Real Estate Private Limited',
 }) => {
@@ -26,7 +28,9 @@ export const CompanyLogo: React.FC<CompanyLogoProps> = ({
     sm: 'h-10 sm:h-12',
     md: 'h-14 sm:h-16',
     lg: 'h-20 sm:h-24',
-    xl: 'h-28 sm:h-36',
+    xl: 'h-28 sm:h-32 md:h-36',
+    '2xl': 'h-36 sm:h-44 md:h-52',
+    '3xl': 'h-48 sm:h-56 md:h-64',
     custom: '',
   };
 
@@ -42,7 +46,7 @@ export const CompanyLogo: React.FC<CompanyLogoProps> = ({
       <img
         src={logoImg}
         alt={alt}
-        className={`${heightClass} w-auto max-w-full object-contain transition-transform duration-300 group-hover:scale-[1.02]`}
+        className={`${heightClass} ${imgClassName} w-auto max-w-full object-contain transition-transform duration-300 group-hover:scale-[1.02]`}
         loading="eager"
         decoding="async"
       />
