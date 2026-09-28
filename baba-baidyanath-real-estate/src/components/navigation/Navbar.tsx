@@ -45,8 +45,8 @@ export const Navbar: React.FC<NavbarProps> = ({
     <header
       className={`sticky top-0 z-50 transition-all duration-300 border-b ${
         scrolled
-          ? 'bg-[#FAF8F5]/98 backdrop-blur-2xl border-[#DDD3C1] shadow-[0_4px_20px_rgba(20,15,10,0.08)]'
-          : 'bg-[#FAF8F5]/92 backdrop-blur-xl border-[#E8E2D5] shadow-[0_2px_15px_rgba(20,15,10,0.04)]'
+          ? 'bg-[#D4BC8B]/96 backdrop-blur-2xl border-[#B89B60] shadow-[0_6px_25px_rgba(70,50,20,0.15)]'
+          : 'bg-[#DEC89E]/96 backdrop-blur-xl border-[#C8AE7A] shadow-[0_4px_20px_rgba(70,50,20,0.08)]'
       }`}
     >
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -77,8 +77,8 @@ export const Navbar: React.FC<NavbarProps> = ({
                   <span
                     className={`transition-colors duration-200 ${
                       isActive
-                        ? 'text-[#991B1B] font-bold'
-                        : 'text-[#44403C] hover:text-[#991B1B] font-semibold'
+                        ? 'text-[#881337] font-extrabold'
+                        : 'text-[#2A2118] hover:text-[#881337] font-bold'
                     }`}
                   >
                     {link.label}
@@ -86,9 +86,9 @@ export const Navbar: React.FC<NavbarProps> = ({
 
                   {/* Gradient Underline Animation */}
                   <span
-                    className={`absolute bottom-0 left-0 h-[2px] w-full bg-gradient-to-r from-[#DC2626] via-[#F59E0B] to-[#FDE047] transition-all duration-300 origin-left ${
+                    className={`absolute bottom-0 left-0 h-[2.5px] w-full bg-gradient-to-r from-[#881337] via-[#B45309] to-[#78350F] transition-all duration-300 origin-left ${
                       isActive
-                        ? 'scale-x-100 opacity-100 shadow-[0_0_8px_rgba(245,158,11,0.8)]'
+                        ? 'scale-x-100 opacity-100 shadow-[0_0_6px_rgba(136,19,55,0.6)]'
                         : 'scale-x-0 opacity-0 group-hover:scale-x-100 group-hover:opacity-100'
                     }`}
                   />
@@ -101,18 +101,18 @@ export const Navbar: React.FC<NavbarProps> = ({
           <div className="flex items-center gap-2 sm:gap-3 shrink-0">
             <button
               onClick={onOpenEnquiry}
-              className="relative group overflow-hidden inline-flex items-center gap-1 sm:gap-1.5 px-3 sm:px-4 py-1.5 sm:py-2 rounded-full bg-gradient-to-r from-[#B45309] via-[#F59E0B] to-[#D97706] text-[#0C0A09] font-bold text-[11px] sm:text-xs tracking-wider uppercase whitespace-nowrap shrink-0 transition-all duration-300 btn-gold-border hover:scale-[1.02] cursor-pointer focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#F59E0B]"
+              className="relative group overflow-hidden inline-flex items-center gap-1 sm:gap-1.5 px-3 sm:px-4 py-1.5 sm:py-2 rounded-full bg-gradient-to-r from-[#881337] via-[#991B1B] to-[#B45309] text-white font-bold text-[11px] sm:text-xs tracking-wider uppercase whitespace-nowrap shrink-0 transition-all duration-300 hover:scale-[1.02] cursor-pointer shadow-md focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#881337] border border-amber-300/40"
             >
               <span className="whitespace-nowrap">Enquire Now</span>
-              <IconMinimalArrow size={11} color="stone" className="shrink-0 transition-transform group-hover:translate-x-0.5 group-hover:-translate-y-0.5" />
+              <IconMinimalArrow size={11} color="gold" className="shrink-0 transition-transform group-hover:translate-x-0.5 group-hover:-translate-y-0.5" />
             </button>
             <button
               onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
-              className="lg:hidden p-1.5 sm:p-2 text-[#1C1917] hover:bg-black/5 rounded-xl border border-stone-200 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#F59E0B] cursor-pointer"
+              className="lg:hidden p-1.5 sm:p-2 text-[#2A2118] hover:bg-black/10 rounded-xl border border-[#B89B60] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#881337] cursor-pointer"
               aria-label={mobileMenuOpen ? 'Close menu' : 'Open menu'}
               aria-expanded={mobileMenuOpen}
             >
-              {mobileMenuOpen ? <X className="w-5 h-5 text-[#B45309]" /> : <Menu className="w-5 h-5" />}
+              {mobileMenuOpen ? <X className="w-5 h-5 text-[#881337]" /> : <Menu className="w-5 h-5" />}
             </button>
           </div>
 
@@ -121,13 +121,13 @@ export const Navbar: React.FC<NavbarProps> = ({
 
       {/* 5. Mobile Drawer Menu */}
       {mobileMenuOpen && (
-        <div className="lg:hidden border-b border-[#E8E2D5] bg-[#FAF8F5]/98 backdrop-blur-2xl shadow-2xl animate-in slide-in-from-top-3 fade-in duration-200">
+        <div className="lg:hidden border-b border-[#B89B60] bg-[#D4BC8B] backdrop-blur-2xl shadow-2xl animate-in slide-in-from-top-3 fade-in duration-200">
           <div className="px-5 pt-3 pb-5 space-y-2">
             
             {/* Logo in drawer without rectangle */}
-            <div className="pb-3 mb-2 border-b border-[#E8E2D5] flex items-center justify-between">
+            <div className="pb-3 mb-2 border-b border-[#B89B60]/50 flex items-center justify-between">
               <CompanyLogo variant="full" size="sm" />
-              <span className="text-[10px] font-mono text-[#B45309] bg-[#B45309]/10 px-2 py-0.5 rounded border border-[#B45309]/20 font-bold">
+              <span className="text-[10px] font-mono text-[#881337] bg-[#881337]/10 px-2 py-0.5 rounded border border-[#881337]/30 font-bold">
                 RoC Patna
               </span>
             </div>
@@ -141,12 +141,12 @@ export const Navbar: React.FC<NavbarProps> = ({
                     key={link.tab}
                     onClick={() => handleNavClick(link.tab)}
                     className={`block w-full text-left py-2.5 px-2 text-xs uppercase tracking-[0.18em] transition-colors relative group ${
-                      isActive ? 'text-[#991B1B] font-bold' : 'text-[#44403C] hover:text-[#991B1B]'
+                      isActive ? 'text-[#881337] font-bold' : 'text-[#2A2118] hover:text-[#881337] font-semibold'
                     }`}
                   >
                     <span>{link.label}</span>
                     <span
-                      className={`block mt-1.5 h-[2px] w-full bg-gradient-to-r from-[#DC2626] via-[#F59E0B] to-[#FDE047] transition-all duration-200 origin-left ${
+                      className={`block mt-1.5 h-[2px] w-full bg-gradient-to-r from-[#881337] via-[#B45309] to-[#78350F] transition-all duration-200 origin-left ${
                         isActive ? 'scale-x-100 opacity-100' : 'scale-x-0 opacity-0 group-hover:scale-x-100 group-hover:opacity-100'
                       }`}
                     />
@@ -156,17 +156,17 @@ export const Navbar: React.FC<NavbarProps> = ({
             </div>
 
             {/* Compact Mobile Action in Drawer */}
-            <div className="pt-3 border-t border-[#E8E2D5]">
+            <div className="pt-3 border-t border-[#B89B60]/50">
               <button
                 onClick={() => {
                   setMobileMenuOpen(false);
                   onOpenEnquiry?.();
                 }}
-                className="w-full inline-flex items-center justify-center gap-2 py-2.5 px-4 rounded-full bg-gradient-to-r from-[#B45309] via-[#F59E0B] to-[#D97706] text-[#0C0A09] font-bold text-xs uppercase tracking-wider btn-gold-border"
+                className="w-full inline-flex items-center justify-center gap-2 py-2.5 px-4 rounded-full bg-gradient-to-r from-[#881337] via-[#991B1B] to-[#B45309] text-white font-bold text-xs uppercase tracking-wider shadow-md"
               >
-                <IconDivineSpark size={13} color="stone" />
+                <IconDivineSpark size={13} color="amber" />
                 <span className="whitespace-nowrap">Schedule Consultation</span>
-                <IconMinimalArrow size={12} color="stone" />
+                <IconMinimalArrow size={12} color="amber" />
               </button>
             </div>
 
