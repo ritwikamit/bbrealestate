@@ -35,7 +35,8 @@
 | **Registrar of Companies** | ROC Patna |
 | **Authorized Capital** | ₹1,00,000 (INR One Lakh) |
 | **Paid-up Capital** | ₹1,00,000 (INR One Lakh) |
-| **Registered Office Address** | C/O Kundan Kumar Singh, Near Gayatri Mandir, Aurangabad, Bihar 824101, India |
+| **Corporate Office Address** | Kunda House, Near PNB Bank, MG Road, Yodha Nagar, Aurangabad-Bihar-824101, Bihar |
+| **Registered Office (MCA)** | C/O Kundan Kumar Singh, Near Gayatri Mandir, Aurangabad, Bihar 824101, India |
 | **Directors** | Kundan Kumar Singh & Vikas Kumar Singh |
 | **Primary Industry Activity** | Real estate activities with own or leased property (Class 68100) |
 

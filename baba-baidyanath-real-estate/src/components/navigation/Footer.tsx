@@ -56,8 +56,8 @@ export const Footer: React.FC<FooterProps> = ({ onSelectTab, onOpenEnquiry }) =>
               <div className="text-[11px] text-stone-400 font-mono">
                 Incorporated 7 Nov 2024 &bull; RoC Patna &bull; Authorised Capital: ₹1,00,000
               </div>
-              <div className="text-[11px] text-stone-400 font-mono">
-                Location: Aurangabad, Bihar 824101
+              <div className="text-[11px] text-stone-300 font-mono">
+                Office: Kunda House, Near PNB Bank, MG Road, Yodha Nagar, Aurangabad 824101
               </div>
             </div>
           </div>

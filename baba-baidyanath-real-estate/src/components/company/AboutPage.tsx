@@ -302,11 +302,20 @@ export const AboutPage: React.FC<AboutPageProps> = ({ onOpenEnquiry }) => {
                 </span>
               </div>
 
-              <div>
+              <div className="border-b border-[#E8E2D5] pb-3.5">
                 <span className="text-xs uppercase tracking-wider text-[#78716C] font-mono block">
-                  Official Registered Office
+                  Corporate Office Address
                 </span>
                 <span className="font-medium text-[#151311] block mt-0.5 leading-relaxed">
+                  {COMPANY_DATA.officeAddress}
+                </span>
+              </div>
+
+              <div>
+                <span className="text-xs uppercase tracking-wider text-[#78716C] font-mono block">
+                  MCA Registered Office
+                </span>
+                <span className="font-medium text-[#151311] block mt-0.5 leading-relaxed text-xs text-[#524E48]">
                   {COMPANY_DATA.registeredAddress}
                 </span>
               </div>

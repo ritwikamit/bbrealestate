@@ -20,10 +20,12 @@ export interface CompanyData {
   authorisedCapital: string;
   paidUpCapital: string;
   registeredAddress: string;
+  officeAddress?: string;
   directors: string[];
   publicActivity: string;
   tagline: string;
   googleMapsUrl: string;
+  mapEmbedUrl?: string;
 }
 
 export interface ServiceItem {

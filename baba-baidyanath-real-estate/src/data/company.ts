@@ -10,11 +10,13 @@ export const COMPANY_DATA: CompanyData = {
   roc: "Registrar of Companies, Patna",
   authorisedCapital: "₹1,00,000",
   paidUpCapital: "₹1,00,000",
+  officeAddress: "Kunda House, Near PNB Bank, MG Road, Yodha Nagar, Aurangabad-Bihar-824101, Bihar",
   registeredAddress: "C/O Kundan Kumar Singh, Near Gayatri Mandir, Aurangabad, Bihar 824101, India",
   directors: ["Kundan Kumar Singh", "Vikas Kumar Singh"],
   publicActivity: "Real-estate activities with own or leased property",
   tagline: "Building Value. Creating Places.",
-  googleMapsUrl: "https://www.google.com/maps/search/?api=1&query=Gayatri+Mandir+Aurangabad+Bihar+824101"
+  googleMapsUrl: "https://www.google.com/maps/place/24%C2%B045'03.2%22N+84%C2%B022'10.8%22E/@24.750898,84.3696775,18z/data=!4m4!3m3!8m2!3d24.750898!4d84.3696775",
+  mapEmbedUrl: "https://maps.google.com/maps?q=24.750898,84.3696775&hl=en&z=17&output=embed"
 };
 
 export const CORPORATE_FACTS = [
@@ -34,8 +36,8 @@ export const CORPORATE_FACTS = [
     detail: "State of Bihar Registration"
   },
   {
-    label: "Registered Seat",
+    label: "Corporate Office",
     value: "Aurangabad",
-    detail: "Near Gayatri Mandir, Pin 824101"
+    detail: "Kunda House, MG Road, Pin 824101"
   }
 ];
