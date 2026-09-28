@@ -138,11 +138,11 @@ export const ProjectsSection: React.FC<ProjectsSectionProps> = ({ onOpenEnquiry 
             </p>
           </div>
 
-          {/* Asset Class Filter Pills */}
-          <div className="flex flex-wrap items-center gap-2 self-start md:self-auto bg-stone-100/80 p-1.5 rounded-2xl border border-[#E7E2D8]">
+          {/* Asset Class Filter Pills (Horizontally swipeable on mobile/tablet) */}
+          <div className="w-full md:w-auto overflow-x-auto no-scrollbar flex items-center gap-1.5 sm:gap-2 bg-stone-100/80 p-1.5 rounded-2xl border border-[#E7E2D8] select-none">
             <button
               onClick={() => setSelectedFilter('all')}
-              className={`px-3.5 py-1.5 rounded-xl text-xs font-semibold transition-all cursor-pointer ${
+              className={`px-3.5 py-2 rounded-xl text-xs font-semibold transition-all cursor-pointer whitespace-nowrap shrink-0 ${
                 selectedFilter === 'all'
                   ? 'bg-white text-[#881337] shadow-sm font-bold'
                   : 'text-[#57534E] hover:text-[#1C1917]'
@@ -152,7 +152,7 @@ export const ProjectsSection: React.FC<ProjectsSectionProps> = ({ onOpenEnquiry 
             </button>
             <button
               onClick={() => setSelectedFilter('plots')}
-              className={`px-3.5 py-1.5 rounded-xl text-xs font-semibold transition-all cursor-pointer ${
+              className={`px-3.5 py-2 rounded-xl text-xs font-semibold transition-all cursor-pointer whitespace-nowrap shrink-0 ${
                 selectedFilter === 'plots'
                   ? 'bg-white text-[#881337] shadow-sm font-bold'
                   : 'text-[#57534E] hover:text-[#1C1917]'
@@ -162,7 +162,7 @@ export const ProjectsSection: React.FC<ProjectsSectionProps> = ({ onOpenEnquiry 
             </button>
             <button
               onClick={() => setSelectedFilter('commercial')}
-              className={`px-3.5 py-1.5 rounded-xl text-xs font-semibold transition-all cursor-pointer ${
+              className={`px-3.5 py-2 rounded-xl text-xs font-semibold transition-all cursor-pointer whitespace-nowrap shrink-0 ${
                 selectedFilter === 'commercial'
                   ? 'bg-white text-[#881337] shadow-sm font-bold'
                   : 'text-[#57534E] hover:text-[#1C1917]'
@@ -172,7 +172,7 @@ export const ProjectsSection: React.FC<ProjectsSectionProps> = ({ onOpenEnquiry 
             </button>
             <button
               onClick={() => setSelectedFilter('agricultural')}
-              className={`px-3.5 py-1.5 rounded-xl text-xs font-semibold transition-all cursor-pointer ${
+              className={`px-3.5 py-2 rounded-xl text-xs font-semibold transition-all cursor-pointer whitespace-nowrap shrink-0 ${
                 selectedFilter === 'agricultural'
                   ? 'bg-white text-[#881337] shadow-sm font-bold'
                   : 'text-[#57534E] hover:text-[#1C1917]'
@@ -182,7 +182,7 @@ export const ProjectsSection: React.FC<ProjectsSectionProps> = ({ onOpenEnquiry 
             </button>
             <button
               onClick={() => setSelectedFilter('villas')}
-              className={`px-3.5 py-1.5 rounded-xl text-xs font-semibold transition-all cursor-pointer ${
+              className={`px-3.5 py-2 rounded-xl text-xs font-semibold transition-all cursor-pointer whitespace-nowrap shrink-0 ${
                 selectedFilter === 'villas'
                   ? 'bg-white text-[#881337] shadow-sm font-bold'
                   : 'text-[#57534E] hover:text-[#1C1917]'
@@ -265,13 +265,13 @@ export const ProjectsSection: React.FC<ProjectsSectionProps> = ({ onOpenEnquiry 
                 </div>
 
                 {/* Action CTA */}
-                <div className="pt-3 border-t border-[#E7E2D8] flex items-center justify-between gap-4">
-                  <span className="text-[11px] font-mono text-[#78716C]">
+                <div className="pt-3 border-t border-[#E7E2D8] flex flex-col sm:flex-row items-stretch sm:items-center justify-between gap-3">
+                  <span className="text-[11px] font-mono text-[#78716C] order-2 sm:order-1 text-center sm:text-left">
                     Ref: BBRE-{card.id.toUpperCase().slice(0, 8)}
                   </span>
                   <button
                     onClick={onOpenEnquiry}
-                    className="inline-flex items-center gap-2 px-5 py-2.5 rounded-xl bg-gradient-to-r from-[#881337] via-[#991B1B] to-[#B45309] text-white font-bold text-xs uppercase tracking-wider transition-all duration-200 hover:scale-[1.02] cursor-pointer shadow-sm hover:shadow-md"
+                    className="order-1 sm:order-2 w-full sm:w-auto inline-flex items-center justify-center gap-2 px-5 py-3 sm:py-2.5 rounded-xl bg-gradient-to-r from-[#881337] via-[#991B1B] to-[#B45309] text-white font-bold text-xs uppercase tracking-wider transition-all duration-200 hover:scale-[1.02] active:scale-98 cursor-pointer shadow-sm hover:shadow-md"
                   >
                     <span>Request Dossier</span>
                     <IconMinimalArrow size={12} color="amber" />

@@ -72,11 +72,31 @@ export const CapabilitiesSection: React.FC<CapabilitiesSectionProps> = ({ onOpen
           </div>
         </div>
 
+        {/* Mobile & Tablet Tab Strip (Clean Horizontal Pill Carousel) */}
+        <div className="lg:hidden w-full overflow-x-auto no-scrollbar flex items-center gap-2 pb-3 mb-4 select-none -mx-4 px-4 sm:mx-0 sm:px-0">
+          {CAPABILITY_AREAS.map((service) => {
+            const isActive = activeTab === service.id;
+            return (
+              <button
+                key={service.id}
+                onClick={() => setActiveTab(service.id)}
+                className={`px-4 py-2.5 rounded-xl text-xs font-semibold whitespace-nowrap shrink-0 transition-all cursor-pointer border ${
+                  isActive
+                    ? 'bg-white text-[#881337] border-[#881337]/40 shadow-sm font-bold'
+                    : 'bg-white/80 text-[#57534E] border-[#E7E2D8] hover:bg-white'
+                }`}
+              >
+                <span>{service.title}</span>
+              </button>
+            );
+          })}
+        </div>
+
         {/* Interactive Capability Layout */}
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-start">
           
-          {/* Practice List Navigation */}
-          <div className="lg:col-span-5 space-y-3">
+          {/* Desktop Practice List Navigation (Visible on lg+) */}
+          <div className="hidden lg:block lg:col-span-5 space-y-3">
             {CAPABILITY_AREAS.map((service) => {
               const isActive = activeTab === service.id;
               return (
@@ -108,7 +128,7 @@ export const CapabilitiesSection: React.FC<CapabilitiesSectionProps> = ({ onOpen
           </div>
 
           {/* Active Capability Detail Panel in Light Luxury Card */}
-          <div className="lg:col-span-7">
+          <div className="w-full lg:col-span-7">
             <div className="rounded-2xl p-5 sm:p-8 bg-white border border-[#E7E2D8] shadow-[0_15px_35px_rgba(28,25,23,0.06)] space-y-6">
               
               <div className="flex items-center justify-between border-b border-[#E7E2D8] pb-4">
@@ -180,7 +200,7 @@ export const CapabilitiesSection: React.FC<CapabilitiesSectionProps> = ({ onOpen
                 </div>
                 <button
                   onClick={onOpenEnquiry}
-                  className="inline-flex items-center justify-center gap-2 px-6 py-3 rounded-xl bg-gradient-to-r from-[#881337] via-[#991B1B] to-[#B45309] text-white font-bold text-xs tracking-wider uppercase transition-all duration-300 hover:scale-[1.02] cursor-pointer shadow-md"
+                  className="w-full sm:w-auto inline-flex items-center justify-center gap-2 px-6 py-3.5 sm:py-3 rounded-xl bg-gradient-to-r from-[#881337] via-[#991B1B] to-[#B45309] text-white font-bold text-xs tracking-wider uppercase transition-all duration-300 hover:scale-[1.02] active:scale-98 cursor-pointer shadow-md"
                 >
                   <span>Enquire on this Scope</span>
                   <IconMinimalArrow size={14} color="amber" />

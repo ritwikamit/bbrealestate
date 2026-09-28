@@ -39,7 +39,7 @@ export const AboutPage: React.FC<AboutPageProps> = ({ onOpenEnquiry }) => {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           
           {/* Main Hero Container with 4K Photo in Background */}
-          <div className="relative w-full rounded-3xl sm:rounded-[2.5rem] overflow-hidden min-h-[560px] sm:min-h-[620px] md:min-h-[680px] lg:min-h-[740px] border border-[#E8E2D5] shadow-[0_25px_70px_rgba(40,25,10,0.08)] flex flex-col justify-start p-6 sm:p-10 md:p-12 lg:p-14 transition-all">
+          <div className="relative w-full rounded-2xl sm:rounded-3xl md:rounded-[2.5rem] overflow-hidden min-h-[auto] sm:min-h-[560px] md:min-h-[620px] lg:min-h-[680px] border border-[#E8E2D5] shadow-[0_20px_60px_rgba(40,25,10,0.07)] flex flex-col justify-start p-5 sm:p-8 md:p-12 lg:p-14 transition-all">
             
             {/* The 4K Photo Slightly Visible and Blurry in Background */}
             <div className="absolute inset-0 -z-10 bg-[#FAF6F0] overflow-hidden">
@@ -56,9 +56,9 @@ export const AboutPage: React.FC<AboutPageProps> = ({ onOpenEnquiry }) => {
               />
             </div>
 
-            {/* Top Statutory Accreditation Badge (No dot, clean editorial typography) */}
+            {/* Top Statutory Accreditation Badge (Responsive wrapping on small screens) */}
             <div className="relative z-10 flex items-center justify-between gap-4">
-              <div className="inline-flex items-center gap-3 px-3.5 py-1.5 rounded-full bg-stone-900/[0.06] border border-stone-800/10 text-xs font-mono text-[#262320]">
+              <div className="inline-flex flex-wrap sm:flex-nowrap items-center gap-2 sm:gap-3 px-3 sm:px-3.5 py-1.5 rounded-2xl sm:rounded-full bg-stone-900/[0.06] border border-stone-800/10 text-[11px] sm:text-xs font-mono text-[#262320]">
                 <span className="font-bold tracking-wider text-[#1A1816]">
                   CIN: {COMPANY_DATA.cin}
                 </span>
@@ -69,16 +69,16 @@ export const AboutPage: React.FC<AboutPageProps> = ({ onOpenEnquiry }) => {
             </div>
 
             {/* Content Positioned Right Below the Accreditation Badge */}
-            <div className="relative z-10 max-w-2xl mt-4 sm:mt-5 space-y-4 bg-transparent border-0 shadow-none p-0">
+            <div className="relative z-10 max-w-2xl mt-4 sm:mt-5 space-y-3.5 sm:space-y-4 bg-transparent border-0 shadow-none p-0">
               
               {/* Brand Tag */}
-              <div className="inline-flex items-center gap-2 text-xs uppercase tracking-widest font-semibold text-[#8B4513]">
+              <div className="inline-flex items-center gap-2 text-[11px] sm:text-xs uppercase tracking-widest font-semibold text-[#8B4513]">
                 <span className="w-1.5 h-1.5 rounded-full bg-[#B45309]" />
                 <span>Corporate Heritage &bull; Institutional Standards</span>
               </div>
 
               {/* Editorial Headline */}
-              <h1 className="font-serif text-3xl sm:text-4xl lg:text-[44px] font-bold text-[#171513] tracking-tight leading-[1.18]">
+              <h1 className="font-serif text-2xl sm:text-3xl md:text-4xl lg:text-[44px] font-bold text-[#171513] tracking-tight leading-[1.2]">
                 Built On Sacred Values.<br />
                 <span className="text-[#881337]">
                   Committed to Lasting Value.
@@ -86,16 +86,16 @@ export const AboutPage: React.FC<AboutPageProps> = ({ onOpenEnquiry }) => {
               </h1>
 
               {/* Narrative */}
-              <p className="text-sm sm:text-base text-[#3E3832] leading-relaxed font-normal max-w-xl">
+              <p className="text-xs sm:text-sm md:text-base text-[#3E3832] leading-relaxed font-normal max-w-xl">
                 Baba Baidyanath Real Estate Private Limited was founded to bring uncompromising corporate governance, verifiable land due diligence, and absolute transparency to real estate development in Aurangabad and emerging growth corridors across Bihar.
               </p>
 
-              {/* Bespoke Luxury Action Buttons */}
-              <div className="flex flex-wrap items-center gap-3.5 pt-2">
+              {/* Bespoke Luxury Action Buttons (Full width on mobile, inline on tablet+) */}
+              <div className="flex flex-col sm:flex-row items-stretch sm:items-center gap-3 pt-2 w-full sm:w-auto">
                 {onOpenEnquiry && (
                   <button
                     onClick={onOpenEnquiry}
-                    className="px-6 py-3 rounded-xl bg-[#881337] hover:bg-[#70102D] text-white font-semibold text-xs tracking-wider uppercase transition-all duration-200 shadow-sm hover:shadow-md cursor-pointer inline-flex items-center gap-2"
+                    className="w-full sm:w-auto px-6 py-3.5 sm:py-3 rounded-xl bg-[#881337] hover:bg-[#70102D] text-white font-semibold text-xs tracking-wider uppercase transition-all duration-200 shadow-sm hover:shadow-md cursor-pointer inline-flex items-center justify-center gap-2 active:scale-98"
                   >
                     <span>Direct Consultation</span>
                   </button>
@@ -103,7 +103,7 @@ export const AboutPage: React.FC<AboutPageProps> = ({ onOpenEnquiry }) => {
 
                 <button
                   onClick={scrollToDossier}
-                  className="px-5 py-3 rounded-xl bg-stone-900/[0.05] hover:bg-stone-900/[0.09] text-[#171513] border border-stone-800/15 text-xs font-semibold tracking-wider uppercase transition-all duration-200 inline-flex items-center gap-1.5 cursor-pointer shadow-none"
+                  className="w-full sm:w-auto px-5 py-3.5 sm:py-3 rounded-xl bg-stone-900/[0.05] hover:bg-stone-900/[0.09] text-[#171513] border border-stone-800/15 text-xs font-semibold tracking-wider uppercase transition-all duration-200 inline-flex items-center justify-center gap-1.5 cursor-pointer shadow-none active:scale-98"
                 >
                   <span>View Statutory Dossier</span>
                   <ArrowRight className="w-3.5 h-3.5 text-[#881337]" />

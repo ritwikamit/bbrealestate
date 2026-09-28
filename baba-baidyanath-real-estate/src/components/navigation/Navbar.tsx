@@ -52,13 +52,13 @@ export const Navbar: React.FC<NavbarProps> = ({
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex items-center justify-between py-2 sm:py-2.5 min-h-[72px] sm:min-h-[78px]">
           
-          {/* 1. Official Master Logo (Pure Logo, No Rectangle) */}
+          {/* 1. Official Master Logo (Pure Logo, Responsive Sizing) */}
           <button
             onClick={() => handleNavClick('home')}
-            className="text-left group cursor-pointer focus-visible:outline-none p-0 flex items-center"
+            className="text-left group cursor-pointer focus-visible:outline-none p-0 flex items-center shrink-0"
             aria-label="Baba Baidyanath Real Estate - Go to Homepage"
           >
-            <CompanyLogo variant="horizontal" size="md" />
+            <CompanyLogo variant="horizontal" size="md" imgClassName="h-10 sm:h-12 md:h-14 lg:h-16" />
           </button>
 
           {/* 2. Desktop Navigation */}
@@ -101,14 +101,14 @@ export const Navbar: React.FC<NavbarProps> = ({
           <div className="flex items-center gap-2 sm:gap-3 shrink-0">
             <button
               onClick={onOpenEnquiry}
-              className="relative group overflow-hidden inline-flex items-center gap-1 sm:gap-1.5 px-3 sm:px-4 py-1.5 sm:py-2 rounded-full bg-gradient-to-r from-[#881337] via-[#991B1B] to-[#B45309] text-white font-bold text-[11px] sm:text-xs tracking-wider uppercase whitespace-nowrap shrink-0 transition-all duration-300 hover:scale-[1.02] cursor-pointer shadow-md focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#881337] border border-amber-300/40"
+              className="relative group overflow-hidden inline-flex items-center gap-1 sm:gap-1.5 px-3 sm:px-4 py-2 rounded-full bg-gradient-to-r from-[#881337] via-[#991B1B] to-[#B45309] text-white font-bold text-[11px] sm:text-xs tracking-wider uppercase whitespace-nowrap shrink-0 transition-all duration-300 hover:scale-[1.02] active:scale-95 cursor-pointer shadow-md focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#881337] border border-amber-300/40"
             >
               <span className="whitespace-nowrap">Enquire Now</span>
               <IconMinimalArrow size={11} color="gold" className="shrink-0 transition-transform group-hover:translate-x-0.5 group-hover:-translate-y-0.5" />
             </button>
             <button
               onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
-              className="lg:hidden p-1.5 sm:p-2 text-[#2A2118] hover:bg-black/10 rounded-xl border border-[#B89B60] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#881337] cursor-pointer"
+              className="lg:hidden p-2 text-[#2A2118] hover:bg-stone-200/50 active:scale-95 rounded-xl border border-[#E8E0D2] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#881337] cursor-pointer shrink-0"
               aria-label={mobileMenuOpen ? 'Close menu' : 'Open menu'}
               aria-expanded={mobileMenuOpen}
             >

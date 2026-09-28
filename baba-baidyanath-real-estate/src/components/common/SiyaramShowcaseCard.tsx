@@ -52,12 +52,12 @@ export const SiyaramShowcaseCard: React.FC<SiyaramShowcaseCardProps> = ({
         </div>
       </div>
 
-      <div className="pt-2 flex flex-wrap items-center gap-3">
+      <div className="pt-2 flex flex-col sm:flex-row items-stretch sm:items-center gap-2.5 sm:gap-3">
         <a
           href={SIYARAM_DATA.justdialUrl}
           target="_blank"
           rel="noopener noreferrer"
-          className="inline-flex items-center gap-1.5 px-4 py-2.5 rounded-xl bg-[#0076D7] hover:bg-[#0060B2] text-white text-xs font-bold transition-all shadow-sm cursor-pointer hover:shadow-md"
+          className="w-full sm:w-auto inline-flex items-center justify-center gap-1.5 px-4 py-3 sm:py-2.5 rounded-xl bg-[#0076D7] hover:bg-[#0060B2] text-white text-xs font-bold transition-all shadow-sm cursor-pointer hover:shadow-md active:scale-98"
         >
           <span>View on Justdial</span>
           <ExternalLink className="w-3.5 h-3.5" />
@@ -67,7 +67,7 @@ export const SiyaramShowcaseCard: React.FC<SiyaramShowcaseCardProps> = ({
           href={SIYARAM_DATA.googleMapsUrl}
           target="_blank"
           rel="noopener noreferrer"
-          className="inline-flex items-center gap-1.5 px-4 py-2.5 rounded-xl bg-stone-900/[0.06] hover:bg-stone-900/[0.1] text-[#171513] border border-stone-800/15 text-xs font-semibold transition-all cursor-pointer"
+          className="w-full sm:w-auto inline-flex items-center justify-center gap-1.5 px-4 py-3 sm:py-2.5 rounded-xl bg-stone-900/[0.06] hover:bg-stone-900/[0.1] text-[#171513] border border-stone-800/15 text-xs font-semibold transition-all cursor-pointer active:scale-98"
         >
           <MapPin className="w-3.5 h-3.5 text-[#881337]" />
           <span>Google Map Directions</span>
