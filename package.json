@@ -1,0 +1,10 @@
+{
+  "name": "baba-baidyanath-real-estate-project",
+  "version": "1.0.0",
+  "private": true,
+  "scripts": {
+    "build": "cd baba-baidyanath-real-estate && npm install --legacy-peer-deps && npm run build",
+    "dev": "cd baba-baidyanath-real-estate && npm run dev",
+    "preview": "cd baba-baidyanath-real-estate && npm run preview"
+  }
+}
