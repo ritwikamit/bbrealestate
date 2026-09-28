@@ -51,7 +51,7 @@ export const CompanyLogo: React.FC<CompanyLogoProps> = ({
       {isDark && (
         <div 
           aria-hidden="true" 
-          className="absolute inset-0 bg-white/[0.14] rounded-2xl blur-lg pointer-events-none transform scale-110" 
+          className="absolute inset-0 bg-white/[0.18] rounded-2xl blur-md pointer-events-none transform scale-105" 
         />
       )}
       <img
@@ -59,7 +59,7 @@ export const CompanyLogo: React.FC<CompanyLogoProps> = ({
         alt={alt}
         className={`${heightClass} ${imgClassName} w-auto max-w-full object-contain relative z-10 transition-all duration-300 group-hover:scale-[1.02] ${
           isDark
-            ? 'drop-shadow-[0_0_1.5px_rgba(255,255,255,0.95)] drop-shadow-[0_0_8px_rgba(254,240,138,0.5)] drop-shadow-[0_2px_12px_rgba(0,0,0,0.85)]'
+            ? 'drop-shadow-[0_0_1px_rgba(255,255,255,1)] drop-shadow-[0_0_2px_rgba(255,255,255,0.9)] drop-shadow-[0_0_6px_rgba(254,240,138,0.5)] drop-shadow-[0_2px_12px_rgba(0,0,0,0.85)]'
             : ''
         }`}
         loading="eager"

@@ -40,8 +40,13 @@ export const Footer: React.FC<FooterProps> = ({ onSelectTab, onOpenEnquiry }) =>
           
           {/* Col 1: Corporate Profile & Official Logo */}
           <div className="lg:col-span-5 space-y-6">
-            <div className="flex items-center -ml-2 mb-2">
-              <CompanyLogo variant="full" size="xl" theme="dark" className="items-start text-left" />
+            {/* Executive Logo Card with Frosted Luminous Backing for Maximum Contrast */}
+            <div className="inline-flex p-3 sm:p-4 rounded-2xl bg-white/[0.08] hover:bg-white/[0.12] border border-white/[0.16] backdrop-blur-xl shadow-[0_12px_35px_rgba(0,0,0,0.6)] -ml-1 mb-2 relative group transition-all duration-300">
+              <div 
+                aria-hidden="true" 
+                className="absolute inset-0 bg-gradient-to-r from-[#DC2626]/12 via-[#F59E0B]/18 to-white/10 rounded-2xl blur-md pointer-events-none" 
+              />
+              <CompanyLogo variant="full" size="xl" theme="dark" className="items-start text-left relative z-10" />
             </div>
 
             <p className="text-xs sm:text-sm text-stone-400 leading-relaxed max-w-md font-light">
