@@ -36,10 +36,10 @@ export const LoadingScreen: React.FC<LoadingScreenProps> = ({ onComplete }) => {
           key="minimalist-loader"
           initial={{ opacity: 1 }}
           exit={{ opacity: 0, transition: { duration: 0.6, ease: [0.16, 1, 0.3, 1] } }}
-          className="fixed inset-0 z-[100] flex flex-col items-center justify-center bg-gradient-to-br from-[#DEC89E] via-[#D8BF8E] to-[#C4A972] px-6 select-none"
+          className="fixed inset-0 z-[100] flex flex-col items-center justify-center bg-gradient-to-br from-[#EAE1D0] via-[#E4D8C5] to-[#D9CBB6] px-6 select-none"
         >
           {/* Subtle Ambient Golden Radial Halo */}
-          <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[540px] h-[540px] bg-gradient-to-tr from-[#991B1B]/15 via-[#F59E0B]/25 to-transparent rounded-full blur-[100px] pointer-events-none" />
+          <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[540px] h-[540px] bg-gradient-to-tr from-[#881337]/10 via-[#B45309]/15 to-transparent rounded-full blur-[100px] pointer-events-none" />
 
           {/* Minimalist Centered Container */}
           <motion.div

@@ -55,66 +55,60 @@ export const AboutPage: React.FC<AboutPageProps> = ({ onOpenEnquiry }) => {
               />
             </div>
 
-            {/* Top Bar Written Over Photo: Fully Transparent Badges */}
-            <div className="relative z-10 flex flex-wrap items-center justify-between gap-3 mb-5 sm:mb-7">
-              <div className="inline-flex items-center gap-2.5 px-3.5 py-1.5 rounded-full bg-black/10 border border-black/15 shadow-sm">
-                <span className="relative flex h-2 w-2">
-                  <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-emerald-500 opacity-75" />
-                  <span className="relative inline-flex rounded-full h-2 w-2 bg-emerald-600" />
-                </span>
-                <span className="font-mono text-xs font-bold text-[#151311] tracking-wider uppercase">
+            {/* Top Statutory Accreditation Badge (No dot, clean editorial typography) */}
+            <div className="relative z-10 flex items-center justify-between gap-4">
+              <div className="inline-flex items-center gap-3 px-3.5 py-1.5 rounded-full bg-stone-900/[0.06] border border-stone-800/10 text-xs font-mono text-[#262320]">
+                <span className="font-bold tracking-wider text-[#1A1816]">
                   CIN: {COMPANY_DATA.cin}
                 </span>
-                <span className="text-xs text-[#78716C]">&bull;</span>
-                <span className="font-mono text-xs font-bold text-emerald-900 bg-emerald-500/25 px-2 py-0.5 rounded-full border border-emerald-700/30">
+                <span className="font-semibold text-emerald-800 bg-emerald-700/10 px-2 py-0.5 rounded-md">
                   Active / RoC Patna
                 </span>
               </div>
-
-              <div className="hidden sm:inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-black/10 border border-black/15 font-mono text-xs font-bold text-[#151311] shadow-sm">
-                <Building2 className="w-3.5 h-3.5 text-[#B45309]" />
-                <span>Incorporated 7 Nov 2024 &bull; Bihar</span>
-              </div>
             </div>
 
-            {/* Main Content Block Kept Up At The Top */}
-            <div className="relative z-10 max-w-2xl space-y-4 bg-transparent border-0 shadow-none p-0">
-              <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-[#B45309]/15 border border-[#B45309]/30 text-xs text-[#78350F] font-bold tracking-wide shadow-sm">
-                <Sparkles className="w-3.5 h-3.5 text-[#B45309]" />
+            {/* Content Positioned Right Below the Accreditation Badge */}
+            <div className="relative z-10 max-w-2xl mt-4 sm:mt-5 space-y-4 bg-transparent border-0 shadow-none p-0">
+              
+              {/* Brand Tag */}
+              <div className="inline-flex items-center gap-2 text-xs uppercase tracking-widest font-semibold text-[#8B4513]">
+                <span className="w-1.5 h-1.5 rounded-full bg-[#B45309]" />
                 <span>Corporate Heritage &bull; Institutional Standards</span>
               </div>
 
-              <h1 className="font-serif text-3xl sm:text-4xl lg:text-5xl font-extrabold text-[#151311] tracking-tight leading-[1.15]">
+              {/* Editorial Headline */}
+              <h1 className="font-serif text-3xl sm:text-4xl lg:text-[44px] font-bold text-[#171513] tracking-tight leading-[1.18]">
                 Built On Sacred Values.<br />
-                <span className="bg-gradient-to-r from-[#991B1B] via-[#B45309] to-[#C2410C] bg-clip-text text-transparent">
+                <span className="text-[#881337]">
                   Committed to Lasting Value.
                 </span>
               </h1>
 
-              <p className="text-xs sm:text-sm md:text-base text-[#1C1917] leading-relaxed font-semibold max-w-xl">
+              {/* Narrative */}
+              <p className="text-sm sm:text-base text-[#3E3832] leading-relaxed font-normal max-w-xl">
                 Baba Baidyanath Real Estate Private Limited was founded to bring uncompromising corporate governance, verifiable land due diligence, and absolute transparency to real estate development in Aurangabad and emerging growth corridors across Bihar.
               </p>
 
-              {/* Action Buttons Floating Transparently Over Photo */}
-              <div className="flex flex-wrap items-center gap-3 pt-2">
+              {/* Bespoke Luxury Action Buttons */}
+              <div className="flex flex-wrap items-center gap-3.5 pt-2">
                 {onOpenEnquiry && (
                   <button
                     onClick={onOpenEnquiry}
-                    className="px-6 py-3 rounded-full bg-gradient-to-r from-[#B45309] via-[#D97706] to-[#B45309] text-white font-bold text-xs uppercase tracking-[0.14em] cursor-pointer inline-flex items-center gap-2 hover:scale-[1.02] shadow-[0_6px_20px_rgba(180,83,9,0.35)] transition-all border border-amber-300/40"
+                    className="px-6 py-3 rounded-xl bg-[#881337] hover:bg-[#70102D] text-white font-semibold text-xs tracking-wider uppercase transition-all duration-200 shadow-sm hover:shadow-md cursor-pointer inline-flex items-center gap-2"
                   >
-                    <Sparkles className="w-4 h-4 text-amber-200" />
                     <span>Direct Consultation</span>
                   </button>
                 )}
 
                 <button
                   onClick={scrollToDossier}
-                  className="px-5 py-3 rounded-full bg-black/10 hover:bg-black/20 text-[#151311] border border-black/20 text-xs font-bold uppercase tracking-wider transition-all inline-flex items-center gap-1.5 cursor-pointer shadow-sm hover:border-[#B45309]"
+                  className="px-5 py-3 rounded-xl bg-stone-900/[0.05] hover:bg-stone-900/[0.09] text-[#171513] border border-stone-800/15 text-xs font-semibold tracking-wider uppercase transition-all duration-200 inline-flex items-center gap-1.5 cursor-pointer shadow-none"
                 >
                   <span>View Statutory Dossier</span>
-                  <ArrowRight className="w-3.5 h-3.5 text-[#B45309]" />
+                  <ArrowRight className="w-3.5 h-3.5 text-[#881337]" />
                 </button>
               </div>
+
             </div>
 
           </div>
