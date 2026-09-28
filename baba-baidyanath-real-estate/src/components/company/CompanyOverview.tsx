@@ -8,7 +8,6 @@ import {
   IconTitleSeal,
   IconMinimalArrow
 } from '../common/ThemeIcons';
-import { CompanyLogo } from '../common/CompanyLogo';
 
 interface CompanyOverviewProps {
   onOpenEnquiry: () => void;
@@ -21,11 +20,6 @@ export const CompanyOverview: React.FC<CompanyOverviewProps> = ({ onOpenEnquiry 
       className="py-20 md:py-28 relative z-10 bg-transparent text-[#1C1917] border-y border-[#E7E2D8]"
       aria-label="Company Overview"
     >
-      {/* Subtle Warm Luxury Watermark */}
-      <div className="absolute top-12 right-8 opacity-[0.04] pointer-events-none hidden xl:block">
-        <CompanyLogo variant="mark-only" size="xl" />
-      </div>
-
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         
         {/* Section Header */}
