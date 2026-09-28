@@ -30,11 +30,11 @@ export const SiyaramShowcaseCard: React.FC<SiyaramShowcaseCardProps> = ({
         </div>
 
         {/* Official Siyaram's Brand Logo */}
-        <div className="flex items-center px-3 py-1.5 rounded-xl bg-white/80 border border-[#E5DEC9]">
+        <div className="w-28 sm:w-32 h-11 px-3 py-1.5 rounded-xl bg-white border border-[#E5DEC9] shadow-xs flex items-center justify-center shrink-0 overflow-hidden">
           <img
             src={siyaramsLogo}
             alt="Siyaram's Official Brand Logo"
-            className="h-6 sm:h-7 w-auto object-contain"
+            className="max-h-full max-w-full w-auto h-auto object-contain object-center transition-transform duration-200 group-hover:scale-105"
             loading="lazy"
           />
         </div>

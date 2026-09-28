@@ -18,32 +18,32 @@ const REGISTRY_LOGOS: Record<VerifiedRegistryItem['id'], { src: string; alt: str
   dnb: {
     src: logoDnb,
     alt: 'Dun & Bradstreet Official Logo',
-    imgClass: 'h-8 sm:h-9'
+    imgClass: 'max-h-10 sm:max-h-11 w-auto'
   },
   falconebiz: {
     src: logoFalconeBiz,
     alt: 'FalconeBiz Official Logo',
-    imgClass: 'h-7 sm:h-8'
+    imgClass: 'max-h-8 sm:max-h-9 w-auto'
   },
   justdial: {
     src: logoJustdial,
     alt: 'Justdial Official Logo',
-    imgClass: 'h-7 sm:h-8 rounded-sm'
+    imgClass: 'max-h-8 sm:max-h-9 w-auto rounded-sm'
   },
   tofler: {
     src: logoTofler,
     alt: 'Tofler Official Logo',
-    imgClass: 'h-6 sm:h-7'
+    imgClass: 'max-h-9 sm:max-h-10 w-auto'
   },
   zaubacorp: {
     src: logoZaubaCorp,
     alt: 'Zauba Corp Official Logo',
-    imgClass: 'h-7 sm:h-8'
+    imgClass: 'max-h-8 sm:max-h-9 w-auto'
   },
   tracxn: {
     src: logoTracxn,
     alt: 'Tracxn Official Logo',
-    imgClass: 'h-6 sm:h-7'
+    imgClass: 'max-h-7 sm:max-h-8 w-auto'
   }
 };
 
@@ -81,13 +81,13 @@ export const CorporateRegistriesSection: React.FC<CorporateRegistriesSectionProp
               >
                 <div className="space-y-4">
                   
-                  {/* Logo and Status Row */}
-                  <div className="flex items-center justify-between gap-3 pb-3 border-b border-[#E8E2D5]">
-                    <div className="h-12 px-3 py-1.5 rounded-xl bg-[#FAF8F5] border border-[#E8E2D5] flex items-center justify-center shrink-0">
+                  {/* Logo and Status Row (Precision-Centered Box) */}
+                  <div className="flex items-center justify-between gap-3 pb-3.5 border-b border-[#E8E2D5]">
+                    <div className="w-32 sm:w-36 h-12 sm:h-14 px-3 py-1.5 rounded-xl bg-white border border-[#E8E2D5] shadow-xs flex items-center justify-center shrink-0 overflow-hidden">
                       <img
                         src={logoInfo.src}
                         alt={logoInfo.alt}
-                        className={`${logoInfo.imgClass || 'h-8'} w-auto max-w-[130px] sm:max-w-[150px] object-contain transition-transform duration-200 group-hover:scale-105`}
+                        className={`${logoInfo.imgClass || 'max-h-8'} max-w-full object-contain object-center transition-transform duration-200 group-hover:scale-105`}
                         loading="lazy"
                       />
                     </div>
