@@ -40,18 +40,18 @@ export const AboutPage: React.FC<AboutPageProps> = ({ onOpenEnquiry }) => {
           {/* Main Hero Container with 4K Photo Clear in Background */}
           <div className="relative w-full rounded-3xl sm:rounded-[2.5rem] overflow-hidden min-h-[560px] sm:min-h-[620px] md:min-h-[680px] lg:min-h-[740px] border border-[#E8E2D5] shadow-[0_25px_70px_rgba(40,25,10,0.08)] flex flex-col justify-between p-5 sm:p-8 md:p-12 lg:p-14 transition-all">
             
-            {/* The 4K Photo Clear & Razor Sharp in the Background */}
+            {/* The 4K Photo with Artistic Blur Effect in the Background */}
             <div className="absolute inset-0 -z-10 bg-[#FAF6F0] overflow-hidden">
               <img
                 src={aboutHeroBg}
                 alt="Baba Baidyanath Real Estate 4K Master Artwork"
-                className="w-full h-full object-cover object-center select-none"
-                style={{ 
-                  imageRendering: '-webkit-optimize-contrast',
-                  filter: 'contrast(1.05) brightness(1.01)'
-                }}
+                className="w-full h-full object-cover object-center select-none scale-105 filter blur-[6px] transition-all duration-700"
                 loading="eager"
                 decoding="async"
+              />
+              <div 
+                aria-hidden="true" 
+                className="absolute inset-0 bg-gradient-to-r from-white/20 via-transparent to-transparent pointer-events-none" 
               />
             </div>
 
