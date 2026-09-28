@@ -1,6 +1,6 @@
 import React from 'react';
 import { TabType } from '../../types';
-import { COMPANY_DATA } from '../../data/company';
+import { COMPANY_DATA, SIYARAM_DATA } from '../../data/company';
 import { ShieldCheck, MapPin, Building, ArrowUpRight } from 'lucide-react';
 import { CompanyLogo } from '../common/CompanyLogo';
 
@@ -192,6 +192,23 @@ export const Footer: React.FC<FooterProps> = ({ onSelectTab, onOpenEnquiry }) =>
               <div className="flex items-center gap-2.5 pt-1">
                 <Building className="w-4 h-4 text-[#881337] shrink-0" />
                 <span>Jurisdiction: RoC Patna, Bihar</span>
+              </div>
+              <div className="pt-2 border-t border-[#D2C0A4] text-[11px] space-y-1">
+                <span className="font-bold text-[#881337] block">
+                  Promoter Landmark:
+                </span>
+                <span className="block text-[#44382C]">
+                  Siyaram &amp; Siya Shop (Near PNB Bank)
+                </span>
+                <a
+                  href={SIYARAM_DATA.justdialUrl}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="inline-flex items-center gap-1 text-[#0076D7] hover:underline font-bold"
+                >
+                  <span>Siyaram's on Justdial</span>
+                  <ArrowUpRight className="w-3 h-3" />
+                </a>
               </div>
             </div>
 

@@ -3,6 +3,7 @@ import { COMPANY_DATA } from '../../data/company';
 import { EnquiryForm } from '../enquiry/EnquiryForm';
 import { MapPin, Navigation, Clock, ShieldCheck, Building, ExternalLink, ArrowUpRight } from 'lucide-react';
 import { CompanyLogo } from '../common/CompanyLogo';
+import { SiyaramShowcaseCard } from '../common/SiyaramShowcaseCard';
 
 export const ContactPage: React.FC = () => {
   return (
@@ -110,6 +111,9 @@ export const ContactPage: React.FC = () => {
                 </a>
               </div>
             </div>
+
+            {/* Promoter's Flagship Siyaram Landmark Card */}
+            <SiyaramShowcaseCard />
 
             {/* Privacy note card */}
             <div className="p-6 rounded-2xl bg-white border border-[#E7E2D8] shadow-sm flex items-start gap-3 text-xs text-[#57534E] leading-relaxed">

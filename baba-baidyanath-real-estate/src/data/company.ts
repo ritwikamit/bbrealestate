@@ -19,6 +19,17 @@ export const COMPANY_DATA: CompanyData = {
   mapEmbedUrl: "https://maps.google.com/maps?q=24.750898,84.3696775&hl=en&z=17&output=embed"
 };
 
+export const SIYARAM_DATA = {
+  name: "Siyaram & Siya Shop",
+  brand: "Siyaram's",
+  category: "Authorised Retail & Premium Textile Showroom",
+  landmark: "Near PNB Bank, MG Road, Yodha Nagar, Aurangabad, Bihar 824101",
+  relationship: "Promoter's Flagship Commercial Landmark",
+  justdialUrl: "https://www.justdial.com/Aurangabad-Bihar/Siyaram-And-Siya-Shop-Near-Pnb-Bank-Yodha-Nagar/9999P6186-6186-160224135143-H1K6_BZDET",
+  googleMapsUrl: "https://www.google.com/maps/place/24%C2%B045'03.2%22N+84%C2%B022'10.8%22E/@24.750898,84.3696775,18z/data=!4m4!3m3!8m2!3d24.750898!4d84.3696775",
+  note: "Located at the same building landmark as the corporate real estate office."
+};
+
 export const CORPORATE_FACTS = [
   {
     label: "Incorporation",

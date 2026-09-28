@@ -1,6 +1,7 @@
 import React from 'react';
-import { COMPANY_DATA } from '../../data/company';
+import { COMPANY_DATA, SIYARAM_DATA } from '../../data/company';
 import { Navigation, Clock, ArrowUpRight, MapPin, Building2, ExternalLink } from 'lucide-react';
+import siyaramsLogo from '../../assets/siyarams-logo.webp';
 
 export const LocationSection: React.FC = () => {
   return (
@@ -82,6 +83,36 @@ export const LocationSection: React.FC = () => {
                 <p className="text-xs text-[#44403C]">
                   {COMPANY_DATA.registeredAddress}
                 </p>
+              </div>
+
+              {/* Promoter's Siyaram's Landmark Card */}
+              <div className="p-4 sm:p-5 rounded-2xl bg-[#FAF8F5] border border-[#E5DEC9] space-y-2.5">
+                <div className="flex items-center justify-between gap-3 border-b border-[#E5DEC9] pb-2.5">
+                  <div className="text-[11px] font-mono uppercase tracking-wider text-[#881337] font-bold flex items-center gap-1.5">
+                    <MapPin className="w-3.5 h-3.5 text-[#881337]" />
+                    <span>Promoter's Commercial Landmark</span>
+                  </div>
+                  <img
+                    src={siyaramsLogo}
+                    alt="Siyaram's"
+                    className="h-5 w-auto object-contain"
+                    loading="lazy"
+                  />
+                </div>
+                <div className="text-xs text-[#443C34] leading-relaxed">
+                  <strong>Siyaram &amp; Siya Shop</strong> (Near PNB Bank, Yodha Nagar) — identical physical map location as the real estate corporate office.
+                </div>
+                <div className="flex items-center gap-3 pt-1">
+                  <a
+                    href={SIYARAM_DATA.justdialUrl}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="text-[11px] font-semibold text-[#0076D7] hover:underline inline-flex items-center gap-1"
+                  >
+                    <span>View Siyaram's on Justdial</span>
+                    <ExternalLink className="w-3 h-3" />
+                  </a>
+                </div>
               </div>
 
             </div>

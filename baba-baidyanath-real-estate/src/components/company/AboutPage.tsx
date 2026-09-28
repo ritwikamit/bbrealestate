@@ -15,6 +15,7 @@ import {
   CreditCard
 } from 'lucide-react';
 import aboutHeroBg from '../../assets/about-hero-bg.png';
+import { SiyaramShowcaseCard } from '../common/SiyaramShowcaseCard';
 
 interface AboutPageProps {
   onOpenEnquiry?: () => void;
@@ -345,6 +346,11 @@ export const AboutPage: React.FC<AboutPageProps> = ({ onOpenEnquiry }) => {
                 </div>
               ))}
             </div>
+          </div>
+
+          {/* Promoter's Allied Commercial Heritage: Siyaram's Showroom */}
+          <div className="pt-6 border-t border-[#E8E2D5]">
+            <SiyaramShowcaseCard />
           </div>
 
           {/* Consultation CTA Banner */}
