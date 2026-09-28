@@ -48,12 +48,13 @@ export const LoadingScreen: React.FC<LoadingScreenProps> = ({ onComplete }) => {
             transition={{ duration: 0.6, ease: 'easeOut' }}
             className="relative z-10 flex flex-col items-center text-center max-w-lg w-full px-4"
           >
-            {/* Master Company Logo Lockup (Big & Grand) */}
-            <div className="mb-10 sm:mb-12 w-full flex justify-center">
+            {/* Master Company Logo Lockup (Big & Grand with High-Contrast Dark Theme) */}
+            <div className="mb-10 sm:mb-12 w-full flex justify-center relative">
               <CompanyLogo
                 variant="hero"
                 size="2xl"
-                className="drop-shadow-[0_25px_50px_rgba(0,0,0,0.95)] transform scale-110 sm:scale-125 transition-transform duration-500"
+                theme="dark"
+                className="transform scale-110 sm:scale-125 transition-transform duration-500"
               />
             </div>
 

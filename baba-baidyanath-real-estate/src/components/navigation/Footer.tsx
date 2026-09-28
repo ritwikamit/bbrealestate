@@ -41,7 +41,7 @@ export const Footer: React.FC<FooterProps> = ({ onSelectTab, onOpenEnquiry }) =>
           {/* Col 1: Corporate Profile & Official Logo */}
           <div className="lg:col-span-5 space-y-6">
             <div className="flex items-center -ml-2 mb-2">
-              <CompanyLogo variant="full" size="xl" className="items-start text-left" />
+              <CompanyLogo variant="full" size="xl" theme="dark" className="items-start text-left" />
             </div>
 
             <p className="text-xs sm:text-sm text-stone-400 leading-relaxed max-w-md font-light">

@@ -52,13 +52,13 @@ export const Navbar: React.FC<NavbarProps> = ({
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex items-center justify-between py-2 sm:py-2.5 min-h-[72px] sm:min-h-[78px]">
           
-          {/* 1. Official 3D Master Logo (Exact Lockup as Uploaded) */}
+          {/* 1. Official 3D Master Logo with High-Contrast Dark Theme */}
           <button
             onClick={() => handleNavClick('home')}
-            className="text-left group cursor-pointer focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#F59E0B] rounded-xl p-1 -ml-1 hover:bg-white/[0.04] transition-all flex items-center"
+            className="text-left group cursor-pointer focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#F59E0B] rounded-2xl py-1 px-2.5 -ml-1 bg-white/[0.06] hover:bg-white/[0.1] border border-white/[0.12] transition-all flex items-center shadow-sm"
             aria-label="Baba Baidyanath Real Estate - Go to Homepage"
           >
-            <CompanyLogo variant="horizontal" size="md" />
+            <CompanyLogo variant="horizontal" size="md" theme="dark" />
           </button>
 
           {/* 2. Desktop Navigation: Open Minimalist Links without Cylinders */}
@@ -126,7 +126,7 @@ export const Navbar: React.FC<NavbarProps> = ({
             
             {/* Logo in drawer */}
             <div className="pb-3 mb-2 border-b border-white/[0.08] flex items-center justify-between">
-              <CompanyLogo variant="full" size="xs" />
+              <CompanyLogo variant="full" size="sm" theme="dark" />
               <span className="text-[10px] font-mono text-[#F59E0B] bg-[#F59E0B]/10 px-2 py-0.5 rounded border border-[#F59E0B]/20">
                 RoC Patna
               </span>

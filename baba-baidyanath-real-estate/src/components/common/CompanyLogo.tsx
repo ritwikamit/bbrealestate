@@ -12,14 +12,16 @@ export interface CompanyLogoProps {
 
 /**
  * Official Master Logo of Baba Baidyanath Real Estate Private Limited.
- * Renders the authentic, unadulterated high-resolution brand artwork
- * exactly as provided.
+ * Renders the authentic, unadulterated high-resolution brand artwork.
+ * Enhanced for dark surfaces (Navbar, Loading Screen, Footer) with a
+ * luminous contour outline and warm golden aura so black text is 100% visible.
  */
 export const CompanyLogo: React.FC<CompanyLogoProps> = ({
   variant = 'horizontal',
   className = '',
   imgClassName = '',
   size = 'md',
+  theme = 'auto',
   alt = 'Baba Baidyanath Real Estate Private Limited',
 }) => {
   // Height sizing mapped to standard proportional containers
@@ -41,12 +43,25 @@ export const CompanyLogo: React.FC<CompanyLogoProps> = ({
       ? ''
       : sizeMap[size] || sizeMap.md;
 
+  const isDark = theme === 'dark';
+
   return (
-    <div className={`inline-flex items-center justify-center shrink-0 select-none ${className}`}>
+    <div className={`inline-flex items-center justify-center shrink-0 select-none relative group ${className}`}>
+      {/* Soft luminous ambient backlight for dark surfaces so dark lettering (BABA, REAL ESTATE) pops cleanly */}
+      {isDark && (
+        <div 
+          aria-hidden="true" 
+          className="absolute inset-0 bg-white/[0.14] rounded-2xl blur-lg pointer-events-none transform scale-110" 
+        />
+      )}
       <img
         src={logoImg}
         alt={alt}
-        className={`${heightClass} ${imgClassName} w-auto max-w-full object-contain transition-transform duration-300 group-hover:scale-[1.02]`}
+        className={`${heightClass} ${imgClassName} w-auto max-w-full object-contain relative z-10 transition-all duration-300 group-hover:scale-[1.02] ${
+          isDark
+            ? 'drop-shadow-[0_0_1.5px_rgba(255,255,255,0.95)] drop-shadow-[0_0_8px_rgba(254,240,138,0.5)] drop-shadow-[0_2px_12px_rgba(0,0,0,0.85)]'
+            : ''
+        }`}
         loading="eager"
         decoding="async"
       />
