@@ -45,23 +45,23 @@ export const Navbar: React.FC<NavbarProps> = ({
     <header
       className={`sticky top-0 z-50 transition-all duration-300 border-b ${
         scrolled
-          ? 'bg-black/92 backdrop-blur-2xl border-white/[0.12] shadow-[0_12px_40px_rgba(0,0,0,0.85)]'
-          : 'bg-black/80 backdrop-blur-xl border-white/[0.08] shadow-[0_4px_24px_rgba(0,0,0,0.6)]'
+          ? 'bg-[#FAF8F5]/98 backdrop-blur-2xl border-[#DDD3C1] shadow-[0_4px_20px_rgba(20,15,10,0.08)]'
+          : 'bg-[#FAF8F5]/92 backdrop-blur-xl border-[#E8E2D5] shadow-[0_2px_15px_rgba(20,15,10,0.04)]'
       }`}
     >
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex items-center justify-between py-2 sm:py-2.5 min-h-[72px] sm:min-h-[78px]">
           
-          {/* 1. Official 3D Master Logo with High-Contrast Dark Theme */}
+          {/* 1. Official Master Logo (Pure Logo, No Rectangle) */}
           <button
             onClick={() => handleNavClick('home')}
-            className="text-left group cursor-pointer focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#F59E0B] rounded-2xl py-1 px-2.5 -ml-1 bg-white/[0.06] hover:bg-white/[0.1] border border-white/[0.12] transition-all flex items-center shadow-sm"
+            className="text-left group cursor-pointer focus-visible:outline-none p-0 flex items-center"
             aria-label="Baba Baidyanath Real Estate - Go to Homepage"
           >
-            <CompanyLogo variant="horizontal" size="md" theme="dark" />
+            <CompanyLogo variant="horizontal" size="md" />
           </button>
 
-          {/* 2. Desktop Navigation: Open Minimalist Links without Cylinders */}
+          {/* 2. Desktop Navigation */}
           <nav
             className="hidden lg:flex items-center gap-7 xl:gap-9"
             aria-label="Primary Navigation"
@@ -72,13 +72,13 @@ export const Navbar: React.FC<NavbarProps> = ({
                 <button
                   key={link.tab}
                   onClick={() => handleNavClick(link.tab)}
-                  className="group relative py-2 text-xs uppercase tracking-[0.2em] font-medium transition-colors duration-200 cursor-pointer whitespace-nowrap focus-visible:outline-none focus-visible:text-white"
+                  className="group relative py-2 text-xs uppercase tracking-[0.2em] font-medium transition-colors duration-200 cursor-pointer whitespace-nowrap focus-visible:outline-none"
                 >
                   <span
                     className={`transition-colors duration-200 ${
                       isActive
-                        ? 'text-white font-semibold'
-                        : 'text-stone-300 group-hover:text-white'
+                        ? 'text-[#991B1B] font-bold'
+                        : 'text-[#44403C] hover:text-[#991B1B] font-semibold'
                     }`}
                   >
                     {link.label}
@@ -97,7 +97,7 @@ export const Navbar: React.FC<NavbarProps> = ({
             })}
           </nav>
 
-          {/* 3. Right Action Area: Clean Enquire Button without Star Icon */}
+          {/* 3. Right Action Area */}
           <div className="flex items-center gap-2 sm:gap-3 shrink-0">
             <button
               onClick={onOpenEnquiry}
@@ -108,31 +108,31 @@ export const Navbar: React.FC<NavbarProps> = ({
             </button>
             <button
               onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
-              className="lg:hidden p-1.5 sm:p-2 text-[#FAF8F5] hover:bg-white/10 rounded-xl border border-white/10 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#F59E0B] cursor-pointer"
+              className="lg:hidden p-1.5 sm:p-2 text-[#1C1917] hover:bg-black/5 rounded-xl border border-stone-200 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#F59E0B] cursor-pointer"
               aria-label={mobileMenuOpen ? 'Close menu' : 'Open menu'}
               aria-expanded={mobileMenuOpen}
             >
-              {mobileMenuOpen ? <X className="w-5 h-5 text-[#F59E0B]" /> : <Menu className="w-5 h-5" />}
+              {mobileMenuOpen ? <X className="w-5 h-5 text-[#B45309]" /> : <Menu className="w-5 h-5" />}
             </button>
           </div>
 
         </div>
       </div>
 
-      {/* 5. Mobile Drawer Menu without Cylinders */}
+      {/* 5. Mobile Drawer Menu */}
       {mobileMenuOpen && (
-        <div className="lg:hidden border-b border-white/[0.12] bg-black/95 backdrop-blur-2xl shadow-2xl animate-in slide-in-from-top-3 fade-in duration-200">
+        <div className="lg:hidden border-b border-[#E8E2D5] bg-[#FAF8F5]/98 backdrop-blur-2xl shadow-2xl animate-in slide-in-from-top-3 fade-in duration-200">
           <div className="px-5 pt-3 pb-5 space-y-2">
             
-            {/* Logo in drawer */}
-            <div className="pb-3 mb-2 border-b border-white/[0.08] flex items-center justify-between">
-              <CompanyLogo variant="full" size="sm" theme="dark" />
-              <span className="text-[10px] font-mono text-[#F59E0B] bg-[#F59E0B]/10 px-2 py-0.5 rounded border border-[#F59E0B]/20">
+            {/* Logo in drawer without rectangle */}
+            <div className="pb-3 mb-2 border-b border-[#E8E2D5] flex items-center justify-between">
+              <CompanyLogo variant="full" size="sm" />
+              <span className="text-[10px] font-mono text-[#B45309] bg-[#B45309]/10 px-2 py-0.5 rounded border border-[#B45309]/20 font-bold">
                 RoC Patna
               </span>
             </div>
 
-            {/* Nav list: clean open links without cylinders */}
+            {/* Nav list */}
             <div className="space-y-1">
               {navLinks.map((link) => {
                 const isActive = currentTab === link.tab;
@@ -141,7 +141,7 @@ export const Navbar: React.FC<NavbarProps> = ({
                     key={link.tab}
                     onClick={() => handleNavClick(link.tab)}
                     className={`block w-full text-left py-2.5 px-2 text-xs uppercase tracking-[0.18em] transition-colors relative group ${
-                      isActive ? 'text-white font-bold' : 'text-stone-300 hover:text-white'
+                      isActive ? 'text-[#991B1B] font-bold' : 'text-[#44403C] hover:text-[#991B1B]'
                     }`}
                   >
                     <span>{link.label}</span>
@@ -155,8 +155,8 @@ export const Navbar: React.FC<NavbarProps> = ({
               })}
             </div>
 
-            {/* Compact Mobile Action in Drawer with Gold Border */}
-            <div className="pt-3 border-t border-white/[0.08]">
+            {/* Compact Mobile Action in Drawer */}
+            <div className="pt-3 border-t border-[#E8E2D5]">
               <button
                 onClick={() => {
                   setMobileMenuOpen(false);

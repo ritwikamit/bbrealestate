@@ -33,12 +33,12 @@ export default function App() {
   };
 
   return (
-    <div className="min-h-screen flex flex-col bg-[#070605] text-[#1C1917] selection:bg-[#F59E0B] selection:text-[#0C0A09] relative">
+    <div className="min-h-screen flex flex-col bg-[#FAF8F5] text-[#1C1917] selection:bg-[#F59E0B] selection:text-[#0C0A09] relative">
       
       {/* 1. Cinematic Loading Page */}
       <LoadingScreen onComplete={() => setIsLoadingComplete(true)} />
 
-      {/* 2. Navigation Bar (LUCID BLACK) */}
+      {/* 2. Navigation Bar (WARM IVORY) */}
       <Navbar
         currentTab={currentTab}
         onSelectTab={handleSelectTab}
