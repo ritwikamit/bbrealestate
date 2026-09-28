@@ -17,6 +17,8 @@ import {
 import aboutHeroBg from '../../assets/about-hero-bg.png';
 import { SiyaramShowcaseCard } from '../common/SiyaramShowcaseCard';
 import { CorporateRegistriesSection } from './CorporateRegistriesSection';
+import { CompanyOverview } from './CompanyOverview';
+import { FAQSection } from './FAQSection';
 
 interface AboutPageProps {
   onOpenEnquiry?: () => void;
@@ -380,7 +382,17 @@ export const AboutPage: React.FC<AboutPageProps> = ({ onOpenEnquiry }) => {
       </section>
 
       {/* ========================================================================= */}
-      {/* 4. THIRD-PARTY VERIFIED CORPORATE REGISTRIES & DIRECTORIES */}
+      {/* 4. CORPORATE GOVERNANCE & CORE INSTITUTIONAL PRINCIPLES */}
+      {/* ========================================================================= */}
+      <CompanyOverview onOpenEnquiry={onOpenEnquiry} />
+
+      {/* ========================================================================= */}
+      {/* 5. FREQUENTLY ASKED QUESTIONS & STATUTORY CLARITY */}
+      {/* ========================================================================= */}
+      <FAQSection />
+
+      {/* ========================================================================= */}
+      {/* 6. THIRD-PARTY VERIFIED CORPORATE REGISTRIES & DIRECTORIES */}
       {/* ========================================================================= */}
       <CorporateRegistriesSection />
 

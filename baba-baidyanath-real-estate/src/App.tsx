@@ -4,13 +4,9 @@ import { Navbar } from './components/navigation/Navbar';
 import { Footer } from './components/navigation/Footer';
 import { Hero } from './components/hero/Hero';
 import { CorporateFactsBar } from './components/company/CorporateFactsBar';
-import { CompanyOverview } from './components/company/CompanyOverview';
 import { CapabilitiesSection } from './components/services/CapabilitiesSection';
 import { ProjectsSection } from './components/projects/ProjectsSection';
 import { LandAndEMICalculator } from './components/tools/LandAndEMICalculator';
-import { LocationSection } from './components/location/LocationSection';
-import { FAQSection } from './components/company/FAQSection';
-import { CorporateRegistriesSection } from './components/company/CorporateRegistriesSection';
 import { ClientVoicesSection } from './components/testimonials/ClientVoicesSection';
 import { AboutPage } from './components/company/AboutPage';
 import { ContactPage } from './components/contact/ContactPage';
@@ -20,8 +16,7 @@ import { GridBackgroundCanvas } from './components/canvas/GridBackgroundCanvas';
 import { LoadingScreen } from './components/loading/LoadingScreen';
 import { MobileBottomNav } from './components/navigation/MobileBottomNav';
 import { BackToTopButton } from './components/common/BackToTopButton';
-import { ArrowUpRight, ShieldCheck, MapPin, Sparkles } from 'lucide-react';
-import { COMPANY_DATA } from './data/company';
+import { ArrowUpRight, Sparkles } from 'lucide-react';
 
 export default function App() {
   const [currentTab, setCurrentTab] = useState<TabType>('home');
@@ -66,13 +61,6 @@ export default function App() {
                 <CorporateFactsBar />
               </div>
 
-              {/* Corporate Overview */}
-              <div className="relative z-10">
-                <CompanyOverview
-                  onOpenEnquiry={() => setIsEnquiryOpen(true)}
-                />
-              </div>
-
               {/* Capabilities */}
               <div className="relative z-10">
                 <CapabilitiesSection
@@ -114,21 +102,6 @@ export default function App() {
               {/* Client Voices / Verified Testimonials Carousel */}
               <div className="relative z-10">
                 <ClientVoicesSection onOpenEnquiry={() => setIsEnquiryOpen(true)} />
-              </div>
-
-              {/* Location & Map Section */}
-              <div className="relative z-10">
-                <LocationSection />
-              </div>
-
-              {/* Verified Public Corporate Registries & Intelligence Dossiers */}
-              <div className="relative z-10 border-t border-[#E7E2D8]">
-                <CorporateRegistriesSection />
-              </div>
-
-              {/* Frequently Asked Questions */}
-              <div className="relative z-10">
-                <FAQSection />
               </div>
 
               {/* Direct Enquiry CTA Banner in Warm Light Luxury leading to dark footer */}
