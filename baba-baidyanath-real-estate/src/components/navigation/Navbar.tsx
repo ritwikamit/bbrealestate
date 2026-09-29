@@ -46,6 +46,7 @@ export const Navbar: React.FC<NavbarProps> = ({
   }, []);
 
   const navLinks: { label: string; hindi: string; tab: TabType }[] = [
+    { label: 'Home', hindi: 'होम', tab: 'home' },
     { label: 'About', hindi: 'परिचय', tab: 'about' },
     { label: 'Plotting', hindi: 'प्लॉटिंग', tab: 'plotting' },
     { label: 'Locations', hindi: 'लोकेशन', tab: 'locations' },
@@ -56,18 +57,7 @@ export const Navbar: React.FC<NavbarProps> = ({
   const handleNavClick = (tab: TabType) => {
     onSelectTab(tab);
     setMobileMenuOpen(false);
-    setDevDropdownOpen(false);
     window.scrollTo({ top: 0, behavior: 'smooth' });
-  };
-
-  const handleDevSectionClick = (category: DevelopmentCategory) => {
-    if (onSelectDevelopmentCategory) {
-      onSelectDevelopmentCategory(category);
-    } else {
-      onSelectTab('projects');
-    }
-    setDevDropdownOpen(false);
-    setMobileMenuOpen(false);
   };
 
   return (
