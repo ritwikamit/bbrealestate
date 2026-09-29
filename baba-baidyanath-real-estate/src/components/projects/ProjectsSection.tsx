@@ -296,9 +296,9 @@ export const ProjectsSection: React.FC<ProjectsSectionProps> = ({
         
         {/* Centered Header with authentic Hindi invocation */}
         <div className="text-center max-w-3xl mx-auto space-y-3 mb-8 sm:mb-10">
-          <div className="flex items-center justify-center gap-2 text-[#9A6F20] tracking-wide">
-            <span className="font-hindi text-sm sm:text-base text-[#9A6F20] font-semibold">
-              ॥ आगामी प्रमुख विकास परियोजनाएं ॥
+          <div className="flex items-center justify-center gap-2">
+            <span className="badge-yellow-theme px-3.5 py-1 rounded-full font-hindi text-xs sm:text-sm text-[#9A6F20] font-semibold inline-flex items-center gap-1.5">
+              <span>॥ आगामी प्रमुख विकास परियोजनाएं ॥</span>
             </span>
           </div>
           <h2 className="font-serif text-3xl sm:text-4xl lg:text-5xl text-[#1C1917] font-bold tracking-tight">
@@ -317,7 +317,7 @@ export const ProjectsSection: React.FC<ProjectsSectionProps> = ({
                 onClick={() => handleFilterChange('all')}
                 className={`px-3.5 sm:px-5 py-2 sm:py-2.5 rounded-xl transition-all cursor-pointer whitespace-nowrap shrink-0 inline-flex items-center justify-center ${
                   activeFilter === 'all'
-                    ? 'bg-[#1C1917] text-[#FAF8F5] shadow-sm border border-[#C59B27]/40'
+                    ? 'bg-[#1C1917] text-[#FAF8F5] shadow-[0_4px_16px_rgba(234,179,8,0.25)] border border-[#FACC15]/80'
                     : 'text-[#44403C] hover:text-[#1C1917] hover:bg-stone-100/70'
                 }`}
               >
@@ -329,7 +329,7 @@ export const ProjectsSection: React.FC<ProjectsSectionProps> = ({
                     |
                   </span>
                   <span className={`font-hindi text-xs sm:text-sm font-semibold ${
-                    activeFilter === 'all' ? 'text-[#E7C973]' : 'text-[#9A6F20]'
+                    activeFilter === 'all' ? 'text-[#FACC15] drop-shadow-[0_0_8px_rgba(250,204,21,0.45)]' : 'text-[#9A6F20]'
                   }`}>
                     समस्त
                   </span>
@@ -344,7 +344,7 @@ export const ProjectsSection: React.FC<ProjectsSectionProps> = ({
                     onClick={() => handleFilterChange(sec.key)}
                     className={`px-3.5 sm:px-5 py-2 sm:py-2.5 rounded-xl transition-all cursor-pointer whitespace-nowrap shrink-0 inline-flex items-center justify-center ${
                       isActive
-                        ? 'bg-[#1C1917] text-[#FAF8F5] shadow-sm border border-[#C59B27]/40'
+                        ? 'bg-[#1C1917] text-[#FAF8F5] shadow-[0_4px_16px_rgba(234,179,8,0.25)] border border-[#FACC15]/80'
                         : 'text-[#44403C] hover:text-[#1C1917] hover:bg-stone-100/70'
                     }`}
                   >
@@ -356,7 +356,7 @@ export const ProjectsSection: React.FC<ProjectsSectionProps> = ({
                         |
                       </span>
                       <span className={`font-hindi text-xs sm:text-sm font-semibold ${
-                        isActive ? 'text-[#E7C973]' : 'text-[#9A6F20]'
+                        isActive ? 'text-[#FACC15] drop-shadow-[0_0_8px_rgba(250,204,21,0.45)]' : 'text-[#9A6F20]'
                       }`}>
                         {sec.menuHindi}
                       </span>
@@ -412,7 +412,7 @@ export const ProjectsSection: React.FC<ProjectsSectionProps> = ({
                   {sectionCards.map((card) => (
                     <div
                       key={card.id}
-                      className="group rounded-2xl sm:rounded-3xl bg-white border border-[#E8E2D5] shadow-[0_15px_40px_rgba(28,25,23,0.05)] hover:shadow-[0_20px_50px_rgba(28,25,23,0.1)] transition-all duration-300 flex flex-col overflow-hidden"
+                      className="group rounded-2xl sm:rounded-3xl bg-white border border-[#E8E2D5] hover:border-[#FACC15]/60 shadow-[0_15px_40px_rgba(28,25,23,0.05)] hover:shadow-[0_20px_50px_rgba(234,179,8,0.12)] transition-all duration-300 flex flex-col overflow-hidden"
                     >
                       {/* Card Image Container */}
                       <div className="relative h-56 sm:h-64 md:h-72 w-full overflow-hidden bg-stone-100">
@@ -428,7 +428,7 @@ export const ProjectsSection: React.FC<ProjectsSectionProps> = ({
 
                         {/* Top Badge: Category & Feasibility Status */}
                         <div className="absolute top-3 sm:top-4 left-3 sm:left-4 right-3 sm:right-4 flex items-center justify-between gap-2">
-                          <span className="px-2 sm:px-2.5 py-1 rounded-md bg-stone-950/85 backdrop-blur-md text-[10px] sm:text-[11px] font-mono font-semibold text-[#E7C973] uppercase tracking-wider">
+                          <span className="px-2 sm:px-2.5 py-1 rounded-md bg-stone-950/90 border border-[#FACC15]/30 backdrop-blur-md text-[10px] sm:text-[11px] font-mono font-semibold text-[#FEF08A] uppercase tracking-wider shadow-xs">
                             {card.tag}
                           </span>
                           <span className="px-2 sm:px-2.5 py-1 rounded-md bg-stone-950/85 backdrop-blur-md text-[10px] sm:text-[11px] font-mono text-emerald-400 font-medium">
@@ -438,8 +438,8 @@ export const ProjectsSection: React.FC<ProjectsSectionProps> = ({
 
                         {/* Bottom Overlay Title on Image */}
                         <div className="absolute bottom-3 sm:bottom-4 left-3 sm:left-4 right-3 sm:right-4 text-white">
-                          <div className="flex items-center gap-1.5 text-[11px] sm:text-xs text-[#E7C973] font-mono mb-1">
-                            <MapPin className="w-3.5 h-3.5 text-[#E7C973] shrink-0" />
+                          <div className="flex items-center gap-1.5 text-[11px] sm:text-xs text-[#FEF08A] font-mono mb-1">
+                            <MapPin className="w-3.5 h-3.5 text-[#FACC15] shrink-0" />
                             <span className="truncate">{card.location}</span>
                           </div>
                           <h4 className="font-serif text-lg sm:text-xl md:text-2xl font-bold tracking-tight text-white drop-shadow-sm leading-snug">
@@ -488,7 +488,7 @@ export const ProjectsSection: React.FC<ProjectsSectionProps> = ({
                           </span>
                           <button
                             onClick={onOpenEnquiry}
-                            className="order-1 sm:order-2 w-full sm:w-auto inline-flex items-center justify-center gap-2 px-5 py-2.5 rounded-xl bg-gradient-to-r from-[#9A6F20] via-[#C59B27] to-[#E7C973] text-[#0F0E0D] font-bold text-xs uppercase tracking-wider transition-all duration-200 hover:scale-[1.02] active:scale-98 cursor-pointer shadow-xs hover:shadow-sm"
+                            className="order-1 sm:order-2 w-full sm:w-auto inline-flex items-center justify-center gap-2 px-5 py-2.5 rounded-xl btn-yellow-gradient font-bold text-xs uppercase tracking-wider transition-all duration-200 hover:scale-[1.02] active:scale-98 cursor-pointer shadow-xs"
                           >
                             <span>Request Dossier</span>
                             <IconMinimalArrow size={12} color="stone" />

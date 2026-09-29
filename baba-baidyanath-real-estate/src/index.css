@@ -102,6 +102,63 @@
   box-shadow: 0 16px 48px rgba(28, 25, 23, 0.12);
 }
 
+/* ══════════════════════════════════════════════════════════════
+   ROYAL YELLOW GRADIENT THEME SYSTEM (DEVBHOOMI LUXURY AURA)
+   ══════════════════════════════════════════════════════════════ */
+.text-yellow-gradient {
+  background: linear-gradient(135deg, #FFFBEB 0%, #FEF08A 20%, #FDE047 45%, #FACC15 70%, #EAB308 90%, #CA8A04 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.text-yellow-gradient-vibrant {
+  background: linear-gradient(90deg, #FEF08A 0%, #FDE047 25%, #FACC15 50%, #EAB308 75%, #CA8A04 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.bg-yellow-gradient {
+  background: linear-gradient(135deg, #FEF08A 0%, #FDE047 25%, #FACC15 55%, #EAB308 85%, #CA8A04 100%);
+}
+
+.bg-yellow-gradient-warm {
+  background: linear-gradient(135deg, #FDE047 0%, #FACC15 35%, #EAB308 75%, #B45309 100%);
+}
+
+.bg-yellow-gradient-subtle {
+  background: linear-gradient(135deg, rgba(254, 240, 138, 0.18) 0%, rgba(250, 204, 21, 0.12) 50%, rgba(202, 138, 4, 0.08) 100%);
+}
+
+.btn-yellow-gradient {
+  background: linear-gradient(135deg, #FEF08A 0%, #FDE047 25%, #FACC15 55%, #EAB308 85%, #CA8A04 100%);
+  color: #0F0E0D !important;
+  border: 1px solid rgba(254, 240, 138, 0.8) !important;
+  box-shadow: 0 4px 18px rgba(234, 179, 8, 0.35), inset 0 1px 2px rgba(255, 255, 255, 0.75) !important;
+  transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.btn-yellow-gradient:hover {
+  background: linear-gradient(135deg, #FFFBEB 0%, #FEF08A 30%, #FDE047 60%, #FACC15 90%, #EAB308 100%);
+  box-shadow: 0 8px 30px rgba(234, 179, 8, 0.5), inset 0 1px 3px rgba(255, 255, 255, 0.9) !important;
+  transform: translateY(-1px);
+}
+
+.border-yellow-gradient-line {
+  height: 2px;
+  background: linear-gradient(90deg, transparent 0%, #FEF08A 20%, #FACC15 50%, #EAB308 80%, transparent 100%);
+}
+
+.badge-yellow-theme {
+  background: linear-gradient(135deg, rgba(254, 240, 138, 0.22) 0%, rgba(250, 204, 21, 0.15) 100%);
+  border: 1px solid rgba(250, 204, 21, 0.45);
+  box-shadow: 0 2px 10px rgba(234, 179, 8, 0.12);
+}
+
+.glow-yellow-ambient {
+  filter: drop-shadow(0 0 20px rgba(250, 204, 21, 0.4));
+}
+
+
 body {
   font-family: var(--font-body-current);
   background-color: #FAF8F5;

@@ -26,7 +26,9 @@ export const Footer: React.FC<FooterProps> = ({ onSelectTab, onOpenEnquiry, onSe
   };
 
   return (
-    <footer className="relative z-10 bg-[#0F0E0D] text-stone-300 border-t border-[#C59B27]/25 shadow-[0_-12px_40px_rgba(0,0,0,0.6)]" aria-label="Corporate Footer">
+    <footer className="relative z-10 bg-[#0F0E0D] text-stone-300 border-t border-[#FACC15]/25 shadow-[0_-12px_40px_rgba(0,0,0,0.6)]" aria-label="Corporate Footer">
+      {/* Radiant Yellow Gradient Top Accent Line */}
+      <div className="border-yellow-gradient-line w-full" />
       
       {/* Statutory Corporate Credentials Strip */}
       <div className="border-b border-white/10 bg-white/[0.02] py-3.5 px-4 sm:px-6 lg:px-8">

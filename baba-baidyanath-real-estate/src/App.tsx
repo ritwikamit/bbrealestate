@@ -63,6 +63,10 @@ export default function App() {
               {/* Visible Architectural Grid Canvas */}
               <GridBackgroundCanvas currentTab={currentTab} />
 
+              {/* Ambient Yellow Gradient Aura Washes */}
+              <div className="absolute top-1/4 -right-40 w-96 h-96 rounded-full bg-radial from-[#FACC15]/12 via-[#FEF08A]/5 to-transparent blur-3xl pointer-events-none" />
+              <div className="absolute top-2/3 -left-40 w-96 h-96 rounded-full bg-radial from-[#FDE047]/10 via-[#FACC15]/5 to-transparent blur-3xl pointer-events-none" />
+
               {/* Corporate Facts Bar */}
               <div className="relative z-10">
                 <CorporateFactsBar />
@@ -79,7 +83,7 @@ export default function App() {
 
               {/* Land & EMI Calculator Teaser Banner */}
               <div className="relative z-10 py-12 px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto">
-                <div className="rounded-2xl p-6 sm:p-9 bg-white border border-[#E8E2D5] flex flex-col md:flex-row items-center justify-between gap-6 shadow-[0_15px_35px_rgba(28,25,23,0.05)]">
+                <div className="rounded-2xl p-6 sm:p-9 bg-white border border-[#E8E2D5] hover:border-[#FACC15]/50 flex flex-col md:flex-row items-center justify-between gap-6 shadow-[0_15px_35px_rgba(28,25,23,0.05)] hover:shadow-[0_20px_45px_rgba(234,179,8,0.1)] transition-all duration-300">
                   <div className="space-y-1.5 text-center md:text-left">
                     <div className="inline-flex items-center gap-2 text-xs uppercase tracking-widest text-[#9A6F20] font-mono font-semibold">
                       <span>Regional Land Computing Engine</span>
@@ -94,7 +98,7 @@ export default function App() {
                   </div>
                   <button
                     onClick={() => handleSelectTab('calculator')}
-                    className="shrink-0 px-6 py-3 rounded-full bg-gradient-to-r from-[#9A6F20] via-[#C59B27] to-[#E7C973] text-[#0F0E0D] font-bold text-xs tracking-wider uppercase btn-gold-border hover:scale-[1.02] transition-all cursor-pointer inline-flex items-center gap-2 shadow-sm"
+                    className="shrink-0 px-6 py-3 rounded-full btn-yellow-gradient font-bold text-xs tracking-wider uppercase hover:scale-[1.02] transition-all cursor-pointer inline-flex items-center gap-2"
                   >
                     <span>Launch Full Calculator</span>
                     <ArrowUpRight className="w-4 h-4 text-[#0F0E0D]" />
@@ -105,9 +109,9 @@ export default function App() {
               {/* Direct Enquiry CTA Banner in Warm Light Luxury */}
               <section className="py-16 sm:py-24 relative z-10 border-t border-[#E8E2D5] px-4 sm:px-6 lg:px-8 bg-gradient-to-b from-[#FAF8F5] to-[#F5EFE6]">
                 <div className="max-w-5xl mx-auto">
-                  <div className="rounded-3xl p-8 sm:p-14 bg-white border border-[#E8E2D5] text-center space-y-6 shadow-[0_20px_50px_rgba(28,25,23,0.06)]">
-                    <div className="flex items-center justify-center gap-2 text-xs text-[#9A6F20] font-mono uppercase tracking-widest mx-auto">
-                      <Sparkles className="w-3.5 h-3.5 text-[#C59B27]" />
+                  <div className="rounded-3xl p-8 sm:p-14 bg-white border border-[#E8E2D5] hover:border-[#FACC15]/50 text-center space-y-6 shadow-[0_20px_50px_rgba(28,25,23,0.06)] hover:shadow-[0_25px_60px_rgba(234,179,8,0.12)] transition-all duration-300">
+                    <div className="badge-yellow-theme px-4 py-1.5 rounded-full flex items-center justify-center gap-2 text-xs text-[#9A6F20] font-mono uppercase tracking-widest mx-auto w-fit">
+                      <Sparkles className="w-3.5 h-3.5 text-[#EAB308]" />
                       <span className="font-hindi text-sm font-semibold">॥ निःशुल्क परामर्श एवं स्थल निरीक्षण ॥</span>
                     </div>
 
@@ -125,7 +129,7 @@ export default function App() {
                     <div className="pt-2">
                       <button
                         onClick={() => setIsEnquiryOpen(true)}
-                        className="px-8 sm:px-10 py-4 rounded-full bg-gradient-to-r from-[#9A6F20] via-[#C59B27] to-[#E7C973] text-[#0F0E0D] font-bold text-xs sm:text-sm uppercase tracking-[0.16em] cursor-pointer inline-flex items-center justify-center gap-2.5 btn-gold-border hover:scale-[1.02] transition-all shadow-md"
+                        className="px-8 sm:px-10 py-4 rounded-full btn-yellow-gradient font-bold text-xs sm:text-sm uppercase tracking-[0.16em] cursor-pointer inline-flex items-center justify-center gap-2.5 hover:scale-[1.02] transition-all shadow-md"
                       >
                         <span>Open Formal Enquiry Desk</span>
                         <span className="font-hindi text-xs">| ॥ आवेदन करें ॥</span>

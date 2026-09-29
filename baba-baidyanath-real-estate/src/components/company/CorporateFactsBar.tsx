@@ -5,7 +5,7 @@ import { IconCorporateChamber, IconVerifiedBadge, IconDeskPhone } from '../commo
 export const CorporateFactsBar: React.FC = () => {
   return (
     <section id="corporate-facts" className="relative z-20 py-6 sm:py-8 px-3 sm:px-6 lg:px-8 max-w-7xl mx-auto" aria-label="Verified Corporate Facts">
-      <div className="rounded-2xl bg-white/95 backdrop-blur-xl border border-[#E8E2D5] p-4 sm:p-8 shadow-[0_15px_35px_rgba(28,25,23,0.05)]">
+      <div className="rounded-2xl bg-white/95 backdrop-blur-xl border border-[#E8E2D5] hover:border-[#FACC15]/50 p-4 sm:p-8 shadow-[0_15px_35px_rgba(28,25,23,0.05)] hover:shadow-[0_20px_45px_rgba(234,179,8,0.1)] transition-all duration-300">
         
         {/* Verification banner with Direct Desk Phone & CIN */}
         <div className="flex flex-col sm:flex-row items-start sm:items-center justify-between gap-3 sm:gap-4 pb-4 sm:pb-6 border-b border-[#E8E2D5]">
@@ -17,7 +17,7 @@ export const CorporateFactsBar: React.FC = () => {
           <div className="flex flex-wrap items-center gap-2 sm:gap-3 w-full sm:w-auto">
             <a
               href="tel:+919876543210"
-              className="flex-1 sm:flex-initial flex items-center justify-center gap-1.5 text-[11px] sm:text-xs font-mono text-[#1C1917] hover:text-[#9A6F20] bg-[#FAF8F5] hover:bg-[#F5EFE6] px-3.5 py-1.5 rounded-lg border border-[#E8E2D5] shadow-xs transition-all hover:scale-[1.02]"
+              className="flex-1 sm:flex-initial flex items-center justify-center gap-1.5 text-[11px] sm:text-xs font-mono text-[#1C1917] hover:text-[#9A6F20] bg-[#FAF8F5] hover:bg-yellow-50/50 hover:border-[#FACC15]/60 px-3.5 py-1.5 rounded-lg border border-[#E8E2D5] shadow-xs transition-all hover:scale-[1.02]"
               title="Call Baba Baidyanath Real Estate Office"
             >
               <IconDeskPhone size={14} color="gold" className="shrink-0" />
@@ -32,7 +32,7 @@ export const CorporateFactsBar: React.FC = () => {
         {/* Facts grid with authentic Hindi credentials */}
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 pt-6">
           
-          <div className="border-l-2 border-[#C59B27] pl-4 space-y-1">
+          <div className="border-l-2 border-[#FACC15] pl-4 space-y-1">
             <div className="flex items-center justify-between">
               <span className="text-[11px] uppercase tracking-widest text-[#78716C] block font-medium">
                 Incorporated

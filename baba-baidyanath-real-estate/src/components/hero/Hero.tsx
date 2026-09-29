@@ -63,25 +63,25 @@ export const Hero: React.FC<HeroProps> = ({
       <div className="absolute inset-0 bg-gradient-to-b from-[#0F0E0D]/60 via-black/20 to-[#0F0E0D]/80 pointer-events-none" />
       <div className="absolute bottom-0 left-0 right-0 h-28 bg-gradient-to-t from-[#FAF8F5] via-[#FAF8F5]/30 to-transparent pointer-events-none" />
 
-      {/* Subtle Luminous Golden Particle Glows */}
+      {/* Subtle Luminous Golden & Yellow Particle Glows */}
       <div className="absolute inset-0 overflow-hidden pointer-events-none z-[2]">
         <motion.div
           animate={{
             y: [-15, 20, -15],
             x: [-8, 12, -8],
-            opacity: [0.3, 0.6, 0.3],
+            opacity: [0.35, 0.7, 0.35],
           }}
           transition={{ duration: 7, repeat: Infinity, ease: 'easeInOut' }}
-          className="absolute top-1/4 left-1/5 w-80 h-80 rounded-full bg-radial from-[#C59B27]/25 via-transparent to-transparent blur-3xl"
+          className="absolute top-1/4 left-1/5 w-80 h-80 rounded-full bg-radial from-[#FACC15]/30 via-[#EAB308]/15 to-transparent blur-3xl"
         />
         <motion.div
           animate={{
             y: [20, -20, 20],
             x: [12, -12, 12],
-            opacity: [0.25, 0.55, 0.25],
+            opacity: [0.3, 0.65, 0.3],
           }}
           transition={{ duration: 9, repeat: Infinity, ease: 'easeInOut', delay: 1 }}
-          className="absolute bottom-1/4 right-1/5 w-96 h-96 rounded-full bg-radial from-[#E7C973]/20 via-[#9A6F20]/15 to-transparent blur-3xl"
+          className="absolute bottom-1/4 right-1/5 w-96 h-96 rounded-full bg-radial from-[#FEF08A]/25 via-[#FACC15]/20 to-transparent blur-3xl"
         />
       </div>
 
@@ -93,7 +93,7 @@ export const Hero: React.FC<HeroProps> = ({
           transition={{ duration: 0.6, ease: 'easeOut' }}
           className="flex items-center justify-center gap-2 sm:gap-3 max-w-[95vw] sm:max-w-4xl"
         >
-          <span className="font-hindi text-xs sm:text-sm md:text-[15px] tracking-widest text-[#E7C973] font-medium text-center [text-wrap:balance] drop-shadow-[0_2px_10px_rgba(0,0,0,0.8)]">
+          <span className="font-hindi text-xs sm:text-sm md:text-[15px] tracking-widest text-[#FEF08A] font-medium text-center [text-wrap:balance] drop-shadow-[0_2px_12px_rgba(234,179,8,0.5)]">
             ॥ श्री बाबा बैद्यनाथाय नमः ॥ पूर्वोत्तरे प्रज्वलिकानिधाने सदा वसंतं गिरिजासमेतम्। सुरासुराराधितपादपद्यं श्रीवैद्यनाथं तमहं नमामि।।
           </span>
         </motion.div>
@@ -109,13 +109,13 @@ export const Hero: React.FC<HeroProps> = ({
           transition={{ duration: 0.4 }}
           className="mb-3 sm:mb-4 flex items-center justify-center gap-2 text-stone-300 font-mono text-[10.5px] sm:text-xs uppercase tracking-[0.24em]"
         >
-          <span className="w-6 sm:w-10 h-[1px] bg-gradient-to-r from-transparent to-[#C59B27]/70" />
-          <span className="text-[#E7C973] font-semibold">EST. 2024</span>
+          <span className="w-6 sm:w-10 h-[1.5px] bg-gradient-to-r from-transparent to-[#FACC15]" />
+          <span className="text-[#FEF08A] font-semibold">EST. 2024</span>
           <span className="text-stone-400">&bull;</span>
           <span className="text-stone-200">AURANGABAD, BIHAR</span>
           <span className="text-stone-400">&bull;</span>
-          <span className="text-[#E7C973] hidden md:inline">ROC PATNA</span>
-          <span className="w-6 sm:w-10 h-[1px] bg-gradient-to-l from-transparent to-[#C59B27]/70" />
+          <span className="text-[#FEF08A] hidden md:inline">ROC PATNA</span>
+          <span className="w-6 sm:w-10 h-[1.5px] bg-gradient-to-l from-transparent to-[#FACC15]" />
         </motion.div>
 
         {/* Majestic Classical Chiselled Title (Cinzel Typography) */}
@@ -128,7 +128,7 @@ export const Hero: React.FC<HeroProps> = ({
           <span className="block text-[#FAF8F5] drop-shadow-[0_2px_15px_rgba(0,0,0,0.9)]">
             WHERE SACRED TRUST
           </span>
-          <span className="block mt-1 sm:mt-2 bg-gradient-to-r from-[#FFF6DF] via-[#E7C973] to-[#C59B27] bg-clip-text text-transparent drop-shadow-[0_4px_35px_rgba(197,155,39,0.5)]">
+          <span className="block mt-1 sm:mt-2 text-yellow-gradient drop-shadow-[0_4px_35px_rgba(250,204,21,0.55)]">
             SHAPES TIMELESS LANDMARKS
           </span>
         </motion.h1>
@@ -165,10 +165,10 @@ export const Hero: React.FC<HeroProps> = ({
           transition={{ duration: 0.5 }}
           className="flex flex-col sm:flex-row items-center justify-center gap-3.5 sm:gap-5 w-full sm:w-auto"
         >
-          {/* Primary Golden Shimmer CTA */}
+          {/* Primary Golden-Yellow Shimmer CTA */}
           <button
             onClick={handleExplore}
-            className="w-full sm:w-auto group relative overflow-hidden h-12 sm:h-14 px-8 sm:px-10 rounded-full bg-gradient-to-r from-[#9A6F20] via-[#C59B27] to-[#E7C973] text-[#0F0E0D] font-bold tracking-[0.14em] uppercase text-xs sm:text-sm btn-gold-border hover:scale-[1.03] transition-all duration-300 flex items-center justify-center gap-2.5 cursor-pointer shadow-[0_10px_30px_rgba(197,155,39,0.25)] font-jakarta"
+            className="w-full sm:w-auto group relative overflow-hidden h-12 sm:h-14 px-8 sm:px-10 rounded-full btn-yellow-gradient font-bold tracking-[0.14em] uppercase text-xs sm:text-sm hover:scale-[1.03] transition-all duration-300 flex items-center justify-center gap-2.5 cursor-pointer font-jakarta"
           >
             <span>Explore Developments</span>
             <IconMinimalArrow size={14} color="stone" className="transition-transform group-hover:translate-x-1" />
@@ -177,7 +177,7 @@ export const Hero: React.FC<HeroProps> = ({
           {/* Liquid Glass Secondary CTA */}
           <button
             onClick={handleEnquiry}
-            className="w-full sm:w-auto h-12 sm:h-14 liquid-glass text-white/95 hover:text-white uppercase font-semibold rounded-full px-8 sm:px-10 tracking-[0.16em] text-xs sm:text-sm transition-all duration-300 flex items-center justify-center gap-2 cursor-pointer btn-gold-border hover:bg-white/[0.12] font-jakarta"
+            className="w-full sm:w-auto h-12 sm:h-14 liquid-glass text-white/95 hover:text-white uppercase font-semibold rounded-full px-8 sm:px-10 tracking-[0.16em] text-xs sm:text-sm transition-all duration-300 flex items-center justify-center gap-2 cursor-pointer border border-[#FACC15]/40 hover:border-[#FEF08A] hover:bg-white/[0.12] font-jakarta"
           >
             <IconDivineSpark size={14} color="gold" />
             <span>Consultation Desk</span>
@@ -185,8 +185,10 @@ export const Hero: React.FC<HeroProps> = ({
         </motion.div>
       </div>
 
-      {/* 5. Bottom Trust Credentials Strip with Hindi Subtitles */}
-      <div className="relative z-10 border-t border-white/[0.08] bg-[#0F0E0D]/85 backdrop-blur-md py-4 sm:py-5 px-4 sm:px-6">
+      {/* 5. Bottom Trust Credentials Strip with Yellow Gradient Divider */}
+      <div className="relative z-10 bg-[#0F0E0D]/85 backdrop-blur-md">
+        <div className="border-yellow-gradient-line w-full" />
+        <div className="py-4 sm:py-5 px-4 sm:px-6">
         <div className="max-w-6xl mx-auto grid grid-cols-2 md:grid-cols-4 gap-3.5 sm:gap-4 text-center sm:text-left">
           
           <div className="flex items-center gap-3 justify-center sm:justify-start">
@@ -231,6 +233,7 @@ export const Hero: React.FC<HeroProps> = ({
 
         </div>
       </div>
-    </section>
-  );
+    </div>
+  </section>
+);
 };

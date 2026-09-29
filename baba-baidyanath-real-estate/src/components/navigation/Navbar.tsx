@@ -110,6 +110,8 @@ export const Navbar: React.FC<NavbarProps> = ({
             <span>औरंगाबाद, बिहार (८२४१०१)</span>
           </div>
         </div>
+        {/* Luminous Yellow Gradient Micro-Divider */}
+        <div className="border-yellow-gradient-line w-full" />
       </div>
 
       <div className="max-w-7xl mx-auto px-3 sm:px-6 lg:px-8">
@@ -248,9 +250,9 @@ export const Navbar: React.FC<NavbarProps> = ({
                     {link.hindi}
                   </span>
 
-                  {/* Golden Line Underline */}
+                  {/* Golden Yellow Line Underline */}
                   <span
-                    className={`absolute bottom-0 left-0 h-[2px] w-full bg-[#C59B27] transition-all duration-300 origin-left ${
+                    className={`absolute bottom-0 left-0 h-[2.5px] w-full bg-gradient-to-r from-transparent via-[#FACC15] via-[#EAB308] to-transparent shadow-[0_2px_8px_rgba(250,204,21,0.5)] transition-all duration-300 origin-left ${
                       isActive
                         ? 'scale-x-100 opacity-100'
                         : 'scale-x-0 opacity-0 group-hover:scale-x-100 group-hover:opacity-100'
@@ -265,17 +267,17 @@ export const Navbar: React.FC<NavbarProps> = ({
           <div className="flex items-center gap-1.5 sm:gap-3 shrink-0">
             <button
               onClick={onOpenEnquiry}
-              className="relative group overflow-hidden inline-flex items-center justify-center gap-1.5 sm:gap-2 px-3 sm:px-5 py-2 sm:py-2.5 rounded-full bg-[#1C1917] hover:bg-[#2C2724] text-[#FAF8F5] transition-all duration-300 hover:scale-[1.02] active:scale-95 cursor-pointer shadow-sm border border-[#C59B27]/40"
+              className="relative group overflow-hidden inline-flex items-center justify-center gap-1.5 sm:gap-2 px-3 sm:px-5 py-2 sm:py-2.5 rounded-full bg-[#1C1917] hover:bg-[#262118] text-[#FAF8F5] transition-all duration-300 hover:scale-[1.02] active:scale-95 cursor-pointer shadow-sm border border-[#FACC15]/65 hover:border-[#FEF08A] shadow-[0_2px_14px_rgba(234,179,8,0.22)] hover:shadow-[0_4px_22px_rgba(250,204,21,0.45)]"
               aria-label="Enquire Desk - संपर्क"
             >
               <span className="inline-flex items-baseline gap-1.5 sm:gap-2">
                 <span className="text-[11px] sm:text-sm font-semibold text-[#FAF8F5] whitespace-nowrap">
                   Enquire Desk
                 </span>
-                <span className="text-stone-500 font-light text-[11px] sm:text-sm select-none">
+                <span className="text-yellow-500/60 font-light text-[11px] sm:text-sm select-none">
                   |
                 </span>
-                <span className="font-hindi text-[11px] sm:text-sm font-semibold text-[#E7C973] whitespace-nowrap">
+                <span className="font-hindi text-[11px] sm:text-sm font-semibold text-[#FACC15] whitespace-nowrap drop-shadow-[0_0_8px_rgba(250,204,21,0.4)]">
                   संपर्क
                 </span>
               </span>
@@ -395,16 +397,16 @@ export const Navbar: React.FC<NavbarProps> = ({
                   setMobileMenuOpen(false);
                   if (onOpenEnquiry) onOpenEnquiry();
                 }}
-                className="w-full inline-flex items-center justify-center gap-2 py-3 px-4 rounded-xl bg-[#1C1917] text-[#FAF8F5] transition-all shadow-sm border border-[#C59B27]/40 cursor-pointer"
+                className="w-full inline-flex items-center justify-center gap-2 py-3 px-4 rounded-xl bg-[#1C1917] text-[#FAF8F5] transition-all shadow-[0_2px_14px_rgba(234,179,8,0.2)] border border-[#FACC15]/60 hover:border-[#FEF08A] cursor-pointer"
               >
                 <span className="inline-flex items-baseline gap-2">
                   <span className="text-xs sm:text-sm font-semibold text-[#FAF8F5]">
                     Enquire Desk
                   </span>
-                  <span className="text-stone-500 font-light text-xs sm:text-sm select-none">
+                  <span className="text-yellow-500/60 font-light text-xs sm:text-sm select-none">
                     |
                   </span>
-                  <span className="font-hindi text-xs sm:text-sm font-semibold text-[#E7C973]">
+                  <span className="font-hindi text-xs sm:text-sm font-semibold text-[#FACC15]">
                     संपर्क
                   </span>
                 </span>
