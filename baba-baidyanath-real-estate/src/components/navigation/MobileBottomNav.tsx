@@ -11,8 +11,6 @@ import {
 interface MobileBottomNavProps {
   currentTab: TabType;
   onSelectTab: (tab: TabType) => void;
-  onSelectDevelopmentCategory?: (category: 'all' | 'plots' | 'commercial' | 'farmlands' | 'villas') => void;
-  currentDevelopmentCategory?: string;
   onOpenEnquiry?: () => void;
 }
 

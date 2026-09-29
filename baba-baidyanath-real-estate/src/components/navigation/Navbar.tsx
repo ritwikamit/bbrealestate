@@ -1,37 +1,18 @@
-import React, { useState, useEffect, useRef } from 'react';
+import React, { useState, useEffect } from 'react';
 import { TabType } from '../../types';
 import { CompanyLogo } from '../common/CompanyLogo';
-import { Menu, X, ChevronDown } from 'lucide-react';
+import { Menu, X } from 'lucide-react';
 import { IconMinimalArrow } from '../common/ThemeIcons';
-
-export type DevelopmentCategory = 'plots' | 'land_parcels';
-
-export interface DevMenuItem {
-  key: DevelopmentCategory;
-  label: string;
-  hindi: string;
-  desc: string;
-  badge?: string;
-}
-
-export const DEV_MENU_ITEMS: DevMenuItem[] = [
-  { key: 'plots', label: 'Residential Plots', hindi: 'आवासीय भूखंड', desc: 'Demarcated residential layout townships', badge: 'Verified Sites' },
-  { key: 'land_parcels', label: 'Land Parcels', hindi: 'भूमि पार्सल', desc: 'Large property and development land parcels', badge: 'Strategic Parcels' },
-];
 
 interface NavbarProps {
   currentTab: TabType;
   onSelectTab: (tab: TabType) => void;
-  onSelectDevelopmentCategory?: (category: DevelopmentCategory) => void;
-  currentDevelopmentCategory?: DevelopmentCategory;
   onOpenEnquiry?: () => void;
 }
 
 export const Navbar: React.FC<NavbarProps> = ({
   currentTab,
   onSelectTab,
-  onSelectDevelopmentCategory,
-  currentDevelopmentCategory = 'plots',
   onOpenEnquiry,
 }) => {
   const [scrolled, setScrolled] = useState(false);

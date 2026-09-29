@@ -1,5 +1,4 @@
 import React, { useState } from 'react';
-import { Calculator, ArrowRightLeft, Coins, CheckCircle2, Sparkles } from 'lucide-react';
 
 type UnitType = 'katha' | 'bigha' | 'decimal' | 'sqft' | 'gaj' | 'acre';
 

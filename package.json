@@ -6,5 +6,8 @@
     "build": "cd baba-baidyanath-real-estate && npm install --legacy-peer-deps && npm run build",
     "dev": "cd baba-baidyanath-real-estate && npm run dev",
     "preview": "cd baba-baidyanath-real-estate && npm run preview"
+  },
+  "devDependencies": {
+    "@dietrichgebert/ponytail": "^4.10.0"
   }
 }

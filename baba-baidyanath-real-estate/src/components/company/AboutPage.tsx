@@ -1,20 +1,12 @@
 import React from 'react';
 import { COMPANY_DATA } from '../../data/company';
 import {
-  ShieldCheck,
   UserCheck,
   Landmark,
   FileText,
   Calendar,
   CreditCard,
-  MapPin,
-  CheckCircle2,
-  ArrowRight,
-  Sparkles,
-  Search,
-  Scale,
-  Compass,
-  FileCheck
+  ArrowRight
 } from 'lucide-react';
 import { SiyaramShowcaseCard } from '../common/SiyaramShowcaseCard';
 import { CompanyLogo } from '../common/CompanyLogo';

@@ -1,9 +1,6 @@
 import React, { useState } from 'react';
-import {
-  IconTitleSeal,
-  IconMinimalArrow
-} from '../common/ThemeIcons';
-import { MapPin, CheckCircle2, ShieldCheck, Clock } from 'lucide-react';
+import { IconMinimalArrow } from '../common/ThemeIcons';
+import { MapPin, CheckCircle2, Clock } from 'lucide-react';
 
 import residentialPlotsImg from '../../assets/residential-plots.jpg';
 import plotsEnclaveTwoImg from '../../assets/plots-enclave-two.jpg';

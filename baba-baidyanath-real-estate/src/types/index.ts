@@ -9,8 +9,7 @@ export type TabType =
   | 'privacy'
   | 'terms'
   | 'disclaimer'
-  | 'projects'
-  | 'services';
+  | 'projects';
 
 export interface CompanyData {
   name: string;
@@ -29,18 +28,6 @@ export interface CompanyData {
   tagline: string;
   googleMapsUrl: string;
   mapEmbedUrl?: string;
-}
-
-export interface ServiceItem {
-  id: string;
-  number: string;
-  title: string;
-  category: string;
-  overview: string;
-  deliverables: string[];
-  audience: string;
-  description?: string;
-  features?: string[];
 }
 
 export interface ProjectItem {

@@ -156,7 +156,7 @@ export default function App() {
                 <AboutPage onOpenEnquiry={() => setIsEnquiryOpen(true)} />
               )}
 
-              {(currentTab === 'plotting' || currentTab === 'projects' || currentTab === 'services') && (
+              {(currentTab === 'plotting' || currentTab === 'projects') && (
                 <div className="space-y-0">
                   <ProjectsSection
                     onOpenEnquiry={() => setIsEnquiryOpen(true)}

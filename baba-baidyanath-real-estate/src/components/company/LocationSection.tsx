@@ -1,6 +1,5 @@
 import React from 'react';
-import { MapPin, Navigation, ArrowUpRight, Compass, ShieldCheck } from 'lucide-react';
-import { COMPANY_DATA } from '../../data/company';
+import { MapPin, ArrowUpRight, ShieldCheck } from 'lucide-react';
 
 interface LocationSectionProps {
   onOpenEnquiry?: () => void;
