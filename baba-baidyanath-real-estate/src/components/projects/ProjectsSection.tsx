@@ -131,9 +131,10 @@ export const ProjectsSection: React.FC<ProjectsSectionProps> = ({ onOpenEnquiry 
         {/* Header with authentic Hindi badge */}
         <div className="flex flex-col md:flex-row md:items-end justify-between mb-10 sm:mb-14 gap-6">
           <div className="max-w-3xl space-y-3">
-            <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-[#FAF8F5] border border-[#C59B27]/40 text-xs text-[#9A6F20] font-semibold tracking-wide shadow-2xs">
-              <IconModernTowers size={15} color="gold" />
-              <span className="font-hindi text-[12px]">॥ आगामी प्रमुख विकास परियोजनाएं ॥</span>
+            <div className="flex items-center gap-2 text-[#9A6F20] tracking-wide">
+              <span className="font-hindi text-sm sm:text-base text-[#9A6F20] font-semibold">
+                ॥ आगामी प्रमुख विकास परियोजनाएं ॥
+              </span>
             </div>
             <h2 className="font-serif text-3xl sm:text-4xl lg:text-5xl text-[#1C1917] font-bold tracking-tight">
               Strategic Land &amp; Plotted Developments

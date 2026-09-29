@@ -1,7 +1,8 @@
 @import "tailwindcss";
 
 :root {
-  --font-heading-current: 'Cinzel', serif;
+  --font-heading-current: 'Playfair Display', Georgia, serif;
+  --font-cinzel-current: 'Cinzel', serif;
   --font-body-current: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, sans-serif;
   --font-hindi-current: 'Noto Serif Devanagari', 'Rozha One', serif;
 
@@ -25,6 +26,7 @@
 @theme {
   --font-serif: var(--font-heading-current);
   --font-display: var(--font-heading-current);
+  --font-cinzel: var(--font-cinzel-current);
   --font-sans: var(--font-body-current);
 
   --color-charcoal: #0F0E0D;
@@ -43,11 +45,15 @@
   --color-muted: #78716C;
 }
 
+.font-serif, .font-playfair {
+  font-family: 'Playfair Display', Georgia, serif;
+}
+
 .font-cinzel {
   font-family: 'Cinzel', serif;
 }
 
-.font-jakarta {
+.font-jakarta, .font-sans {
   font-family: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, sans-serif;
 }
 

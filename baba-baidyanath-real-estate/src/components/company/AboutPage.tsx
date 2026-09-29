@@ -59,17 +59,6 @@ export const AboutPage: React.FC<AboutPageProps> = ({ onOpenEnquiry }) => {
               />
             </div>
 
-            {/* Top Statutory Accreditation Badge (Responsive wrapping on small screens) */}
-            <div className="relative z-10 flex items-center justify-between gap-4">
-              <div className="inline-flex flex-wrap sm:flex-nowrap items-center gap-2 sm:gap-3 px-3 sm:px-3.5 py-1.5 rounded-2xl sm:rounded-full bg-stone-900/[0.06] border border-stone-800/10 text-[11px] sm:text-xs font-mono text-[#262320]">
-                <span className="font-bold tracking-wider text-[#1A1816]">
-                  CIN: {COMPANY_DATA.cin}
-                </span>
-                <span className="font-semibold text-emerald-800 bg-emerald-700/10 px-2 py-0.5 rounded-md">
-                  Active / RoC Patna
-                </span>
-              </div>
-            </div>
 
             {/* Content Positioned Right Below the Accreditation Badge */}
             <div className="relative z-10 max-w-2xl mt-4 sm:mt-5 space-y-3.5 sm:space-y-4 bg-transparent border-0 shadow-none p-0">

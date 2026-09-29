@@ -85,19 +85,17 @@ export const Hero: React.FC<HeroProps> = ({
         />
       </div>
 
-      {/* 3. Top Sacred Pre-Headline Shloka Badge */}
-      <div className="relative z-10 pt-6 sm:pt-10 px-4 sm:px-6 flex flex-col items-center text-center max-w-full">
+      {/* 3. Top Sacred Pre-Headline Shloka */}
+      <div className="relative z-10 pt-6 sm:pt-8 px-4 sm:px-6 flex flex-col items-center text-center max-w-full">
         <motion.div
-          initial={{ opacity: 0, y: -15 }}
+          initial={{ opacity: 0, y: -8 }}
           animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.8, ease: 'easeOut' }}
-          className="inline-flex items-center justify-center gap-2 sm:gap-3 px-4 sm:px-6 py-2 rounded-full bg-[#181614]/85 border border-[#C59B27]/40 backdrop-blur-xl shadow-[0_4px_25px_rgba(197,155,39,0.25)] max-w-[95vw] sm:max-w-3xl"
+          transition={{ duration: 0.6, ease: 'easeOut' }}
+          className="flex items-center justify-center gap-2 sm:gap-3 max-w-[95vw] sm:max-w-4xl"
         >
-          <IconDivineSpark size={14} color="gold" className="shrink-0 animate-pulse" />
-          <span className="font-hindi text-[11px] sm:text-xs md:text-[13px] tracking-wide text-[#E7C973] font-medium text-center [text-wrap:balance]">
+          <span className="font-hindi text-xs sm:text-sm md:text-[15px] tracking-widest text-[#E7C973] font-medium text-center [text-wrap:balance] drop-shadow-[0_2px_10px_rgba(0,0,0,0.8)]">
             ॥ श्री बाबा बैद्यनाथाय नमः ॥ पूर्वोत्तरे प्रज्वलिकानिधाने सदा वसंतं गिरिजासमेतम्। सुरासुराराधितपादपद्यं श्रीवैद्यनाथं तमहं नमामि।।
           </span>
-          <IconDivineSpark size={14} color="gold" className="shrink-0 animate-pulse" />
         </motion.div>
       </div>
 
@@ -150,16 +148,14 @@ export const Hero: React.FC<HeroProps> = ({
           </div>
         </motion.div>
 
-        {/* Refined Luxury Editorial Narrative */}
+        {/* Factual Grounded Corporate Description */}
         <motion.p
           initial={{ opacity: 0, y: 10 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.5 }}
           className="font-jakarta text-[#E7E5E4] font-normal leading-relaxed max-w-xl sm:max-w-2xl lg:max-w-3xl mb-7 sm:mb-9 text-xs sm:text-base md:text-lg [text-wrap:balance] drop-shadow-[0_2px_12px_rgba(0,0,0,0.95)] px-2"
         >
-          Rooted in the sacred grace of Baba Baidyanath Dham and registered under the Ministry of Corporate Affairs (RoC Patna),
-          we develop verified clear-title residential enclaves, commercial spaces, and plotted land parcels—building
-          enduring value across <span className="text-[#E7C973] font-medium">Aurangabad</span>, <span className="text-[#E7C973] font-medium">Patna</span>, <span className="text-[#E7C973] font-medium">Deoghar</span>, and Bihar&apos;s prime growth corridors.
+          Registered under the Ministry of Corporate Affairs (RoC Patna), we provide verified clear-title residential plots, commercial spaces, and agricultural parcels with direct access to NH-19 and arterial corridors across Aurangabad and South Bihar.
         </motion.p>
 
         {/* Dual High-Impact Action Buttons */}

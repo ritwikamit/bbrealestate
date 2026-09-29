@@ -70,9 +70,10 @@ export const LandAndEMICalculator: React.FC = () => {
         {/* Header */}
         <div className="flex flex-col md:flex-row md:items-end justify-between mb-12 gap-6">
           <div className="max-w-2xl space-y-3">
-            <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-[#FAF8F5] border border-[#C59B27]/40 text-xs text-[#9A6F20] font-semibold tracking-wide shadow-xs">
-              <Sparkles className="w-3.5 h-3.5 text-[#C59B27]" />
-              <span className="font-hindi text-[12px]">॥ बिहार भूमि मापी एवं वित्तीय विश्लेषण ॥</span>
+            <div className="flex items-center gap-2 text-[#9A6F20] tracking-wide">
+              <span className="font-hindi text-sm sm:text-base text-[#9A6F20] font-semibold">
+                ॥ बिहार भूमि मापी एवं वित्तीय विश्लेषण ॥
+              </span>
             </div>
             <h2 className="font-serif text-3xl sm:text-5xl lg:text-6xl text-[#1C1917] font-bold tracking-tight">
               Property &amp; Land Calculators

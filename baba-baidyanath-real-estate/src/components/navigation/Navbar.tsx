@@ -48,17 +48,23 @@ export const Navbar: React.FC<NavbarProps> = ({
           : 'bg-[#FAF8F5]/90 backdrop-blur-xl border-[#E8E2D5]/70'
       }`}
     >
-      {/* Top Auspicious Micro-Bar */}
-      <div className="bg-[#1C1917] text-[#E7C973] py-1 px-4 text-center text-[10px] sm:text-[11px] font-hindi tracking-wider flex items-center justify-between border-b border-[#C59B27]/20">
-        <span className="hidden sm:inline font-mono text-[10px] text-stone-400">
-          CIN: U68100BR2024PTC072121 &bull; RoC Patna
-        </span>
-        <span className="mx-auto sm:mx-0 font-medium">
-          ॥ श्री बाबा बैद्यनाथाय नमः &bull; सत्यमेव जयते ॥
-        </span>
-        <span className="hidden sm:inline font-sans text-[10px] text-stone-300">
-          औरंगाबाद, बिहार
-        </span>
+      {/* Top Auspicious Micro-Bar with Perfect Alignment */}
+      <div className="bg-[#151311] text-[#E7C973] border-b border-[#C59B27]/25 text-[11px] py-1.5 px-4 sm:px-6 lg:px-8">
+        <div className="max-w-7xl mx-auto grid grid-cols-1 sm:grid-cols-3 items-center text-center gap-2">
+          <div className="hidden sm:flex items-center justify-start gap-2 font-mono text-[10.5px] text-stone-300">
+            <span className="text-[#C59B27] font-semibold">CIN:</span>
+            <span>U68100BR2024PTC072121</span>
+            <span className="text-stone-500">•</span>
+            <span>RoC Patna</span>
+          </div>
+          <div className="font-hindi text-xs sm:text-[13px] tracking-wide text-[#F3E5AB] font-medium flex items-center justify-center gap-1.5">
+            <span>॥ श्री बाबा बैद्यनाथाय नमः • सत्यमेव जयते ॥</span>
+          </div>
+          <div className="hidden sm:flex items-center justify-end gap-2 text-stone-300 font-hindi text-xs">
+            <span className="w-1.5 h-1.5 rounded-full bg-emerald-500" />
+            <span>औरंगाबाद, बिहार (८२४१०१)</span>
+          </div>
+        </div>
       </div>
 
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -121,11 +127,12 @@ export const Navbar: React.FC<NavbarProps> = ({
           <div className="flex items-center gap-2 sm:gap-3 shrink-0">
             <button
               onClick={onOpenEnquiry}
-              className="relative group overflow-hidden inline-flex items-center gap-1.5 px-4 sm:px-5 py-2.5 rounded-full bg-[#1C1917] hover:bg-[#2C2724] text-[#FAF8F5] font-semibold text-xs tracking-wider uppercase whitespace-nowrap shrink-0 transition-all duration-300 hover:scale-[1.02] active:scale-95 cursor-pointer shadow-sm border border-[#C59B27]/40"
+              className="relative group overflow-hidden inline-flex items-center gap-2 px-4 sm:px-5 py-2.5 rounded-full bg-[#1C1917] hover:bg-[#2C2724] text-[#FAF8F5] font-semibold text-xs sm:text-[13px] tracking-wider uppercase whitespace-nowrap shrink-0 transition-all duration-300 hover:scale-[1.02] active:scale-95 cursor-pointer shadow-sm border border-[#C59B27]/40"
             >
               <span className="whitespace-nowrap text-[#FAF8F5]">Enquire Desk</span>
-              <span className="text-[11px] text-[#E7C973] font-hindi">| संपर्क</span>
-              <IconMinimalArrow size={11} color="gold" className="shrink-0 transition-transform group-hover:translate-x-0.5 group-hover:-translate-y-0.5" />
+              <span className="text-stone-500 font-light">|</span>
+              <span className="text-xs sm:text-[13px] text-[#E7C973] font-hindi font-medium">संपर्क</span>
+              <IconMinimalArrow size={12} color="gold" className="shrink-0 transition-transform group-hover:translate-x-0.5 group-hover:-translate-y-0.5" />
             </button>
             <button
               onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
