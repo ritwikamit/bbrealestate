@@ -75,7 +75,7 @@ export const VERIFIED_REGISTRIES: VerifiedRegistryItem[] = [
     description: "Verified MCA corporate filing record, share capital structure, registered office address, and RoC Patna jurisdiction.",
     identifierType: "CIN",
     identifierValue: "U68100BR2024PTC072121",
-    status: "Active / Verified"
+    status: ""
   },
   {
     id: "dnb",
@@ -86,7 +86,7 @@ export const VERIFIED_REGISTRIES: VerifiedRegistryItem[] = [
     description: "International corporate business profile cataloged on the Dun & Bradstreet worldwide enterprise directory.",
     identifierType: "D&B Entity ID",
     identifierValue: "cbc7c0fb9db121bc077e91d301531883",
-    status: "Cataloged Profile"
+    status: ""
   },
   {
     id: "tofler",
@@ -97,7 +97,7 @@ export const VERIFIED_REGISTRIES: VerifiedRegistryItem[] = [
     description: "Statutory company profile, active directorship details, authorized capital verification, and RoC incorporation history.",
     identifierType: "CIN",
     identifierValue: "U68100BR2024PTC072121",
-    status: "Active Corporate Entity"
+    status: ""
   },
   {
     id: "tracxn",
@@ -108,7 +108,7 @@ export const VERIFIED_REGISTRIES: VerifiedRegistryItem[] = [
     description: "Institutional intelligence coverage tracking legal entity incorporation and regional real estate activities.",
     identifierType: "Tracxn Entity Key",
     identifierValue: "BiQ1jHIeSiB2QxZvhYJPGB6...",
-    status: "Indexed Legal Entity"
+    status: ""
   },
   {
     id: "falconebiz",
@@ -119,7 +119,7 @@ export const VERIFIED_REGISTRIES: VerifiedRegistryItem[] = [
     description: "Comprehensive corporate lookup detailing active registration under RoC Patna, paid-up capital, and corporate objects.",
     identifierType: "CIN",
     identifierValue: "U68100BR2024PTC072121",
-    status: "RoC Patna / Active"
+    status: ""
   },
   {
     id: "justdial",
@@ -130,7 +130,7 @@ export const VERIFIED_REGISTRIES: VerifiedRegistryItem[] = [
     description: "Verified regional enterprise listing for Baba Baijnath Enterprises in Aurangabad, Bihar on India's leading local search platform.",
     identifierType: "JD Listing ID",
     identifierValue: "9999P6186-6186-240102215951-K3D7",
-    status: "JD Verified Listing"
+    status: ""
   }
 ];
 

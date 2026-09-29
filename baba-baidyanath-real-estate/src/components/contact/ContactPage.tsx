@@ -2,7 +2,6 @@ import React from 'react';
 import { COMPANY_DATA } from '../../data/company';
 import { EnquiryForm } from '../enquiry/EnquiryForm';
 import { MapPin, Navigation, Clock, ShieldCheck, Building, ExternalLink, ArrowUpRight } from 'lucide-react';
-import { CompanyLogo } from '../common/CompanyLogo';
 import { SiyaramShowcaseCard } from '../common/SiyaramShowcaseCard';
 
 export const ContactPage: React.FC = () => {
@@ -12,9 +11,6 @@ export const ContactPage: React.FC = () => {
         
         {/* Page Header */}
         <div className="max-w-4xl space-y-5">
-          <div className="mb-6">
-            <CompanyLogo variant="horizontal" size="2xl" theme="light" />
-          </div>
           <div className="text-xs uppercase tracking-[0.25em] text-[#9A6F20] font-mono font-semibold">
             Direct Institutional Desk &bull; Aurangabad Headquarters
           </div>

@@ -242,12 +242,12 @@ export const Footer: React.FC<FooterProps> = ({ onSelectTab, onOpenEnquiry }) =>
             &copy; 2026 Baba Baidyanath Real Estate Private Limited. All rights reserved.
           </div>
           
-          <div className="inline-flex items-center justify-center gap-1.5 text-xs sm:text-[13px] text-stone-400 font-normal leading-none">
+          <div className="inline-flex items-center justify-center gap-2 text-xs sm:text-[13px] text-stone-400 font-normal">
             <span>Designed and Developed by</span>
             <img
               src="/accustomlabs-transparent.png"
               alt="ACCustom Labs"
-              className="h-[13px] sm:h-[14px] w-auto object-contain inline-block align-middle relative -top-[0.5px]"
+              className="h-[16px] sm:h-[18px] w-auto object-contain inline-block relative top-[0.5px]"
               loading="lazy"
             />
           </div>

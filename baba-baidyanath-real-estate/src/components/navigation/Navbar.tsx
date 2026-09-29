@@ -131,7 +131,7 @@ export const Navbar: React.FC<NavbarProps> = ({
             >
               <span className="whitespace-nowrap text-[#FAF8F5]">Enquire Desk</span>
               <span className="text-stone-500 font-light">|</span>
-              <span className="text-xs sm:text-[13px] text-[#E7C973] font-hindi font-medium">संपर्क</span>
+              <span className="text-xs sm:text-[13px] font-semibold text-[#E7C973] font-hindi leading-none inline-block">संपर्क</span>
               <IconMinimalArrow size={12} color="gold" className="shrink-0 transition-transform group-hover:translate-x-0.5 group-hover:-translate-y-0.5" />
             </button>
             <button

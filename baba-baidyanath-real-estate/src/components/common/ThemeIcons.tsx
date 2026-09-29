@@ -263,3 +263,34 @@ export const IconExecutiveSeal: React.FC<GraphicalIconProps> = ({ className = ''
     </svg>
   );
 };
+
+/**
+ * 13. Statutory Ledger & Public Filing Dossier
+ */
+export const IconStatutoryLedger: React.FC<GraphicalIconProps> = ({ className = '', size = 18, color = 'gold' }) => {
+  const c = colorMap[color];
+  return (
+    <svg width={size} height={size} viewBox="0 0 24 24" fill="none" className={className}>
+      <path d="M4 4C4 2.9 4.9 2 6 2H15L20 7V20C20 21.1 19.1 22 18 22H6C4.9 22 4 21.1 4 20V4Z" stroke={c.stroke} strokeWidth="1.3" fill={c.stroke} fillOpacity="0.06" />
+      <polyline points="14 2 14 8 20 8" stroke={c.stroke} strokeWidth="1.2" strokeLinecap="round" strokeLinejoin="round" />
+      <line x1="8" y1="13" x2="16" y2="13" stroke={c.stroke} strokeWidth="1.2" strokeLinecap="round" />
+      <line x1="8" y1="17" x2="13" y2="17" stroke={c.stroke} strokeWidth="1.2" strokeLinecap="round" />
+    </svg>
+  );
+};
+
+/**
+ * 14. Capital Vault & Authorized Shares Icon
+ */
+export const IconCapitalVault: React.FC<GraphicalIconProps> = ({ className = '', size = 18, color = 'gold' }) => {
+  const c = colorMap[color];
+  return (
+    <svg width={size} height={size} viewBox="0 0 24 24" fill="none" className={className}>
+      <rect x="3" y="6" width="18" height="13" rx="2" stroke={c.stroke} strokeWidth="1.3" fill={c.stroke} fillOpacity="0.08" />
+      <circle cx="12" cy="12.5" r="2.5" stroke={c.stroke} strokeWidth="1.2" />
+      <line x1="12" y1="10" x2="12" y2="15" stroke={c.stroke} strokeWidth="1" />
+      <line x1="9.5" y1="12.5" x2="14.5" y2="12.5" stroke={c.stroke} strokeWidth="1" />
+    </svg>
+  );
+};
+

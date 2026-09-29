@@ -81,8 +81,8 @@ export const CorporateRegistriesSection: React.FC<CorporateRegistriesSectionProp
               >
                 <div className="space-y-4">
                   
-                  {/* Logo and Status Row (Precision-Centered Box) */}
-                  <div className="flex items-center justify-between gap-3 pb-3.5 border-b border-[#E8E2D5]">
+                  {/* Logo Row */}
+                  <div className="flex items-center justify-between pb-3.5 border-b border-[#E8E2D5]">
                     <div className="w-32 sm:w-36 h-12 sm:h-14 px-3 py-1.5 rounded-xl bg-white border border-[#E8E2D5] shadow-xs flex items-center justify-center shrink-0 overflow-hidden">
                       <img
                         src={logoInfo.src}
@@ -91,11 +91,6 @@ export const CorporateRegistriesSection: React.FC<CorporateRegistriesSectionProp
                         loading="lazy"
                       />
                     </div>
-                    
-                    <span className="text-[11px] font-mono text-emerald-700 font-medium flex items-center gap-1.5 shrink-0">
-                      <span className="w-1.5 h-1.5 rounded-full bg-emerald-500" />
-                      <span>{registry.status}</span>
-                    </span>
                   </div>
 
                   {/* Registry Details */}

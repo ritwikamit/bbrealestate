@@ -1,0 +1,18 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none">
+  <defs>
+    <linearGradient id="goldSpark" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#FFF3D0" />
+      <stop offset="50%" stop-color="#C59B27" />
+      <stop offset="100%" stop-color="#7E561C" />
+    </linearGradient>
+  </defs>
+  <path
+    d="M12 2L13.8 9.2C14.2 10.8 15.2 11.8 16.8 12.2L24 14L16.8 15.8C15.2 16.2 14.2 17.2 13.8 18.8L12 26L10.2 18.8C9.8 17.2 8.8 16.2 7.2 15.8L0 14L7.2 12.2C8.8 11.8 9.8 10.8 10.2 9.2L12 2Z"
+    transform="scale(0.8) translate(3, 3)"
+    stroke="url(#goldSpark)"
+    stroke-width="1.2"
+    fill="#C59B27"
+    fill-opacity="0.15"
+  />
+  <circle cx="12" cy="12" r="1.5" fill="#C59B27" />
+</svg>

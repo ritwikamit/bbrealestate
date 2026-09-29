@@ -17,6 +17,7 @@ import {
   FileCheck
 } from 'lucide-react';
 import { SiyaramShowcaseCard } from '../common/SiyaramShowcaseCard';
+import { CompanyLogo } from '../common/CompanyLogo';
 import { CorporateRegistriesSection } from './CorporateRegistriesSection';
 import { FAQSection } from './FAQSection';
 
@@ -42,6 +43,11 @@ export const AboutPage: React.FC<AboutPageProps> = ({ onOpenEnquiry }) => {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           
           <div className="max-w-3xl space-y-5">
+            {/* Corporate Brand Identity Logo */}
+            <div className="mb-4">
+              <CompanyLogo variant="horizontal" size="2xl" theme="light" />
+            </div>
+
             {/* Authentic Sanskrit Invocation */}
             <div className="flex items-center gap-2 text-[#9A6F20]">
               <span className="font-hindi text-sm sm:text-base font-semibold tracking-wide">
@@ -93,10 +99,9 @@ export const AboutPage: React.FC<AboutPageProps> = ({ onOpenEnquiry }) => {
           {/* Quick Factual Badges Bar */}
           <div className="grid grid-cols-2 md:grid-cols-4 gap-4 mt-12 pt-8 border-t border-[#E8E2D5]">
             <div className="p-4 rounded-xl bg-white border border-[#E8E2D5]/80 shadow-2xs">
-              <span className="text-[11px] font-mono uppercase tracking-wider text-[#78716C] block">Corporate Status</span>
-              <span className="text-sm font-bold text-[#1C1917] flex items-center gap-1.5 mt-1">
-                <span className="w-2 h-2 rounded-full bg-emerald-500" />
-                Active / RoC Patna
+              <span className="text-[11px] font-mono uppercase tracking-wider text-[#78716C] block">Corporate Jurisdiction</span>
+              <span className="text-sm font-bold text-[#1C1917] mt-1 block">
+                RoC Patna (Bihar)
               </span>
             </div>
             <div className="p-4 rounded-xl bg-white border border-[#E8E2D5]/80 shadow-2xs">
@@ -271,11 +276,6 @@ export const AboutPage: React.FC<AboutPageProps> = ({ onOpenEnquiry }) => {
               
               <div className="flex items-center gap-3 text-xs font-mono text-[#78716C]">
                 <span>RoC Patna Jurisdiction</span>
-                <span>&bull;</span>
-                <span className="text-emerald-700 font-semibold flex items-center gap-1.5">
-                  <span className="w-1.5 h-1.5 rounded-full bg-emerald-500" />
-                  <span>ACTIVE ENTITY</span>
-                </span>
               </div>
             </div>
 

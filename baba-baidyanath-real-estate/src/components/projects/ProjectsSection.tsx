@@ -403,27 +403,6 @@ export const ProjectsSection: React.FC<ProjectsSectionProps> = ({
           ))}
         </div>
 
-        {/* Corporate Statutory Notice Container */}
-        <div className="rounded-2xl p-6 bg-white border border-[#E8E2D5] flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4">
-          <div className="flex items-start gap-3">
-            <IconTitleSeal size={20} color="gold" className="shrink-0 mt-1" />
-            <div>
-              <h4 className="text-xs font-bold uppercase tracking-wider text-[#1C1917] font-mono">
-                {UPCOMING_PORTFOLIO_NOTICE.title}
-              </h4>
-              <p className="text-xs text-[#57534E] mt-0.5 max-w-3xl leading-relaxed">
-                {UPCOMING_PORTFOLIO_NOTICE.body}
-              </p>
-            </div>
-          </div>
-          <button
-            onClick={onOpenEnquiry}
-            className="shrink-0 px-4 py-2 rounded-lg bg-[#FAF8F5] hover:bg-[#F5EFE6] border border-[#E8E2D5] text-xs font-semibold text-[#1C1917] hover:text-[#9A6F20] transition-colors cursor-pointer"
-          >
-            Express Early Interest
-          </button>
-        </div>
-
       </div>
     </section>
   );
