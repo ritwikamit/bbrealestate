@@ -94,15 +94,15 @@ export const Navbar: React.FC<NavbarProps> = ({
       }`}
     >
       {/* Top Auspicious Micro-Bar with Perfect Alignment */}
-      <div className="bg-[#151311] text-[#E7C973] border-b border-[#C59B27]/25 text-[11px] py-1.5 px-4 sm:px-6 lg:px-8">
-        <div className="max-w-7xl mx-auto grid grid-cols-1 sm:grid-cols-3 items-center text-center gap-2">
+      <div className="bg-[#151311] text-[#E7C973] border-b border-[#C59B27]/25 text-[11px] py-1.5 px-3 sm:px-6 lg:px-8">
+        <div className="max-w-7xl mx-auto flex items-center justify-between sm:grid sm:grid-cols-3 text-center gap-2">
           <div className="hidden sm:flex items-center justify-start gap-2 font-mono text-[10.5px] text-stone-300">
             <span className="text-[#C59B27] font-semibold">CIN:</span>
             <span>U68100BR2024PTC072121</span>
             <span className="text-stone-500">•</span>
             <span>RoC Patna</span>
           </div>
-          <div className="font-hindi text-xs sm:text-[13px] tracking-wide text-[#F3E5AB] font-medium flex items-center justify-center gap-1.5">
+          <div className="font-hindi text-xs sm:text-[13px] tracking-wide text-[#F3E5AB] font-medium flex items-center justify-center gap-1.5 mx-auto">
             <span>॥ श्री बाबा बैद्यनाथाय नमः • सत्यमेव जयते ॥</span>
           </div>
           <div className="hidden sm:flex items-center justify-end gap-2 text-stone-300 font-hindi text-xs">
@@ -112,8 +112,8 @@ export const Navbar: React.FC<NavbarProps> = ({
         </div>
       </div>
 
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="flex items-center justify-between py-2 sm:py-2.5 min-h-[70px] sm:min-h-[76px]">
+      <div className="max-w-7xl mx-auto px-3 sm:px-6 lg:px-8">
+        <div className="flex items-center justify-between py-2 sm:py-2.5 min-h-[62px] sm:min-h-[76px]">
           
           {/* 1. Official Master Logo (Flawlessly Visible on Warm Ivory Background) */}
           <button
@@ -125,7 +125,7 @@ export const Navbar: React.FC<NavbarProps> = ({
               variant="horizontal"
               size="md"
               theme="light"
-              imgClassName="h-10 sm:h-12 md:h-14 lg:h-15"
+              imgClassName="h-9 sm:h-12 md:h-14 lg:h-15"
             />
           </button>
 
@@ -262,26 +262,26 @@ export const Navbar: React.FC<NavbarProps> = ({
           </nav>
 
           {/* 3. Right Action Area */}
-          <div className="flex items-center gap-2 sm:gap-3 shrink-0">
+          <div className="flex items-center gap-1.5 sm:gap-3 shrink-0">
             <button
               onClick={onOpenEnquiry}
-              className="relative group overflow-hidden inline-flex items-center justify-center gap-2 px-4 sm:px-5 py-2.5 rounded-full bg-[#1C1917] hover:bg-[#2C2724] text-[#FAF8F5] transition-all duration-300 hover:scale-[1.02] active:scale-95 cursor-pointer shadow-sm border border-[#C59B27]/40"
+              className="relative group overflow-hidden inline-flex items-center justify-center gap-1.5 sm:gap-2 px-3 sm:px-5 py-2 sm:py-2.5 rounded-full bg-[#1C1917] hover:bg-[#2C2724] text-[#FAF8F5] transition-all duration-300 hover:scale-[1.02] active:scale-95 cursor-pointer shadow-sm border border-[#C59B27]/40"
               aria-label="Enquire Desk - संपर्क"
             >
-              <span className="text-xs sm:text-sm font-semibold text-[#FAF8F5] leading-none inline-flex items-center whitespace-nowrap">
+              <span className="text-[11px] sm:text-sm font-semibold text-[#FAF8F5] leading-none inline-flex items-center whitespace-nowrap">
                 Enquire Desk
               </span>
-              <span className="text-stone-500 font-light text-xs sm:text-sm leading-none select-none inline-flex items-center">
+              <span className="text-stone-500 font-light text-[11px] sm:text-sm leading-none select-none inline-flex items-center">
                 |
               </span>
-              <span className="font-hindi text-xs sm:text-sm font-semibold text-[#E7C973] leading-none inline-flex items-center whitespace-nowrap">
+              <span className="font-hindi text-[11px] sm:text-sm font-semibold text-[#E7C973] leading-none inline-flex items-center whitespace-nowrap">
                 संपर्क
               </span>
-              <IconMinimalArrow size={12} color="gold" className="shrink-0 transition-transform group-hover:translate-x-0.5 group-hover:-translate-y-0.5" />
+              <IconMinimalArrow size={11} color="gold" className="shrink-0 transition-transform group-hover:translate-x-0.5 group-hover:-translate-y-0.5 hidden xs:inline-block sm:inline-block" />
             </button>
             <button
               onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
-              className="lg:hidden p-2 text-[#1C1917] hover:bg-stone-200/60 active:scale-95 rounded-xl border border-[#E8E2D5] focus-visible:outline-none cursor-pointer shrink-0"
+              className="lg:hidden p-1.5 sm:p-2 text-[#1C1917] hover:bg-stone-200/60 active:scale-95 rounded-xl border border-[#E8E2D5] focus-visible:outline-none cursor-pointer shrink-0"
               aria-label={mobileMenuOpen ? 'Close menu' : 'Open menu'}
               aria-expanded={mobileMenuOpen}
             >

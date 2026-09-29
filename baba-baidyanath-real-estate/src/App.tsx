@@ -223,6 +223,8 @@ export default function App() {
       <MobileBottomNav
         currentTab={currentTab}
         onSelectTab={handleSelectTab}
+        onSelectDevelopmentCategory={handleSelectDevelopmentCategory}
+        currentDevelopmentCategory={developmentCategory}
         onOpenEnquiry={() => setIsEnquiryOpen(true)}
       />
 

@@ -17,12 +17,16 @@ import { COMPANY_DATA } from '../../data/company';
 interface MobileBottomNavProps {
   currentTab: TabType;
   onSelectTab: (tab: TabType) => void;
+  onSelectDevelopmentCategory?: (category: 'all' | 'plots' | 'commercial' | 'farmlands' | 'villas') => void;
+  currentDevelopmentCategory?: string;
   onOpenEnquiry?: () => void;
 }
 
 export const MobileBottomNav: React.FC<MobileBottomNavProps> = ({
   currentTab,
   onSelectTab,
+  onSelectDevelopmentCategory,
+  currentDevelopmentCategory = 'all',
   onOpenEnquiry,
 }) => {
   const [drawerOpen, setDrawerOpen] = useState(false);
@@ -41,6 +45,16 @@ export const MobileBottomNav: React.FC<MobileBottomNavProps> = ({
 
   const handleTabClick = (tab: TabType) => {
     onSelectTab(tab);
+    setDrawerOpen(false);
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+  };
+
+  const handleDevCategoryClick = (cat: 'all' | 'plots' | 'commercial' | 'farmlands' | 'villas') => {
+    if (onSelectDevelopmentCategory) {
+      onSelectDevelopmentCategory(cat);
+    } else {
+      onSelectTab('projects');
+    }
     setDrawerOpen(false);
     window.scrollTo({ top: 0, behavior: 'smooth' });
   };
@@ -87,10 +101,12 @@ export const MobileBottomNav: React.FC<MobileBottomNavProps> = ({
                   setDrawerOpen(false);
                   onOpenEnquiry?.();
                 }}
-                className="p-3 rounded-xl bg-gradient-to-r from-[#9A6F20] via-[#C59B27] to-[#E7C973] text-[#0F0E0D] font-bold text-xs uppercase tracking-wider flex items-center justify-center gap-1.5 shadow-[0_0_15px_rgba(197,155,39,0.3)] border border-[#E7C973]/40 active:scale-98 transition-transform cursor-pointer"
+                className="p-3 rounded-xl bg-gradient-to-r from-[#9A6F20] via-[#C59B27] to-[#E7C973] text-[#0F0E0D] font-bold text-xs uppercase tracking-wider flex items-center justify-center gap-2 shadow-[0_0_15px_rgba(197,155,39,0.3)] border border-[#E7C973]/40 active:scale-98 transition-transform cursor-pointer"
               >
                 <IconDivineSpark size={14} color="gold" />
-                <span>Enquire Now</span>
+                <span className="leading-none inline-flex items-center text-xs font-bold">Enquire Desk</span>
+                <span className="text-stone-700 font-light leading-none select-none text-xs inline-flex items-center">|</span>
+                <span className="font-hindi text-xs font-bold leading-none inline-flex items-center">संपर्क</span>
               </button>
               <a
                 href={`tel:${COMPANY_DATA.phone}`}
@@ -115,6 +131,65 @@ export const MobileBottomNav: React.FC<MobileBottomNavProps> = ({
               ].map((item) => {
                 const isActive = currentTab === item.tab;
                 const IconComponent = item.icon;
+
+                if (item.tab === 'projects') {
+                  return (
+                    <div key={item.tab} className="rounded-xl border border-white/10 bg-white/[0.03] overflow-hidden">
+                      <button
+                        onClick={() => handleTabClick('projects')}
+                        className={`w-full flex items-center justify-between p-3 text-xs tracking-wide transition-all cursor-pointer ${
+                          isActive
+                            ? 'bg-white/10 text-[#E7C973] font-bold'
+                            : 'text-stone-300 hover:bg-white/5'
+                        }`}
+                      >
+                        <div className="flex items-center gap-3">
+                          <IconComponent size={16} color={isActive ? 'gold' : 'stone'} />
+                          <span>{item.label}</span>
+                          <span className="text-[10.5px] text-stone-400 font-hindi">({item.hindi})</span>
+                        </div>
+                        <IconMinimalArrow size={12} color={isActive ? 'gold' : 'stone'} />
+                      </button>
+
+                      {/* Development Sub-sections in Mobile Drawer */}
+                      <div className="px-3 pb-3 pt-1 space-y-1 bg-black/30 border-t border-white/5">
+                        <span className="text-[9.5px] font-mono text-[#E7C973] uppercase tracking-wider font-semibold block px-1 py-0.5">
+                          Section Menus:
+                        </span>
+                        {[
+                          { key: 'all' as const, label: 'All Sites', hindi: 'समस्त' },
+                          { key: 'plots' as const, label: 'Plots', hindi: 'भूखंड' },
+                          { key: 'commercial' as const, label: 'Commercial', hindi: 'व्यावसायिक' },
+                          { key: 'farmlands' as const, label: 'Farmlands', hindi: 'फार्मलैंड्स' },
+                          { key: 'villas' as const, label: 'Villas', hindi: 'विला' },
+                        ].map((sub) => {
+                          const isSubActive = currentTab === 'projects' && currentDevelopmentCategory === sub.key;
+                          return (
+                            <button
+                              key={sub.key}
+                              onClick={() => handleDevCategoryClick(sub.key)}
+                              className={`w-full text-left px-2.5 py-1.5 rounded-lg text-xs transition-all flex items-center justify-between cursor-pointer ${
+                                isSubActive
+                                  ? 'bg-[#C59B27]/20 text-[#E7C973] font-bold border border-[#C59B27]/40'
+                                  : 'text-stone-400 hover:bg-white/5 hover:text-stone-200'
+                              }`}
+                            >
+                              <div className="flex items-center gap-1.5">
+                                <span className="text-xs leading-none">{sub.label}</span>
+                                <span className="text-stone-600 font-light select-none text-xs leading-none">|</span>
+                                <span className="font-hindi text-xs leading-none">{sub.hindi}</span>
+                              </div>
+                              <span className="text-[9px] font-mono opacity-60">
+                                {sub.key === 'all' ? 'All' : '2 Sites'}
+                              </span>
+                            </button>
+                          );
+                        })}
+                      </div>
+                    </div>
+                  );
+                }
+
                 return (
                   <button
                     key={item.tab}

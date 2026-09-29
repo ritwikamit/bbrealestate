@@ -309,13 +309,13 @@ export const ProjectsSection: React.FC<ProjectsSectionProps> = ({
           </p>
         </div>
 
-        {/* Single Aesthetically Centered Navigation Menu */}
+        {/* Single Aesthetically Centered Navigation Menu (Optimized for Smartphone, Tablet & Desktop) */}
         {showFilterMenu ? (
-          <div className="flex justify-center mb-12 sm:mb-16">
-            <div className="inline-flex flex-wrap items-center justify-center gap-2 sm:gap-2.5 p-2 rounded-2xl bg-white/95 border border-[#E8E2D5] shadow-[0_10px_30px_rgba(28,25,23,0.04)] max-w-full">
+          <div className="w-full flex justify-center mb-10 sm:mb-14 px-1 sm:px-4">
+            <div className="w-full sm:w-auto max-w-full overflow-x-auto no-scrollbar scroll-smooth flex items-center justify-start sm:justify-center gap-1.5 sm:gap-2.5 p-1.5 sm:p-2 rounded-2xl bg-white/95 border border-[#E8E2D5] shadow-[0_10px_30px_rgba(28,25,23,0.04)] overscroll-contain">
               <button
                 onClick={() => handleFilterChange('all')}
-                className={`px-4 sm:px-5 py-2.5 rounded-xl transition-all cursor-pointer whitespace-nowrap inline-flex items-center justify-center gap-2 ${
+                className={`px-3.5 sm:px-5 py-2 sm:py-2.5 rounded-xl transition-all cursor-pointer whitespace-nowrap shrink-0 inline-flex items-center justify-center gap-1.5 sm:gap-2 ${
                   activeFilter === 'all'
                     ? 'bg-[#1C1917] text-[#FAF8F5] shadow-sm border border-[#C59B27]/40'
                     : 'text-[#44403C] hover:text-[#1C1917] hover:bg-stone-100/70'
@@ -324,7 +324,7 @@ export const ProjectsSection: React.FC<ProjectsSectionProps> = ({
                 <span className="text-xs sm:text-sm font-semibold leading-none flex items-center">
                   All Sites
                 </span>
-                <span className="text-stone-400 font-light leading-none select-none text-xs sm:text-sm flex items-center">
+                <span className="text-stone-300 font-light leading-none select-none text-xs sm:text-sm flex items-center">
                   |
                 </span>
                 <span className={`font-hindi text-xs sm:text-sm font-semibold leading-none flex items-center ${
@@ -340,7 +340,7 @@ export const ProjectsSection: React.FC<ProjectsSectionProps> = ({
                   <button
                     key={sec.key}
                     onClick={() => handleFilterChange(sec.key)}
-                    className={`px-4 sm:px-5 py-2.5 rounded-xl transition-all cursor-pointer whitespace-nowrap inline-flex items-center justify-center gap-2 ${
+                    className={`px-3.5 sm:px-5 py-2 sm:py-2.5 rounded-xl transition-all cursor-pointer whitespace-nowrap shrink-0 inline-flex items-center justify-center gap-1.5 sm:gap-2 ${
                       isActive
                         ? 'bg-[#1C1917] text-[#FAF8F5] shadow-sm border border-[#C59B27]/40'
                         : 'text-[#44403C] hover:text-[#1C1917] hover:bg-stone-100/70'
@@ -349,7 +349,7 @@ export const ProjectsSection: React.FC<ProjectsSectionProps> = ({
                     <span className="text-xs sm:text-sm font-semibold leading-none flex items-center">
                       {sec.menuLabel}
                     </span>
-                    <span className="text-stone-400 font-light leading-none select-none text-xs sm:text-sm flex items-center">
+                    <span className="text-stone-300 font-light leading-none select-none text-xs sm:text-sm flex items-center">
                       |
                     </span>
                     <span className={`font-hindi text-xs sm:text-sm font-semibold leading-none flex items-center ${
@@ -375,22 +375,22 @@ export const ProjectsSection: React.FC<ProjectsSectionProps> = ({
         ) : null}
 
         {/* Rendered as Separate Sections */}
-        <div className="space-y-16 sm:space-y-20 mb-14">
+        <div className="space-y-12 sm:space-y-16 md:space-y-20 mb-12 sm:mb-14">
           {sectionsToDisplay.map((sec) => {
             const sectionCards = portfolioCards.filter((c) => c.category === sec.key);
             return (
               <div
                 key={sec.key}
                 id={`section-${sec.key}`}
-                className="space-y-8 pt-4 first:pt-0"
+                className="space-y-6 sm:space-y-8 pt-4 first:pt-0"
               >
                 {/* Section Header */}
-                <div className="flex flex-col sm:flex-row sm:items-end justify-between gap-3 border-b border-[#E8E2D5] pb-4">
+                <div className="flex flex-col sm:flex-row sm:items-end justify-between gap-3 border-b border-[#E8E2D5] pb-3 sm:pb-4">
                   <div className="space-y-1">
                     <span className="font-hindi text-xs sm:text-sm text-[#9A6F20] font-semibold block">
                       {sec.sectionHindi}
                     </span>
-                    <h3 className="font-serif text-2xl sm:text-3xl font-bold text-[#1C1917]">
+                    <h3 className="font-serif text-xl sm:text-2xl md:text-3xl font-bold text-[#1C1917] leading-tight">
                       {sec.sectionTitle}
                     </h3>
                     <p className="text-xs sm:text-sm text-[#57534E] max-w-2xl leading-relaxed">
@@ -398,20 +398,20 @@ export const ProjectsSection: React.FC<ProjectsSectionProps> = ({
                     </p>
                   </div>
 
-                  <span className="text-xs font-mono text-[#9A6F20] font-semibold shrink-0">
+                  <span className="text-[11px] sm:text-xs font-mono text-[#9A6F20] font-semibold shrink-0 self-start sm:self-end bg-stone-100/80 px-2.5 py-1 rounded-md border border-[#E8E2D5]">
                     2 Verified Developments
                   </span>
                 </div>
 
                 {/* 2-Card Visual Showcase Grid for this Section */}
-                <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+                <div className="grid grid-cols-1 md:grid-cols-2 gap-6 sm:gap-8">
                   {sectionCards.map((card) => (
                     <div
                       key={card.id}
-                      className="group rounded-3xl bg-white border border-[#E8E2D5] shadow-[0_15px_40px_rgba(28,25,23,0.05)] hover:shadow-[0_20px_50px_rgba(28,25,23,0.1)] transition-all duration-300 flex flex-col overflow-hidden"
+                      className="group rounded-2xl sm:rounded-3xl bg-white border border-[#E8E2D5] shadow-[0_15px_40px_rgba(28,25,23,0.05)] hover:shadow-[0_20px_50px_rgba(28,25,23,0.1)] transition-all duration-300 flex flex-col overflow-hidden"
                     >
                       {/* Card Image Container */}
-                      <div className="relative h-64 sm:h-72 w-full overflow-hidden bg-stone-100">
+                      <div className="relative h-56 sm:h-64 md:h-72 w-full overflow-hidden bg-stone-100">
                         <img
                           src={card.image}
                           alt={card.title}
@@ -420,41 +420,41 @@ export const ProjectsSection: React.FC<ProjectsSectionProps> = ({
                         />
                         
                         {/* Visual Vignette Gradient */}
-                        <div className="absolute inset-0 bg-gradient-to-t from-black/65 via-transparent to-black/20 pointer-events-none" />
+                        <div className="absolute inset-0 bg-gradient-to-t from-black/75 via-black/25 to-black/20 pointer-events-none" />
 
                         {/* Top Badge: Category & Feasibility Status */}
-                        <div className="absolute top-4 left-4 right-4 flex items-center justify-between gap-2">
-                          <span className="px-2.5 py-1 rounded-md bg-stone-950/80 backdrop-blur-md text-[11px] font-mono font-semibold text-[#E7C973] uppercase tracking-wider">
+                        <div className="absolute top-3 sm:top-4 left-3 sm:left-4 right-3 sm:right-4 flex items-center justify-between gap-2">
+                          <span className="px-2 sm:px-2.5 py-1 rounded-md bg-stone-950/85 backdrop-blur-md text-[10px] sm:text-[11px] font-mono font-semibold text-[#E7C973] uppercase tracking-wider">
                             {card.tag}
                           </span>
-                          <span className="px-2.5 py-1 rounded-md bg-stone-950/80 backdrop-blur-md text-[11px] font-mono text-emerald-400 font-medium">
+                          <span className="px-2 sm:px-2.5 py-1 rounded-md bg-stone-950/85 backdrop-blur-md text-[10px] sm:text-[11px] font-mono text-emerald-400 font-medium">
                             {card.status}
                           </span>
                         </div>
 
                         {/* Bottom Overlay Title on Image */}
-                        <div className="absolute bottom-4 left-4 right-4 text-white">
-                          <div className="flex items-center gap-1.5 text-xs text-[#E7C973] font-mono mb-1">
-                            <MapPin className="w-3.5 h-3.5 text-[#E7C973]" />
+                        <div className="absolute bottom-3 sm:bottom-4 left-3 sm:left-4 right-3 sm:right-4 text-white">
+                          <div className="flex items-center gap-1.5 text-[11px] sm:text-xs text-[#E7C973] font-mono mb-1">
+                            <MapPin className="w-3.5 h-3.5 text-[#E7C973] shrink-0" />
                             <span className="truncate">{card.location}</span>
                           </div>
-                          <h4 className="font-serif text-xl sm:text-2xl font-bold tracking-tight text-white drop-shadow-sm">
+                          <h4 className="font-serif text-lg sm:text-xl md:text-2xl font-bold tracking-tight text-white drop-shadow-sm leading-snug">
                             {card.title}
                           </h4>
-                          <div className="font-hindi text-xs text-stone-200 mt-0.5">
+                          <div className="font-hindi text-[11px] sm:text-xs text-stone-200 mt-0.5">
                             {card.tagHindi}
                           </div>
                         </div>
                       </div>
 
                       {/* Card Body */}
-                      <div className="p-6 sm:p-7 flex-1 flex flex-col justify-between space-y-5">
+                      <div className="p-5 sm:p-7 flex-1 flex flex-col justify-between space-y-4 sm:space-y-5">
                         <p className="text-xs sm:text-sm text-[#57534E] leading-relaxed">
                           {card.overview}
                         </p>
 
                         {/* Key Metrics Grid */}
-                        <div className="grid grid-cols-1 sm:grid-cols-3 gap-2.5 p-3.5 rounded-2xl bg-[#FAF8F5] border border-[#E8E2D5]">
+                        <div className="grid grid-cols-1 sm:grid-cols-3 gap-2 sm:gap-2.5 p-3 sm:p-3.5 rounded-xl sm:rounded-2xl bg-[#FAF8F5] border border-[#E8E2D5]">
                           {card.metrics.map((metric, i) => (
                             <div key={i} className="space-y-0.5">
                               <div className="text-[10px] uppercase tracking-wider font-mono text-[#78716C]">
@@ -479,12 +479,12 @@ export const ProjectsSection: React.FC<ProjectsSectionProps> = ({
 
                         {/* Action CTA */}
                         <div className="pt-3 border-t border-[#E8E2D5] flex flex-col sm:flex-row items-stretch sm:items-center justify-between gap-3">
-                          <span className="text-[11px] font-mono text-[#78716C] order-2 sm:order-1 text-center sm:text-left">
+                          <span className="text-[10.5px] sm:text-[11px] font-mono text-[#78716C] order-2 sm:order-1 text-center sm:text-left">
                             Ref: BBRE-{card.id.toUpperCase().slice(0, 8)}
                           </span>
                           <button
                             onClick={onOpenEnquiry}
-                            className="order-1 sm:order-2 w-full sm:w-auto inline-flex items-center justify-center gap-2 px-5 py-3 sm:py-2.5 rounded-xl bg-gradient-to-r from-[#9A6F20] via-[#C59B27] to-[#E7C973] text-[#0F0E0D] font-bold text-xs uppercase tracking-wider transition-all duration-200 hover:scale-[1.02] active:scale-98 cursor-pointer shadow-xs hover:shadow-sm"
+                            className="order-1 sm:order-2 w-full sm:w-auto inline-flex items-center justify-center gap-2 px-5 py-2.5 rounded-xl bg-gradient-to-r from-[#9A6F20] via-[#C59B27] to-[#E7C973] text-[#0F0E0D] font-bold text-xs uppercase tracking-wider transition-all duration-200 hover:scale-[1.02] active:scale-98 cursor-pointer shadow-xs hover:shadow-sm"
                           >
                             <span>Request Dossier</span>
                             <IconMinimalArrow size={12} color="stone" />
