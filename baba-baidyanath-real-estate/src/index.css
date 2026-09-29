@@ -173,20 +173,39 @@ h1, h2, h3, h4, .font-display, .font-serif {
   letter-spacing: -0.01em;
 }
 
-/* Custom scrollbar matching warm antique gold */
+/* ══════════════════════════════════════════════════════════════
+   UNIVERSAL SCROLLBAR: YELLOW BAR ONLY, WHITE PATH FULLY TRANSPARENT
+   ══════════════════════════════════════════════════════════════ */
+* {
+  scrollbar-width: thin;
+  scrollbar-color: #FACC15 transparent;
+}
+
 ::-webkit-scrollbar {
-  width: 7px;
+  width: 6px;
+  height: 6px;
 }
 
 ::-webkit-scrollbar-track {
-  background: #FAF8F5;
+  background: transparent !important;
+  background-color: transparent !important;
+  border: none !important;
+  box-shadow: none !important;
 }
 
 ::-webkit-scrollbar-thumb {
-  background: #C59B27;
-  border-radius: 4px;
+  background: linear-gradient(180deg, #FDE047 0%, #FACC15 50%, #EAB308 100%) !important;
+  border-radius: 9999px !important;
+  border: none !important;
+  box-shadow: 0 0 8px rgba(250, 204, 21, 0.4) !important;
 }
 
 ::-webkit-scrollbar-thumb:hover {
-  background: #9A6F20;
+  background: linear-gradient(180deg, #FEF08A 0%, #FDE047 50%, #FACC15 100%) !important;
+  box-shadow: 0 0 12px rgba(250, 204, 21, 0.7) !important;
 }
+
+::-webkit-scrollbar-corner {
+  background: transparent !important;
+}
+

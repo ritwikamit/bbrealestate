@@ -89,12 +89,12 @@ export const Navbar: React.FC<NavbarProps> = ({
     <header
       className={`sticky top-0 z-50 transition-all duration-300 border-b ${
         scrolled
-          ? 'bg-[#FAF8F5]/96 backdrop-blur-2xl border-[#E8E2D5] shadow-[0_10px_30px_rgba(28,25,23,0.06)]'
-          : 'bg-[#FAF8F5]/90 backdrop-blur-xl border-[#E8E2D5]/70'
+          ? 'bg-[#FAF8F5]/96 backdrop-blur-2xl border-[#FACC15]/20 shadow-[0_10px_30px_rgba(28,25,23,0.06)]'
+          : 'bg-[#FAF8F5]/90 backdrop-blur-xl border-[#FACC15]/15'
       }`}
     >
       {/* Top Auspicious Micro-Bar with Perfect Alignment */}
-      <div className="bg-[#151311] text-[#E7C973] border-b border-[#C59B27]/25 text-[11px] py-1.5 px-3 sm:px-6 lg:px-8">
+      <div className="bg-[#151311] text-[#E7C973] text-[11px] py-1.5 px-3 sm:px-6 lg:px-8">
         <div className="max-w-7xl mx-auto flex items-center justify-between sm:grid sm:grid-cols-3 text-center gap-2">
           <div className="hidden sm:flex items-center justify-start gap-2 font-mono text-[10.5px] text-stone-300">
             <span className="text-[#C59B27] font-semibold">CIN:</span>
@@ -110,9 +110,9 @@ export const Navbar: React.FC<NavbarProps> = ({
             <span>औरंगाबाद, बिहार (८२४१०१)</span>
           </div>
         </div>
-        {/* Luminous Yellow Gradient Micro-Divider */}
-        <div className="border-yellow-gradient-line w-full" />
       </div>
+      {/* Luminous Yellow Gradient Micro-Divider Line */}
+      <div className="border-yellow-gradient-line w-full" />
 
       <div className="max-w-7xl mx-auto px-3 sm:px-6 lg:px-8">
         <div className="flex items-center justify-between py-2 sm:py-2.5 min-h-[62px] sm:min-h-[76px]">
@@ -209,7 +209,7 @@ export const Navbar: React.FC<NavbarProps> = ({
                                     }`}>
                                       {item.label}
                                     </span>
-                                    <span className="text-stone-400 font-light select-none text-xs sm:text-sm">|</span>
+                                    <span className="text-[#FACC15] font-light select-none text-xs sm:text-sm">|</span>
                                     <span className="font-hindi text-xs sm:text-sm font-semibold text-[#9A6F20]">
                                       {item.hindi}
                                     </span>
@@ -274,7 +274,7 @@ export const Navbar: React.FC<NavbarProps> = ({
                 <span className="text-[11px] sm:text-sm font-semibold text-[#FAF8F5] whitespace-nowrap">
                   Enquire Desk
                 </span>
-                <span className="text-yellow-500/60 font-light text-[11px] sm:text-sm select-none">
+                <span className="text-[#FACC15] font-semibold text-[11px] sm:text-sm select-none">
                   |
                 </span>
                 <span className="font-hindi text-[11px] sm:text-sm font-semibold text-[#FACC15] whitespace-nowrap drop-shadow-[0_0_8px_rgba(250,204,21,0.4)]">
@@ -403,7 +403,7 @@ export const Navbar: React.FC<NavbarProps> = ({
                   <span className="text-xs sm:text-sm font-semibold text-[#FAF8F5]">
                     Enquire Desk
                   </span>
-                  <span className="text-yellow-500/60 font-light text-xs sm:text-sm select-none">
+                  <span className="text-[#FACC15] font-semibold text-xs sm:text-sm select-none">
                     |
                   </span>
                   <span className="font-hindi text-xs sm:text-sm font-semibold text-[#FACC15]">

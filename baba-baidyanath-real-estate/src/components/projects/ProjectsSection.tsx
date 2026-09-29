@@ -312,20 +312,20 @@ export const ProjectsSection: React.FC<ProjectsSectionProps> = ({
         {/* Single Aesthetically Centered Navigation Menu (Optimized for Smartphone, Tablet & Desktop) */}
         {showFilterMenu ? (
           <div className="w-full flex justify-center mb-10 sm:mb-14 px-1 sm:px-4">
-            <div className="w-full sm:w-auto max-w-full overflow-x-auto no-scrollbar scroll-smooth flex items-center justify-start sm:justify-center gap-1.5 sm:gap-2.5 p-1.5 sm:p-2 rounded-2xl bg-white/95 border border-[#E8E2D5] shadow-[0_10px_30px_rgba(28,25,23,0.04)] overscroll-contain">
+            <div className="w-full sm:w-auto max-w-full overflow-x-auto no-scrollbar scroll-smooth flex items-center justify-start sm:justify-center gap-1.5 sm:gap-2.5 p-1 rounded-2xl bg-transparent overscroll-contain">
               <button
                 onClick={() => handleFilterChange('all')}
                 className={`px-3.5 sm:px-5 py-2 sm:py-2.5 rounded-xl transition-all cursor-pointer whitespace-nowrap shrink-0 inline-flex items-center justify-center ${
                   activeFilter === 'all'
                     ? 'bg-[#1C1917] text-[#FAF8F5] shadow-[0_4px_16px_rgba(234,179,8,0.25)] border border-[#FACC15]/80'
-                    : 'text-[#44403C] hover:text-[#1C1917] hover:bg-stone-100/70'
+                    : 'text-[#44403C] hover:text-[#1C1917] hover:bg-stone-200/40'
                 }`}
               >
                 <span className="inline-flex items-baseline gap-1.5 sm:gap-2">
                   <span className="text-xs sm:text-sm font-semibold">
                     All Sites
                   </span>
-                  <span className="text-stone-300 font-light select-none text-xs sm:text-sm">
+                  <span className="text-[#FACC15] font-light select-none text-xs sm:text-sm">
                     |
                   </span>
                   <span className={`font-hindi text-xs sm:text-sm font-semibold ${
@@ -345,14 +345,14 @@ export const ProjectsSection: React.FC<ProjectsSectionProps> = ({
                     className={`px-3.5 sm:px-5 py-2 sm:py-2.5 rounded-xl transition-all cursor-pointer whitespace-nowrap shrink-0 inline-flex items-center justify-center ${
                       isActive
                         ? 'bg-[#1C1917] text-[#FAF8F5] shadow-[0_4px_16px_rgba(234,179,8,0.25)] border border-[#FACC15]/80'
-                        : 'text-[#44403C] hover:text-[#1C1917] hover:bg-stone-100/70'
+                        : 'text-[#44403C] hover:text-[#1C1917] hover:bg-stone-200/40'
                     }`}
                   >
                     <span className="inline-flex items-baseline gap-1.5 sm:gap-2">
                       <span className="text-xs sm:text-sm font-semibold">
                         {sec.menuLabel}
                       </span>
-                      <span className="text-stone-300 font-light select-none text-xs sm:text-sm">
+                      <span className="text-[#FACC15] font-light select-none text-xs sm:text-sm">
                         |
                       </span>
                       <span className={`font-hindi text-xs sm:text-sm font-semibold ${

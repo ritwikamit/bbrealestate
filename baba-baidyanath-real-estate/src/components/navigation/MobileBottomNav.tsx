@@ -50,7 +50,7 @@ export const MobileBottomNav: React.FC<MobileBottomNavProps> = ({
           onClick={() => handleTabClick('home')}
           className={`flex flex-col items-center justify-center py-1.5 px-1 rounded-xl transition-all duration-200 cursor-pointer select-none active:scale-95 ${
             currentTab === 'home'
-              ? 'text-[#FACC15] bg-white/[0.07] border border-[#FACC15]/30 shadow-xs'
+              ? 'text-[#FACC15] bg-yellow-500/10 border border-[#FACC15]/40 shadow-xs'
               : 'text-stone-400 hover:text-stone-200'
           }`}
           aria-label="Home"
@@ -80,7 +80,7 @@ export const MobileBottomNav: React.FC<MobileBottomNavProps> = ({
           onClick={() => handleTabClick('projects')}
           className={`flex flex-col items-center justify-center py-1.5 px-1 rounded-xl transition-all duration-200 cursor-pointer select-none active:scale-95 ${
             currentTab === 'projects'
-              ? 'text-[#FACC15] bg-white/[0.07] border border-[#FACC15]/30 shadow-xs'
+              ? 'text-[#FACC15] bg-yellow-500/10 border border-[#FACC15]/40 shadow-xs'
               : 'text-stone-400 hover:text-stone-200'
           }`}
           aria-label="Projects"
@@ -110,7 +110,7 @@ export const MobileBottomNav: React.FC<MobileBottomNavProps> = ({
           onClick={() => handleTabClick('calculator')}
           className={`flex flex-col items-center justify-center py-1.5 px-1 rounded-xl transition-all duration-200 cursor-pointer select-none active:scale-95 ${
             currentTab === 'calculator'
-              ? 'text-[#FACC15] bg-white/[0.07] border border-[#FACC15]/30 shadow-xs'
+              ? 'text-[#FACC15] bg-yellow-500/10 border border-[#FACC15]/40 shadow-xs'
               : 'text-stone-400 hover:text-stone-200'
           }`}
           aria-label="Land & EMI Calculator"

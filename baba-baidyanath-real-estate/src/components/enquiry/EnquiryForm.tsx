@@ -112,11 +112,11 @@ export const EnquiryForm: React.FC<EnquiryFormProps> = ({
   };
 
   const inputClass = isDark
-    ? "w-full px-4 py-3 rounded-xl bg-white/[0.04] border border-white/15 text-white placeholder-stone-500 focus:outline-none focus:border-[#F59E0B] focus:ring-1 focus:ring-[#F59E0B] text-sm transition-all"
-    : "w-full px-4 py-3 rounded-xl bg-[#FAF8F5] border border-[#E7E2D8] text-[#1C1917] placeholder-[#A8A29E] focus:outline-none focus:border-[#F59E0B] focus:ring-1 focus:ring-[#F59E0B] text-sm transition-all";
+    ? "w-full px-4 py-3 rounded-xl bg-white/[0.04] border border-white/15 text-white placeholder-stone-500 focus:outline-none focus:border-[#FACC15] focus:ring-1 focus:ring-[#FACC15] text-sm transition-all"
+    : "w-full px-4 py-3 rounded-xl bg-[#FAF8F5] border border-[#E7E2D8] text-[#1C1917] placeholder-[#A8A29E] focus:outline-none focus:border-[#FACC15] focus:ring-1 focus:ring-[#FACC15] text-sm transition-all";
 
   const labelClass = isDark
-    ? "block text-xs uppercase tracking-wider font-mono text-stone-300"
+    ? "block text-xs uppercase tracking-wider font-mono text-[#FACC15] font-semibold"
     : "block text-xs uppercase tracking-wider font-mono text-[#57534E]";
 
   if (submitted) {
@@ -338,7 +338,7 @@ export const EnquiryForm: React.FC<EnquiryFormProps> = ({
         <button
           type="submit"
           disabled={isSubmitting}
-          className="w-full rounded-full py-3.5 px-6 bg-gradient-to-r from-[#9A6F20] via-[#C59B27] to-[#E7C973] text-[#0F0E0D] font-bold text-xs uppercase tracking-[0.16em] btn-gold-border transition-all duration-200 cursor-pointer disabled:opacity-50 flex items-center justify-center gap-2 hover:scale-[1.01] active:scale-95 shadow-md"
+          className="w-full rounded-full py-3.5 px-6 btn-yellow-gradient font-bold text-xs uppercase tracking-[0.16em] transition-all duration-200 cursor-pointer disabled:opacity-50 flex items-center justify-center gap-2 hover:scale-[1.01] active:scale-95 shadow-md"
         >
           {isSubmitting ? (
             <span>Securing & Registering...</span>
