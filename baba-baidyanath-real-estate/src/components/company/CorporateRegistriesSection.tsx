@@ -105,7 +105,7 @@ export const CorporateRegistriesSection: React.FC<CorporateRegistriesSectionProp
                         {registry.category}
                       </span>
                     </div>
-                    <h3 className="font-serif text-lg font-bold text-[#151311] group-hover:text-[#881337] transition-colors">
+                    <h3 className="font-serif text-lg font-bold text-[#151311] group-hover:text-[#9A6F20] transition-colors">
                       {registry.name}
                     </h3>
                     <p className="text-xs text-[#524E48] leading-relaxed">
@@ -129,7 +129,7 @@ export const CorporateRegistriesSection: React.FC<CorporateRegistriesSectionProp
                     href={registry.url}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="w-full inline-flex items-center justify-center gap-2 px-4 py-2.5 rounded-xl bg-stone-900/[0.04] hover:bg-[#881337] text-[#151311] hover:text-white border border-stone-800/15 hover:border-[#881337] text-xs font-semibold uppercase tracking-wider transition-all duration-200 cursor-pointer group-hover:shadow-sm active:scale-98"
+                    className="w-full inline-flex items-center justify-center gap-2 px-4 py-2.5 rounded-xl bg-stone-900/[0.04] hover:bg-[#1C1917] text-[#151311] hover:text-[#E7C973] border border-stone-800/15 hover:border-[#C59B27] text-xs font-semibold uppercase tracking-wider transition-all duration-200 cursor-pointer group-hover:shadow-sm active:scale-98"
                   >
                     <span>Verify on {registry.name}</span>
                     <ExternalLink className="w-3.5 h-3.5 transition-transform group-hover:translate-x-0.5" />

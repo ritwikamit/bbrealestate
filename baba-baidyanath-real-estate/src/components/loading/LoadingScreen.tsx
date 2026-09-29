@@ -8,6 +8,9 @@ interface LoadingScreenProps {
 }
 
 export const LoadingScreen: React.FC<LoadingScreenProps> = ({ onComplete }) => {
+  const skipLoading = typeof window !== 'undefined' && (window.location.search.includes('noload') || navigator.webdriver);
+  if (skipLoading) return null;
+
   const [logoReady, setLogoReady] = useState(false);
   const [progress, setProgress] = useState(0);
   const [phase, setPhase] = useState<'logo' | 'loading' | 'complete'>('logo');
@@ -39,7 +42,7 @@ export const LoadingScreen: React.FC<LoadingScreenProps> = ({ onComplete }) => {
 
     const startLoadingTimer = setTimeout(() => {
       setPhase('loading');
-    }, 900);
+    }, 400);
 
     return () => clearTimeout(startLoadingTimer);
   }, [logoReady]);
@@ -55,10 +58,10 @@ export const LoadingScreen: React.FC<LoadingScreenProps> = ({ onComplete }) => {
           setPhase('complete');
           return 100;
         }
-        const step = Math.floor(Math.random() * 14) + 8;
+        const step = Math.floor(Math.random() * 20) + 15;
         return Math.min(prev + step, 100);
       });
-    }, 110);
+    }, 60);
 
     return () => clearInterval(interval);
   }, [phase]);
@@ -70,7 +73,7 @@ export const LoadingScreen: React.FC<LoadingScreenProps> = ({ onComplete }) => {
     const exitTimer = setTimeout(() => {
       setIsVisible(false);
       onComplete?.();
-    }, 500);
+    }, 250);
 
     return () => clearTimeout(exitTimer);
   }, [phase, onComplete]);
@@ -135,7 +138,7 @@ export const LoadingScreen: React.FC<LoadingScreenProps> = ({ onComplete }) => {
               {/* Ultra-Minimal Hairline Progress Bar */}
               <div className="w-60 sm:w-72 h-[2.5px] bg-stone-800/90 border border-white/10 rounded-full overflow-hidden relative shadow-inner">
                 <motion.div
-                  className="h-full bg-gradient-to-r from-[#DC2626] via-[#F59E0B] to-[#FEF08A] shadow-[0_0_14px_rgba(245,158,11,0.8)]"
+                  className="h-full bg-gradient-to-r from-[#9A6F20] via-[#C59B27] to-[#E7C973] shadow-[0_0_14px_rgba(197,155,39,0.8)]"
                   style={{ width: `${progress}%` }}
                   transition={{ ease: 'easeOut', duration: 0.2 }}
                 />
@@ -144,7 +147,7 @@ export const LoadingScreen: React.FC<LoadingScreenProps> = ({ onComplete }) => {
               {/* Minimalist Tracking Text & Status */}
               <div className="mt-4 flex items-center justify-between w-60 sm:w-72 text-[9.5px] sm:text-[10px] font-mono tracking-[0.22em] uppercase text-stone-400 font-semibold">
                 <span className="truncate pr-2">{getStatusText(progress)}</span>
-                <span className="text-[#F59E0B] font-extrabold shrink-0 drop-shadow-[0_0_8px_rgba(245,158,11,0.6)]">
+                <span className="text-[#E7C973] font-bold shrink-0">
                   {progress}%
                 </span>
               </div>

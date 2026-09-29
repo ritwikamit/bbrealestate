@@ -13,14 +13,17 @@ export const ContactPage: React.FC = () => {
         {/* Page Header */}
         <div className="max-w-3xl space-y-4">
           <div className="mb-4">
-            <CompanyLogo variant="horizontal" size="lg" />
+            <CompanyLogo variant="horizontal" size="lg" theme="light" />
           </div>
-          <div className="text-xs uppercase tracking-[0.25em] text-[#B45309] font-mono font-medium">
+          <div className="text-xs uppercase tracking-[0.25em] text-[#9A6F20] font-mono font-semibold">
             Direct Institutional Desk &bull; Aurangabad Headquarters
           </div>
           <h1 className="font-serif text-4xl sm:text-6xl font-bold text-[#1C1917] tracking-tight">
             Connect With Our Corporate Office
           </h1>
+          <div className="font-hindi text-base sm:text-lg text-[#9A6F20] font-medium">
+            ॥ संपर्क एवं स्थल निरीक्षण कार्यालय — औरंगाबाद, बिहार ॥
+          </div>
           <p className="text-base sm:text-lg text-[#57534E] leading-relaxed font-normal">
             We welcome direct inquiries from property seekers, institutional partners, and landowners in Aurangabad, Rohtas, Gaya, and adjacent corridors.
           </p>

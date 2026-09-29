@@ -88,8 +88,8 @@ export const LocationSection: React.FC = () => {
               {/* Promoter's Siyaram's Landmark Card */}
               <div className="p-4 sm:p-5 rounded-2xl bg-[#FAF8F5] border border-[#E5DEC9] space-y-2.5">
                 <div className="flex items-center justify-between gap-3 border-b border-[#E5DEC9] pb-2.5">
-                  <div className="text-[11px] font-mono uppercase tracking-wider text-[#881337] font-bold flex items-center gap-1.5">
-                    <MapPin className="w-3.5 h-3.5 text-[#881337]" />
+                  <div className="text-[11px] font-mono uppercase tracking-wider text-[#9A6F20] font-bold flex items-center gap-1.5">
+                    <MapPin className="w-3.5 h-3.5 text-[#9A6F20]" />
                     <span>Promoter's Commercial Landmark</span>
                   </div>
                   <img

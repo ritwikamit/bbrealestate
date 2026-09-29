@@ -70,39 +70,39 @@ export const LandAndEMICalculator: React.FC = () => {
         {/* Header */}
         <div className="flex flex-col md:flex-row md:items-end justify-between mb-12 gap-6">
           <div className="max-w-2xl space-y-3">
-            <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-[#F59E0B]/10 border border-[#F59E0B]/30 text-xs text-[#B45309] font-medium tracking-wide">
-              <Sparkles className="w-3.5 h-3.5 text-[#D97706]" />
-              <span>Regional Due Diligence Tools &bull; Bihar Standards</span>
+            <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-[#FAF8F5] border border-[#C59B27]/40 text-xs text-[#9A6F20] font-semibold tracking-wide shadow-xs">
+              <Sparkles className="w-3.5 h-3.5 text-[#C59B27]" />
+              <span className="font-hindi text-[12px]">॥ बिहार भूमि मापी एवं वित्तीय विश्लेषण ॥</span>
             </div>
             <h2 className="font-serif text-3xl sm:text-5xl lg:text-6xl text-[#1C1917] font-bold tracking-tight">
               Property &amp; Land Calculators
             </h2>
             <p className="text-base text-[#57534E] leading-relaxed font-normal">
-              Standardized mathematical benchmarks for Bihar land measurements (Katha, Bigha, Decimal) and financing feasibility.
+              कट्ठा, बीघा, धूर, डिसमिल एवं वर्ग फीट की प्रामाणिक क्षेत्रीय गणना (औरंगाबाद एवं मगध मानक)। Standardized mathematical benchmarks for Bihar land records.
             </p>
           </div>
 
           {/* Mode Switcher */}
-          <div className="flex items-center gap-1.5 p-1 bg-white border border-[#E7E2D8] rounded-2xl sm:rounded-full shadow-sm w-full sm:w-auto self-start">
+          <div className="flex items-center gap-1.5 p-1 bg-white border border-[#E8E2D5] rounded-2xl sm:rounded-full shadow-xs w-full sm:w-auto self-start">
             <button
               onClick={() => setActiveMode('land')}
               className={`flex-1 sm:flex-initial px-3 sm:px-5 py-2.5 sm:py-2 text-[11px] sm:text-xs font-semibold tracking-wider uppercase rounded-xl sm:rounded-full transition-all cursor-pointer text-center whitespace-nowrap ${
                 activeMode === 'land'
-                  ? 'bg-gradient-to-r from-[#B45309] via-[#F59E0B] to-[#D97706] text-[#0C0A09] btn-gold-border'
+                  ? 'bg-gradient-to-r from-[#9A6F20] via-[#C59B27] to-[#E7C973] text-[#0F0E0D] font-bold shadow-xs'
                   : 'text-[#78716C] hover:text-[#1C1917]'
               }`}
             >
-              Bihar Land Converter
+              Bihar Land Converter / भूमि मापी
             </button>
             <button
               onClick={() => setActiveMode('emi')}
               className={`flex-1 sm:flex-initial px-3 sm:px-5 py-2.5 sm:py-2 text-[11px] sm:text-xs font-semibold tracking-wider uppercase rounded-xl sm:rounded-full transition-all cursor-pointer text-center whitespace-nowrap ${
                 activeMode === 'emi'
-                  ? 'bg-gradient-to-r from-[#B45309] via-[#F59E0B] to-[#D97706] text-[#0C0A09] btn-gold-border'
+                  ? 'bg-gradient-to-r from-[#9A6F20] via-[#C59B27] to-[#E7C973] text-[#0F0E0D] font-bold shadow-xs'
                   : 'text-[#78716C] hover:text-[#1C1917]'
               }`}
             >
-              Loan / EMI Estimator
+              Loan &amp; EMI / ईएमआई
             </button>
           </div>
         </div>

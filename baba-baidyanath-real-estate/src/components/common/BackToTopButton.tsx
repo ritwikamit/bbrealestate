@@ -34,7 +34,7 @@ export const BackToTopButton: React.FC = () => {
           exit={{ opacity: 0, scale: 0.6, y: 10 }}
           transition={{ duration: 0.25, ease: 'easeOut' }}
           onClick={scrollToTop}
-          className="fixed z-40 bottom-20 right-4 sm:right-6 lg:bottom-8 lg:right-8 w-11 h-11 sm:w-12 sm:h-12 rounded-full bg-[#FAF8F5]/95 backdrop-blur-xl border border-[#E8E0D2] text-[#881337] hover:text-white hover:bg-gradient-to-r hover:from-[#881337] hover:via-[#991B1B] hover:to-[#B45309] shadow-[0_8px_25px_rgba(40,25,10,0.12)] flex items-center justify-center cursor-pointer transition-all duration-300 hover:scale-110 active:scale-95 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#881337]"
+          className="fixed z-40 bottom-20 right-4 sm:right-6 lg:bottom-8 lg:right-8 w-11 h-11 sm:w-12 sm:h-12 rounded-full bg-[#1C1917] border border-[#C59B27]/50 text-[#E7C973] hover:text-[#0F0E0D] hover:bg-[#E7C973] shadow-[0_8px_25px_rgba(28,25,23,0.25)] flex items-center justify-center cursor-pointer transition-all duration-300 hover:scale-110 active:scale-95 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#C59B27]"
           aria-label="Back to top"
           title="Back to top"
         >

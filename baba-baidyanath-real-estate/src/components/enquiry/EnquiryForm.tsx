@@ -338,7 +338,7 @@ export const EnquiryForm: React.FC<EnquiryFormProps> = ({
         <button
           type="submit"
           disabled={isSubmitting}
-          className="w-full rounded-full py-3.5 px-6 bg-gradient-to-r from-[#B45309] via-[#F59E0B] to-[#D97706] text-[#0C0A09] font-bold text-xs uppercase tracking-[0.2em] btn-gold-border transition-all duration-200 cursor-pointer disabled:opacity-50 flex items-center justify-center gap-2 hover:scale-[1.01] active:scale-95"
+          className="w-full rounded-full py-3.5 px-6 bg-gradient-to-r from-[#9A6F20] via-[#C59B27] to-[#E7C973] text-[#0F0E0D] font-bold text-xs uppercase tracking-[0.16em] btn-gold-border transition-all duration-200 cursor-pointer disabled:opacity-50 flex items-center justify-center gap-2 hover:scale-[1.01] active:scale-95 shadow-md"
         >
           {isSubmitting ? (
             <span>Securing & Registering...</span>

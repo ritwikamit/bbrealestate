@@ -29,7 +29,7 @@ export const EnquiryModal: React.FC<EnquiryModalProps> = ({ isOpen, onClose }) =
           <div className="absolute top-4 sm:top-5 right-4 sm:right-5 z-10">
             <button
               onClick={onClose}
-              className="p-2 text-[#78716C] hover:text-[#1C1917] bg-stone-200/70 hover:bg-stone-300 rounded-full border border-[#E7E2D8] transition-colors cursor-pointer focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#881337] active:scale-95"
+              className="p-2 text-[#78716C] hover:text-[#1C1917] bg-stone-200/70 hover:bg-stone-300 rounded-full border border-[#E7E2D8] transition-colors cursor-pointer focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#C59B27] active:scale-95"
               aria-label="Close modal"
             >
               <X className="w-5 h-5" />

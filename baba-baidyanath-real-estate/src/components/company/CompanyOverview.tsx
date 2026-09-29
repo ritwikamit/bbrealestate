@@ -30,7 +30,7 @@ export const CompanyOverview: React.FC<CompanyOverviewProps> = ({ onOpenEnquiry 
           </div>
           <h2 className="font-serif text-3xl sm:text-5xl lg:text-6xl text-[#1C1917] font-bold tracking-tight [text-wrap:balance]">
             Sacred Integrity.<br />
-            <span className="bg-gradient-to-r from-[#DC2626] via-[#B45309] to-[#D97706] bg-clip-text text-transparent">
+            <span className="bg-gradient-to-r from-[#9A6F20] via-[#C59B27] to-[#E7C973] bg-clip-text text-transparent">
               Dedicated to Lasting Value.
             </span>
           </h2>
@@ -57,9 +57,9 @@ export const CompanyOverview: React.FC<CompanyOverviewProps> = ({ onOpenEnquiry 
               </h3>
               <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
                 {(COMPANY_DATA?.directors || []).map((director, index) => (
-                  <div key={index} className="p-4 rounded-xl bg-[#FAF8F5] border border-[#E7E2D8] hover:border-[#F59E0B]/50 transition-colors">
-                    <div className="flex items-center gap-2 text-[10px] uppercase tracking-wider text-[#B45309] font-semibold mb-1">
-                      <IconExecutiveSeal size={14} color="crimson" />
+                  <div key={index} className="p-4 rounded-xl bg-[#FAF8F5] border border-[#E7E2D8] hover:border-[#C59B27]/50 transition-colors">
+                    <div className="flex items-center gap-2 text-[10px] uppercase tracking-wider text-[#9A6F20] font-semibold mb-1">
+                      <IconExecutiveSeal size={14} color="gold" />
                       <span>Appointed Director</span>
                     </div>
                     <div className="font-serif text-lg text-[#1C1917] font-bold">
@@ -76,7 +76,7 @@ export const CompanyOverview: React.FC<CompanyOverviewProps> = ({ onOpenEnquiry 
             <div className="pt-2">
               <button
                 onClick={onOpenEnquiry}
-                className="group text-xs uppercase tracking-wider font-semibold text-[#B45309] hover:text-[#DC2626] inline-flex items-center gap-2 transition-colors cursor-pointer"
+                className="group text-xs uppercase tracking-wider font-semibold text-[#9A6F20] hover:text-[#C59B27] inline-flex items-center gap-2 transition-colors cursor-pointer"
               >
                 <span>Initiate a Corporate or Land Discussion</span>
                 <IconMinimalArrow size={14} color="amber" className="transition-transform group-hover:translate-x-1" />
@@ -84,13 +84,13 @@ export const CompanyOverview: React.FC<CompanyOverviewProps> = ({ onOpenEnquiry 
             </div>
           </div>
 
-          {/* Column 2: Institutional Principles Bento (Rich Mixed Slate/White Cards) */}
+          {/* Column 2: Institutional Principles Bento */}
           <div className="lg:col-span-5 space-y-4">
             
-            <div className="p-6 rounded-2xl bg-white border border-[#E7E2D8] shadow-[0_10px_25px_rgba(28,25,23,0.05)] space-y-3 hover:border-[#F59E0B]/40 transition-all">
+            <div className="p-6 rounded-2xl bg-white border border-[#E7E2D8] shadow-[0_10px_25px_rgba(28,25,23,0.05)] space-y-3 hover:border-[#C59B27]/40 transition-all">
               <div className="flex items-center gap-3">
-                <div className="p-2.5 rounded-xl bg-[#F59E0B]/10 border border-[#F59E0B]/25">
-                  <IconPlotMatrix size={20} color="amber" />
+                <div className="p-2.5 rounded-xl bg-[#C59B27]/10 border border-[#C59B27]/25">
+                  <IconPlotMatrix size={20} color="gold" />
                 </div>
                 <h4 className="font-serif text-lg font-bold text-[#1C1917]">
                   Verified Title Due Diligence
@@ -101,10 +101,10 @@ export const CompanyOverview: React.FC<CompanyOverviewProps> = ({ onOpenEnquiry 
               </p>
             </div>
 
-            <div className="p-6 rounded-2xl bg-white border border-[#E7E2D8] shadow-[0_10px_25px_rgba(28,25,23,0.05)] space-y-3 hover:border-[#DC2626]/40 transition-all">
+            <div className="p-6 rounded-2xl bg-white border border-[#E7E2D8] shadow-[0_10px_25px_rgba(28,25,23,0.05)] space-y-3 hover:border-[#C59B27]/40 transition-all">
               <div className="flex items-center gap-3">
-                <div className="p-2.5 rounded-xl bg-[#DC2626]/10 border border-[#DC2626]/25">
-                  <IconVastuMandala size={20} color="crimson" />
+                <div className="p-2.5 rounded-xl bg-[#C59B27]/10 border border-[#C59B27]/25">
+                  <IconVastuMandala size={20} color="gold" />
                 </div>
                 <h4 className="font-serif text-lg font-bold text-[#1C1917]">
                   Direct Regional Stewardship

@@ -9,9 +9,9 @@ interface GraphicalIconProps {
 }
 
 const colorMap: Record<IconColor, { stroke: string; fill?: string; glow?: string }> = {
-  gold: { stroke: '#F59E0B', fill: '#FDE68A', glow: 'rgba(245, 158, 11, 0.4)' },
-  crimson: { stroke: '#DC2626', fill: '#FCA5A5', glow: 'rgba(220, 38, 38, 0.4)' },
-  amber: { stroke: '#D97706', fill: '#FEF3C7', glow: 'rgba(217, 119, 6, 0.4)' },
+  gold: { stroke: '#C59B27', fill: '#E7C973', glow: 'rgba(197, 155, 39, 0.4)' },
+  crimson: { stroke: '#9A6F20', fill: '#E7C973', glow: 'rgba(154, 111, 32, 0.4)' },
+  amber: { stroke: '#9A6F20', fill: '#FAF8F5', glow: 'rgba(197, 155, 39, 0.35)' },
   emerald: { stroke: '#059669', fill: '#A7F3D0', glow: 'rgba(5, 150, 105, 0.4)' },
   stone: { stroke: '#78716C', fill: '#D6D3D1', glow: 'rgba(120, 113, 108, 0.2)' },
   white: { stroke: '#FAF8F5', fill: '#FFFFFF', glow: 'rgba(255, 255, 255, 0.3)' },
@@ -26,9 +26,9 @@ export const IconDivineSpark: React.FC<GraphicalIconProps> = ({ className = '', 
     <svg width={size} height={size} viewBox="0 0 24 24" fill="none" className={className}>
       <defs>
         <linearGradient id={`gradSpark-${color}`} x1="0%" y1="0%" x2="100%" y2="100%">
-          <stop offset="0%" stopColor="#FEF08A" />
+          <stop offset="0%" stopColor="#FFF3D0" />
           <stop offset="50%" stopColor={c.stroke} />
-          <stop offset="100%" stopColor="#991B1B" />
+          <stop offset="100%" stopColor="#7E561C" />
         </linearGradient>
       </defs>
       <path

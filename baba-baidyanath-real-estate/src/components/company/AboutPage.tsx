@@ -83,14 +83,14 @@ export const AboutPage: React.FC<AboutPageProps> = ({ onOpenEnquiry }) => {
               {/* Editorial Headline */}
               <h1 className="font-serif text-2xl sm:text-3xl md:text-4xl lg:text-[44px] font-bold text-[#171513] tracking-tight leading-[1.2]">
                 Built On Sacred Values.<br />
-                <span className="text-[#881337]">
-                  Committed to Lasting Value.
+                <span className="text-[#9A6F20] font-hindi">
+                  ॥ विश्वास, समर्पण और आपका अपना आशियाना ॥
                 </span>
               </h1>
 
               {/* Narrative */}
               <p className="text-xs sm:text-sm md:text-base text-[#3E3832] leading-relaxed font-normal max-w-xl">
-                Baba Baidyanath Real Estate Private Limited was founded to bring uncompromising corporate governance, verifiable land due diligence, and absolute transparency to real estate development in Aurangabad and emerging growth corridors across Bihar.
+                बाबा बैद्यनाथ रियल एस्टेट प्राइवेट लिमिटेड का उद्देश्य औरंगाबाद एवं बिहार के विकासशील गलियारों में पारदर्शी भूमि क्रय-विक्रय, निर्दोष खतियान सत्यापन और प्रामाणिक विधिक प्रक्रिया सुनिश्चित करना है।
               </p>
 
               {/* Bespoke Luxury Action Buttons (Full width on mobile, inline on tablet+) */}
@@ -98,7 +98,7 @@ export const AboutPage: React.FC<AboutPageProps> = ({ onOpenEnquiry }) => {
                 {onOpenEnquiry && (
                   <button
                     onClick={onOpenEnquiry}
-                    className="w-full sm:w-auto px-6 py-3.5 sm:py-3 rounded-xl bg-[#881337] hover:bg-[#70102D] text-white font-semibold text-xs tracking-wider uppercase transition-all duration-200 shadow-sm hover:shadow-md cursor-pointer inline-flex items-center justify-center gap-2 active:scale-98"
+                    className="w-full sm:w-auto px-6 py-3.5 sm:py-3 rounded-xl bg-gradient-to-r from-[#9A6F20] via-[#C59B27] to-[#E7C973] text-[#0F0E0D] font-bold text-xs tracking-wider uppercase transition-all duration-200 shadow-sm hover:shadow-md cursor-pointer inline-flex items-center justify-center gap-2 active:scale-98"
                   >
                     <span>Direct Consultation</span>
                   </button>
@@ -109,7 +109,7 @@ export const AboutPage: React.FC<AboutPageProps> = ({ onOpenEnquiry }) => {
                   className="w-full sm:w-auto px-5 py-3.5 sm:py-3 rounded-xl bg-stone-900/[0.05] hover:bg-stone-900/[0.09] text-[#171513] border border-stone-800/15 text-xs font-semibold tracking-wider uppercase transition-all duration-200 inline-flex items-center justify-center gap-1.5 cursor-pointer shadow-none active:scale-98"
                 >
                   <span>View Statutory Dossier</span>
-                  <ArrowRight className="w-3.5 h-3.5 text-[#881337]" />
+                  <ArrowRight className="w-3.5 h-3.5 text-[#9A6F20]" />
                 </button>
               </div>
 
