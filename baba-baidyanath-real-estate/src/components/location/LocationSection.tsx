@@ -146,8 +146,9 @@ export const LocationSection: React.FC = () => {
                 <MapPin className="w-4 h-4 text-[#D97706]" />
                 <span>Live Google Maps Navigation</span>
               </div>
-              <span className="text-[11px] font-mono text-emerald-700 bg-emerald-50 px-2.5 py-0.5 rounded-full border border-emerald-200 font-semibold">
-                Pin Verified
+              <span className="text-xs font-mono text-emerald-700 font-medium flex items-center gap-1.5">
+                <span className="w-1.5 h-1.5 rounded-full bg-emerald-500" />
+                <span>Verified Coordinates</span>
               </span>
             </div>
 

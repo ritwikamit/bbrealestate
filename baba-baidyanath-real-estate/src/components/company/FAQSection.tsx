@@ -15,8 +15,8 @@ export const FAQSection: React.FC = () => {
         
         {/* Header */}
         <div className="text-center mb-16 space-y-3">
-          <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-[#F59E0B]/10 border border-[#F59E0B]/30 text-xs text-[#B45309] font-medium tracking-wide">
-            <HelpCircle className="w-3.5 h-3.5 text-[#D97706]" />
+          <div className="flex items-center justify-center gap-2 text-xs uppercase tracking-widest text-[#9A6F20] font-mono font-semibold">
+            <HelpCircle className="w-3.5 h-3.5 text-[#C59B27]" />
             <span>Transparency &amp; Verification</span>
           </div>
           <h2 className="font-serif text-3xl sm:text-5xl lg:text-6xl text-[#1C1917] font-bold tracking-tight">

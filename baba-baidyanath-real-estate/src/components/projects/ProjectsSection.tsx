@@ -332,10 +332,10 @@ export const ProjectsSection: React.FC<ProjectsSectionProps> = ({
 
                 {/* Top Badge: Category & Feasibility Status */}
                 <div className="absolute top-4 left-4 right-4 flex items-center justify-between gap-2">
-                  <span className="px-3 py-1 rounded-full bg-[#FAF8F5]/95 backdrop-blur-md text-[11px] font-mono font-bold text-[#9A6F20] border border-[#C59B27]/30 shadow-xs uppercase tracking-wider">
+                  <span className="px-2.5 py-1 rounded-md bg-stone-950/80 backdrop-blur-md text-[11px] font-mono font-semibold text-[#E7C973] uppercase tracking-wider">
                     {card.tag}
                   </span>
-                  <span className="px-3 py-1 rounded-full bg-stone-900/80 backdrop-blur-md text-[11px] font-mono text-emerald-400 border border-emerald-500/30 font-medium">
+                  <span className="px-2.5 py-1 rounded-md bg-stone-950/80 backdrop-blur-md text-[11px] font-mono text-emerald-400 font-medium">
                     {card.status}
                   </span>
                 </div>

@@ -97,9 +97,9 @@ export default function App() {
               <section className="py-16 sm:py-24 relative z-10 border-t border-[#E8E2D5] px-4 sm:px-6 lg:px-8 bg-gradient-to-b from-[#FAF8F5] to-[#F5EFE6]">
                 <div className="max-w-5xl mx-auto">
                   <div className="rounded-3xl p-8 sm:p-14 bg-white border border-[#E8E2D5] text-center space-y-6 shadow-[0_20px_50px_rgba(28,25,23,0.06)]">
-                    <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-[#FAF8F5] border border-[#C59B27]/30 text-xs text-[#9A6F20] font-mono uppercase tracking-widest mx-auto shadow-xs">
+                    <div className="flex items-center justify-center gap-2 text-xs text-[#9A6F20] font-mono uppercase tracking-widest mx-auto">
                       <Sparkles className="w-3.5 h-3.5 text-[#C59B27]" />
-                      <span className="font-hindi text-[11.5px] font-semibold">॥ निःशुल्क परामर्श एवं स्थल निरीक्षण ॥</span>
+                      <span className="font-hindi text-sm font-semibold">॥ निःशुल्क परामर्श एवं स्थल निरीक्षण ॥</span>
                     </div>
 
                     <h2 className="font-serif text-2xl sm:text-4xl lg:text-5xl font-bold tracking-tight text-[#1C1917] max-w-2xl mx-auto leading-tight">

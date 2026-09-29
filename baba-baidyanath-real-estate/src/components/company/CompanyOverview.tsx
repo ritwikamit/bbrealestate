@@ -24,8 +24,8 @@ export const CompanyOverview: React.FC<CompanyOverviewProps> = ({ onOpenEnquiry 
         
         {/* Section Header */}
         <div className="max-w-3xl mb-12 sm:mb-16 space-y-3">
-          <div className="inline-flex items-center gap-2 px-3.5 py-1 rounded-full bg-[#F59E0B]/10 border border-[#F59E0B]/30 text-xs text-[#B45309] font-medium tracking-wide">
-            <IconDivineSpark size={14} color="amber" />
+          <div className="flex items-center gap-2 text-xs uppercase tracking-widest font-mono font-semibold text-[#9A6F20]">
+            <IconDivineSpark size={14} color="gold" />
             <span>Corporate Identity &bull; Registered in Bihar</span>
           </div>
           <h2 className="font-serif text-3xl sm:text-5xl lg:text-6xl text-[#1C1917] font-bold tracking-tight [text-wrap:balance]">

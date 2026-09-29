@@ -145,9 +145,6 @@ export const AboutPage: React.FC<AboutPageProps> = ({ onOpenEnquiry }) => {
                     <div className="p-3 rounded-2xl bg-[#FAF8F5] border border-[#E8E2D5] text-[#9A6F20]">
                       <UserCheck className="w-6 h-6" />
                     </div>
-                    <span className="text-xs font-mono font-bold text-emerald-800 bg-emerald-50 px-3 py-1 rounded-full border border-emerald-200">
-                      MCA Verified Director
-                    </span>
                   </div>
 
                   <div>
@@ -272,13 +269,12 @@ export const AboutPage: React.FC<AboutPageProps> = ({ onOpenEnquiry }) => {
                 </h2>
               </div>
               
-              <div className="flex items-center gap-2">
-                <span className="text-xs font-mono bg-[#FAF8F5] text-[#57534E] px-3.5 py-1.5 rounded-full border border-[#E8E2D5]">
-                  GOVT. OF INDIA &bull; ROC PATNA
-                </span>
-                <span className="text-xs font-mono bg-emerald-50 text-emerald-800 px-3.5 py-1.5 rounded-full border border-emerald-200 font-bold flex items-center gap-1.5">
-                  <span className="w-2 h-2 rounded-full bg-emerald-500" />
-                  <span>ACTIVE</span>
+              <div className="flex items-center gap-3 text-xs font-mono text-[#78716C]">
+                <span>RoC Patna Jurisdiction</span>
+                <span>&bull;</span>
+                <span className="text-emerald-700 font-semibold flex items-center gap-1.5">
+                  <span className="w-1.5 h-1.5 rounded-full bg-emerald-500" />
+                  <span>ACTIVE ENTITY</span>
                 </span>
               </div>
             </div>

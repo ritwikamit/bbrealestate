@@ -84,10 +84,10 @@ export const LandAndEMICalculator: React.FC = () => {
           </div>
 
           {/* Mode Switcher */}
-          <div className="flex items-center gap-1.5 p-1 bg-white border border-[#E8E2D5] rounded-2xl sm:rounded-full shadow-xs w-full sm:w-auto self-start">
+          <div className="flex items-center gap-1.5 p-1 bg-white border border-[#E8E2D5] rounded-xl shadow-xs w-full sm:w-auto self-start">
             <button
               onClick={() => setActiveMode('land')}
-              className={`flex-1 sm:flex-initial px-3 sm:px-5 py-2.5 sm:py-2 text-[11px] sm:text-xs font-semibold tracking-wider uppercase rounded-xl sm:rounded-full transition-all cursor-pointer text-center whitespace-nowrap ${
+              className={`flex-1 sm:flex-initial px-4 sm:px-5 py-2.5 sm:py-2 text-[11px] sm:text-xs font-semibold tracking-wider uppercase rounded-lg transition-all cursor-pointer text-center whitespace-nowrap ${
                 activeMode === 'land'
                   ? 'bg-gradient-to-r from-[#9A6F20] via-[#C59B27] to-[#E7C973] text-[#0F0E0D] font-bold shadow-xs'
                   : 'text-[#78716C] hover:text-[#1C1917]'
@@ -97,7 +97,7 @@ export const LandAndEMICalculator: React.FC = () => {
             </button>
             <button
               onClick={() => setActiveMode('emi')}
-              className={`flex-1 sm:flex-initial px-3 sm:px-5 py-2.5 sm:py-2 text-[11px] sm:text-xs font-semibold tracking-wider uppercase rounded-xl sm:rounded-full transition-all cursor-pointer text-center whitespace-nowrap ${
+              className={`flex-1 sm:flex-initial px-4 sm:px-5 py-2.5 sm:py-2 text-[11px] sm:text-xs font-semibold tracking-wider uppercase rounded-lg transition-all cursor-pointer text-center whitespace-nowrap ${
                 activeMode === 'emi'
                   ? 'bg-gradient-to-r from-[#9A6F20] via-[#C59B27] to-[#E7C973] text-[#0F0E0D] font-bold shadow-xs'
                   : 'text-[#78716C] hover:text-[#1C1917]'
