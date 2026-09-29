@@ -18,7 +18,7 @@ const colorMap: Record<IconColor, { stroke: string; fill?: string; glow?: string
 };
 
 /**
- * 1. Divine Crest Mark (Bespoke 4-point geometric star with central bindu)
+ * 1. Divine Crest Mark (Custom 4-point geometric star with central bindu)
  */
 export const IconDivineSpark: React.FC<GraphicalIconProps> = ({ className = '', size = 16, color = 'gold' }) => {
   const c = colorMap[color];

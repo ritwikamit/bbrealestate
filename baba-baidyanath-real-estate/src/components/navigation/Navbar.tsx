@@ -4,7 +4,7 @@ import { CompanyLogo } from '../common/CompanyLogo';
 import { Menu, X, ChevronDown } from 'lucide-react';
 import { IconMinimalArrow } from '../common/ThemeIcons';
 
-export type DevelopmentCategory = 'all' | 'plots' | 'commercial' | 'farmlands' | 'villas';
+export type DevelopmentCategory = 'plots' | 'land_parcels';
 
 export interface DevMenuItem {
   key: DevelopmentCategory;
@@ -15,11 +15,8 @@ export interface DevMenuItem {
 }
 
 export const DEV_MENU_ITEMS: DevMenuItem[] = [
-  { key: 'all', label: 'All Sites', hindi: 'समस्त', desc: 'Browse all master planned sectors', badge: 'All 4 Sectors' },
-  { key: 'plots', label: 'Plots', hindi: 'भूखंड', desc: 'Demarcated residential layout townships', badge: '2 Sites' },
-  { key: 'commercial', label: 'Commercial', hindi: 'व्यावसायिक', desc: 'Highway frontage plazas & business hubs', badge: '2 Sites' },
-  { key: 'farmlands', label: 'Farmlands', hindi: 'फार्मलैंड्स', desc: 'Canal-irrigated agro estates & orchards', badge: '2 Sites' },
-  { key: 'villas', label: 'Villas', hindi: 'विला', desc: 'Bespoke country villas & gated estates', badge: '2 Sites' },
+  { key: 'plots', label: 'Residential Plots', hindi: 'आवासीय भूखंड', desc: 'Demarcated residential layout townships', badge: 'Verified Sites' },
+  { key: 'land_parcels', label: 'Land Parcels', hindi: 'भूमि पार्सल', desc: 'Large property and development land parcels', badge: 'Strategic Parcels' },
 ];
 
 interface NavbarProps {
@@ -34,13 +31,11 @@ export const Navbar: React.FC<NavbarProps> = ({
   currentTab,
   onSelectTab,
   onSelectDevelopmentCategory,
-  currentDevelopmentCategory = 'all',
+  currentDevelopmentCategory = 'plots',
   onOpenEnquiry,
 }) => {
   const [scrolled, setScrolled] = useState(false);
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
-  const [devDropdownOpen, setDevDropdownOpen] = useState(false);
-  const dropdownRef = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
     const handleScroll = () => {
@@ -50,21 +45,11 @@ export const Navbar: React.FC<NavbarProps> = ({
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
 
-  useEffect(() => {
-    const handleClickOutside = (event: MouseEvent) => {
-      if (dropdownRef.current && !dropdownRef.current.contains(event.target as Node)) {
-        setDevDropdownOpen(false);
-      }
-    };
-    document.addEventListener('mousedown', handleClickOutside);
-    return () => document.removeEventListener('mousedown', handleClickOutside);
-  }, []);
-
   const navLinks: { label: string; hindi: string; tab: TabType }[] = [
-    { label: 'Home', hindi: 'मुखपृष्ठ', tab: 'home' },
     { label: 'About', hindi: 'परिचय', tab: 'about' },
-    { label: 'Developments', hindi: 'परियोजनाएं', tab: 'projects' },
-    { label: 'Land Calculator', hindi: 'भूमि मापी', tab: 'calculator' },
+    { label: 'Plotting', hindi: 'प्लॉटिंग', tab: 'plotting' },
+    { label: 'Locations', hindi: 'लोकेशन', tab: 'locations' },
+    { label: 'Association', hindi: 'वास्तु विहार', tab: 'association' },
     { label: 'Contact', hindi: 'संपर्क', tab: 'contact' },
   ];
 
@@ -139,98 +124,6 @@ export const Navbar: React.FC<NavbarProps> = ({
             {navLinks.map((link) => {
               const isActive = currentTab === link.tab;
 
-              if (link.tab === 'projects') {
-                return (
-                  <div
-                    key={link.tab}
-                    ref={dropdownRef}
-                    className="relative"
-                    onMouseEnter={() => setDevDropdownOpen(true)}
-                    onMouseLeave={() => setDevDropdownOpen(false)}
-                  >
-                    <button
-                      onClick={() => handleNavClick('projects')}
-                      className="group relative py-2 transition-colors duration-200 cursor-pointer whitespace-nowrap focus-visible:outline-none flex flex-col items-center"
-                      aria-haspopup="true"
-                      aria-expanded={devDropdownOpen}
-                    >
-                      <span className="flex items-center gap-1">
-                        <span
-                          className={`text-xs uppercase tracking-[0.16em] font-semibold transition-colors duration-200 ${
-                            isActive
-                              ? 'text-[#C59B27] font-bold'
-                              : 'text-[#44403C] hover:text-[#C59B27]'
-                          }`}
-                        >
-                          {link.label}
-                        </span>
-                        <ChevronDown className={`w-3 h-3 text-[#C59B27] transition-transform duration-200 ${devDropdownOpen ? 'rotate-180' : ''}`} />
-                      </span>
-                      <span className="text-[10px] text-stone-400 font-hindi -mt-0.5 group-hover:text-[#9A6F20] transition-colors">
-                        {link.hindi}
-                      </span>
-
-                      {/* Golden Line Underline */}
-                      <span
-                        className={`absolute bottom-0 left-0 h-[2px] w-full bg-[#C59B27] transition-all duration-300 origin-left ${
-                          isActive
-                            ? 'scale-x-100 opacity-100'
-                            : 'scale-x-0 opacity-0 group-hover:scale-x-100 group-hover:opacity-100'
-                        }`}
-                      />
-                    </button>
-
-                    {/* Dropdown Panel with Separate Section Menus */}
-                    {devDropdownOpen && (
-                      <div className="absolute top-full left-1/2 -translate-x-1/2 pt-2 z-50 animate-in fade-in slide-in-from-top-2 duration-150">
-                        <div className="w-80 rounded-2xl bg-[#FAF8F5]/98 backdrop-blur-2xl border border-[#E8E2D5] p-2 shadow-[0_20px_45px_rgba(28,25,23,0.12)] space-y-1">
-                          <div className="px-3 py-1.5 border-b border-[#E8E2D5] flex items-center justify-between">
-                            <span className="text-[10px] font-mono uppercase tracking-widest text-[#9A6F20] font-bold">
-                              Development Sectors
-                            </span>
-                            <span className="font-hindi text-[10.5px] text-[#C59B27]">॥ क्षेत्रवार विभाजन ॥</span>
-                          </div>
-                          {DEV_MENU_ITEMS.map((item) => {
-                            const isItemActive = currentTab === 'projects' && currentDevelopmentCategory === item.key;
-                            return (
-                              <button
-                                key={item.key}
-                                onClick={() => handleDevSectionClick(item.key)}
-                                className={`w-full text-left px-3 py-2.5 rounded-xl transition-all flex items-center justify-between group/item cursor-pointer ${
-                                  isItemActive
-                                    ? 'bg-white border border-[#C59B27]/40 shadow-xs'
-                                    : 'hover:bg-white/80 text-[#44403C]'
-                                }`}
-                              >
-                                <div className="space-y-0.5">
-                                  <div className="inline-flex items-baseline gap-2">
-                                    <span className={`text-xs sm:text-sm font-semibold transition-colors ${
-                                      isItemActive ? 'text-[#C59B27]' : 'text-[#1C1917] group-hover/item:text-[#C59B27]'
-                                    }`}>
-                                      {item.label}
-                                    </span>
-                                    <span className="text-[#FACC15] font-light select-none text-xs sm:text-sm">|</span>
-                                    <span className="font-hindi text-xs sm:text-sm font-semibold text-[#9A6F20]">
-                                      {item.hindi}
-                                    </span>
-                                  </div>
-                                  <div className="text-[10.5px] text-[#78716C] line-clamp-1">
-                                    {item.desc}
-                                  </div>
-                                </div>
-                                <span className="text-[10px] font-mono text-[#9A6F20] font-semibold shrink-0 bg-[#FAF8F5] px-2 py-0.5 rounded-md border border-[#E8E2D5]">
-                                  {item.badge}
-                                </span>
-                              </button>
-                            );
-                          })}
-                        </div>
-                      </div>
-                    )}
-                  </div>
-                );
-              }
-
               return (
                 <button
                   key={link.tab}
@@ -267,12 +160,12 @@ export const Navbar: React.FC<NavbarProps> = ({
           <div className="flex items-center gap-1.5 sm:gap-3 shrink-0">
             <button
               onClick={onOpenEnquiry}
-              className="relative group overflow-hidden inline-flex items-center justify-center gap-1.5 sm:gap-2 px-3 sm:px-5 py-2 sm:py-2.5 rounded-full bg-[#1C1917] hover:bg-[#262118] text-[#FAF8F5] transition-all duration-300 hover:scale-[1.02] active:scale-95 cursor-pointer shadow-sm border border-[#FACC15]/65 hover:border-[#FEF08A] shadow-[0_2px_14px_rgba(234,179,8,0.22)] hover:shadow-[0_4px_22px_rgba(250,204,21,0.45)]"
-              aria-label="Enquire Desk - संपर्क"
+              className="relative group overflow-hidden inline-flex items-center justify-center gap-1.5 sm:gap-2 px-3.5 sm:px-5 py-2 sm:py-2.5 rounded-full bg-[#1C1917] hover:bg-[#262118] text-[#FAF8F5] transition-all duration-300 hover:scale-[1.02] active:scale-95 cursor-pointer shadow-sm border border-[#FACC15]/65 hover:border-[#FEF08A] shadow-[0_2px_14px_rgba(234,179,8,0.22)] hover:shadow-[0_4px_22px_rgba(250,204,21,0.45)]"
+              aria-label="Enquire Now - संपर्क"
             >
               <span className="inline-flex items-baseline gap-1.5 sm:gap-2">
                 <span className="text-[11px] sm:text-sm font-semibold text-[#FAF8F5] whitespace-nowrap">
-                  Enquire Desk
+                  Enquire Now
                 </span>
                 <span className="text-[#FACC15] font-semibold text-[11px] sm:text-sm select-none">
                   |
@@ -312,62 +205,6 @@ export const Navbar: React.FC<NavbarProps> = ({
             {navLinks.map((link) => {
               const isActive = currentTab === link.tab;
 
-              if (link.tab === 'projects') {
-                return (
-                  <div key={link.tab} className="rounded-xl border border-[#E8E2D5] bg-stone-50/50 overflow-hidden">
-                    <button
-                      onClick={() => handleNavClick('projects')}
-                      className={`w-full text-left px-4 py-3 transition-all flex items-center justify-between cursor-pointer ${
-                        isActive
-                          ? 'bg-white text-[#C59B27] font-bold shadow-xs'
-                          : 'text-[#44403C] hover:bg-white/70 hover:text-[#1C1917]'
-                      }`}
-                    >
-                      <div className="flex items-baseline gap-2.5">
-                        <span className="text-xs uppercase tracking-wider font-semibold">
-                          {link.label}
-                        </span>
-                        <span className="text-[11px] text-stone-500 font-hindi">
-                          {link.hindi}
-                        </span>
-                      </div>
-                      <IconMinimalArrow size={12} color={isActive ? 'amber' : 'stone'} />
-                    </button>
-
-                    {/* Sub-menu section items for Developments */}
-                    <div className="px-2 pb-2.5 pt-1 space-y-1 bg-white/80 border-t border-[#E8E2D5]/70">
-                      <div className="px-2 py-1 text-[10px] font-mono text-[#9A6F20] uppercase tracking-wider font-semibold flex items-center justify-between">
-                        <span>Section Menus:</span>
-                        <span className="font-hindi text-[10px]">॥ अनुभाग विभाजन ॥</span>
-                      </div>
-                      {DEV_MENU_ITEMS.map((item) => {
-                        const isSubActive = currentTab === 'projects' && currentDevelopmentCategory === item.key;
-                        return (
-                          <button
-                            key={item.key}
-                            onClick={() => handleDevSectionClick(item.key)}
-                            className={`w-full text-left px-3 py-2 rounded-lg text-xs transition-all flex items-center justify-between cursor-pointer ${
-                              isSubActive
-                                ? 'bg-[#1C1917] text-[#E7C973] font-bold shadow-xs'
-                                : 'text-[#57534E] hover:bg-stone-100 hover:text-[#1C1917]'
-                            }`}
-                          >
-                            <div className="inline-flex items-baseline gap-2">
-                              <span className="font-semibold text-xs sm:text-sm">{item.label}</span>
-                              <span className="text-stone-400 font-light select-none text-xs sm:text-sm">|</span>
-                              <span className="font-hindi text-xs sm:text-sm font-semibold">{item.hindi}</span>
-                            </div>
-                            <span className="text-[10px] font-mono opacity-70">
-                              {item.badge}
-                            </span>
-                          </button>
-                        );
-                      })}
-                    </div>
-                  </div>
-                );
-              }
-
               return (
                 <button
                   key={link.tab}
@@ -401,7 +238,7 @@ export const Navbar: React.FC<NavbarProps> = ({
               >
                 <span className="inline-flex items-baseline gap-2">
                   <span className="text-xs sm:text-sm font-semibold text-[#FAF8F5]">
-                    Enquire Desk
+                    Enquire Now
                   </span>
                   <span className="text-[#FACC15] font-semibold text-xs sm:text-sm select-none">
                     |

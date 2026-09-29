@@ -5,6 +5,8 @@ import { Footer } from './components/navigation/Footer';
 import { Hero } from './components/hero/Hero';
 import { CorporateFactsBar } from './components/company/CorporateFactsBar';
 import { ProjectsSection } from './components/projects/ProjectsSection';
+import { LocationSection } from './components/company/LocationSection';
+import { VastuViharAssociationSection } from './components/company/VastuViharAssociationSection';
 import { LandAndEMICalculator } from './components/tools/LandAndEMICalculator';
 import { AboutPage } from './components/company/AboutPage';
 import { ContactPage } from './components/contact/ContactPage';
@@ -18,18 +20,11 @@ import { ArrowUpRight, Sparkles } from 'lucide-react';
 
 export default function App() {
   const [currentTab, setCurrentTab] = useState<TabType>('home');
-  const [developmentCategory, setDevelopmentCategory] = useState<'all' | 'plots' | 'commercial' | 'farmlands' | 'villas'>('all');
   const [isEnquiryOpen, setIsEnquiryOpen] = useState(false);
   const [, setIsLoadingComplete] = useState(false);
 
   const handleSelectTab = (tab: TabType) => {
     setCurrentTab(tab);
-    window.scrollTo({ top: 0, behavior: 'smooth' });
-  };
-
-  const handleSelectDevelopmentCategory = (category: 'all' | 'plots' | 'commercial' | 'farmlands' | 'villas') => {
-    setDevelopmentCategory(category);
-    setCurrentTab('projects');
     window.scrollTo({ top: 0, behavior: 'smooth' });
   };
 
@@ -43,8 +38,6 @@ export default function App() {
       <Navbar
         currentTab={currentTab}
         onSelectTab={handleSelectTab}
-        onSelectDevelopmentCategory={handleSelectDevelopmentCategory}
-        currentDevelopmentCategory={developmentCategory}
         onOpenEnquiry={() => setIsEnquiryOpen(true)}
       />
 
@@ -55,30 +48,40 @@ export default function App() {
             {/* Cinematic Hero */}
             <Hero
               onOpenEnquiry={() => setIsEnquiryOpen(true)}
-              onExplorePortfolio={() => handleSelectTab('projects')}
+              onExplorePortfolio={() => handleSelectTab('plotting')}
             />
 
-            {/* REST OF HOME SECTIONS IN LUXURY MINIMAL LIGHT THEME */}
+            {/* REST OF HOME SECTIONS IN MINIMAL LIGHT LUXURY THEME */}
             <div className="relative w-full bg-[#FAF8F5] text-[#1C1917] overflow-hidden">
               {/* Visible Architectural Grid Canvas */}
               <GridBackgroundCanvas currentTab={currentTab} />
 
-              {/* Ambient Yellow Gradient Aura Washes */}
-              <div className="absolute top-1/4 -right-40 w-96 h-96 rounded-full bg-radial from-[#FACC15]/12 via-[#FEF08A]/5 to-transparent blur-3xl pointer-events-none" />
-              <div className="absolute top-2/3 -left-40 w-96 h-96 rounded-full bg-radial from-[#FDE047]/10 via-[#FACC15]/5 to-transparent blur-3xl pointer-events-none" />
+              {/* Ambient Yellow Gradient Subtle Washes */}
+              <div className="absolute top-1/4 -right-40 w-96 h-96 rounded-full bg-radial from-[#FACC15]/10 via-[#FEF08A]/4 to-transparent blur-3xl pointer-events-none" />
+              <div className="absolute top-2/3 -left-40 w-96 h-96 rounded-full bg-radial from-[#FDE047]/8 via-[#FACC15]/4 to-transparent blur-3xl pointer-events-none" />
 
               {/* Corporate Facts Bar */}
               <div className="relative z-10">
                 <CorporateFactsBar />
               </div>
 
-              {/* Projects in Preparation */}
+              {/* Plotting Opportunities */}
               <div className="relative z-10">
                 <ProjectsSection
                   showFilterMenu={false}
-                  onViewAllDevelopments={() => handleSelectTab('projects')}
+                  onViewAllDevelopments={() => handleSelectTab('plotting')}
                   onOpenEnquiry={() => setIsEnquiryOpen(true)}
                 />
+              </div>
+
+              {/* Strategic Bihar Locations Section */}
+              <div className="relative z-10">
+                <LocationSection onOpenEnquiry={() => setIsEnquiryOpen(true)} />
+              </div>
+
+              {/* Association with Vastu Vihar Section */}
+              <div className="relative z-10">
+                <VastuViharAssociationSection onOpenEnquiry={() => setIsEnquiryOpen(true)} />
               </div>
 
               {/* Land & EMI Calculator Teaser Banner */}
@@ -100,13 +103,13 @@ export default function App() {
                     onClick={() => handleSelectTab('calculator')}
                     className="shrink-0 px-6 py-3 rounded-full btn-yellow-gradient font-bold text-xs tracking-wider uppercase hover:scale-[1.02] transition-all cursor-pointer inline-flex items-center gap-2"
                   >
-                    <span>Launch Full Calculator</span>
+                    <span>Launch Land Calculator</span>
                     <ArrowUpRight className="w-4 h-4 text-[#0F0E0D]" />
                   </button>
                 </div>
               </div>
 
-              {/* Direct Enquiry CTA Banner in Warm Light Luxury */}
+              {/* Direct Consultation Desk Banner */}
               <section className="py-16 sm:py-24 relative z-10 border-t border-[#E8E2D5] px-4 sm:px-6 lg:px-8 bg-gradient-to-b from-[#FAF8F5] to-[#F5EFE6]">
                 <div className="max-w-5xl mx-auto">
                   <div className="rounded-3xl p-8 sm:p-14 bg-white border border-[#E8E2D5] hover:border-[#FACC15]/50 text-center space-y-6 shadow-[0_20px_50px_rgba(28,25,23,0.06)] hover:shadow-[0_25px_60px_rgba(234,179,8,0.12)] transition-all duration-300">
@@ -123,15 +126,15 @@ export default function App() {
                     </h2>
 
                     <p className="text-sm sm:text-base text-[#57534E] max-w-xl mx-auto leading-relaxed font-normal">
-                      Whether you are seeking clear-title residential or commercial land parcels, or are a local landowner exploring joint development partnerships in Aurangabad, Bihar.
+                      Whether you are seeking clear-title residential plots, strategic land parcels, or are a property seeker in Aurangabad, Bihar.
                     </p>
 
                     <div className="pt-2">
                       <button
                         onClick={() => setIsEnquiryOpen(true)}
-                        className="px-8 sm:px-10 py-4 rounded-full btn-yellow-gradient font-bold text-xs sm:text-sm uppercase tracking-[0.16em] cursor-pointer inline-flex items-center justify-center gap-2.5 hover:scale-[1.02] transition-all shadow-md"
+                        className="px-8 sm:px-10 py-4 rounded-full btn-yellow-gradient font-bold text-xs sm:text-sm uppercase tracking-[0.16em] cursor-pointer inline-flex items-center justify-center gap-2.5 hover:scale-[1.02] transition-all shadow-md text-[#0F0E0D]"
                       >
-                        <span>Open Formal Enquiry Desk</span>
+                        <span>Enquire Now</span>
                         <span className="font-hindi text-xs">| ॥ आवेदन करें ॥</span>
                         <ArrowUpRight className="w-4 h-4 text-[#0F0E0D]" />
                       </button>
@@ -153,13 +156,11 @@ export default function App() {
                 <AboutPage onOpenEnquiry={() => setIsEnquiryOpen(true)} />
               )}
 
-              {currentTab === 'services' && (
+              {(currentTab === 'plotting' || currentTab === 'projects' || currentTab === 'services') && (
                 <div className="space-y-0">
                   <ProjectsSection
                     onOpenEnquiry={() => setIsEnquiryOpen(true)}
                     showFilterMenu={true}
-                    selectedCategory={developmentCategory}
-                    onCategoryChange={setDevelopmentCategory}
                   />
                   <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
                     <CorporateFactsBar />
@@ -167,16 +168,20 @@ export default function App() {
                 </div>
               )}
 
-              {currentTab === 'projects' && (
+              {currentTab === 'locations' && (
                 <div className="space-y-0">
-                  <ProjectsSection
-                    onOpenEnquiry={() => setIsEnquiryOpen(true)}
-                    showFilterMenu={true}
-                    selectedCategory={developmentCategory}
-                    onCategoryChange={setDevelopmentCategory}
-                  />
+                  <LocationSection onOpenEnquiry={() => setIsEnquiryOpen(true)} />
                   <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
-                    <LandAndEMICalculator />
+                    <CorporateFactsBar />
+                  </div>
+                </div>
+              )}
+
+              {currentTab === 'association' && (
+                <div className="space-y-0 py-8">
+                  <VastuViharAssociationSection onOpenEnquiry={() => setIsEnquiryOpen(true)} />
+                  <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
+                    <CorporateFactsBar />
                   </div>
                 </div>
               )}
@@ -207,7 +212,7 @@ export default function App() {
         )}
       </main>
 
-      {/* Global Interactive Enquiry Modal */}
+      {/* Global Interactive Consultation Modal */}
       <EnquiryModal
         isOpen={isEnquiryOpen}
         onClose={() => setIsEnquiryOpen(false)}
@@ -216,7 +221,6 @@ export default function App() {
       {/* Corporate Statutory Footer */}
       <Footer
         onSelectTab={handleSelectTab}
-        onSelectDevelopmentCategory={handleSelectDevelopmentCategory}
         onOpenEnquiry={() => setIsEnquiryOpen(true)}
       />
 
@@ -227,8 +231,6 @@ export default function App() {
       <MobileBottomNav
         currentTab={currentTab}
         onSelectTab={handleSelectTab}
-        onSelectDevelopmentCategory={handleSelectDevelopmentCategory}
-        currentDevelopmentCategory={developmentCategory}
         onOpenEnquiry={() => setIsEnquiryOpen(true)}
       />
 

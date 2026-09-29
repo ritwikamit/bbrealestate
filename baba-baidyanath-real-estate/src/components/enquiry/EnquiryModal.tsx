@@ -43,8 +43,8 @@ export const EnquiryModal: React.FC<EnquiryModalProps> = ({ isOpen, onClose }) =
           <EnquiryForm 
             onSuccess={onClose}
             theme="dark"
-            title="Official Requirement Registration"
-            subtitle="Submit your property, land parcel, or partnership inquiry directly to the corporate office in Aurangabad."
+            title="Property Consultation & Land Requirement"
+            subtitle="Submit your plot or land parcel requirement directly to the corporate office in Aurangabad."
           />
 
         </div>

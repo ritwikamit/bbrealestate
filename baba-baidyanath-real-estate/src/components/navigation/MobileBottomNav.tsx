@@ -19,8 +19,8 @@ interface MobileBottomNavProps {
 /**
  * Minimalist Luxury Quick Menu for Smartphone & Tablet:
  * - Streamlined to 5 essential quick actions (no redundant drawers; header menu handles full sitemap)
- * - Bespoke native vector icons crafted & validated via custom-icons skill
- * - Seamless royal yellow gradient theme accents
+ * - Native vector icons built and verified via custom-icons skill
+ * - Harmonious royal yellow gradient theme accents
  * - Clean active states with ZERO distracting floating dots
  * - Safe area padding for edge-to-edge iOS and Android screens
  */
@@ -75,33 +75,33 @@ export const MobileBottomNav: React.FC<MobileBottomNavProps> = ({
           </span>
         </button>
 
-        {/* 2. Developments / Projects */}
+        {/* 2. Plotting */}
         <button
-          onClick={() => handleTabClick('projects')}
+          onClick={() => handleTabClick('plotting')}
           className={`flex flex-col items-center justify-center py-1.5 px-1 rounded-xl transition-all duration-200 cursor-pointer select-none active:scale-95 ${
-            currentTab === 'projects'
+            currentTab === 'plotting' || currentTab === 'projects'
               ? 'text-[#FACC15] bg-yellow-500/10 border border-[#FACC15]/40 shadow-xs'
               : 'text-stone-400 hover:text-stone-200'
           }`}
-          aria-label="Projects"
+          aria-label="Plotting Opportunities"
         >
           <NavIconDevelopments
             size={20}
             className={`transition-colors duration-200 ${
-              currentTab === 'projects'
+              currentTab === 'plotting' || currentTab === 'projects'
                 ? 'text-[#FACC15] drop-shadow-[0_0_8px_rgba(250,204,21,0.5)]'
                 : 'text-stone-400'
             }`}
           />
           <span
             className={`text-[10px] tracking-wider uppercase mt-1 truncate max-w-full ${
-              currentTab === 'projects' ? 'font-bold text-[#FACC15]' : 'font-medium text-stone-400'
+              currentTab === 'plotting' || currentTab === 'projects' ? 'font-bold text-[#FACC15]' : 'font-medium text-stone-400'
             }`}
           >
-            Projects
+            Plotting
           </span>
           <span className="text-[9px] font-hindi text-stone-500 -mt-0.5 leading-tight">
-            परियोजनाएं
+            प्लॉटिंग
           </span>
         </button>
 

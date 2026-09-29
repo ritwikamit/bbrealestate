@@ -37,7 +37,7 @@ export const AboutPage: React.FC<AboutPageProps> = ({ onOpenEnquiry }) => {
     <div className="relative z-10 w-full text-[#1C1917] pb-24">
       
       {/* ========================================================================= */}
-      {/* 1. EDITORIAL HERO: MINIMAL, TIMELESS, AUTHENTIC */}
+      {/* 1. EDITORIAL HERO: MINIMAL, EDITORIAL, AUTHENTIC */}
       {/* ========================================================================= */}
       <section className="relative w-full pt-8 sm:pt-12 pb-14 sm:pb-20 border-b border-[#E8E2D5]">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">

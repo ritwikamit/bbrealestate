@@ -126,14 +126,14 @@ export const Hero: React.FC<HeroProps> = ({
           className="font-cinzel text-white font-bold leading-[1.15] sm:leading-[1.12] tracking-[0.03em] sm:tracking-[0.05em] mb-3 sm:mb-4 text-2xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl select-none drop-shadow-[0_4px_35px_rgba(0,0,0,0.95)] max-w-full"
         >
           <span className="block text-[#FAF8F5] drop-shadow-[0_2px_15px_rgba(0,0,0,0.9)]">
-            WHERE SACRED TRUST
+            LAND WITH A
           </span>
           <span className="block mt-1 sm:mt-2 text-yellow-gradient drop-shadow-[0_4px_35px_rgba(250,204,21,0.55)]">
-            SHAPES TIMELESS LANDMARKS
+            CLEARER FUTURE.
           </span>
         </motion.h1>
 
-        {/* Authentic Hindi Regional Ribbon & Slogan */}
+        {/* Authentic Conversational Hindi Regional Ribbon */}
         <motion.div
           initial={{ opacity: 0, y: 10 }}
           animate={{ opacity: 1, y: 0 }}
@@ -141,10 +141,10 @@ export const Hero: React.FC<HeroProps> = ({
           className="space-y-1 mb-5 sm:mb-7"
         >
           <div className="font-hindi text-sm sm:text-lg md:text-xl text-[#E7C973] font-semibold tracking-wide drop-shadow-md">
-            ॥ बाबा बैद्यनाथ की पावन भूमि पर प्रामाणिक एवं सुरक्षित भूमि निवेश ॥
+            ॥ अपनी जमीन के लिए सही जगह चुनना एक बड़ा फैसला है ॥
           </div>
           <div className="font-hindi text-xs sm:text-sm text-stone-300 font-normal">
-            विश्वास, पारदर्शिता और आपकी अपनी ज़मीन — औरंगाबाद, बिहार
+            हम बेहतर लोकेशन और स्पष्ट जानकारी के साथ प्लॉटिंग के अवसर उपलब्ध कराते हैं।
           </div>
         </motion.div>
 
@@ -155,7 +155,7 @@ export const Hero: React.FC<HeroProps> = ({
           transition={{ duration: 0.5 }}
           className="font-jakarta text-[#E7E5E4] font-normal leading-relaxed max-w-xl sm:max-w-2xl lg:max-w-3xl mb-7 sm:mb-9 text-xs sm:text-base md:text-lg [text-wrap:balance] drop-shadow-[0_2px_12px_rgba(0,0,0,0.95)] px-2"
         >
-          Registered under the Ministry of Corporate Affairs (RoC Patna), we provide verified clear-title residential plots, commercial spaces, and agricultural parcels with direct access to NH-19 and arterial corridors across Aurangabad and South Bihar.
+          Premium plotting opportunities in carefully selected locations across Bihar. Demarcated land parcels with verified title due diligence and planned road connectivity.
         </motion.p>
 
         {/* Dual High-Impact Action Buttons */}
@@ -170,7 +170,7 @@ export const Hero: React.FC<HeroProps> = ({
             onClick={handleExplore}
             className="w-full sm:w-auto group relative overflow-hidden h-12 sm:h-14 px-8 sm:px-10 rounded-full btn-yellow-gradient font-bold tracking-[0.14em] uppercase text-xs sm:text-sm hover:scale-[1.03] transition-all duration-300 flex items-center justify-center gap-2.5 cursor-pointer font-jakarta"
           >
-            <span>Explore Developments</span>
+            <span>View Plotting Opportunities</span>
             <IconMinimalArrow size={14} color="stone" className="transition-transform group-hover:translate-x-1" />
           </button>
 
@@ -180,7 +180,7 @@ export const Hero: React.FC<HeroProps> = ({
             className="w-full sm:w-auto h-12 sm:h-14 liquid-glass text-white/95 hover:text-white uppercase font-semibold rounded-full px-8 sm:px-10 tracking-[0.16em] text-xs sm:text-sm transition-all duration-300 flex items-center justify-center gap-2 cursor-pointer border border-[#FACC15]/40 hover:border-[#FEF08A] hover:bg-white/[0.12] font-jakarta"
           >
             <IconDivineSpark size={14} color="gold" />
-            <span>Consultation Desk</span>
+            <span>Enquire Now</span>
           </button>
         </motion.div>
       </div>
@@ -216,8 +216,8 @@ export const Hero: React.FC<HeroProps> = ({
               <IconVastuMandala size={18} color="gold" />
             </div>
             <div className="text-left font-jakarta">
-              <span className="block text-[11px] font-semibold text-white uppercase tracking-wider">Vastu Aligned</span>
-              <span className="block text-[10px] text-[#E7C973] font-hindi">वास्तु सम्मत विन्यास</span>
+              <span className="block text-[11px] font-semibold text-white uppercase tracking-wider">Demarcated Plots</span>
+              <span className="block text-[10px] text-[#E7C973] font-hindi">सीमांकित भूखंड एवं रास्ते</span>
             </div>
           </div>
 
@@ -226,8 +226,8 @@ export const Hero: React.FC<HeroProps> = ({
               <IconGeoPin size={18} color="gold" />
             </div>
             <div className="text-left font-jakarta">
-              <span className="block text-[11px] font-semibold text-white uppercase tracking-wider">Prime Bihar Corridors</span>
-              <span className="block text-[10px] text-[#E7C973] font-hindi">औरंगाबाद एवं मगध क्षेत्र</span>
+              <span className="block text-[11px] font-semibold text-white uppercase tracking-wider">Prime Bihar Locations</span>
+              <span className="block text-[10px] text-[#E7C973] font-hindi">औरंगाबाद एवं प्रमुख क्षेत्र</span>
             </div>
           </div>
 

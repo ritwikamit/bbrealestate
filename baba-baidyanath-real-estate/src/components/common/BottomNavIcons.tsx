@@ -6,7 +6,7 @@ interface IconProps {
 }
 
 /**
- * 1. Bespoke Nav Home Icon (Sacred Architectural Sanctuary / Estate Pavilion)
+ * 1. Vector Nav Home Icon (Sacred Architectural Sanctuary / Estate Pavilion)
  * Validated by custom-icons skill (24x24 viewBox)
  */
 export const NavIconHome: React.FC<IconProps> = ({ size = 20, className = '' }) => (
@@ -31,7 +31,7 @@ export const NavIconHome: React.FC<IconProps> = ({ size = 20, className = '' }) 
 );
 
 /**
- * 2. Bespoke Nav Developments Icon (Master-Planned Plotted Layout Matrix)
+ * 2. Vector Nav Developments Icon (Master-Planned Plotted Layout Matrix)
  * Validated by custom-icons skill (24x24 viewBox)
  */
 export const NavIconDevelopments: React.FC<IconProps> = ({ size = 20, className = '' }) => (
@@ -57,7 +57,7 @@ export const NavIconDevelopments: React.FC<IconProps> = ({ size = 20, className 
 );
 
 /**
- * 3. Bespoke Nav Calculator Icon (Precision Land Computing & EMI Engine)
+ * 3. Vector Nav Calculator Icon (Precision Land Computing & EMI Engine)
  * Validated by custom-icons skill (24x24 viewBox)
  */
 export const NavIconCalculator: React.FC<IconProps> = ({ size = 20, className = '' }) => (
@@ -86,7 +86,7 @@ export const NavIconCalculator: React.FC<IconProps> = ({ size = 20, className = 
 );
 
 /**
- * 4. Bespoke Nav Call Icon (Official Direct Desk Handset with Signal Wave)
+ * 4. Vector Nav Call Icon (Official Direct Desk Handset with Signal Wave)
  * Validated by custom-icons skill (24x24 viewBox)
  */
 export const NavIconCall: React.FC<IconProps> = ({ size = 20, className = '' }) => (
@@ -110,7 +110,7 @@ export const NavIconCall: React.FC<IconProps> = ({ size = 20, className = '' }) 
 );
 
 /**
- * 5. Bespoke Nav Enquire Icon (Sacred Enquiry Dossier & Consultation Registry)
+ * 5. Vector Nav Enquire Icon (Sacred Enquiry Dossier & Consultation Registry)
  * Validated by custom-icons skill (24x24 viewBox)
  */
 export const NavIconEnquire: React.FC<IconProps> = ({ size = 20, className = '' }) => (

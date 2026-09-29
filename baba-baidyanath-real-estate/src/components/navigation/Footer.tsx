@@ -7,21 +7,11 @@ import { CompanyLogo } from '../common/CompanyLogo';
 interface FooterProps {
   onSelectTab: (tab: TabType) => void;
   onOpenEnquiry: () => void;
-  onSelectDevelopmentCategory?: (category: 'all' | 'plots' | 'commercial' | 'farmlands' | 'villas') => void;
 }
 
-export const Footer: React.FC<FooterProps> = ({ onSelectTab, onOpenEnquiry, onSelectDevelopmentCategory }) => {
+export const Footer: React.FC<FooterProps> = ({ onSelectTab, onOpenEnquiry }) => {
   const handleLink = (tab: TabType) => {
     onSelectTab(tab);
-    window.scrollTo({ top: 0, behavior: 'smooth' });
-  };
-
-  const handleDevSection = (cat: 'all' | 'plots' | 'commercial' | 'farmlands' | 'villas') => {
-    if (onSelectDevelopmentCategory) {
-      onSelectDevelopmentCategory(cat);
-    } else {
-      onSelectTab('projects');
-    }
     window.scrollTo({ top: 0, behavior: 'smooth' });
   };
 
@@ -105,33 +95,27 @@ export const Footer: React.FC<FooterProps> = ({ onSelectTab, onOpenEnquiry, onSe
               </li>
               <li>
                 <button 
-                  onClick={() => handleDevSection('all')} 
+                  onClick={() => handleLink('plotting')} 
                   className="hover:text-[#E7C973] transition-colors cursor-pointer text-left font-medium"
                 >
-                  Developments (All Sites)
+                  Plotting Opportunities
                 </button>
-                <div className="pl-2 pt-1 pb-1 space-y-1 text-[11px] text-stone-400">
-                  <div>
-                    <button onClick={() => handleDevSection('plots')} className="hover:text-[#E7C973] transition-colors cursor-pointer">
-                      &bull; Plotted Townships
-                    </button>
-                  </div>
-                  <div>
-                    <button onClick={() => handleDevSection('commercial')} className="hover:text-[#E7C973] transition-colors cursor-pointer">
-                      &bull; Commercial Plazas
-                    </button>
-                  </div>
-                  <div>
-                    <button onClick={() => handleDevSection('farmlands')} className="hover:text-[#E7C973] transition-colors cursor-pointer">
-                      &bull; Agro Farmlands
-                    </button>
-                  </div>
-                  <div>
-                    <button onClick={() => handleDevSection('villas')} className="hover:text-[#E7C973] transition-colors cursor-pointer">
-                      &bull; Bespoke Villas
-                    </button>
-                  </div>
-                </div>
+              </li>
+              <li>
+                <button 
+                  onClick={() => handleLink('locations')} 
+                  className="hover:text-[#E7C973] transition-colors cursor-pointer text-left font-medium"
+                >
+                  Locations &amp; Corridors
+                </button>
+              </li>
+              <li>
+                <button 
+                  onClick={() => handleLink('association')} 
+                  className="hover:text-[#E7C973] transition-colors cursor-pointer text-left font-medium"
+                >
+                  Associated with Vastu Vihar
+                </button>
               </li>
               <li>
                 <button 
@@ -236,7 +220,7 @@ export const Footer: React.FC<FooterProps> = ({ onSelectTab, onOpenEnquiry, onSe
                 onClick={onOpenEnquiry}
                 className="w-full rounded-xl py-3 px-4 text-xs uppercase tracking-[0.14em] text-[#0F0E0D] font-bold bg-gradient-to-r from-[#9A6F20] via-[#C59B27] to-[#E7C973] hover:opacity-95 shadow-[0_0_20px_rgba(197,155,39,0.3)] flex items-center justify-center gap-2 cursor-pointer transition-all border border-[#E7C973]/40"
               >
-                <span>Submit Requirement</span>
+                <span>Enquire Now</span>
                 <ArrowUpRight className="w-3.5 h-3.5 text-[#0F0E0D]" />
               </button>
             </div>

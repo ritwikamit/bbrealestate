@@ -1,13 +1,16 @@
 export type TabType = 
   | 'home'
   | 'about'
-  | 'services'
-  | 'projects'
+  | 'plotting'
+  | 'locations'
+  | 'association'
   | 'calculator'
   | 'contact'
   | 'privacy'
   | 'terms'
-  | 'disclaimer';
+  | 'disclaimer'
+  | 'projects'
+  | 'services';
 
 export interface CompanyData {
   name: string;
@@ -58,10 +61,12 @@ export interface EnquirySubmission {
   name: string;
   phone: string;
   email?: string;
-  enquiryType: string;
-  propertyRequirement?: string;
-  budget?: string;
   preferredLocation?: string;
+  propertyType: 'Residential Plot' | 'Land Parcel' | 'Other';
+  plotSizeRequirement?: string;
+  budgetRange: string;
+  purpose: 'Investment' | 'Personal Use' | 'Future Development' | 'Other';
+  preferredContactMethod?: 'Phone' | 'WhatsApp' | 'Email';
   message: string;
 }
 
@@ -69,9 +74,11 @@ export interface EnquiryFormData {
   name: string;
   phone: string;
   email: string;
-  enquiryType: string;
-  propertyRequirement: string;
-  budget: string;
   preferredLocation: string;
+  propertyType: string;
+  plotSizeRequirement: string;
+  budgetRange: string;
+  purpose: string;
+  preferredContactMethod: string;
   message: string;
 }

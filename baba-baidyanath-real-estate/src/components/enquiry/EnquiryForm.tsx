@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { EnquiryFormData } from '../../types';
-import { Send, CheckCircle2, ShieldCheck, AlertCircle } from 'lucide-react';
+import { Send, CheckCircle2, ShieldCheck, AlertCircle, Phone, MessageSquare, Mail } from 'lucide-react';
 import { CompanyLogo } from '../common/CompanyLogo';
 
 interface EnquiryFormProps {
@@ -12,7 +12,7 @@ interface EnquiryFormProps {
 
 export const EnquiryForm: React.FC<EnquiryFormProps> = ({ 
   onSuccess,
-  title = "Register Your Property Requirement",
+  title = "Property Consultation & Land Requirement",
   subtitle = "Direct communication with Baba Baidyanath Real Estate Private Limited.",
   theme = 'light'
 }) => {
@@ -22,10 +22,12 @@ export const EnquiryForm: React.FC<EnquiryFormProps> = ({
     name: '',
     phone: '',
     email: '',
-    enquiryType: 'Property Requirement',
-    propertyRequirement: 'Residential Land',
-    budget: '₹20L - ₹50L',
     preferredLocation: '',
+    propertyType: 'Residential Plot',
+    plotSizeRequirement: '',
+    budgetRange: '₹50 Lakh – ₹1 Crore',
+    purpose: 'Investment',
+    preferredContactMethod: 'Phone',
     message: ''
   });
 
@@ -63,11 +65,6 @@ export const EnquiryForm: React.FC<EnquiryFormProps> = ({
       return;
     }
 
-    if (!formData.message.trim()) {
-      setErrorMessage('Please briefly outline your property or development requirement.');
-      return;
-    }
-
     setIsSubmitting(true);
 
     // Generate statutory reference number
@@ -101,10 +98,12 @@ export const EnquiryForm: React.FC<EnquiryFormProps> = ({
       name: '',
       phone: '',
       email: '',
-      enquiryType: 'Property Requirement',
-      propertyRequirement: 'Residential Land',
-      budget: '₹20L - ₹50L',
       preferredLocation: '',
+      propertyType: 'Residential Plot',
+      plotSizeRequirement: '',
+      budgetRange: '₹50 Lakh – ₹1 Crore',
+      purpose: 'Investment',
+      preferredContactMethod: 'Phone',
       message: ''
     });
     setSubmitted(false);
@@ -130,13 +129,13 @@ export const EnquiryForm: React.FC<EnquiryFormProps> = ({
 
         <div className="space-y-2">
           <span className="text-xs uppercase tracking-[0.25em] text-[#B45309] font-mono font-medium block">
-            Requirement Registered
+            Consultation Request Logged
           </span>
           <h3 className={`font-serif text-3xl font-bold ${isDark ? 'text-white' : 'text-[#1C1917]'}`}>
             Thank You, {formData.name}
           </h3>
           <p className={`text-sm max-w-md mx-auto leading-relaxed ${isDark ? 'text-stone-300' : 'text-[#57534E]'}`}>
-            Your inquiry has been logged directly with Baba Baidyanath Real Estate Private Limited in Aurangabad. A designated officer will contact you shortly.
+            Your requirement has been logged directly with Baba Baidyanath Real Estate Private Limited in Aurangabad. A designated officer will contact you via your preferred method.
           </p>
         </div>
 
@@ -154,7 +153,7 @@ export const EnquiryForm: React.FC<EnquiryFormProps> = ({
         <div className="pt-2">
           <button
             onClick={resetForm}
-            className="rounded-full px-7 py-3 text-xs uppercase tracking-[0.18em] bg-gradient-to-r from-[#B45309] via-[#F59E0B] to-[#D97706] text-[#0C0A09] font-bold cursor-pointer active:scale-95 btn-gold-border"
+            className="rounded-full px-7 py-3 text-xs uppercase tracking-[0.18em] btn-yellow-gradient text-[#0C0A09] font-bold cursor-pointer active:scale-95"
           >
             Submit Another Requirement
           </button>
@@ -195,7 +194,7 @@ export const EnquiryForm: React.FC<EnquiryFormProps> = ({
         </div>
       )}
 
-      {/* Row 1: Name & Phone */}
+      {/* Row 1: Full Name & Mobile Number */}
       <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
         <div className="space-y-1.5">
           <label className={labelClass}>
@@ -214,7 +213,7 @@ export const EnquiryForm: React.FC<EnquiryFormProps> = ({
 
         <div className="space-y-1.5">
           <label className={labelClass}>
-            Phone Number <span className="text-[#DC2626]">*</span>
+            Mobile Number <span className="text-[#DC2626]">*</span>
           </label>
           <input
             type="tel"
@@ -228,11 +227,11 @@ export const EnquiryForm: React.FC<EnquiryFormProps> = ({
         </div>
       </div>
 
-      {/* Row 2: Email & Category */}
+      {/* Row 2: Email & Preferred Location */}
       <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
         <div className="space-y-1.5">
           <label className={labelClass}>
-            Email Address (Optional)
+            Email Address
           </label>
           <input
             type="email"
@@ -246,89 +245,138 @@ export const EnquiryForm: React.FC<EnquiryFormProps> = ({
 
         <div className="space-y-1.5">
           <label className={labelClass}>
-            Enquiry Nature
+            Preferred Location
           </label>
-          <select
-            name="enquiryType"
-            value={formData.enquiryType}
+          <input
+            type="text"
+            name="preferredLocation"
+            value={formData.preferredLocation}
             onChange={handleChange}
-            className={`${inputClass} cursor-pointer`}
-          >
-            <option value="Property Requirement">Property Acquisition</option>
-            <option value="Land Sale Proposal">Landowner / Land Sale Offer</option>
-            <option value="Corporate Joint Venture">Commercial Joint Development</option>
-            <option value="Legal & Title Verification">Statutory Due Diligence</option>
-            <option value="General Inquiry">General Corporate Query</option>
-          </select>
+            placeholder="e.g. Near GT Road NH-19, Aurangabad, etc."
+            className={inputClass}
+          />
         </div>
       </div>
 
-      {/* Row 3: Requirement Type & Budget */}
+      {/* Row 3: Property Type & Approximate Plot Size */}
       <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
         <div className="space-y-1.5">
           <label className={labelClass}>
-            Property Typology
+            Property Type
           </label>
           <select
-            name="propertyRequirement"
-            value={formData.propertyRequirement}
+            name="propertyType"
+            value={formData.propertyType}
             onChange={handleChange}
             className={`${inputClass} cursor-pointer`}
           >
-            <option value="Residential Land">Residential Plot / Land (Katha)</option>
-            <option value="Commercial Space">Commercial / Highway Frontage</option>
-            <option value="Acreage / Farm Land">Agricultural / Large Acreage</option>
-            <option value="Warehouse / Logistic">Logistics & Warehousing</option>
-            <option value="Other">Other Institutional Requirement</option>
+            <option value="Residential Plot">Residential Plot</option>
+            <option value="Land Parcel">Land Parcel</option>
+            <option value="Other">Other</option>
           </select>
         </div>
 
         <div className="space-y-1.5">
           <label className={labelClass}>
-            Estimated Budget Bracket
+            Approximate Plot Size / Land Requirement
+          </label>
+          <input
+            type="text"
+            name="plotSizeRequirement"
+            value={formData.plotSizeRequirement}
+            onChange={handleChange}
+            placeholder="Example: 2000 sq ft, 5000 sq ft, 1 katha, 1 acre"
+            className={inputClass}
+          />
+        </div>
+      </div>
+
+      {/* Row 4: Budget Range & Purpose */}
+      <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+        <div className="space-y-1.5">
+          <label className={labelClass}>
+            Budget Range
           </label>
           <select
-            name="budget"
-            value={formData.budget}
+            name="budgetRange"
+            value={formData.budgetRange}
             onChange={handleChange}
             className={`${inputClass} cursor-pointer`}
           >
-            <option value="Under ₹20L">Under ₹ 20 Lakhs</option>
-            <option value="₹20L - ₹50L">₹ 20 Lakhs – ₹ 50 Lakhs</option>
-            <option value="₹50L - ₹1Cr">₹ 50 Lakhs – ₹ 1 Crore</option>
-            <option value="₹1Cr - ₹3Cr">₹ 1 Crore – ₹ 3 Crores</option>
-            <option value="Above ₹3Cr">Above ₹ 3 Crores</option>
+            <option value="₹50 Lakh – ₹1 Crore">₹50 Lakh – ₹1 Crore</option>
+            <option value="₹1 – ₹2 Crore">₹1 – ₹2 Crore</option>
+            <option value="₹2 – ₹5 Crore">₹2 – ₹5 Crore</option>
+            <option value="₹5 – ₹10 Crore">₹5 – ₹10 Crore</option>
+            <option value="₹10 Crore+">₹10 Crore+</option>
+            <option value="Prefer not to say">Prefer not to say</option>
+          </select>
+        </div>
+
+        <div className="space-y-1.5">
+          <label className={labelClass}>
+            Purpose
+          </label>
+          <select
+            name="purpose"
+            value={formData.purpose}
+            onChange={handleChange}
+            className={`${inputClass} cursor-pointer`}
+          >
+            <option value="Investment">Investment</option>
+            <option value="Personal Use">Personal Use</option>
+            <option value="Future Development">Future Development</option>
+            <option value="Other">Other</option>
           </select>
         </div>
       </div>
 
-      {/* Row 4: Preferred Location */}
+      {/* Row 5: Preferred Contact Method */}
       <div className="space-y-1.5">
         <label className={labelClass}>
-          Target Locality / Corridor in Aurangabad / Magadh
+          Preferred Contact Method
         </label>
-        <input
-          type="text"
-          name="preferredLocation"
-          value={formData.preferredLocation}
-          onChange={handleChange}
-          placeholder="e.g. Near Gayatri Mandir, NH-19 GT Road corridor, Daudnagar Road, etc."
-          className={inputClass}
-        />
+        <div className="grid grid-cols-3 gap-3">
+          {[
+            { id: 'Phone', label: 'Phone', icon: Phone },
+            { id: 'WhatsApp', label: 'WhatsApp', icon: MessageSquare },
+            { id: 'Email', label: 'Email', icon: Mail }
+          ].map((item) => {
+            const isSelected = formData.preferredContactMethod === item.id;
+            const Icon = item.icon;
+            return (
+              <button
+                type="button"
+                key={item.id}
+                onClick={() => setFormData((prev) => ({ ...prev, preferredContactMethod: item.id }))}
+                className={`py-2.5 px-3 rounded-xl border text-xs font-semibold flex items-center justify-center gap-2 cursor-pointer transition-all ${
+                  isSelected
+                    ? isDark
+                      ? 'bg-yellow-500/20 border-[#FACC15] text-[#FEF08A]'
+                      : 'bg-[#1C1917] border-[#1C1917] text-[#FAF8F5]'
+                    : isDark
+                      ? 'bg-white/[0.03] border-white/10 text-stone-300 hover:bg-white/[0.08]'
+                      : 'bg-white border-[#E8E2D5] text-[#57534E] hover:bg-stone-50'
+                }`}
+              >
+                <Icon className="w-3.5 h-3.5" />
+                <span>{item.label}</span>
+              </button>
+            );
+          })}
+        </div>
       </div>
 
-      {/* Row 5: Message */}
+      {/* Row 6: Message */}
       <div className="space-y-1.5">
         <label className={labelClass}>
-          Specific Requirement Outline <span className="text-[#DC2626]">*</span>
+          Message / Specific Notes
         </label>
         <textarea
           name="message"
           rows={3}
-          required
           value={formData.message}
           onChange={handleChange}
-          placeholder="Please describe size needed (e.g. 2 Katha), purpose, timeline, or land details if offering land."
+          placeholder="Share any additional requirements, preferred timelines, or specific location preferences."
           className={`${inputClass} resize-none`}
         />
       </div>
@@ -338,14 +386,14 @@ export const EnquiryForm: React.FC<EnquiryFormProps> = ({
         <button
           type="submit"
           disabled={isSubmitting}
-          className="w-full rounded-full py-3.5 px-6 btn-yellow-gradient font-bold text-xs uppercase tracking-[0.16em] transition-all duration-200 cursor-pointer disabled:opacity-50 flex items-center justify-center gap-2 hover:scale-[1.01] active:scale-95 shadow-md"
+          className="w-full rounded-full py-3.5 px-6 btn-yellow-gradient font-bold text-xs uppercase tracking-[0.16em] transition-all duration-200 cursor-pointer disabled:opacity-50 flex items-center justify-center gap-2 hover:scale-[1.01] active:scale-95 shadow-md text-[#0C0A09]"
         >
           {isSubmitting ? (
-            <span>Securing & Registering...</span>
+            <span>Securing &amp; Registering...</span>
           ) : (
             <>
               <Send className="w-3.5 h-3.5 text-[#0C0A09]" />
-              <span>Submit Confidential Requirement</span>
+              <span>Submit Consultation Request</span>
             </>
           )}
         </button>

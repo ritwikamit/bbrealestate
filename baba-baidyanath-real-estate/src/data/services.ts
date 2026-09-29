@@ -34,7 +34,7 @@ export const CAPABILITY_AREAS: ServiceItem[] = [
     number: "03",
     title: "Landowner Partnerships & Joint Development",
     category: "Structured Collaboration",
-    overview: "Collaborative models for agricultural and commercial landholders seeking to unlock fair, long-term capital value without sacrificing family patrimony.",
+    overview: "Collaborative models for agricultural and commercial landholders seeking to realize fair, long-term capital value without sacrificing family patrimony.",
     deliverables: [
       "Fair revenue-share and area-sharing agreements (JDA)",
       "Transparent project accounting and escrow protections",

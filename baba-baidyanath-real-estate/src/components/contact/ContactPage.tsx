@@ -18,10 +18,10 @@ export const ContactPage: React.FC = () => {
             Connect With Our Corporate Office
           </h1>
           <div className="font-hindi text-base sm:text-lg text-[#9A6F20] font-medium">
-            ॥ संपर्क एवं स्थल निरीक्षण कार्यालय — औरंगाबाद, बिहार ॥
+            ॥ संपर्क एवं स्थल निरीक्षण कार्यालय, औरंगाबाद, बिहार ॥
           </div>
           <p className="text-base sm:text-lg text-[#57534E] leading-relaxed font-normal">
-            We welcome direct inquiries from property seekers, institutional partners, and landowners in Aurangabad, Rohtas, Gaya, and adjacent corridors.
+            We welcome direct inquiries from property seekers and landowners in Aurangabad, Rohtas, Gaya, and adjacent corridors.
           </p>
         </div>
 
@@ -129,7 +129,7 @@ export const ContactPage: React.FC = () => {
             <div className="rounded-3xl p-7 sm:p-9 bg-white border border-[#E7E2D8] shadow-[0_15px_35px_rgba(28,25,23,0.06)] text-[#1C1917]">
               <EnquiryForm 
                 title="Send a Direct Message"
-                subtitle="Fill out the requirements schedule below for residential plots, commercial space, or landowner joint developments."
+                subtitle="Fill out the consultation schedule below for residential plots, land parcels, or land consultation."
               />
             </div>
           </div>
