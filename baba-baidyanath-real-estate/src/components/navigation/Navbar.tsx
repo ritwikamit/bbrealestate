@@ -201,14 +201,15 @@ export const Navbar: React.FC<NavbarProps> = ({
                                 }`}
                               >
                                 <div className="space-y-0.5">
-                                  <div className="flex items-center gap-1.5">
-                                    <span className={`text-xs font-bold transition-colors ${
+                                  <div className="flex items-center gap-2">
+                                    <span className={`text-xs sm:text-sm font-semibold leading-none inline-flex items-center transition-colors ${
                                       isItemActive ? 'text-[#C59B27]' : 'text-[#1C1917] group-hover/item:text-[#C59B27]'
                                     }`}>
                                       {item.label}
                                     </span>
-                                    <span className="font-hindi text-[11px] text-[#9A6F20]">
-                                      ({item.hindi})
+                                    <span className="text-stone-400 font-light leading-none select-none text-xs sm:text-sm inline-flex items-center">|</span>
+                                    <span className="font-hindi text-xs sm:text-sm font-semibold text-[#9A6F20] leading-none inline-flex items-center">
+                                      {item.hindi}
                                     </span>
                                   </div>
                                   <div className="text-[10.5px] text-[#78716C] line-clamp-1">
@@ -264,11 +265,18 @@ export const Navbar: React.FC<NavbarProps> = ({
           <div className="flex items-center gap-2 sm:gap-3 shrink-0">
             <button
               onClick={onOpenEnquiry}
-              className="relative group overflow-hidden inline-flex items-center gap-2 px-4 sm:px-5 py-2.5 rounded-full bg-[#1C1917] hover:bg-[#2C2724] text-[#FAF8F5] font-semibold text-xs sm:text-[13px] tracking-wider uppercase whitespace-nowrap shrink-0 transition-all duration-300 hover:scale-[1.02] active:scale-95 cursor-pointer shadow-sm border border-[#C59B27]/40"
+              className="relative group overflow-hidden inline-flex items-center justify-center gap-2 px-4 sm:px-5 py-2.5 rounded-full bg-[#1C1917] hover:bg-[#2C2724] text-[#FAF8F5] transition-all duration-300 hover:scale-[1.02] active:scale-95 cursor-pointer shadow-sm border border-[#C59B27]/40"
+              aria-label="Enquire Desk - संपर्क"
             >
-              <span className="whitespace-nowrap text-[#FAF8F5]">Enquire Desk</span>
-              <span className="text-stone-500 font-light">|</span>
-              <span className="text-xs sm:text-[13px] font-semibold text-[#E7C973] font-hindi leading-none inline-block">संपर्क</span>
+              <span className="text-xs sm:text-sm font-semibold text-[#FAF8F5] leading-none inline-flex items-center whitespace-nowrap">
+                Enquire Desk
+              </span>
+              <span className="text-stone-500 font-light text-xs sm:text-sm leading-none select-none inline-flex items-center">
+                |
+              </span>
+              <span className="font-hindi text-xs sm:text-sm font-semibold text-[#E7C973] leading-none inline-flex items-center whitespace-nowrap">
+                संपर्क
+              </span>
               <IconMinimalArrow size={12} color="gold" className="shrink-0 transition-transform group-hover:translate-x-0.5 group-hover:-translate-y-0.5" />
             </button>
             <button
@@ -340,9 +348,10 @@ export const Navbar: React.FC<NavbarProps> = ({
                                 : 'text-[#57534E] hover:bg-stone-100 hover:text-[#1C1917]'
                             }`}
                           >
-                            <div className="flex items-center gap-1.5">
-                              <span className="font-medium">{item.label}</span>
-                              <span className="font-hindi text-[10.5px] opacity-80">({item.hindi})</span>
+                            <div className="flex items-center gap-2">
+                              <span className="font-semibold text-xs sm:text-sm leading-none inline-flex items-center">{item.label}</span>
+                              <span className="text-stone-400 font-light leading-none select-none text-xs sm:text-sm inline-flex items-center">|</span>
+                              <span className="font-hindi text-xs sm:text-sm font-semibold leading-none inline-flex items-center">{item.hindi}</span>
                             </div>
                             <span className="text-[10px] font-mono opacity-70">
                               {item.badge}
@@ -384,10 +393,18 @@ export const Navbar: React.FC<NavbarProps> = ({
                   setMobileMenuOpen(false);
                   if (onOpenEnquiry) onOpenEnquiry();
                 }}
-                className="w-full inline-flex items-center justify-center gap-2 py-3 px-4 rounded-xl bg-[#1C1917] text-[#FAF8F5] font-semibold text-xs uppercase tracking-wider shadow-sm border border-[#C59B27]/40 cursor-pointer"
+                className="w-full inline-flex items-center justify-center gap-2 py-3 px-4 rounded-xl bg-[#1C1917] text-[#FAF8F5] transition-all shadow-sm border border-[#C59B27]/40 cursor-pointer"
               >
-                <span>Open Formal Enquiry</span>
-                <span className="text-[#E7C973] font-hindi">॥ आवेदन प्रपत्र ॥</span>
+                <span className="text-xs sm:text-sm font-semibold text-[#FAF8F5] leading-none inline-flex items-center">
+                  Enquire Desk
+                </span>
+                <span className="text-stone-500 font-light text-xs sm:text-sm leading-none select-none inline-flex items-center">
+                  |
+                </span>
+                <span className="font-hindi text-xs sm:text-sm font-semibold text-[#E7C973] leading-none inline-flex items-center">
+                  संपर्क
+                </span>
+                <IconMinimalArrow size={12} color="gold" className="shrink-0 ml-1" />
               </button>
             </div>
           </div>

@@ -294,86 +294,85 @@ export const ProjectsSection: React.FC<ProjectsSectionProps> = ({
     <section id="projects-section" className="py-12 sm:py-20 md:py-24 relative z-10 bg-transparent text-[#1C1917] border-b border-[#E8E2D5]" aria-label="Project Portfolio">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         
-        {/* Header with authentic Hindi badge */}
-        <div className="flex flex-col md:flex-row md:items-end justify-between mb-8 sm:mb-12 gap-6">
-          <div className="max-w-3xl space-y-3">
-            <div className="flex items-center gap-2 text-[#9A6F20] tracking-wide">
-              <span className="font-hindi text-sm sm:text-base text-[#9A6F20] font-semibold">
-                ॥ आगामी प्रमुख विकास परियोजनाएं ॥
-              </span>
-            </div>
-            <h2 className="font-serif text-3xl sm:text-4xl lg:text-5xl text-[#1C1917] font-bold tracking-tight">
-              Strategic Land &amp; Plotted Developments
-            </h2>
-            <p className="text-base sm:text-lg text-[#57534E] leading-relaxed font-normal">
-              स्पष्ट खतियान, निर्विवाद स्वामित्व एवं पारदर्शी विधिक प्रक्रिया के साथ आवासीय, व्यावसायिक एवं कृषि भूखंड।
-            </p>
+        {/* Centered Header with authentic Hindi invocation */}
+        <div className="text-center max-w-3xl mx-auto space-y-3 mb-8 sm:mb-10">
+          <div className="flex items-center justify-center gap-2 text-[#9A6F20] tracking-wide">
+            <span className="font-hindi text-sm sm:text-base text-[#9A6F20] font-semibold">
+              ॥ आगामी प्रमुख विकास परियोजनाएं ॥
+            </span>
           </div>
+          <h2 className="font-serif text-3xl sm:text-4xl lg:text-5xl text-[#1C1917] font-bold tracking-tight">
+            Strategic Land &amp; Plotted Developments
+          </h2>
+          <p className="text-base sm:text-lg text-[#57534E] leading-relaxed font-normal">
+            स्पष्ट खतियान, निर्विवाद स्वामित्व एवं पारदर्शी विधिक प्रक्रिया के साथ आवासीय, व्यावसायिक एवं कृषि भूखंड।
+          </p>
+        </div>
 
-          {/* Separate Section Menus in Developments */}
-          {showFilterMenu ? (
-            <div className="flex flex-col items-start md:items-end gap-2.5">
-              <span className="text-[11px] font-mono uppercase tracking-wider text-[#9A6F20] font-semibold">
-                Section Categories:
-              </span>
-              <div className="w-full md:w-auto overflow-x-auto no-scrollbar flex items-center gap-1.5 sm:gap-2 bg-white/95 p-1.5 rounded-2xl border border-[#E8E2D5] select-none shadow-xs">
-                <button
-                  onClick={() => handleFilterChange('all')}
-                  className={`px-4 py-2 rounded-xl text-xs font-semibold transition-all cursor-pointer whitespace-nowrap shrink-0 flex items-center gap-1.5 ${
-                    activeFilter === 'all'
-                      ? 'bg-[#1C1917] text-[#E7C973] shadow-sm font-bold'
-                      : 'text-[#57534E] hover:text-[#1C1917] hover:bg-stone-100/60'
-                  }`}
-                >
-                  <span>All Sites</span>
-                  <span className="font-hindi text-[11px] opacity-75">(समस्त)</span>
-                </button>
+        {/* Single Aesthetically Centered Navigation Menu */}
+        {showFilterMenu ? (
+          <div className="flex justify-center mb-12 sm:mb-16">
+            <div className="inline-flex flex-wrap items-center justify-center gap-2 sm:gap-2.5 p-2 rounded-2xl bg-white/95 border border-[#E8E2D5] shadow-[0_10px_30px_rgba(28,25,23,0.04)] max-w-full">
+              <button
+                onClick={() => handleFilterChange('all')}
+                className={`px-4 sm:px-5 py-2.5 rounded-xl transition-all cursor-pointer whitespace-nowrap inline-flex items-center justify-center gap-2 ${
+                  activeFilter === 'all'
+                    ? 'bg-[#1C1917] text-[#FAF8F5] shadow-sm border border-[#C59B27]/40'
+                    : 'text-[#44403C] hover:text-[#1C1917] hover:bg-stone-100/70'
+                }`}
+              >
+                <span className="text-xs sm:text-sm font-semibold leading-none flex items-center">
+                  All Sites
+                </span>
+                <span className="text-stone-400 font-light leading-none select-none text-xs sm:text-sm flex items-center">
+                  |
+                </span>
+                <span className={`font-hindi text-xs sm:text-sm font-semibold leading-none flex items-center ${
+                  activeFilter === 'all' ? 'text-[#E7C973]' : 'text-[#9A6F20]'
+                }`}>
+                  समस्त
+                </span>
+              </button>
 
-                {SECTIONS_CONFIG.map((sec) => (
+              {SECTIONS_CONFIG.map((sec) => {
+                const isActive = activeFilter === sec.key;
+                return (
                   <button
                     key={sec.key}
                     onClick={() => handleFilterChange(sec.key)}
-                    className={`px-4 py-2 rounded-xl text-xs font-semibold transition-all cursor-pointer whitespace-nowrap shrink-0 flex items-center gap-1.5 ${
-                      activeFilter === sec.key
-                        ? 'bg-[#1C1917] text-[#E7C973] shadow-sm font-bold'
-                        : 'text-[#57534E] hover:text-[#1C1917] hover:bg-stone-100/60'
+                    className={`px-4 sm:px-5 py-2.5 rounded-xl transition-all cursor-pointer whitespace-nowrap inline-flex items-center justify-center gap-2 ${
+                      isActive
+                        ? 'bg-[#1C1917] text-[#FAF8F5] shadow-sm border border-[#C59B27]/40'
+                        : 'text-[#44403C] hover:text-[#1C1917] hover:bg-stone-100/70'
                     }`}
                   >
-                    <span>{sec.menuLabel}</span>
-                    <span className="font-hindi text-[11px] opacity-75">({sec.menuHindi})</span>
+                    <span className="text-xs sm:text-sm font-semibold leading-none flex items-center">
+                      {sec.menuLabel}
+                    </span>
+                    <span className="text-stone-400 font-light leading-none select-none text-xs sm:text-sm flex items-center">
+                      |
+                    </span>
+                    <span className={`font-hindi text-xs sm:text-sm font-semibold leading-none flex items-center ${
+                      isActive ? 'text-[#E7C973]' : 'text-[#9A6F20]'
+                    }`}>
+                      {sec.menuHindi}
+                    </span>
                   </button>
-                ))}
-              </div>
+                );
+              })}
             </div>
-          ) : onViewAllDevelopments ? (
+          </div>
+        ) : onViewAllDevelopments ? (
+          <div className="flex justify-center mb-10">
             <button
               onClick={onViewAllDevelopments}
-              className="self-start md:self-end px-5 py-2.5 rounded-full border border-[#C59B27]/50 text-[#0F0E0D] hover:bg-[#1C1917] hover:text-[#E7C973] text-xs font-semibold uppercase tracking-wider transition-all inline-flex items-center gap-2 shrink-0 cursor-pointer shadow-2xs"
+              className="px-6 py-3 rounded-full border border-[#C59B27]/50 text-[#0F0E0D] hover:bg-[#1C1917] hover:text-[#E7C973] text-xs font-semibold uppercase tracking-wider transition-all inline-flex items-center gap-2 cursor-pointer shadow-2xs"
             >
               <span>Explore All Developments</span>
               <IconMinimalArrow size={12} color="gold" />
             </button>
-          ) : null}
-        </div>
-
-        {/* Quick Section Anchor Pills when viewing All Sites */}
-        {showFilterMenu && activeFilter === 'all' && (
-          <div className="flex flex-wrap items-center gap-2 mb-10 pb-4 border-b border-[#E8E2D5]/80">
-            <span className="text-[11px] font-mono uppercase tracking-wider text-stone-500 font-semibold mr-1">
-              Scroll to section:
-            </span>
-            {SECTIONS_CONFIG.map((sec) => (
-              <a
-                key={sec.key}
-                href={`#section-${sec.key}`}
-                className="px-3 py-1.5 rounded-lg bg-stone-50 border border-[#E8E2D5] text-[#44403C] hover:border-[#C59B27] hover:text-[#C59B27] text-xs font-medium transition-all shadow-2xs inline-flex items-center gap-1.5"
-              >
-                <span>{sec.menuLabel}</span>
-                <span className="font-hindi text-[10.5px] text-[#9A6F20]">({sec.menuHindi})</span>
-              </a>
-            ))}
           </div>
-        )}
+        ) : null}
 
         {/* Rendered as Separate Sections */}
         <div className="space-y-16 sm:space-y-20 mb-14">
