@@ -20,6 +20,9 @@ interface ProjectsSectionProps {
   onOpenEnquiry: () => void;
   showFilterMenu?: boolean;
   onViewAllDevelopments?: () => void;
+  initialCategory?: 'all' | 'plots' | 'commercial' | 'farmlands' | 'villas';
+  selectedCategory?: 'all' | 'plots' | 'commercial' | 'farmlands' | 'villas';
+  onCategoryChange?: (category: 'all' | 'plots' | 'commercial' | 'farmlands' | 'villas') => void;
 }
 
 interface PortfolioCard {
@@ -36,12 +39,74 @@ interface PortfolioCard {
   highlights: string[];
 }
 
+export interface SectionConfig {
+  key: 'plots' | 'commercial' | 'farmlands' | 'villas';
+  menuLabel: string;
+  menuHindi: string;
+  sectionTitle: string;
+  sectionHindi: string;
+  description: string;
+}
+
+export const SECTIONS_CONFIG: SectionConfig[] = [
+  {
+    key: 'plots',
+    menuLabel: 'Plots',
+    menuHindi: 'भूखंड',
+    sectionTitle: 'Residential Plotted Townships & Layouts',
+    sectionHindi: '॥ आवासीय भूखंड एवं नियोजित टाउनशिप ॥',
+    description: 'Master-planned residential plotted enclaves with 30–40 ft arterial roads, clear individual Dakhil-Kharij mutation records, boundary demarcation, and complete registry readiness in Aurangabad growth zones.'
+  },
+  {
+    key: 'commercial',
+    menuLabel: 'Commercial',
+    menuHindi: 'व्यावसायिक',
+    sectionTitle: 'Commercial Hubs & Highway Plazas',
+    sectionHindi: '॥ व्यावसायिक संकुल एवं व्यापार केंद्र ॥',
+    description: 'High-visibility arterial frontage land parcels, multi-level retail hubs, and enterprise logistics corridors across NH-19 and GT Road economic bypasses.'
+  },
+  {
+    key: 'farmlands',
+    menuLabel: 'Farmlands',
+    menuHindi: 'फार्मलैंड्स',
+    sectionTitle: 'Agro Farmlands & Eco Orchards',
+    sectionHindi: '॥ फार्मलैंड, बागवानी एवं कृषि फार्म ॥',
+    description: 'Canal-irrigated, fertile agricultural land parcels and managed orchard estates with clear genealogical Khatiyan records and unencumbered titles.'
+  },
+  {
+    key: 'villas',
+    menuLabel: 'Villas',
+    menuHindi: 'विला',
+    sectionTitle: 'Bespoke Country Villas & Estates',
+    sectionHindi: '॥ आरण्या विला एवं कंट्री होम्स ॥',
+    description: 'Sandstone masonry, timber pergolas, private cobblestone driveways, and expansive private gardens nestled in Aurangabad\'s serene green belts.'
+  }
+];
+
 export const ProjectsSection: React.FC<ProjectsSectionProps> = ({
   onOpenEnquiry,
   showFilterMenu = true,
   onViewAllDevelopments,
+  initialCategory = 'all',
+  selectedCategory,
+  onCategoryChange
 }) => {
-  const [selectedFilter, setSelectedFilter] = useState<'all' | 'plots' | 'commercial' | 'farmlands' | 'villas'>('all');
+  const [internalFilter, setInternalFilter] = useState<'all' | 'plots' | 'commercial' | 'farmlands' | 'villas'>(initialCategory);
+
+  const activeFilter = selectedCategory !== undefined ? selectedCategory : internalFilter;
+
+  const handleFilterChange = (cat: 'all' | 'plots' | 'commercial' | 'farmlands' | 'villas') => {
+    setInternalFilter(cat);
+    if (onCategoryChange) {
+      onCategoryChange(cat);
+    }
+  };
+
+  React.useEffect(() => {
+    if (initialCategory && selectedCategory === undefined) {
+      setInternalFilter(initialCategory);
+    }
+  }, [initialCategory, selectedCategory]);
 
   const portfolioCards: PortfolioCard[] = [
     // 1. PLOTS (2 Projects)
@@ -221,17 +286,16 @@ export const ProjectsSection: React.FC<ProjectsSectionProps> = ({
     }
   ];
 
-  // Exclusive category filtering
-  const filteredCards = selectedFilter === 'all'
-    ? portfolioCards
-    : portfolioCards.filter(c => c.category === selectedFilter);
+  const sectionsToDisplay = activeFilter === 'all'
+    ? SECTIONS_CONFIG
+    : SECTIONS_CONFIG.filter((s) => s.key === activeFilter);
 
   return (
     <section id="projects-section" className="py-12 sm:py-20 md:py-24 relative z-10 bg-transparent text-[#1C1917] border-b border-[#E8E2D5]" aria-label="Project Portfolio">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         
         {/* Header with authentic Hindi badge */}
-        <div className="flex flex-col md:flex-row md:items-end justify-between mb-10 sm:mb-14 gap-6">
+        <div className="flex flex-col md:flex-row md:items-end justify-between mb-8 sm:mb-12 gap-6">
           <div className="max-w-3xl space-y-3">
             <div className="flex items-center gap-2 text-[#9A6F20] tracking-wide">
               <span className="font-hindi text-sm sm:text-base text-[#9A6F20] font-semibold">
@@ -246,59 +310,40 @@ export const ProjectsSection: React.FC<ProjectsSectionProps> = ({
             </p>
           </div>
 
-          {/* Exclusive Category Filter Pills (Shown only when showFilterMenu is true) */}
+          {/* Separate Section Menus in Developments */}
           {showFilterMenu ? (
-            <div className="w-full md:w-auto overflow-x-auto no-scrollbar flex items-center gap-1.5 sm:gap-2 bg-white/95 p-1.5 rounded-2xl border border-[#E8E2D5] select-none shadow-xs">
-              <button
-                onClick={() => setSelectedFilter('all')}
-                className={`px-3.5 py-2 rounded-xl text-xs font-semibold transition-all cursor-pointer whitespace-nowrap shrink-0 ${
-                  selectedFilter === 'all'
-                    ? 'bg-[#1C1917] text-[#E7C973] shadow-sm font-bold'
-                    : 'text-[#57534E] hover:text-[#1C1917]'
-                }`}
-              >
-                All Assets / समस्त ({portfolioCards.length})
-              </button>
-              <button
-                onClick={() => setSelectedFilter('plots')}
-                className={`px-3.5 py-2 rounded-xl text-xs font-semibold transition-all cursor-pointer whitespace-nowrap shrink-0 ${
-                  selectedFilter === 'plots'
-                    ? 'bg-[#1C1917] text-[#E7C973] shadow-sm font-bold'
-                    : 'text-[#57534E] hover:text-[#1C1917]'
-                }`}
-              >
-                Plots / भूखंड (2)
-              </button>
-              <button
-                onClick={() => setSelectedFilter('commercial')}
-                className={`px-3.5 py-2 rounded-xl text-xs font-semibold transition-all cursor-pointer whitespace-nowrap shrink-0 ${
-                  selectedFilter === 'commercial'
-                    ? 'bg-[#1C1917] text-[#E7C973] shadow-sm font-bold'
-                    : 'text-[#57534E] hover:text-[#1C1917]'
-                }`}
-              >
-                Commercial / व्यावसायिक (2)
-              </button>
-              <button
-                onClick={() => setSelectedFilter('farmlands')}
-                className={`px-3.5 py-2 rounded-xl text-xs font-semibold transition-all cursor-pointer whitespace-nowrap shrink-0 ${
-                  selectedFilter === 'farmlands'
-                    ? 'bg-[#1C1917] text-[#E7C973] shadow-sm font-bold'
-                    : 'text-[#57534E] hover:text-[#1C1917]'
-                }`}
-              >
-                Farmlands / फार्मलैंड (2)
-              </button>
-              <button
-                onClick={() => setSelectedFilter('villas')}
-                className={`px-3.5 py-2 rounded-xl text-xs font-semibold transition-all cursor-pointer whitespace-nowrap shrink-0 ${
-                  selectedFilter === 'villas'
-                    ? 'bg-[#1C1917] text-[#E7C973] shadow-sm font-bold'
-                    : 'text-[#57534E] hover:text-[#1C1917]'
-                }`}
-              >
-                Villas / विला (2)
-              </button>
+            <div className="flex flex-col items-start md:items-end gap-2.5">
+              <span className="text-[11px] font-mono uppercase tracking-wider text-[#9A6F20] font-semibold">
+                Section Categories:
+              </span>
+              <div className="w-full md:w-auto overflow-x-auto no-scrollbar flex items-center gap-1.5 sm:gap-2 bg-white/95 p-1.5 rounded-2xl border border-[#E8E2D5] select-none shadow-xs">
+                <button
+                  onClick={() => handleFilterChange('all')}
+                  className={`px-4 py-2 rounded-xl text-xs font-semibold transition-all cursor-pointer whitespace-nowrap shrink-0 flex items-center gap-1.5 ${
+                    activeFilter === 'all'
+                      ? 'bg-[#1C1917] text-[#E7C973] shadow-sm font-bold'
+                      : 'text-[#57534E] hover:text-[#1C1917] hover:bg-stone-100/60'
+                  }`}
+                >
+                  <span>All Sites</span>
+                  <span className="font-hindi text-[11px] opacity-75">(समस्त)</span>
+                </button>
+
+                {SECTIONS_CONFIG.map((sec) => (
+                  <button
+                    key={sec.key}
+                    onClick={() => handleFilterChange(sec.key)}
+                    className={`px-4 py-2 rounded-xl text-xs font-semibold transition-all cursor-pointer whitespace-nowrap shrink-0 flex items-center gap-1.5 ${
+                      activeFilter === sec.key
+                        ? 'bg-[#1C1917] text-[#E7C973] shadow-sm font-bold'
+                        : 'text-[#57534E] hover:text-[#1C1917] hover:bg-stone-100/60'
+                    }`}
+                  >
+                    <span>{sec.menuLabel}</span>
+                    <span className="font-hindi text-[11px] opacity-75">({sec.menuHindi})</span>
+                  </button>
+                ))}
+              </div>
             </div>
           ) : onViewAllDevelopments ? (
             <button
@@ -311,96 +356,148 @@ export const ProjectsSection: React.FC<ProjectsSectionProps> = ({
           ) : null}
         </div>
 
-        {/* 4-Card Visual Showcase Grid */}
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-8 mb-14">
-          {filteredCards.map((card) => (
-            <div
-              key={card.id}
-              className="group rounded-3xl bg-white border border-[#E8E2D5] shadow-[0_15px_40px_rgba(28,25,23,0.05)] hover:shadow-[0_20px_50px_rgba(28,25,23,0.1)] transition-all duration-300 flex flex-col overflow-hidden"
-            >
-              {/* Card Image Container */}
-              <div className="relative h-64 sm:h-72 w-full overflow-hidden bg-stone-100">
-                <img
-                  src={card.image}
-                  alt={card.title}
-                  className="w-full h-full object-cover object-center group-hover:scale-105 transition-transform duration-700 ease-out"
-                  loading="lazy"
-                />
-                
-                {/* Visual Vignette Gradient */}
-                <div className="absolute inset-0 bg-gradient-to-t from-black/65 via-transparent to-black/20 pointer-events-none" />
+        {/* Quick Section Anchor Pills when viewing All Sites */}
+        {showFilterMenu && activeFilter === 'all' && (
+          <div className="flex flex-wrap items-center gap-2 mb-10 pb-4 border-b border-[#E8E2D5]/80">
+            <span className="text-[11px] font-mono uppercase tracking-wider text-stone-500 font-semibold mr-1">
+              Scroll to section:
+            </span>
+            {SECTIONS_CONFIG.map((sec) => (
+              <a
+                key={sec.key}
+                href={`#section-${sec.key}`}
+                className="px-3 py-1.5 rounded-lg bg-stone-50 border border-[#E8E2D5] text-[#44403C] hover:border-[#C59B27] hover:text-[#C59B27] text-xs font-medium transition-all shadow-2xs inline-flex items-center gap-1.5"
+              >
+                <span>{sec.menuLabel}</span>
+                <span className="font-hindi text-[10.5px] text-[#9A6F20]">({sec.menuHindi})</span>
+              </a>
+            ))}
+          </div>
+        )}
 
-                {/* Top Badge: Category & Feasibility Status */}
-                <div className="absolute top-4 left-4 right-4 flex items-center justify-between gap-2">
-                  <span className="px-2.5 py-1 rounded-md bg-stone-950/80 backdrop-blur-md text-[11px] font-mono font-semibold text-[#E7C973] uppercase tracking-wider">
-                    {card.tag}
-                  </span>
-                  <span className="px-2.5 py-1 rounded-md bg-stone-950/80 backdrop-blur-md text-[11px] font-mono text-emerald-400 font-medium">
-                    {card.status}
+        {/* Rendered as Separate Sections */}
+        <div className="space-y-16 sm:space-y-20 mb-14">
+          {sectionsToDisplay.map((sec) => {
+            const sectionCards = portfolioCards.filter((c) => c.category === sec.key);
+            return (
+              <div
+                key={sec.key}
+                id={`section-${sec.key}`}
+                className="space-y-8 pt-4 first:pt-0"
+              >
+                {/* Section Header */}
+                <div className="flex flex-col sm:flex-row sm:items-end justify-between gap-3 border-b border-[#E8E2D5] pb-4">
+                  <div className="space-y-1">
+                    <span className="font-hindi text-xs sm:text-sm text-[#9A6F20] font-semibold block">
+                      {sec.sectionHindi}
+                    </span>
+                    <h3 className="font-serif text-2xl sm:text-3xl font-bold text-[#1C1917]">
+                      {sec.sectionTitle}
+                    </h3>
+                    <p className="text-xs sm:text-sm text-[#57534E] max-w-2xl leading-relaxed">
+                      {sec.description}
+                    </p>
+                  </div>
+
+                  <span className="text-xs font-mono text-[#9A6F20] font-semibold shrink-0">
+                    2 Verified Developments
                   </span>
                 </div>
 
-                {/* Bottom Overlay Title on Image */}
-                <div className="absolute bottom-4 left-4 right-4 text-white">
-                  <div className="flex items-center gap-1.5 text-xs text-[#E7C973] font-mono mb-1">
-                    <MapPin className="w-3.5 h-3.5 text-[#E7C973]" />
-                    <span className="truncate">{card.location}</span>
-                  </div>
-                  <h3 className="font-serif text-xl sm:text-2xl font-bold tracking-tight text-white drop-shadow-sm">
-                    {card.title}
-                  </h3>
-                  <div className="font-hindi text-xs text-stone-200 mt-0.5">
-                    {card.tagHindi}
-                  </div>
-                </div>
-              </div>
+                {/* 2-Card Visual Showcase Grid for this Section */}
+                <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+                  {sectionCards.map((card) => (
+                    <div
+                      key={card.id}
+                      className="group rounded-3xl bg-white border border-[#E8E2D5] shadow-[0_15px_40px_rgba(28,25,23,0.05)] hover:shadow-[0_20px_50px_rgba(28,25,23,0.1)] transition-all duration-300 flex flex-col overflow-hidden"
+                    >
+                      {/* Card Image Container */}
+                      <div className="relative h-64 sm:h-72 w-full overflow-hidden bg-stone-100">
+                        <img
+                          src={card.image}
+                          alt={card.title}
+                          className="w-full h-full object-cover object-center group-hover:scale-105 transition-transform duration-700 ease-out"
+                          loading="lazy"
+                        />
+                        
+                        {/* Visual Vignette Gradient */}
+                        <div className="absolute inset-0 bg-gradient-to-t from-black/65 via-transparent to-black/20 pointer-events-none" />
 
-              {/* Card Body */}
-              <div className="p-6 sm:p-7 flex-1 flex flex-col justify-between space-y-5">
-                <p className="text-xs sm:text-sm text-[#57534E] leading-relaxed">
-                  {card.overview}
-                </p>
+                        {/* Top Badge: Category & Feasibility Status */}
+                        <div className="absolute top-4 left-4 right-4 flex items-center justify-between gap-2">
+                          <span className="px-2.5 py-1 rounded-md bg-stone-950/80 backdrop-blur-md text-[11px] font-mono font-semibold text-[#E7C973] uppercase tracking-wider">
+                            {card.tag}
+                          </span>
+                          <span className="px-2.5 py-1 rounded-md bg-stone-950/80 backdrop-blur-md text-[11px] font-mono text-emerald-400 font-medium">
+                            {card.status}
+                          </span>
+                        </div>
 
-                {/* Key Metrics Grid */}
-                <div className="grid grid-cols-1 sm:grid-cols-3 gap-2.5 p-3.5 rounded-2xl bg-[#FAF8F5] border border-[#E8E2D5]">
-                  {card.metrics.map((metric, i) => (
-                    <div key={i} className="space-y-0.5">
-                      <div className="text-[10px] uppercase tracking-wider font-mono text-[#78716C]">
-                        {metric.label}
+                        {/* Bottom Overlay Title on Image */}
+                        <div className="absolute bottom-4 left-4 right-4 text-white">
+                          <div className="flex items-center gap-1.5 text-xs text-[#E7C973] font-mono mb-1">
+                            <MapPin className="w-3.5 h-3.5 text-[#E7C973]" />
+                            <span className="truncate">{card.location}</span>
+                          </div>
+                          <h4 className="font-serif text-xl sm:text-2xl font-bold tracking-tight text-white drop-shadow-sm">
+                            {card.title}
+                          </h4>
+                          <div className="font-hindi text-xs text-stone-200 mt-0.5">
+                            {card.tagHindi}
+                          </div>
+                        </div>
                       </div>
-                      <div className="text-xs font-bold text-[#1C1917] leading-tight">
-                        {metric.value}
+
+                      {/* Card Body */}
+                      <div className="p-6 sm:p-7 flex-1 flex flex-col justify-between space-y-5">
+                        <p className="text-xs sm:text-sm text-[#57534E] leading-relaxed">
+                          {card.overview}
+                        </p>
+
+                        {/* Key Metrics Grid */}
+                        <div className="grid grid-cols-1 sm:grid-cols-3 gap-2.5 p-3.5 rounded-2xl bg-[#FAF8F5] border border-[#E8E2D5]">
+                          {card.metrics.map((metric, i) => (
+                            <div key={i} className="space-y-0.5">
+                              <div className="text-[10px] uppercase tracking-wider font-mono text-[#78716C]">
+                                {metric.label}
+                              </div>
+                              <div className="text-xs font-bold text-[#1C1917] leading-tight">
+                                {metric.value}
+                              </div>
+                            </div>
+                          ))}
+                        </div>
+
+                        {/* Highlights List */}
+                        <div className="space-y-2">
+                          {card.highlights.map((h, i) => (
+                            <div key={i} className="flex items-start gap-2 text-xs text-[#3E3832]">
+                              <CheckCircle2 className="w-3.5 h-3.5 text-[#9A6F20] shrink-0 mt-0.5" />
+                              <span>{h}</span>
+                            </div>
+                          ))}
+                        </div>
+
+                        {/* Action CTA */}
+                        <div className="pt-3 border-t border-[#E8E2D5] flex flex-col sm:flex-row items-stretch sm:items-center justify-between gap-3">
+                          <span className="text-[11px] font-mono text-[#78716C] order-2 sm:order-1 text-center sm:text-left">
+                            Ref: BBRE-{card.id.toUpperCase().slice(0, 8)}
+                          </span>
+                          <button
+                            onClick={onOpenEnquiry}
+                            className="order-1 sm:order-2 w-full sm:w-auto inline-flex items-center justify-center gap-2 px-5 py-3 sm:py-2.5 rounded-xl bg-gradient-to-r from-[#9A6F20] via-[#C59B27] to-[#E7C973] text-[#0F0E0D] font-bold text-xs uppercase tracking-wider transition-all duration-200 hover:scale-[1.02] active:scale-98 cursor-pointer shadow-xs hover:shadow-sm"
+                          >
+                            <span>Request Dossier</span>
+                            <IconMinimalArrow size={12} color="stone" />
+                          </button>
+                        </div>
                       </div>
                     </div>
                   ))}
                 </div>
-
-                {/* Highlights List */}
-                <div className="space-y-2">
-                  {card.highlights.map((h, i) => (
-                    <div key={i} className="flex items-start gap-2 text-xs text-[#3E3832]">
-                      <CheckCircle2 className="w-3.5 h-3.5 text-[#9A6F20] shrink-0 mt-0.5" />
-                      <span>{h}</span>
-                    </div>
-                  ))}
-                </div>
-
-                {/* Action CTA */}
-                <div className="pt-3 border-t border-[#E8E2D5] flex flex-col sm:flex-row items-stretch sm:items-center justify-between gap-3">
-                  <span className="text-[11px] font-mono text-[#78716C] order-2 sm:order-1 text-center sm:text-left">
-                    Ref: BBRE-{card.id.toUpperCase().slice(0, 8)}
-                  </span>
-                  <button
-                    onClick={onOpenEnquiry}
-                    className="order-1 sm:order-2 w-full sm:w-auto inline-flex items-center justify-center gap-2 px-5 py-3 sm:py-2.5 rounded-xl bg-gradient-to-r from-[#9A6F20] via-[#C59B27] to-[#E7C973] text-[#0F0E0D] font-bold text-xs uppercase tracking-wider transition-all duration-200 hover:scale-[1.02] active:scale-98 cursor-pointer shadow-xs hover:shadow-sm"
-                  >
-                    <span>Request Dossier</span>
-                    <IconMinimalArrow size={12} color="stone" />
-                  </button>
-                </div>
               </div>
-            </div>
-          ))}
+            );
+          })}
         </div>
 
       </div>

@@ -18,11 +18,18 @@ import { ArrowUpRight, Sparkles } from 'lucide-react';
 
 export default function App() {
   const [currentTab, setCurrentTab] = useState<TabType>('home');
+  const [developmentCategory, setDevelopmentCategory] = useState<'all' | 'plots' | 'commercial' | 'farmlands' | 'villas'>('all');
   const [isEnquiryOpen, setIsEnquiryOpen] = useState(false);
   const [, setIsLoadingComplete] = useState(false);
 
   const handleSelectTab = (tab: TabType) => {
     setCurrentTab(tab);
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+  };
+
+  const handleSelectDevelopmentCategory = (category: 'all' | 'plots' | 'commercial' | 'farmlands' | 'villas') => {
+    setDevelopmentCategory(category);
+    setCurrentTab('projects');
     window.scrollTo({ top: 0, behavior: 'smooth' });
   };
 
@@ -36,6 +43,8 @@ export default function App() {
       <Navbar
         currentTab={currentTab}
         onSelectTab={handleSelectTab}
+        onSelectDevelopmentCategory={handleSelectDevelopmentCategory}
+        currentDevelopmentCategory={developmentCategory}
         onOpenEnquiry={() => setIsEnquiryOpen(true)}
       />
 
@@ -142,7 +151,12 @@ export default function App() {
 
               {currentTab === 'services' && (
                 <div className="space-y-0">
-                  <ProjectsSection onOpenEnquiry={() => setIsEnquiryOpen(true)} showFilterMenu={true} />
+                  <ProjectsSection
+                    onOpenEnquiry={() => setIsEnquiryOpen(true)}
+                    showFilterMenu={true}
+                    selectedCategory={developmentCategory}
+                    onCategoryChange={setDevelopmentCategory}
+                  />
                   <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
                     <CorporateFactsBar />
                   </div>
@@ -151,7 +165,12 @@ export default function App() {
 
               {currentTab === 'projects' && (
                 <div className="space-y-0">
-                  <ProjectsSection onOpenEnquiry={() => setIsEnquiryOpen(true)} showFilterMenu={true} />
+                  <ProjectsSection
+                    onOpenEnquiry={() => setIsEnquiryOpen(true)}
+                    showFilterMenu={true}
+                    selectedCategory={developmentCategory}
+                    onCategoryChange={setDevelopmentCategory}
+                  />
                   <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
                     <LandAndEMICalculator />
                   </div>
@@ -193,6 +212,7 @@ export default function App() {
       {/* Corporate Statutory Footer */}
       <Footer
         onSelectTab={handleSelectTab}
+        onSelectDevelopmentCategory={handleSelectDevelopmentCategory}
         onOpenEnquiry={() => setIsEnquiryOpen(true)}
       />
 
