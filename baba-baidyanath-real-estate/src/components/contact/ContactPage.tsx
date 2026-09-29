@@ -12,7 +12,7 @@ export const ContactPage: React.FC = () => {
         
         {/* Page Header */}
         <div className="max-w-4xl space-y-5">
-          <div className="mb-6 inline-block p-4 sm:p-6 rounded-3xl bg-white/80 border border-[#E8E2D5] shadow-[0_10px_30px_rgba(28,25,23,0.04)]">
+          <div className="mb-6">
             <CompanyLogo variant="horizontal" size="2xl" theme="light" />
           </div>
           <div className="text-xs uppercase tracking-[0.25em] text-[#9A6F20] font-mono font-semibold">

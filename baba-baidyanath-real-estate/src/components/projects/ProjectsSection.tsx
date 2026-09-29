@@ -8,17 +8,23 @@ import {
 import { MapPin, CheckCircle2 } from 'lucide-react';
 
 import commercialComplexImg from '../../assets/commercial-complex.jpg';
+import commercialPlazaTwoImg from '../../assets/commercial-plaza-two.jpg';
 import residentialPlotsImg from '../../assets/residential-plots.jpg';
+import plotsEnclaveTwoImg from '../../assets/plots-enclave-two.jpg';
 import agriculturalLandImg from '../../assets/agricultural-land.jpg';
+import farmlandEstateTwoImg from '../../assets/farmland-estate-two.jpg';
 import luxuryVillasImg from '../../assets/luxury-villas.jpg';
+import villasEstateTwoImg from '../../assets/villas-estate-two.jpg';
 
 interface ProjectsSectionProps {
   onOpenEnquiry: () => void;
+  showFilterMenu?: boolean;
+  onViewAllDevelopments?: () => void;
 }
 
 interface PortfolioCard {
   id: string;
-  category: string;
+  category: 'plots' | 'commercial' | 'farmlands' | 'villas';
   tag: string;
   tagHindi: string;
   title: string;
@@ -30,19 +36,24 @@ interface PortfolioCard {
   highlights: string[];
 }
 
-export const ProjectsSection: React.FC<ProjectsSectionProps> = ({ onOpenEnquiry }) => {
-  const [selectedFilter, setSelectedFilter] = useState<'all' | 'plots' | 'commercial' | 'agricultural' | 'villas'>('all');
+export const ProjectsSection: React.FC<ProjectsSectionProps> = ({
+  onOpenEnquiry,
+  showFilterMenu = true,
+  onViewAllDevelopments,
+}) => {
+  const [selectedFilter, setSelectedFilter] = useState<'all' | 'plots' | 'commercial' | 'farmlands' | 'villas'>('all');
 
   const portfolioCards: PortfolioCard[] = [
+    // 1. PLOTS (2 Projects)
     {
-      id: 'residential-plots',
+      id: 'residential-plots-1',
       category: 'plots',
-      tag: 'Planned Plotted Development',
+      tag: 'Master-Planned Plotted Layout',
       tagHindi: 'आवासीय भूखंड योजना',
       title: 'Aurangabad Urban Plotted Township',
       location: 'Aurangabad Urban Extension & Ring Road Corridors',
       image: residentialPlotsImg,
-      status: 'Feasibility & Demarcation Stage',
+      status: 'Demarcated & Registered Layout',
       overview: 'Master-planned residential enclave with clearly demarcated plots, paved tree-lined avenues, curbstones, modern street infrastructure, and dedicated community spaces.',
       metrics: [
         { label: 'Plot Configurations', value: '1,200 – 3,600 Sq. Ft. (1 to 3 Katha)' },
@@ -56,36 +67,82 @@ export const ProjectsSection: React.FC<ProjectsSectionProps> = ({ onOpenEnquiry 
       ]
     },
     {
-      id: 'commercial-complex',
+      id: 'residential-plots-2',
+      category: 'plots',
+      tag: 'Gated Residential Plotted Colony',
+      tagHindi: 'वसंत विहार आवासीय लेआउट',
+      title: 'Vasant Vihar Plotted Enclave',
+      location: 'Near GT Road NH-19 & Gayatri Mandir Sector, Aurangabad',
+      image: plotsEnclaveTwoImg,
+      status: 'Paved Access & Registry Ready',
+      overview: 'Demarcated residential sectors featuring blacktop asphalt avenues, underground power ducting, street light installations, and clear individual Dakhil-Kharij verification.',
+      metrics: [
+        { label: 'Plot Sizing', value: '1 Katha, 2 Katha & 3 Katha Units' },
+        { label: 'Main Boulevard', value: '45 Ft. Tree-Lined Road' },
+        { label: 'Registry Status', value: 'Spot Mutation Assistance' }
+      ],
+      highlights: [
+        'Stone boundary walls with white corner marker pillars',
+        'Walking distance to commercial amenities and institutions',
+        'Immediate possession and construction clearance'
+      ]
+    },
+
+    // 2. COMMERCIAL (2 Projects)
+    {
+      id: 'commercial-1',
       category: 'commercial',
       tag: 'Commercial & Institutional Hub',
       tagHindi: 'व्यावसायिक एवं कॉर्पोरेट संकुल',
       title: 'Grand Trunk Commercial Center',
       location: 'Grand Trunk Road / NH-19 Arterial Frontage, Aurangabad',
       image: commercialComplexImg,
-      status: 'Master Layout Feasibility',
-      overview: 'High-visibility commercial and logistics complex designed for corporate offices, regional retail plazas, banking institutions, and warehousing hubs.',
+      status: 'Frontage Egress Approved',
+      overview: 'High-visibility commercial complex planned for regional retail outlets, corporate offices, banking institutions, and warehousing hubs along the high-speed highway corridor.',
       metrics: [
         { label: 'Frontage Acreage', value: 'Wide High-Speed Corridor Access' },
         { label: 'Typology', value: 'Retail Plaza & Corporate Office Floors' },
         { label: 'Access Approval', value: 'NHAI Egress & Regional Compliance' }
       ],
       highlights: [
-        'Strategic placement on high-density freight and transit route',
-        'Dedicated multi-bay parking and wide internal service drives',
-        'Grade-A institutional construction standards'
+        'Direct frontage on National Highway 19 (Grand Trunk Road)',
+        'Dedicated multi-bay customer parking and dual service drives',
+        'Engineered for institutional retail and corporate occupants'
       ]
     },
     {
-      id: 'agricultural-land',
-      category: 'agricultural',
+      id: 'commercial-2',
+      category: 'commercial',
+      tag: 'Retail & Banking Plaza',
+      tagHindi: 'अपटाउन व्यावसायिक एवं बैंकिंग प्लाजा',
+      title: 'Uptown Arcade & Business Center',
+      location: 'MG Road Commercial District, Aurangabad',
+      image: commercialPlazaTwoImg,
+      status: 'Civil Structure Complete',
+      overview: 'Modern two-level commercial arcade featuring double-height retail showrooms, scheduled bank branches, wide pedestrian colonnades, and surface parking.',
+      metrics: [
+        { label: 'Unit Sizes', value: '450 – 2,800 Sq. Ft. Showrooms' },
+        { label: 'Floor Plates', value: 'Column-Free Flexible Retail' },
+        { label: 'Infrastructure', value: 'Power Backup & Fire Safety Compliant' }
+      ],
+      highlights: [
+        'Prime location in Aurangabad commercial hub near PNB Bank',
+        'Floor-to-ceiling glass facades with maximum signage visibility',
+        'High daily pedestrian footfall and established civic catchment'
+      ]
+    },
+
+    // 3. FARMLANDS (2 Projects)
+    {
+      id: 'farmlands-1',
+      category: 'farmlands',
       tag: 'Fertile Agricultural Farmland',
       tagHindi: 'सोन कछार कृषि प्रक्षेत्र',
       title: 'Son Basin Agricultural & Farm Estates',
       location: 'Son River Agro Corridor & Canal Belt, Aurangabad District',
       image: agriculturalLandImg,
       status: 'Title Pedigree & Lineage Verified',
-      overview: 'Vast fertile agricultural holdings and scenic farm estate parcels with perennial canal irrigation, ideal for high-yield farming, agro-forestry, and long-term land banking.',
+      overview: 'Fertile agricultural holdings and farm estate parcels with perennial canal irrigation, ideal for high-yield farming, horticulture, and long-term land banking.',
       metrics: [
         { label: 'Holding Size', value: 'Multi-Bigha Continuous Acreage' },
         { label: 'Water Source', value: 'Perennial Canal & Ground Water' },
@@ -93,33 +150,78 @@ export const ProjectsSection: React.FC<ProjectsSectionProps> = ({ onOpenEnquiry 
       ],
       highlights: [
         'Complete Khatiyan lineage and unencumbered ancestral verification',
-        'All-weather arterial dirt and paved farm road access',
+        'All-weather arterial farm road access',
         'Free from any joint-tenancy or inheritance title disputes'
       ]
     },
     {
-      id: 'luxury-villas',
+      id: 'farmlands-2',
+      category: 'farmlands',
+      tag: 'Solar-Irrigated Agro Estates',
+      tagHindi: 'मगध सोलर सिंचित कृषि फार्म',
+      title: 'Magadh Managed Orchards & Agro Estates',
+      location: 'Daudnagar & Son Valley Belt, Aurangabad District',
+      image: farmlandEstateTwoImg,
+      status: 'Fenced & Canal-Connected',
+      overview: 'Managed agro-farm parcels featuring productive mango orchard rows, drip irrigation infrastructure, dedicated solar water pumps, and traditional stone boundary walls.',
+      metrics: [
+        { label: 'Holding Unit', value: '5 Bigha to 25 Bigha Parcels' },
+        { label: 'Irrigation', value: 'Solar Pumping System & Drip Network' },
+        { label: 'Produce', value: 'Langra & Malda Mango Orchard Agroforestry' }
+      ],
+      highlights: [
+        'Perimeter stone wall fencing with iron entry gates',
+        'Continuous deep alluvium soil with sweet underground water table',
+        'Single-owner registered sale deed ready for immediate transfer'
+      ]
+    },
+
+    // 4. VILLAS (2 Projects)
+    {
+      id: 'villas-1',
       category: 'villas',
       tag: 'Luxury Gated Enclave',
       tagHindi: 'प्रीमियम विला एन्क्लेव',
       title: 'The Palms Executive Villa Enclave',
       location: 'Prime Suburban Residential Zone, Aurangabad',
       image: luxuryVillasImg,
-      status: 'Architectural Concept Structuring',
-      overview: 'Exclusive low-density gated community comprising contemporary villa estates, lush tropical landscaping, private driveways, and security infrastructure.',
+      status: 'Underground Infrastructure Laid',
+      overview: 'Exclusive low-density gated community comprising contemporary villa estates, lush tree avenues, private driveways, and round-the-clock security infrastructure.',
       metrics: [
         { label: 'Development Style', value: 'Independent Luxury Residences' },
         { label: 'Community Infrastructure', value: 'Gated 24/7 Security & Utilities' },
         { label: 'Design Theme', value: 'Modern Tropical Contemporary' }
       ],
       highlights: [
-        'Underground utility ducts for electricity and high-speed data',
-        'Private manicured lawns and generous setbacks',
-        'Institutional quality property management protocol'
+        'Underground utility ducts for electricity and high-speed fiber',
+        'Private manicured lawns and generous setbacks on all four sides',
+        'Strict building bye-laws ensuring low density and privacy'
+      ]
+    },
+    {
+      id: 'villas-2',
+      category: 'villas',
+      tag: 'Bespoke Modern Villa Estates',
+      tagHindi: 'आरण्या कंट्री एस्टेट विला',
+      title: 'Aaronya Country Estate Villas',
+      location: 'Heritage Green Belt, Aurangabad Outskirts',
+      image: villasEstateTwoImg,
+      status: 'Model Villa Ready for Preview',
+      overview: 'Bespoke single-family residences crafted with natural sandstone masonry, timber louvers, private cobblestone driveways, and expansive private gardens.',
+      metrics: [
+        { label: 'Villa Built-up', value: '3,200 – 4,800 Sq. Ft. (4 & 5 BHK)' },
+        { label: 'Plot Area', value: '4 Katha to 6 Katha per Estate' },
+        { label: 'Architecture', value: 'Natural Stone & Teak Wood Facade' }
+      ],
+      highlights: [
+        'Private cobbled driveways with automated vehicle gates',
+        'Vastu-compliant east-facing entrances and central courtyards',
+        'Private terrace gardens with panoramic views of the countryside'
       ]
     }
   ];
 
+  // Exclusive category filtering
   const filteredCards = selectedFilter === 'all'
     ? portfolioCards
     : portfolioCards.filter(c => c.category === selectedFilter);
@@ -144,59 +246,69 @@ export const ProjectsSection: React.FC<ProjectsSectionProps> = ({ onOpenEnquiry 
             </p>
           </div>
 
-          {/* Asset Class Filter Pills */}
-          <div className="w-full md:w-auto overflow-x-auto no-scrollbar flex items-center gap-1.5 sm:gap-2 bg-white/90 p-1.5 rounded-2xl border border-[#E8E2D5] select-none shadow-xs">
+          {/* Exclusive Category Filter Pills (Shown only when showFilterMenu is true) */}
+          {showFilterMenu ? (
+            <div className="w-full md:w-auto overflow-x-auto no-scrollbar flex items-center gap-1.5 sm:gap-2 bg-white/95 p-1.5 rounded-2xl border border-[#E8E2D5] select-none shadow-xs">
+              <button
+                onClick={() => setSelectedFilter('all')}
+                className={`px-3.5 py-2 rounded-xl text-xs font-semibold transition-all cursor-pointer whitespace-nowrap shrink-0 ${
+                  selectedFilter === 'all'
+                    ? 'bg-[#1C1917] text-[#E7C973] shadow-sm font-bold'
+                    : 'text-[#57534E] hover:text-[#1C1917]'
+                }`}
+              >
+                All Assets / समस्त ({portfolioCards.length})
+              </button>
+              <button
+                onClick={() => setSelectedFilter('plots')}
+                className={`px-3.5 py-2 rounded-xl text-xs font-semibold transition-all cursor-pointer whitespace-nowrap shrink-0 ${
+                  selectedFilter === 'plots'
+                    ? 'bg-[#1C1917] text-[#E7C973] shadow-sm font-bold'
+                    : 'text-[#57534E] hover:text-[#1C1917]'
+                }`}
+              >
+                Plots / भूखंड (2)
+              </button>
+              <button
+                onClick={() => setSelectedFilter('commercial')}
+                className={`px-3.5 py-2 rounded-xl text-xs font-semibold transition-all cursor-pointer whitespace-nowrap shrink-0 ${
+                  selectedFilter === 'commercial'
+                    ? 'bg-[#1C1917] text-[#E7C973] shadow-sm font-bold'
+                    : 'text-[#57534E] hover:text-[#1C1917]'
+                }`}
+              >
+                Commercial / व्यावसायिक (2)
+              </button>
+              <button
+                onClick={() => setSelectedFilter('farmlands')}
+                className={`px-3.5 py-2 rounded-xl text-xs font-semibold transition-all cursor-pointer whitespace-nowrap shrink-0 ${
+                  selectedFilter === 'farmlands'
+                    ? 'bg-[#1C1917] text-[#E7C973] shadow-sm font-bold'
+                    : 'text-[#57534E] hover:text-[#1C1917]'
+                }`}
+              >
+                Farmlands / फार्मलैंड (2)
+              </button>
+              <button
+                onClick={() => setSelectedFilter('villas')}
+                className={`px-3.5 py-2 rounded-xl text-xs font-semibold transition-all cursor-pointer whitespace-nowrap shrink-0 ${
+                  selectedFilter === 'villas'
+                    ? 'bg-[#1C1917] text-[#E7C973] shadow-sm font-bold'
+                    : 'text-[#57534E] hover:text-[#1C1917]'
+                }`}
+              >
+                Villas / विला (2)
+              </button>
+            </div>
+          ) : onViewAllDevelopments ? (
             <button
-              onClick={() => setSelectedFilter('all')}
-              className={`px-3.5 py-2 rounded-xl text-xs font-semibold transition-all cursor-pointer whitespace-nowrap shrink-0 ${
-                selectedFilter === 'all'
-                  ? 'bg-[#1C1917] text-[#E7C973] shadow-sm font-bold'
-                  : 'text-[#57534E] hover:text-[#1C1917]'
-              }`}
+              onClick={onViewAllDevelopments}
+              className="self-start md:self-end px-5 py-2.5 rounded-full border border-[#C59B27]/50 text-[#0F0E0D] hover:bg-[#1C1917] hover:text-[#E7C973] text-xs font-semibold uppercase tracking-wider transition-all inline-flex items-center gap-2 shrink-0 cursor-pointer shadow-2xs"
             >
-              All Assets / समस्त
+              <span>Explore All Developments</span>
+              <IconMinimalArrow size={12} color="gold" />
             </button>
-            <button
-              onClick={() => setSelectedFilter('plots')}
-              className={`px-3.5 py-2 rounded-xl text-xs font-semibold transition-all cursor-pointer whitespace-nowrap shrink-0 ${
-                selectedFilter === 'plots'
-                  ? 'bg-[#1C1917] text-[#E7C973] shadow-sm font-bold'
-                  : 'text-[#57534E] hover:text-[#1C1917]'
-              }`}
-            >
-              Plots / भूखंड
-            </button>
-            <button
-              onClick={() => setSelectedFilter('commercial')}
-              className={`px-3.5 py-2 rounded-xl text-xs font-semibold transition-all cursor-pointer whitespace-nowrap shrink-0 ${
-                selectedFilter === 'commercial'
-                  ? 'bg-[#1C1917] text-[#E7C973] shadow-sm font-bold'
-                  : 'text-[#57534E] hover:text-[#1C1917]'
-              }`}
-            >
-              Commercial / व्यावसायिक
-            </button>
-            <button
-              onClick={() => setSelectedFilter('agricultural')}
-              className={`px-3.5 py-2 rounded-xl text-xs font-semibold transition-all cursor-pointer whitespace-nowrap shrink-0 ${
-                selectedFilter === 'agricultural'
-                  ? 'bg-[#1C1917] text-[#E7C973] shadow-sm font-bold'
-                  : 'text-[#57534E] hover:text-[#1C1917]'
-              }`}
-            >
-              Farmland / कृषि भूमि
-            </button>
-            <button
-              onClick={() => setSelectedFilter('villas')}
-              className={`px-3.5 py-2 rounded-xl text-xs font-semibold transition-all cursor-pointer whitespace-nowrap shrink-0 ${
-                selectedFilter === 'villas'
-                  ? 'bg-[#1C1917] text-[#E7C973] shadow-sm font-bold'
-                  : 'text-[#57534E] hover:text-[#1C1917]'
-              }`}
-            >
-              Villas / विला
-            </button>
-          </div>
+          ) : null}
         </div>
 
         {/* 4-Card Visual Showcase Grid */}

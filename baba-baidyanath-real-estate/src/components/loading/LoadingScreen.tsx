@@ -95,59 +95,49 @@ export const LoadingScreen: React.FC<LoadingScreenProps> = ({ onComplete }) => {
           initial={{ opacity: 1 }}
           exit={{
             opacity: 0,
-            scale: 1.03,
-            filter: 'blur(6px)',
-            transition: { duration: 0.65, ease: [0.22, 1, 0.36, 1] },
+            transition: { duration: 0.5, ease: [0.22, 1, 0.36, 1] },
           }}
-          className="fixed inset-0 z-[100] flex flex-col items-center justify-center bg-gradient-to-br from-[#0C0A09] via-[#050505] to-[#000000] px-6 select-none"
+          className="fixed inset-0 z-[100] flex flex-col items-center justify-center bg-gradient-to-b from-[#FAF8F5] via-[#F5EFE6] to-[#EAE2D2] px-6 select-none"
         >
-          {/* Subtle Ambient Golden Radial Halo */}
-          <motion.div
-            initial={{ opacity: 0, scale: 0.8 }}
-            animate={{ opacity: 1, scale: 1 }}
-            transition={{ duration: 1.2, ease: 'easeOut' }}
-            className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[580px] h-[580px] bg-gradient-to-tr from-[#991B1B]/25 via-[#F59E0B]/22 to-transparent rounded-full blur-[130px] pointer-events-none"
-          />
-
           {/* Minimalist Centered Container */}
           <div className="relative z-10 flex flex-col items-center text-center max-w-lg w-full px-4">
             
-            {/* Step 1: Master Company Logo appears fully first */}
+            {/* Master Company Logo - Crisp and naturally visible without glow */}
             <motion.div
-              initial={{ opacity: 0, scale: 0.9, y: 15 }}
-              animate={logoReady ? { opacity: 1, scale: 1, y: 0 } : { opacity: 0 }}
-              transition={{ duration: 0.85, ease: [0.16, 1, 0.3, 1] }}
-              className="mb-10 sm:mb-12 w-full flex justify-center relative"
+              initial={{ opacity: 0, y: 10 }}
+              animate={logoReady ? { opacity: 1, y: 0 } : { opacity: 0 }}
+              transition={{ duration: 0.6, ease: 'easeOut' }}
+              className="mb-8 sm:mb-10 w-full flex justify-center relative"
             >
               <CompanyLogo
-                variant="hero"
+                variant="horizontal"
                 size="2xl"
-                theme="dark"
-                glow={true}
-                className="transform scale-110 sm:scale-125 transition-transform duration-500"
+                theme="light"
+                glow={false}
+                className="transform scale-100 sm:scale-110 transition-transform duration-300"
               />
             </motion.div>
 
-            {/* Step 2: Hairline Progress Bar appears then smoothly loads the page */}
+            {/* Hairline Progress Bar */}
             <motion.div
-              initial={{ opacity: 0, y: 8 }}
-              animate={phase === 'loading' || phase === 'complete' ? { opacity: 1, y: 0 } : { opacity: 0, y: 8 }}
-              transition={{ duration: 0.5, ease: 'easeOut' }}
+              initial={{ opacity: 0, y: 6 }}
+              animate={phase === 'loading' || phase === 'complete' ? { opacity: 1, y: 0 } : { opacity: 0, y: 6 }}
+              transition={{ duration: 0.4, ease: 'easeOut' }}
               className="w-full flex flex-col items-center"
             >
-              {/* Ultra-Minimal Hairline Progress Bar */}
-              <div className="w-60 sm:w-72 h-[2.5px] bg-stone-800/90 border border-white/10 rounded-full overflow-hidden relative shadow-inner">
+              {/* Minimal Hairline Progress Bar */}
+              <div className="w-56 sm:w-64 h-[2px] bg-[#E8E2D5] rounded-full overflow-hidden relative">
                 <motion.div
-                  className="h-full bg-gradient-to-r from-[#9A6F20] via-[#C59B27] to-[#E7C973] shadow-[0_0_14px_rgba(197,155,39,0.8)]"
+                  className="h-full bg-gradient-to-r from-[#9A6F20] via-[#C59B27] to-[#E7C973]"
                   style={{ width: `${progress}%` }}
                   transition={{ ease: 'easeOut', duration: 0.2 }}
                 />
               </div>
 
-              {/* Minimalist Tracking Text & Status */}
-              <div className="mt-4 flex items-center justify-between w-60 sm:w-72 text-[9.5px] sm:text-[10px] font-mono tracking-[0.22em] uppercase text-stone-400 font-semibold">
+              {/* Minimal Tracking Text & Status */}
+              <div className="mt-3 flex items-center justify-between w-56 sm:w-64 text-[10px] font-mono tracking-[0.2em] uppercase text-[#78716C] font-medium">
                 <span className="truncate pr-2">{getStatusText(progress)}</span>
-                <span className="text-[#E7C973] font-bold shrink-0">
+                <span className="text-[#9A6F20] font-bold shrink-0">
                   {progress}%
                 </span>
               </div>

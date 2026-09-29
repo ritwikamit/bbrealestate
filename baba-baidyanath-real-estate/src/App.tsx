@@ -62,6 +62,8 @@ export default function App() {
               {/* Projects in Preparation */}
               <div className="relative z-10">
                 <ProjectsSection
+                  showFilterMenu={false}
+                  onViewAllDevelopments={() => handleSelectTab('projects')}
                   onOpenEnquiry={() => setIsEnquiryOpen(true)}
                 />
               </div>
@@ -140,7 +142,7 @@ export default function App() {
 
               {currentTab === 'services' && (
                 <div className="space-y-0">
-                  <ProjectsSection onOpenEnquiry={() => setIsEnquiryOpen(true)} />
+                  <ProjectsSection onOpenEnquiry={() => setIsEnquiryOpen(true)} showFilterMenu={true} />
                   <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
                     <CorporateFactsBar />
                   </div>
@@ -149,7 +151,7 @@ export default function App() {
 
               {currentTab === 'projects' && (
                 <div className="space-y-0">
-                  <ProjectsSection onOpenEnquiry={() => setIsEnquiryOpen(true)} />
+                  <ProjectsSection onOpenEnquiry={() => setIsEnquiryOpen(true)} showFilterMenu={true} />
                   <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
                     <LandAndEMICalculator />
                   </div>

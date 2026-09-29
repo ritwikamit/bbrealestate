@@ -4,20 +4,20 @@ import {
   ShieldCheck,
   UserCheck,
   Landmark,
-  Sparkles,
-  ArrowRight,
-  CheckCircle2,
-  Building2,
-  MapPin,
-  Scale,
   FileText,
   Calendar,
-  CreditCard
+  CreditCard,
+  MapPin,
+  CheckCircle2,
+  ArrowRight,
+  Sparkles,
+  Search,
+  Scale,
+  Compass,
+  FileCheck
 } from 'lucide-react';
-import aboutHeroBg from '../../assets/about-hero-bg.png';
 import { SiyaramShowcaseCard } from '../common/SiyaramShowcaseCard';
 import { CorporateRegistriesSection } from './CorporateRegistriesSection';
-import { CompanyOverview } from './CompanyOverview';
 import { FAQSection } from './FAQSection';
 
 interface AboutPageProps {
@@ -33,149 +33,83 @@ export const AboutPage: React.FC<AboutPageProps> = ({ onOpenEnquiry }) => {
   };
 
   return (
-    <div className="relative z-10 w-full text-[#151311] pb-24">
+    <div className="relative z-10 w-full text-[#1C1917] pb-24">
       
       {/* ========================================================================= */}
-      {/* 1. HERO SECTION: 4K PHOTO FULLY VISIBLE IN BACKGROUND + LUCID TRANSPARENT OVERLAY */}
+      {/* 1. EDITORIAL HERO: MINIMAL, TIMELESS, AUTHENTIC */}
       {/* ========================================================================= */}
-      <section className="relative w-full pt-4 sm:pt-6 pb-12 sm:pb-16 lg:pb-20">
+      <section className="relative w-full pt-8 sm:pt-12 pb-14 sm:pb-20 border-b border-[#E8E2D5]">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           
-          {/* Main Hero Container with 4K Photo in Background */}
-          <div className="relative w-full rounded-2xl sm:rounded-3xl md:rounded-[2.5rem] overflow-hidden min-h-[auto] sm:min-h-[560px] md:min-h-[620px] lg:min-h-[680px] border border-[#E8E2D5] shadow-[0_20px_60px_rgba(40,25,10,0.07)] flex flex-col justify-start p-5 sm:p-8 md:p-12 lg:p-14 transition-all">
-            
-            {/* The 4K Photo Slightly Visible and Blurry in Background */}
-            <div className="absolute inset-0 -z-10 bg-[#FAF6F0] overflow-hidden">
-              <img
-                src={aboutHeroBg}
-                alt="Baba Baidyanath Real Estate 4K Master Artwork"
-                className="w-full h-full object-cover object-center select-none scale-105 filter blur-[7px] opacity-40 transition-opacity duration-700"
-                loading="eager"
-                decoding="async"
-              />
-              <div 
-                aria-hidden="true" 
-                className="absolute inset-0 bg-gradient-to-r from-[#FAF6F0]/50 via-transparent to-[#FAF6F0]/20 pointer-events-none" 
-              />
+          <div className="max-w-3xl space-y-5">
+            {/* Authentic Sanskrit Invocation */}
+            <div className="flex items-center gap-2 text-[#9A6F20]">
+              <span className="font-hindi text-sm sm:text-base font-semibold tracking-wide">
+                ॥ श्री बाबा बैद्यनाथाय नमः ॥
+              </span>
             </div>
 
+            {/* Editorial Headline */}
+            <h1 className="font-serif text-3xl sm:text-5xl lg:text-6xl text-[#1C1917] font-bold tracking-tight leading-[1.15]">
+              Clear Title Diligence.
+              <span className="block text-[#9A6F20]">
+                Grounded in Aurangabad.
+              </span>
+            </h1>
 
-            {/* Content Positioned Right Below the Accreditation Badge */}
-            <div className="relative z-10 max-w-2xl mt-4 sm:mt-5 space-y-3.5 sm:space-y-4 bg-transparent border-0 shadow-none p-0">
-              
-              {/* Brand Tag */}
-              <div className="inline-flex items-center gap-2 text-[11px] sm:text-xs uppercase tracking-widest font-semibold text-[#8B4513]">
-                <span className="w-1.5 h-1.5 rounded-full bg-[#B45309]" />
-                <span>Corporate Heritage &bull; Institutional Standards</span>
-              </div>
+            {/* Hindi Heritage Subheading */}
+            <p className="font-hindi text-lg sm:text-xl text-[#785415] font-medium">
+              ॥ विश्वास, समर्पण और आपका अपना आशियाना ॥
+            </p>
 
-              {/* Editorial Headline */}
-              <h1 className="font-serif text-2xl sm:text-3xl md:text-4xl lg:text-[44px] font-bold text-[#171513] tracking-tight leading-[1.2]">
-                Built On Sacred Values.<br />
-                <span className="text-[#9A6F20] font-hindi">
-                  ॥ विश्वास, समर्पण और आपका अपना आशियाना ॥
-                </span>
-              </h1>
+            {/* Grounded Human Narrative */}
+            <p className="text-base sm:text-lg text-[#57534E] leading-relaxed font-normal">
+              Baba Baidyanath Real Estate Private Limited was incorporated in Bihar to replace ambiguous verbal land deals with formal corporate governance, verified Khatiyan due diligence, and systematically planned plotted developments across Aurangabad and South Bihar.
+            </p>
 
-              {/* Narrative */}
-              <p className="text-xs sm:text-sm md:text-base text-[#3E3832] leading-relaxed font-normal max-w-xl">
-                बाबा बैद्यनाथ रियल एस्टेट प्राइवेट लिमिटेड का उद्देश्य औरंगाबाद एवं बिहार के विकासशील गलियारों में पारदर्शी भूमि क्रय-विक्रय, निर्दोष खतियान सत्यापन और प्रामाणिक विधिक प्रक्रिया सुनिश्चित करना है।
-              </p>
-
-              {/* Bespoke Luxury Action Buttons (Full width on mobile, inline on tablet+) */}
-              <div className="flex flex-col sm:flex-row items-stretch sm:items-center gap-3 pt-2 w-full sm:w-auto">
-                {onOpenEnquiry && (
-                  <button
-                    onClick={onOpenEnquiry}
-                    className="w-full sm:w-auto px-6 py-3.5 sm:py-3 rounded-xl bg-gradient-to-r from-[#9A6F20] via-[#C59B27] to-[#E7C973] text-[#0F0E0D] font-bold text-xs tracking-wider uppercase transition-all duration-200 shadow-sm hover:shadow-md cursor-pointer inline-flex items-center justify-center gap-2 active:scale-98"
-                  >
-                    <span>Direct Consultation</span>
-                  </button>
-                )}
-
+            {/* Action Buttons */}
+            <div className="flex flex-wrap items-center gap-4 pt-3">
+              {onOpenEnquiry && (
                 <button
-                  onClick={scrollToDossier}
-                  className="w-full sm:w-auto px-5 py-3.5 sm:py-3 rounded-xl bg-stone-900/[0.05] hover:bg-stone-900/[0.09] text-[#171513] border border-stone-800/15 text-xs font-semibold tracking-wider uppercase transition-all duration-200 inline-flex items-center justify-center gap-1.5 cursor-pointer shadow-none active:scale-98"
+                  onClick={onOpenEnquiry}
+                  className="px-7 py-3.5 rounded-full bg-gradient-to-r from-[#9A6F20] via-[#C59B27] to-[#E7C973] text-[#0F0E0D] font-bold text-xs uppercase tracking-wider transition-all duration-200 shadow-sm hover:scale-[1.02] cursor-pointer inline-flex items-center gap-2"
                 >
-                  <span>View Statutory Dossier</span>
-                  <ArrowRight className="w-3.5 h-3.5 text-[#9A6F20]" />
+                  <span>Consult Corporate Office</span>
+                  <ArrowRight className="w-3.5 h-3.5 text-[#0F0E0D]" />
                 </button>
-              </div>
+              )}
 
+              <button
+                onClick={scrollToDossier}
+                className="px-6 py-3.5 rounded-full bg-white hover:bg-stone-50 text-[#1C1917] border border-[#D5CEBF] text-xs font-semibold tracking-wider uppercase transition-all duration-200 inline-flex items-center gap-2 cursor-pointer shadow-2xs"
+              >
+                <span>View MCA Statutory Dossier</span>
+                <span className="text-[#9A6F20]">&darr;</span>
+              </button>
             </div>
 
           </div>
 
-        </div>
-      </section>
-
-      {/* ========================================================================= */}
-      {/* 2. CORE PILLARS OF GOVERNANCE (4 REFINED TRUST METRICS) */}
-      {/* ========================================================================= */}
-      <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pb-16">
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-5">
-          
-          <div className="p-6 rounded-2xl bg-white border border-[#E8E2D5] shadow-sm hover:shadow-md transition-all space-y-2.5">
-            <div className="p-2.5 rounded-xl bg-[#FEF3C7] border border-[#FDE68A] w-fit">
-              <ShieldCheck className="w-5 h-5 text-[#D97706]" />
+          {/* Quick Factual Badges Bar */}
+          <div className="grid grid-cols-2 md:grid-cols-4 gap-4 mt-12 pt-8 border-t border-[#E8E2D5]">
+            <div className="p-4 rounded-xl bg-white border border-[#E8E2D5]/80 shadow-2xs">
+              <span className="text-[11px] font-mono uppercase tracking-wider text-[#78716C] block">Corporate Status</span>
+              <span className="text-sm font-bold text-[#1C1917] flex items-center gap-1.5 mt-1">
+                <span className="w-2 h-2 rounded-full bg-emerald-500" />
+                Active / RoC Patna
+              </span>
             </div>
-            <div className="font-serif text-lg font-bold text-[#151311]">
-              MCA Incorporated
+            <div className="p-4 rounded-xl bg-white border border-[#E8E2D5]/80 shadow-2xs">
+              <span className="text-[11px] font-mono uppercase tracking-wider text-[#78716C] block">Incorporation</span>
+              <span className="text-sm font-bold text-[#1C1917] mt-1 block">7 November 2024</span>
             </div>
-            <p className="text-xs text-[#524E48] leading-relaxed">
-              Incorporated 7 Nov 2024 under the Companies Act 2013 with RoC Patna jurisdiction.
-            </p>
-            <div className="pt-1 text-[11px] font-mono text-emerald-700 font-semibold flex items-center gap-1">
-              <CheckCircle2 className="w-3 h-3 text-emerald-600" />
-              <span>CIN: {COMPANY_DATA.cin}</span>
+            <div className="p-4 rounded-xl bg-white border border-[#E8E2D5]/80 shadow-2xs">
+              <span className="text-[11px] font-mono uppercase tracking-wider text-[#78716C] block">Registration No.</span>
+              <span className="text-sm font-mono font-bold text-[#9A6F20] mt-1 block">072121</span>
             </div>
-          </div>
-
-          <div className="p-6 rounded-2xl bg-white border border-[#E8E2D5] shadow-sm hover:shadow-md transition-all space-y-2.5">
-            <div className="p-2.5 rounded-xl bg-emerald-50 border border-emerald-200 w-fit">
-              <MapPin className="w-5 h-5 text-emerald-700" />
-            </div>
-            <div className="font-serif text-lg font-bold text-[#151311]">
-              Local Bihar Domicile
-            </div>
-            <p className="text-xs text-[#524E48] leading-relaxed">
-              Permanent headquarters in Aurangabad, Bihar (PIN 824101), giving immediate local accessibility.
-            </p>
-            <div className="pt-1 text-[11px] font-mono text-emerald-700 font-semibold flex items-center gap-1">
-              <CheckCircle2 className="w-3 h-3 text-emerald-600" />
-              <span>Kunda House, MG Road</span>
-            </div>
-          </div>
-
-          <div className="p-6 rounded-2xl bg-white border border-[#E8E2D5] shadow-sm hover:shadow-md transition-all space-y-2.5">
-            <div className="p-2.5 rounded-xl bg-[#FEF3C7] border border-[#FDE68A] w-fit">
-              <Scale className="w-5 h-5 text-[#D97706]" />
-            </div>
-            <div className="font-serif text-lg font-bold text-[#151311]">
-              Title Due Diligence
-            </div>
-            <p className="text-xs text-[#524E48] leading-relaxed">
-              Genealogical Khatiyan, Jamabandi, and mutation verification conducted before any property commitment.
-            </p>
-            <div className="pt-1 text-[11px] font-mono text-[#B45309] font-semibold flex items-center gap-1">
-              <CheckCircle2 className="w-3 h-3 text-emerald-600" />
-              <span>100% Clear Title Standard</span>
-            </div>
-          </div>
-
-          <div className="p-6 rounded-2xl bg-white border border-[#E8E2D5] shadow-sm hover:shadow-md transition-all space-y-2.5">
-            <div className="p-2.5 rounded-xl bg-amber-50 border border-amber-200 w-fit">
-              <Landmark className="w-5 h-5 text-amber-700" />
-            </div>
-            <div className="font-serif text-lg font-bold text-[#151311]">
-              Zero Speculation
-            </div>
-            <p className="text-xs text-[#524E48] leading-relaxed">
-              Operating strictly under approved real estate charter. No unverified brochures or speculative brokerage.
-            </p>
-            <div className="pt-1 text-[11px] font-mono text-emerald-700 font-semibold flex items-center gap-1">
-              <CheckCircle2 className="w-3 h-3 text-emerald-600" />
-              <span>Transparent Commercial Model</span>
+            <div className="p-4 rounded-xl bg-white border border-[#E8E2D5]/80 shadow-2xs">
+              <span className="text-[11px] font-mono uppercase tracking-wider text-[#78716C] block">Corporate HQ</span>
+              <span className="text-sm font-bold text-[#1C1917] mt-1 block">Aurangabad (824101)</span>
             </div>
           </div>
 
@@ -183,205 +117,295 @@ export const AboutPage: React.FC<AboutPageProps> = ({ onOpenEnquiry }) => {
       </section>
 
       {/* ========================================================================= */}
-      {/* 3. REFINED STATUTORY CORPORATE DOSSIER (MCA / ROC PATNA) */}
+      {/* 2. EXECUTIVE STEWARDSHIP: BOARD OF DIRECTORS */}
       {/* ========================================================================= */}
-      <section id="corporate-dossier" className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pb-16 scroll-mt-24">
-        <div className="rounded-3xl p-7 sm:p-12 bg-white border border-[#E8E2D5] shadow-[0_20px_50px_rgba(40,25,10,0.06)] space-y-8">
+      <section className="py-14 sm:py-20 border-b border-[#E8E2D5]">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           
-          {/* Header */}
-          <div className="flex flex-col sm:flex-row sm:items-center justify-between border-b border-[#E8E2D5] pb-6 gap-3">
-            <div>
-              <div className="inline-flex items-center gap-2 text-xs uppercase tracking-widest text-[#B45309] font-mono font-bold">
-                <FileText className="w-4 h-4 text-[#D97706]" />
-                <span>Statutory Compliance &bull; Public Record</span>
-              </div>
-              <h2 className="font-serif text-2xl sm:text-3xl font-bold text-[#151311] mt-1">
-                Official Corporate Registration Dossier
-              </h2>
-            </div>
-            
-            <div className="flex items-center gap-2 self-start sm:self-auto">
-              <span className="text-xs font-mono bg-[#FAF8F5] text-[#524E48] px-3.5 py-1.5 rounded-full border border-[#E8E2D5] font-medium">
-                GOVT. OF INDIA &bull; ROC PATNA
-              </span>
-              <span className="text-xs font-mono bg-emerald-50 text-emerald-700 px-3.5 py-1.5 rounded-full border border-emerald-200 font-bold flex items-center gap-1.5">
-                <span className="w-2 h-2 rounded-full bg-emerald-500 animate-pulse" />
-                <span>ACTIVE</span>
-              </span>
-            </div>
+          <div className="max-w-3xl mb-12 space-y-2">
+            <span className="text-xs uppercase tracking-widest text-[#9A6F20] font-mono font-bold">
+              Leadership &bull; नेतृत्व
+            </span>
+            <h2 className="font-serif text-2xl sm:text-4xl font-bold text-[#1C1917]">
+              Board of Directors
+            </h2>
+            <p className="text-sm sm:text-base text-[#57534E] leading-relaxed">
+              Founded and directed by Kundan Kumar Singh and Vikas Kumar Singh, bringing grounded local accountability, business integrity, and personal accessibility to every land development.
+            </p>
           </div>
 
-          {/* Dossier Grid */}
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-x-12 gap-y-6 text-sm">
-            
-            <div className="space-y-4">
-              <div className="border-b border-[#E8E2D5] pb-3.5">
-                <span className="text-xs uppercase tracking-wider text-[#78716C] font-mono block">
-                  Legal Corporate Entity Name
-                </span>
-                <span className="font-serif text-lg font-bold text-[#151311] block mt-0.5">
-                  Baba Baidyanath Real Estate Private Limited
-                </span>
-              </div>
-
-              <div className="border-b border-[#E8E2D5] pb-3.5">
-                <span className="text-xs uppercase tracking-wider text-[#78716C] font-mono block">
-                  Corporate Identification Number (CIN)
-                </span>
-                <span className="font-mono text-base font-bold text-[#B45309] block mt-0.5">
-                  {COMPANY_DATA.cin}
-                </span>
-              </div>
-
-              <div className="border-b border-[#E8E2D5] pb-3.5">
-                <span className="text-xs uppercase tracking-wider text-[#78716C] font-mono block">
-                  Registration Number
-                </span>
-                <span className="font-mono text-sm font-semibold text-[#151311] block mt-0.5">
-                  072121
-                </span>
-              </div>
-
-              <div>
-                <span className="text-xs uppercase tracking-wider text-[#78716C] font-mono block">
-                  Company Category &amp; Class
-                </span>
-                <span className="font-medium text-[#151311] block mt-0.5">
-                  Company limited by shares / Non-government company / Private unlisted
-                </span>
-              </div>
-            </div>
-
-            <div className="space-y-4">
-              <div className="border-b border-[#E8E2D5] pb-3.5">
-                <span className="text-xs uppercase tracking-wider text-[#78716C] font-mono block">
-                  Date of Statutory Incorporation
-                </span>
-                <span className="font-medium text-[#151311] block mt-0.5 flex items-center gap-2">
-                  <Calendar className="w-4 h-4 text-[#D97706]" />
-                  <span>7 November 2024</span>
-                </span>
-              </div>
-
-              <div className="border-b border-[#E8E2D5] pb-3.5">
-                <span className="text-xs uppercase tracking-wider text-[#78716C] font-mono block">
-                  Registrar of Companies (RoC)
-                </span>
-                <span className="font-medium text-[#151311] block mt-0.5 flex items-center gap-2">
-                  <Landmark className="w-4 h-4 text-[#D97706]" />
-                  <span>RoC Patna (Bihar)</span>
-                </span>
-              </div>
-
-              <div className="border-b border-[#E8E2D5] pb-3.5">
-                <span className="text-xs uppercase tracking-wider text-[#78716C] font-mono block">
-                  Capital Structure
-                </span>
-                <span className="font-medium text-[#151311] block mt-0.5 flex items-center gap-2">
-                  <CreditCard className="w-4 h-4 text-[#D97706]" />
-                  <span>Authorised: ₹1,00,000 &bull; Paid-up: ₹1,00,000</span>
-                </span>
-              </div>
-
-              <div className="border-b border-[#E8E2D5] pb-3.5">
-                <span className="text-xs uppercase tracking-wider text-[#78716C] font-mono block">
-                  Corporate Office Address
-                </span>
-                <span className="font-medium text-[#151311] block mt-0.5 leading-relaxed">
-                  {COMPANY_DATA.officeAddress}
-                </span>
-              </div>
-
-              <div>
-                <span className="text-xs uppercase tracking-wider text-[#78716C] font-mono block">
-                  MCA Registered Office
-                </span>
-                <span className="font-medium text-[#151311] block mt-0.5 leading-relaxed text-xs text-[#524E48]">
-                  {COMPANY_DATA.registeredAddress}
-                </span>
-              </div>
-
-            </div>
-
-          </div>
-
-          {/* Board of Directors */}
-          <div className="pt-6 border-t border-[#E8E2D5] space-y-4">
-            <div>
-              <span className="text-xs uppercase tracking-widest text-[#B45309] font-mono font-bold block">
-                Executive Leadership
-              </span>
-              <h3 className="font-serif text-xl font-bold text-[#151311] mt-0.5">
-                Board of Directors
-              </h3>
-            </div>
-
-            <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
-              {(COMPANY_DATA?.directors || []).map((director, index) => (
-                <div key={index} className="p-4 sm:p-5 rounded-2xl bg-[#FAF8F5] border border-[#E8E2D5] flex items-center justify-between hover:border-[#F59E0B]/40 transition-colors">
-                  <div className="flex items-center gap-3">
-                    <div className="p-2.5 rounded-xl bg-[#FEF3C7] border border-[#FDE68A] text-[#D97706]">
-                      <UserCheck className="w-5 h-5" />
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+            {(COMPANY_DATA?.directors || []).map((director, index) => (
+              <div
+                key={index}
+                className="p-6 sm:p-8 rounded-3xl bg-white border border-[#E8E2D5] shadow-xs hover:shadow-md transition-all flex flex-col justify-between"
+              >
+                <div className="space-y-4">
+                  <div className="flex items-center justify-between">
+                    <div className="p-3 rounded-2xl bg-[#FAF8F5] border border-[#E8E2D5] text-[#9A6F20]">
+                      <UserCheck className="w-6 h-6" />
                     </div>
-                    <div>
-                      <div className="font-serif text-lg font-bold text-[#151311]">
-                        {director}
-                      </div>
-                      <div className="text-xs text-[#78716C] mt-0.5">
-                        Director &bull; Appointed November 2024
-                      </div>
-                    </div>
+                    <span className="text-xs font-mono font-bold text-emerald-800 bg-emerald-50 px-3 py-1 rounded-full border border-emerald-200">
+                      MCA Verified Director
+                    </span>
                   </div>
-                  <span className="text-xs font-mono text-emerald-700 bg-emerald-50 px-3 py-1 rounded-md border border-emerald-200 font-bold shrink-0">
-                    MCA Verified
+
+                  <div>
+                    <h3 className="font-serif text-2xl font-bold text-[#1C1917]">
+                      {director}
+                    </h3>
+                    <p className="text-xs uppercase tracking-wider text-[#9A6F20] font-semibold mt-1">
+                      Director &bull; Baba Baidyanath Real Estate Pvt. Ltd.
+                    </p>
+                  </div>
+
+                  <p className="text-xs sm:text-sm text-[#57534E] leading-relaxed">
+                    Appointed at statutory incorporation on 7 November 2024. Actively oversees title due diligence, land acquisition protocols, boundary infrastructure, and direct stakeholder communications.
+                  </p>
+                </div>
+
+                <div className="mt-6 pt-4 border-t border-[#E8E2D5] flex items-center justify-between text-xs text-[#78716C]">
+                  <span>RoC Patna Jurisdiction</span>
+                  <span className="font-hindi text-[#9A6F20] font-medium">॥ प्रत्यक्ष संपर्क एवं परामर्श ॥</span>
+                </div>
+              </div>
+            ))}
+          </div>
+
+        </div>
+      </section>
+
+      {/* ========================================================================= */}
+      {/* 3. GROUND PRACTICE: HOW WE VERIFY LAND IN BIHAR */}
+      {/* ========================================================================= */}
+      <section className="py-14 sm:py-20 border-b border-[#E8E2D5]">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          
+          <div className="max-w-3xl mb-12 space-y-2">
+            <span className="text-xs uppercase tracking-widest text-[#9A6F20] font-mono font-bold">
+              Our Methodology &bull; कार्यप्रणाली
+            </span>
+            <h2 className="font-serif text-2xl sm:text-4xl font-bold text-[#1C1917]">
+              How We Verify &amp; Deliver Land in Bihar
+            </h2>
+            <p className="text-sm sm:text-base text-[#57534E] leading-relaxed">
+              We eliminate the ambiguity of unverified property brokerage through a disciplined four-stage due diligence workflow.
+            </p>
+          </div>
+
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+            
+            {/* Step 1 */}
+            <div className="p-6 rounded-2xl bg-white border border-[#E8E2D5] shadow-2xs space-y-3.5">
+              <div className="w-10 h-10 rounded-xl bg-[#FAF8F5] border border-[#C59B27]/40 flex items-center justify-center text-[#9A6F20] font-mono font-bold text-sm">
+                01
+              </div>
+              <h3 className="font-serif text-lg font-bold text-[#1C1917]">
+                Khatiyan &amp; CS/RS Survey Cross-Check
+              </h3>
+              <p className="text-xs text-[#57534E] leading-relaxed">
+                We trace property records through Cadastral Survey (CS) and Revisional Survey (RS) maps against circle revenue registers to ensure unbroken hereditary title.
+              </p>
+            </div>
+
+            {/* Step 2 */}
+            <div className="p-6 rounded-2xl bg-white border border-[#E8E2D5] shadow-2xs space-y-3.5">
+              <div className="w-10 h-10 rounded-xl bg-[#FAF8F5] border border-[#C59B27]/40 flex items-center justify-center text-[#9A6F20] font-mono font-bold text-sm">
+                02
+              </div>
+              <h3 className="font-serif text-lg font-bold text-[#1C1917]">
+                Jamabandi &amp; Mutation Legality
+              </h3>
+              <p className="text-xs text-[#57534E] leading-relaxed">
+                Prior to any engagement, we verify current Jamabandi, clear lagan (rent) receipts, and examine District Sub-Registrar records to confirm zero encumbrances or pending disputes.
+              </p>
+            </div>
+
+            {/* Step 3 */}
+            <div className="p-6 rounded-2xl bg-white border border-[#E8E2D5] shadow-2xs space-y-3.5">
+              <div className="w-10 h-10 rounded-xl bg-[#FAF8F5] border border-[#C59B27]/40 flex items-center justify-center text-[#9A6F20] font-mono font-bold text-sm">
+                03
+              </div>
+              <h3 className="font-serif text-lg font-bold text-[#1C1917]">
+                Total Station Boundary Demarcation
+              </h3>
+              <p className="text-xs text-[#57534E] leading-relaxed">
+                Every layout is surveyed using high-precision Total Station equipment. We install permanent corner pillars, dedicate 30 to 40-foot internal roads, and mark exact boundaries on ground.
+              </p>
+            </div>
+
+            {/* Step 4 */}
+            <div className="p-6 rounded-2xl bg-white border border-[#E8E2D5] shadow-2xs space-y-3.5">
+              <div className="w-10 h-10 rounded-xl bg-[#FAF8F5] border border-[#C59B27]/40 flex items-center justify-center text-[#9A6F20] font-mono font-bold text-sm">
+                04
+              </div>
+              <h3 className="font-serif text-lg font-bold text-[#1C1917]">
+                Clear Registry &amp; Mutation Support
+              </h3>
+              <p className="text-xs text-[#57534E] leading-relaxed">
+                We handle the complete conveyance process with full circle rate compliance, direct deed registration at the registry office, and follow-through assistance for prompt mutation.
+              </p>
+            </div>
+
+          </div>
+
+        </div>
+      </section>
+
+      {/* ========================================================================= */}
+      {/* 4. OFFICIAL STATUTORY DOSSIER (MINISTRY OF CORPORATE AFFAIRS) */}
+      {/* ========================================================================= */}
+      <section id="corporate-dossier" className="py-14 sm:py-20 border-b border-[#E8E2D5] scroll-mt-24">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          
+          <div className="rounded-3xl p-6 sm:p-10 lg:p-12 bg-white border border-[#E8E2D5] shadow-sm space-y-8">
+            
+            {/* Header */}
+            <div className="flex flex-col sm:flex-row sm:items-center justify-between border-b border-[#E8E2D5] pb-6 gap-4">
+              <div>
+                <div className="inline-flex items-center gap-2 text-xs uppercase tracking-widest text-[#9A6F20] font-mono font-bold">
+                  <FileText className="w-4 h-4 text-[#9A6F20]" />
+                  <span>Public Statutory Record &bull; MCA21</span>
+                </div>
+                <h2 className="font-serif text-2xl sm:text-3xl font-bold text-[#1C1917] mt-1">
+                  Official Corporate Registration Profile
+                </h2>
+              </div>
+              
+              <div className="flex items-center gap-2">
+                <span className="text-xs font-mono bg-[#FAF8F5] text-[#57534E] px-3.5 py-1.5 rounded-full border border-[#E8E2D5]">
+                  GOVT. OF INDIA &bull; ROC PATNA
+                </span>
+                <span className="text-xs font-mono bg-emerald-50 text-emerald-800 px-3.5 py-1.5 rounded-full border border-emerald-200 font-bold flex items-center gap-1.5">
+                  <span className="w-2 h-2 rounded-full bg-emerald-500" />
+                  <span>ACTIVE</span>
+                </span>
+              </div>
+            </div>
+
+            {/* Dossier 2-Column Data Grid */}
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-x-12 gap-y-6 text-sm">
+              
+              <div className="space-y-4">
+                <div className="border-b border-[#E8E2D5] pb-3">
+                  <span className="text-xs uppercase tracking-wider text-[#78716C] font-mono block">
+                    Full Legal Entity Name
+                  </span>
+                  <span className="font-serif text-lg font-bold text-[#1C1917] block mt-0.5">
+                    Baba Baidyanath Real Estate Private Limited
                   </span>
                 </div>
-              ))}
+
+                <div className="border-b border-[#E8E2D5] pb-3">
+                  <span className="text-xs uppercase tracking-wider text-[#78716C] font-mono block">
+                    Corporate Identification Number (CIN)
+                  </span>
+                  <span className="font-mono text-base font-bold text-[#9A6F20] block mt-0.5">
+                    {COMPANY_DATA.cin}
+                  </span>
+                </div>
+
+                <div className="border-b border-[#E8E2D5] pb-3">
+                  <span className="text-xs uppercase tracking-wider text-[#78716C] font-mono block">
+                    Company Registration Number
+                  </span>
+                  <span className="font-mono text-sm font-semibold text-[#1C1917] block mt-0.5">
+                    072121
+                  </span>
+                </div>
+
+                <div>
+                  <span className="text-xs uppercase tracking-wider text-[#78716C] font-mono block">
+                    Company Category &amp; Class
+                  </span>
+                  <span className="font-medium text-[#1C1917] block mt-0.5">
+                    Company limited by shares &bull; Non-govt company &bull; Private unlisted
+                  </span>
+                </div>
+              </div>
+
+              <div className="space-y-4">
+                <div className="border-b border-[#E8E2D5] pb-3">
+                  <span className="text-xs uppercase tracking-wider text-[#78716C] font-mono block">
+                    Date of Statutory Incorporation
+                  </span>
+                  <span className="font-medium text-[#1C1917] block mt-0.5 flex items-center gap-2">
+                    <Calendar className="w-4 h-4 text-[#9A6F20]" />
+                    <span>7 November 2024</span>
+                  </span>
+                </div>
+
+                <div className="border-b border-[#E8E2D5] pb-3">
+                  <span className="text-xs uppercase tracking-wider text-[#78716C] font-mono block">
+                    Registrar of Companies
+                  </span>
+                  <span className="font-medium text-[#1C1917] block mt-0.5 flex items-center gap-2">
+                    <Landmark className="w-4 h-4 text-[#9A6F20]" />
+                    <span>RoC Patna (Bihar)</span>
+                  </span>
+                </div>
+
+                <div className="border-b border-[#E8E2D5] pb-3">
+                  <span className="text-xs uppercase tracking-wider text-[#78716C] font-mono block">
+                    Capital Structure
+                  </span>
+                  <span className="font-medium text-[#1C1917] block mt-0.5 flex items-center gap-2">
+                    <CreditCard className="w-4 h-4 text-[#9A6F20]" />
+                    <span>Authorised: ₹1,00,000 &bull; Paid-up: ₹1,00,000</span>
+                  </span>
+                </div>
+
+                <div>
+                  <span className="text-xs uppercase tracking-wider text-[#78716C] font-mono block">
+                    Head Office &amp; Address for Correspondence
+                  </span>
+                  <span className="font-medium text-[#1C1917] block mt-0.5 text-xs sm:text-sm">
+                    {COMPANY_DATA.officeAddress}
+                  </span>
+                </div>
+              </div>
+
             </div>
-          </div>
 
-          {/* Promoter's Allied Commercial Heritage: Siyaram's Showroom */}
-          <div className="pt-6 border-t border-[#E8E2D5]">
-            <SiyaramShowcaseCard />
-          </div>
-
-          {/* Consultation CTA Banner */}
-          <div className="p-6 sm:p-8 rounded-2xl bg-gradient-to-r from-[#FAF8F5] via-[#F3EFE6] to-[#FAF8F5] border border-[#E8E2D5] flex flex-col sm:flex-row items-center justify-between gap-6">
-            <div className="space-y-1 text-center sm:text-left">
-              <h4 className="font-serif text-xl font-bold text-[#151311]">
-                Need Legal Due Diligence or Land Advisory?
-              </h4>
-              <p className="text-xs sm:text-sm text-[#524E48]">
-                Connect with our corporate office for confidential property and joint-development inquiries.
-              </p>
+            {/* Promoter's Allied Commercial Heritage: Siyaram's Showroom */}
+            <div className="pt-6 border-t border-[#E8E2D5]">
+              <SiyaramShowcaseCard />
             </div>
 
-            {onOpenEnquiry && (
-              <button
-                onClick={onOpenEnquiry}
-                className="px-6 py-3 rounded-full bg-gradient-to-r from-[#B45309] via-[#F59E0B] to-[#D97706] text-[#0C0A09] font-bold text-xs uppercase tracking-wider cursor-pointer inline-flex items-center gap-2 hover:scale-[1.02] shadow-[0_4px_16px_rgba(245,158,11,0.25)] transition-all shrink-0"
-              >
-                <span>Direct Consultation</span>
-                <ArrowRight className="w-3.5 h-3.5 text-[#0C0A09]" />
-              </button>
-            )}
+            {/* Direct Consultation Notice */}
+            <div className="p-6 rounded-2xl bg-[#FAF8F5] border border-[#E8E2D5] flex flex-col sm:flex-row items-center justify-between gap-4">
+              <div>
+                <h4 className="font-serif text-lg font-bold text-[#1C1917]">
+                  Require Title Documents or Land Consultation?
+                </h4>
+                <p className="text-xs text-[#57534E] mt-0.5">
+                  Visit our office at Kunda House, MG Road, Aurangabad, or speak directly with our directors.
+                </p>
+              </div>
+
+              {onOpenEnquiry && (
+                <button
+                  onClick={onOpenEnquiry}
+                  className="px-6 py-2.5 rounded-full bg-gradient-to-r from-[#9A6F20] via-[#C59B27] to-[#E7C973] text-[#0F0E0D] font-bold text-xs uppercase tracking-wider cursor-pointer inline-flex items-center gap-2 hover:scale-[1.02] transition-all shrink-0"
+                >
+                  <span>Open Enquiry Desk</span>
+                  <ArrowRight className="w-3.5 h-3.5 text-[#0F0E0D]" />
+                </button>
+              )}
+            </div>
+
           </div>
 
         </div>
       </section>
 
       {/* ========================================================================= */}
-      {/* 4. CORPORATE GOVERNANCE & CORE INSTITUTIONAL PRINCIPLES */}
-      {/* ========================================================================= */}
-      <CompanyOverview onOpenEnquiry={onOpenEnquiry} />
-
-      {/* ========================================================================= */}
-      {/* 5. FREQUENTLY ASKED QUESTIONS & STATUTORY CLARITY */}
+      {/* 5. FREQUENTLY ASKED QUESTIONS */}
       {/* ========================================================================= */}
       <FAQSection />
 
       {/* ========================================================================= */}
-      {/* 6. THIRD-PARTY VERIFIED CORPORATE REGISTRIES & DIRECTORIES */}
+      {/* 6. THIRD-PARTY VERIFIED REGISTRIES & DIRECTORIES */}
       {/* ========================================================================= */}
       <CorporateRegistriesSection />
 
