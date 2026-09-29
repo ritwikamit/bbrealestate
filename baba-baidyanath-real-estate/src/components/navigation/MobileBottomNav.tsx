@@ -103,10 +103,12 @@ export const MobileBottomNav: React.FC<MobileBottomNavProps> = ({
                 }}
                 className="p-3 rounded-xl bg-gradient-to-r from-[#9A6F20] via-[#C59B27] to-[#E7C973] text-[#0F0E0D] font-bold text-xs uppercase tracking-wider flex items-center justify-center gap-2 shadow-[0_0_15px_rgba(197,155,39,0.3)] border border-[#E7C973]/40 active:scale-98 transition-transform cursor-pointer"
               >
-                <IconDivineSpark size={14} color="gold" />
-                <span className="leading-none inline-flex items-center text-xs font-bold">Enquire Desk</span>
-                <span className="text-stone-700 font-light leading-none select-none text-xs inline-flex items-center">|</span>
-                <span className="font-hindi text-xs font-bold leading-none inline-flex items-center">संपर्क</span>
+                <IconDivineSpark size={14} color="gold" className="self-center" />
+                <span className="inline-flex items-baseline gap-1.5">
+                  <span className="text-xs font-bold">Enquire Desk</span>
+                  <span className="text-stone-700 font-light select-none text-xs">|</span>
+                  <span className="font-hindi text-xs font-bold text-[#0F0E0D]">संपर्क</span>
+                </span>
               </button>
               <a
                 href={`tel:${COMPANY_DATA.phone}`}
@@ -174,10 +176,10 @@ export const MobileBottomNav: React.FC<MobileBottomNavProps> = ({
                                   : 'text-stone-400 hover:bg-white/5 hover:text-stone-200'
                               }`}
                             >
-                              <div className="flex items-center gap-1.5">
-                                <span className="text-xs leading-none">{sub.label}</span>
-                                <span className="text-stone-600 font-light select-none text-xs leading-none">|</span>
-                                <span className="font-hindi text-xs leading-none">{sub.hindi}</span>
+                              <div className="inline-flex items-baseline gap-1.5">
+                                <span className="text-xs">{sub.label}</span>
+                                <span className="text-stone-600 font-light select-none text-xs">|</span>
+                                <span className="font-hindi text-xs">{sub.hindi}</span>
                               </div>
                               <span className="text-[9px] font-mono opacity-60">
                                 {sub.key === 'all' ? 'All' : '2 Sites'}

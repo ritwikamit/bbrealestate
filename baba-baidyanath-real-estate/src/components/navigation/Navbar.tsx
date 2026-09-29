@@ -201,14 +201,14 @@ export const Navbar: React.FC<NavbarProps> = ({
                                 }`}
                               >
                                 <div className="space-y-0.5">
-                                  <div className="flex items-center gap-2">
-                                    <span className={`text-xs sm:text-sm font-semibold leading-none inline-flex items-center transition-colors ${
+                                  <div className="inline-flex items-baseline gap-2">
+                                    <span className={`text-xs sm:text-sm font-semibold transition-colors ${
                                       isItemActive ? 'text-[#C59B27]' : 'text-[#1C1917] group-hover/item:text-[#C59B27]'
                                     }`}>
                                       {item.label}
                                     </span>
-                                    <span className="text-stone-400 font-light leading-none select-none text-xs sm:text-sm inline-flex items-center">|</span>
-                                    <span className="font-hindi text-xs sm:text-sm font-semibold text-[#9A6F20] leading-none inline-flex items-center">
+                                    <span className="text-stone-400 font-light select-none text-xs sm:text-sm">|</span>
+                                    <span className="font-hindi text-xs sm:text-sm font-semibold text-[#9A6F20]">
                                       {item.hindi}
                                     </span>
                                   </div>
@@ -268,16 +268,18 @@ export const Navbar: React.FC<NavbarProps> = ({
               className="relative group overflow-hidden inline-flex items-center justify-center gap-1.5 sm:gap-2 px-3 sm:px-5 py-2 sm:py-2.5 rounded-full bg-[#1C1917] hover:bg-[#2C2724] text-[#FAF8F5] transition-all duration-300 hover:scale-[1.02] active:scale-95 cursor-pointer shadow-sm border border-[#C59B27]/40"
               aria-label="Enquire Desk - संपर्क"
             >
-              <span className="text-[11px] sm:text-sm font-semibold text-[#FAF8F5] leading-none inline-flex items-center whitespace-nowrap">
-                Enquire Desk
+              <span className="inline-flex items-baseline gap-1.5 sm:gap-2">
+                <span className="text-[11px] sm:text-sm font-semibold text-[#FAF8F5] whitespace-nowrap">
+                  Enquire Desk
+                </span>
+                <span className="text-stone-500 font-light text-[11px] sm:text-sm select-none">
+                  |
+                </span>
+                <span className="font-hindi text-[11px] sm:text-sm font-semibold text-[#E7C973] whitespace-nowrap">
+                  संपर्क
+                </span>
               </span>
-              <span className="text-stone-500 font-light text-[11px] sm:text-sm leading-none select-none inline-flex items-center">
-                |
-              </span>
-              <span className="font-hindi text-[11px] sm:text-sm font-semibold text-[#E7C973] leading-none inline-flex items-center whitespace-nowrap">
-                संपर्क
-              </span>
-              <IconMinimalArrow size={11} color="gold" className="shrink-0 transition-transform group-hover:translate-x-0.5 group-hover:-translate-y-0.5 hidden xs:inline-block sm:inline-block" />
+              <IconMinimalArrow size={11} color="gold" className="shrink-0 transition-transform group-hover:translate-x-0.5 group-hover:-translate-y-0.5 hidden xs:inline-block sm:inline-block self-center" />
             </button>
             <button
               onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
@@ -348,10 +350,10 @@ export const Navbar: React.FC<NavbarProps> = ({
                                 : 'text-[#57534E] hover:bg-stone-100 hover:text-[#1C1917]'
                             }`}
                           >
-                            <div className="flex items-center gap-2">
-                              <span className="font-semibold text-xs sm:text-sm leading-none inline-flex items-center">{item.label}</span>
-                              <span className="text-stone-400 font-light leading-none select-none text-xs sm:text-sm inline-flex items-center">|</span>
-                              <span className="font-hindi text-xs sm:text-sm font-semibold leading-none inline-flex items-center">{item.hindi}</span>
+                            <div className="inline-flex items-baseline gap-2">
+                              <span className="font-semibold text-xs sm:text-sm">{item.label}</span>
+                              <span className="text-stone-400 font-light select-none text-xs sm:text-sm">|</span>
+                              <span className="font-hindi text-xs sm:text-sm font-semibold">{item.hindi}</span>
                             </div>
                             <span className="text-[10px] font-mono opacity-70">
                               {item.badge}
@@ -395,16 +397,18 @@ export const Navbar: React.FC<NavbarProps> = ({
                 }}
                 className="w-full inline-flex items-center justify-center gap-2 py-3 px-4 rounded-xl bg-[#1C1917] text-[#FAF8F5] transition-all shadow-sm border border-[#C59B27]/40 cursor-pointer"
               >
-                <span className="text-xs sm:text-sm font-semibold text-[#FAF8F5] leading-none inline-flex items-center">
-                  Enquire Desk
+                <span className="inline-flex items-baseline gap-2">
+                  <span className="text-xs sm:text-sm font-semibold text-[#FAF8F5]">
+                    Enquire Desk
+                  </span>
+                  <span className="text-stone-500 font-light text-xs sm:text-sm select-none">
+                    |
+                  </span>
+                  <span className="font-hindi text-xs sm:text-sm font-semibold text-[#E7C973]">
+                    संपर्क
+                  </span>
                 </span>
-                <span className="text-stone-500 font-light text-xs sm:text-sm leading-none select-none inline-flex items-center">
-                  |
-                </span>
-                <span className="font-hindi text-xs sm:text-sm font-semibold text-[#E7C973] leading-none inline-flex items-center">
-                  संपर्क
-                </span>
-                <IconMinimalArrow size={12} color="gold" className="shrink-0 ml-1" />
+                <IconMinimalArrow size={12} color="gold" className="shrink-0 ml-1 self-center" />
               </button>
             </div>
           </div>
