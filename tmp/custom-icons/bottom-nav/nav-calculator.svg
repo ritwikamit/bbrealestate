@@ -1,0 +1,11 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="24" height="24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+  <!-- Precision Land Computing & EMI Engine -->
+  <rect x="4" y="2.5" width="16" height="19" rx="2.5" />
+  <rect x="7" y="5.5" width="10" height="3.5" rx="0.75" />
+  <line x1="7.5" y1="12.5" x2="9.5" y2="12.5" />
+  <line x1="8.5" y1="11.5" x2="8.5" y2="13.5" />
+  <line x1="14.5" y1="12.5" x2="16.5" y2="12.5" />
+  <line x1="7.5" y1="17" x2="9.5" y2="17" />
+  <line x1="14.5" y1="16" x2="16.5" y2="16" />
+  <line x1="14.5" y1="18" x2="16.5" y2="18" />
+</svg>
