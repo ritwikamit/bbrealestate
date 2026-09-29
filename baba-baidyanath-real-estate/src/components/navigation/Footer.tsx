@@ -247,7 +247,7 @@ export const Footer: React.FC<FooterProps> = ({ onSelectTab, onOpenEnquiry }) =>
             <img
               src="/accustomlabs-transparent.png"
               alt="ACCustom Labs"
-              className="h-[15px] sm:h-[16px] w-auto object-contain inline-block align-middle"
+              className="h-[18px] sm:h-[19px] w-auto object-contain inline-block relative top-[1.5px] sm:top-[2px]"
               loading="lazy"
             />
           </div>
